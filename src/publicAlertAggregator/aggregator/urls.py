@@ -7,6 +7,8 @@ from . import feeder
 from . import views
 
 urlpatterns = [
+    path('alert/<int:identifier>', views.get_alert_cap_data),
+
     path('subscription', views.post_subscription),
     path('subscription/<int:identifier>', views.delete_subscription),
 

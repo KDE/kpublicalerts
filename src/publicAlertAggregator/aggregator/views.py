@@ -1,9 +1,13 @@
 # SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
-from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound, JsonResponse
+from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound, HttpResponsePermanentRedirect, HttpResponseRedirect, JsonResponse
 from json import loads
-from .models import Subscription
+from .models import Alert, Subscription
+
+#
+# Public subscription API
+#
 
 # add new subscription
 def post_subscription(request):
@@ -27,3 +31,24 @@ def delete_subscription(request, identifier):
         return HttpResponseNotFound('no such subscription')
     s.delete()
     return HttpResponse()
+
+
+#
+# Public alert query API
+#
+
+# get alert CAP data
+def get_alert_cap_data(request, identifier):
+    if request.method != 'GET':
+        return HttpResponseBadRequest('wrong HTTP method')
+    try:
+        a = Alert.objects.get(id = identifier)
+    except:
+        return HttpResponseNotFound('no such alert')
+
+    if a.sourceUrl:
+        return HttpResponseRedirect(a.sourceUrl)
+    elif a.capData:
+        return HttpResponsePermanentRedirect(a.capData.url)
+
+    return HttpResponseBadRequest('alert without CAP data?')
