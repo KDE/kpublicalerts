@@ -7,6 +7,8 @@
 
 #include <KWeatherCore/CAPParser>
 
+#include <QJsonArray>
+#include <QJsonDocument>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 
@@ -44,6 +46,23 @@ void AlertsManager::addAlert(const QUrl &capData)
         beginInsertRows({}, std::distance(m_alerts.begin(), it), std::distance(m_alerts.begin(), it));
         m_alerts.insert(it, std::move(e));
         endInsertRows();
+    });
+}
+
+void AlertsManager::fetchAll()
+{
+    auto reply = m_nam->get(QNetworkRequest(QUrl(QLatin1String("http://localhost:8000/aggregator/alerts")))); // TODO hardcoded URL
+    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        reply->deleteLater();
+        if (reply->error() != QNetworkReply::NoError) {
+            qWarning() << reply->errorString();
+            return;
+        }
+
+        const auto alertIds = QJsonDocument::fromJson(reply->readAll()).array();
+        for (const auto &alertId : alertIds) {
+            addAlert(QUrl(QLatin1String("http://localhost:8000/aggregator/alert/") + alertId.toString()));
+        }
     });
 }
 
