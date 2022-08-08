@@ -52,3 +52,14 @@ def get_alert_cap_data(request, identifier):
         return HttpResponsePermanentRedirect(a.capData.url)
 
     return HttpResponseBadRequest('alert without CAP data?')
+
+# list all alerts in a given area
+def get_alerts(request):
+    if request.method != 'GET':
+        return HttpResponseBadRequest('wrong HTTP method')
+
+    # TODO consider bbox
+    res = []
+    for alert in Alert.objects.all():
+        res.append(str(alert.id))
+    return JsonResponse(res, safe=False)
