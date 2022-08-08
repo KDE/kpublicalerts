@@ -5,8 +5,13 @@ import json
 import requests
 import xml.etree.ElementTree as ET
 
-class MoWaSFeedReader:
+from abstractfeedreader import AbstractFeedReader
+
+class MoWaSFeedReader(AbstractFeedReader):
     feedUrl = 'https://warnung.bund.de/bbk.mowas/gefahrendurchsagen.json'
+
+    def __init__(self):
+        self.issuerId = 'de-mowas'
 
     def convertProperty(xmlParent, mowasObj, propertyName):
         if not propertyName in mowasObj:
@@ -19,7 +24,7 @@ class MoWaSFeedReader:
         feedData = json.loads(req.content)
         for alert in feedData:
             ET.register_namespace('', 'urn:oasis:names:tc:emergency:cap:1.2')
-            root = ET.Element('{urn:oasis:names:tc:emergency:cap:1.2}alerts')
+            root = ET.Element('{urn:oasis:names:tc:emergency:cap:1.2}alert')
             for prop in ['identifier', 'sender', 'sent', 'status', 'msgType', 'scope']:
                 MoWaSFeedReader.convertProperty(root, alert, prop)
             # TODO references: relevant for updates?
@@ -33,6 +38,10 @@ class MoWaSFeedReader:
                 # TODO parameter
                 # TODO area
 
-            print(ET.tostring(root, encoding='utf-8', xml_declaration=True).decode())
+            self.addAlert(
+                alertId = alert['identifier'],
+                issuedTime = alert['sent'],
+                capData = ET.tostring(root, encoding='utf-8', xml_declaration=True).decode()
+            )
 
         print("TODO")
