@@ -7,6 +7,7 @@ from mowasfeedreader import MoWaSFeedReader
 feedReaders = [
     CAPFeedReader('at-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-austria'),
     MoWaSFeedReader(),
+    CAPFeedReader('fr-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-france'),
 ]
 
 for feedReader in feedReaders:
