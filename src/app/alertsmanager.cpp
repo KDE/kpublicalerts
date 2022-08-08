@@ -41,6 +41,10 @@ void AlertsManager::addAlert(const QUrl &capData)
         AlertElement e;
         // TODO make this a proper implicitly shared value type
         e.alertData = *p.parse().get();
+        if (e.alertData.infoVec().at(0).expireTime().isValid() && e.alertData.infoVec().at(0).expireTime() < QDateTime::currentDateTime()) {
+            qDebug() << "dropping expired alert:" << e.alertData.identifier();
+            return;
+        }
 
         auto it = std::lower_bound(m_alerts.begin(), m_alerts.end(), e);
         beginInsertRows({}, std::distance(m_alerts.begin(), it), std::distance(m_alerts.begin(), it));
