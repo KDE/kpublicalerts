@@ -3,9 +3,13 @@
 
 from django.urls import path
 
+from . import feeder
 from . import views
 
 urlpatterns = [
     path('subscription', views.post_subscription),
-    path('subscription/<int:identifier>', views.delete_subscription)
+    path('subscription/<int:identifier>', views.delete_subscription),
+
+    path('feeder/<str:sourceId>/alert', feeder.post_alert),
+    path('feeder/<str:sourceId>/activeAlerts', feeder.post_active_alerts),
 ]
