@@ -19,6 +19,9 @@
 #include <QApplication>
 #endif
 
+#include <KWeatherCore/AlertEntry>
+#include <KWeatherCore/AlertInfo>
+
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
@@ -48,6 +51,10 @@ int main(int argc, char **argv)
     parser.process(app);
 
     QQmlApplicationEngine engine;
+
+    // TODO move to KWeatherCore itself
+    qmlRegisterUncreatableType<KWeatherCore::AlertInfo>("org.kde.weathercore", 1, 0, "AlertInfo", {});
+    qmlRegisterUncreatableType<KWeatherCore::AlertEntry>("org.kde.weathercore", 1, 0, "AlertEntry", {});
 
     QNetworkAccessManager nam;
     nam.setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);

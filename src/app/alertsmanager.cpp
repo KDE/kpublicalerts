@@ -5,6 +5,7 @@
 
 #include "alertsmanager.h"
 
+#include <KWeatherCore/AlertInfo>
 #include <KWeatherCore/CAPParser>
 
 #include <QJsonArray>
