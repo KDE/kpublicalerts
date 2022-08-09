@@ -6,7 +6,11 @@
 #ifndef KPUBLICALERTS_SUBSCRIPTIONMANAGER_H
 #define KPUBLICALERTS_SUBSCRIPTIONMANAGER_H
 
+#include <KUnifiedPush/Connector>
+
 #include <QObject>
+
+class QNetworkAccessManager;
 
 namespace KPublicAlerts {
 
@@ -15,6 +19,12 @@ class SubscriptionManager : public QObject
 public:
     explicit SubscriptionManager(QObject *parent = nullptr);
     ~SubscriptionManager();
+
+    void setNetworkAccessManager(QNetworkAccessManager *nam);
+
+private:
+    QNetworkAccessManager *m_nam = nullptr;
+    KUnifiedPush::Connector m_connector;
 };
 
 }

@@ -34,7 +34,6 @@ Kirigami.ScrollablePage {
             iconColor: {
                 if (model.alert.msgType == AlertEntry.Cancel)
                     return Kirigami.Theme.positiveTextColor;
-                console.log(model.alertInfo.severity)
                 if (model.alertInfo.severity == AlertInfo.Extreme || model.alertInfo.severity == AlertInfo.Severe)
                     return Kirigami.Theme.negativeTextColor;
                 return Kirigami.Theme.neutralTextColor;

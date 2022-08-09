@@ -22,6 +22,7 @@
 #include <KWeatherCore/AlertEntry>
 #include <KWeatherCore/AlertInfo>
 
+#include <KDBusService>
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
@@ -50,6 +51,8 @@ int main(int argc, char **argv)
     parser.addVersionOption();
     parser.process(app);
 
+    KDBusService service(KDBusService::Unique);
+
     QQmlApplicationEngine engine;
 
     // TODO move to KWeatherCore itself
@@ -65,6 +68,7 @@ int main(int argc, char **argv)
     nam.setCache(&namDiskCache);
 
     SubscriptionManager subscriptionMgr;
+    subscriptionMgr.setNetworkAccessManager(&nam);
     qmlRegisterSingletonInstance("org.kde.publicalerts", 1, 0, "SubscriptionManager", &subscriptionMgr);
     AlertsManager alertsMgr;
     alertsMgr.setNetworkAccessManager(&nam);

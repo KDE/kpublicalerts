@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Public Alerts
+Exec=publicalerts
+Icon=weather-storm
+Type=Application
+Comment=Weather and emergency alerts.
+Terminal=false
+Categories=Qt;KDE;Utility;
+X-KDE-FormFactor=desktop;tablet;handset;
