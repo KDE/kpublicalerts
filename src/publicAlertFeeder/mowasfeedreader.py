@@ -31,7 +31,9 @@ class MoWaSFeedReader(AbstractFeedReader):
 
             for alertInfo in alert['info']:
                 info = ET.SubElement(root, '{urn:oasis:names:tc:emergency:cap:1.2}info', {'lang': alertInfo['language']})
-                # TODO category 1 vs N?
+                for category in alertInfo['category']:
+                    cat = ET.SubElement(info, '{urn:oasis:names:tc:emergency:cap:1.2}category')
+                    cat.text = category
                 for prop in ['urgency', 'severity', 'certainty', 'headline', 'description', 'instruction']:
                     MoWaSFeedReader.convertProperty(info, alertInfo, prop)
                 # TODO eventCode
