@@ -33,7 +33,7 @@ def post_alert(request, sourceId):
     if 'capData' in data:
         alert.capData = SimpleUploadedFile(f"{data['alertId']}.xml", data['capData'].encode('utf-8'), 'application/xml')
     alert.save()
-    notifyAlert(alert, { 'added': alert.id })
+    notifyAlert(alert, { 'added': str(alert.id) })
     return JsonResponse({ 'id': alert.id })
 
 # set all active alerts for a source
