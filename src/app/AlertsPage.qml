@@ -24,11 +24,16 @@ Kirigami.ScrollablePage {
             icon: {
                 if (model.alert.msgType == AlertEntry.Cancel)
                     return "dialog-ok";
+                if (model.alertInfo.categories & AlertInfo.CBRNE)
+                    return "office-chart-polar-stacked";
                 if (model.alertInfo.categories & AlertInfo.Fire)
                     return "hotspot";
                 if (model.alertInfo.categories & AlertInfo.Met)
                     return "weather-storm";
-                // TODO AlertInfo  enum properties are not accessible
+                if (model.alertInfo.categories & AlertInfo.Health)
+                    return "cross-shape";
+                if (model.alertInfo.categories & (AlertInfo.Safety | AlertInfo.Security))
+                    return "security-high-symbolic";
                 return "dialog-warning";
             }
             iconColor: {

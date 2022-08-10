@@ -23,7 +23,7 @@ public:
 
     void setNetworkAccessManager(QNetworkAccessManager *nam);
 
-    Q_INVOKABLE void addAlert(const QUrl &capData); // TODO invokable only for testing
+    void addAlert(const QString &id);
     Q_INVOKABLE void fetchAll(); // TODO testing only, needs to take bbox argument
 
     enum {

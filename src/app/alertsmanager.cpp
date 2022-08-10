@@ -27,9 +27,9 @@ void AlertsManager::setNetworkAccessManager(QNetworkAccessManager *nam)
     m_nam = nam;
 }
 
-void AlertsManager::addAlert(const QUrl &capData)
+void AlertsManager::addAlert(const QString &id)
 {
-    auto reply = m_nam->get(QNetworkRequest(capData));
+    auto reply = m_nam->get(QNetworkRequest(QUrl(QLatin1String("http://localhost:8000/aggregator/alert/") + id))); // TODO hardcoded URL
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         reply->deleteLater();
         if (reply->error() != QNetworkReply::NoError) {
@@ -66,7 +66,7 @@ void AlertsManager::fetchAll()
 
         const auto alertIds = QJsonDocument::fromJson(reply->readAll()).array();
         for (const auto &alertId : alertIds) {
-            addAlert(QUrl(QLatin1String("http://localhost:8000/aggregator/alert/") + alertId.toString()));
+            addAlert(alertId.toString());
         }
     });
 }

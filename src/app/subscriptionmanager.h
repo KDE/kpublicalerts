@@ -16,11 +16,16 @@ namespace KPublicAlerts {
 
 class SubscriptionManager : public QObject
 {
+    Q_OBJECT
 public:
     explicit SubscriptionManager(QObject *parent = nullptr);
     ~SubscriptionManager();
 
     void setNetworkAccessManager(QNetworkAccessManager *nam);
+
+Q_SIGNALS:
+    void alertAdded(const QString &id);
+    void alertRemoved(const QString &id);
 
 private:
     QNetworkAccessManager *m_nam = nullptr;
