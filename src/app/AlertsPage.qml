@@ -15,6 +15,11 @@ Kirigami.ScrollablePage {
     id: root
     title: i18n("Current Alerts")
 
+    Component {
+        id: alertPage
+        AlertPage {}
+    }
+
     ListView {
         id: listView
         model: AlertsManager
@@ -42,6 +47,9 @@ Kirigami.ScrollablePage {
                 if (model.alertInfo.severity == AlertInfo.Extreme || model.alertInfo.severity == AlertInfo.Severe)
                     return Kirigami.Theme.negativeTextColor;
                 return Kirigami.Theme.neutralTextColor;
+            }
+            onClicked: {
+                applicationWindow().pageStack.push(alertPage, { alert: model.alert, alertInfo: model.alertInfo })
             }
         }
 

@@ -4,6 +4,7 @@
 -->
 <RCC>
     <qresource prefix="/">
+        <file>AlertPage.qml</file>
         <file>AlertsPage.qml</file>
         <file>main.qml</file>
     </qresource>
