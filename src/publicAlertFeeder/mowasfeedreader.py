@@ -69,5 +69,3 @@ class MoWaSFeedReader(AbstractFeedReader):
                 expireTime = expireTime,
                 capData = ET.tostring(root, encoding='utf-8', xml_declaration=True).decode()
             )
-
-        print("TODO")

@@ -7,8 +7,16 @@ import requests
 class AbstractFeedReader:
     aggregatorBaseUrl = 'http://localhost:8000/aggregator/'
     issuerId = ''
+    alertIds = []
+
+    def update(self):
+        self.alertIds = []
+        self.updateFeed()
+        requests.post(f"{self.aggregatorBaseUrl}feeder/{self.issuerId}/activeAlerts", json=self.alertIds)
+        self.alertIds = []
 
     def addAlert(self, alertId, issuedTime, capSource = None, capData = None, expireTime = None):
+        self.alertIds.append(alertId)
         alert = {}
         alert['issuerId'] = self.issuerId
         alert['alertId'] = alertId

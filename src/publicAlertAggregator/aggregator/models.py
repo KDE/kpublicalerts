@@ -2,7 +2,9 @@
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
 from django.db import models
+from django.dispatch import receiver
 #from django.contrib.gis.db import models
+import os
 
 # Alert records
 def alert_upload_path(instance, filename):
@@ -19,6 +21,12 @@ class Alert(models.Model):
 
     class Meta:
         constraints = [models.UniqueConstraint('issuerId', 'alertId', name='issuerId_alertId_unique')]
+
+@receiver(models.signals.post_delete, sender=Alert)
+def auto_delete_capdata_on_delete(sender, instance, **kwargs):
+    if instance.capData:
+        if os.path.isfile(instance.capData.path):
+            os.remove(instance.capData.path)
 
 # Subscription records
 class Subscription(models.Model):

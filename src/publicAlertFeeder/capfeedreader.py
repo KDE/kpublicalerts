@@ -25,4 +25,3 @@ class CAPFeedReader(AbstractFeedReader):
                 issuedTime = entry['cap_sent'],
                 capSource = capSource
             )
-        print("TODO")

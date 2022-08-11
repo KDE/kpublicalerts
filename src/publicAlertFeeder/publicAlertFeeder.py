@@ -11,4 +11,4 @@ feedReaders = [
 ]
 
 for feedReader in feedReaders:
-    feedReader.updateFeed()
+    feedReader.update()

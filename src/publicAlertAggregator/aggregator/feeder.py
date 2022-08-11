@@ -40,5 +40,12 @@ def post_alert(request, sourceId):
 def post_active_alerts(request, sourceId):
     if request.method != 'POST':
         return HttpResponseBadRequest('wrong HTTP method')
-    # TODO
-    return HttpResponseBadRequest('not implemented yet')
+    alertIds = loads(request.body)
+    print(sourceId, alertIds)
+    alerts = Alert.objects.filter(issuerId = sourceId)
+    for alert in alerts:
+        if alert.alertId not in alertIds:
+            # TODO notify about removal, if it wouldn't expire anyway shortly
+            alert.delete()
+
+    return HttpResponse()
