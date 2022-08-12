@@ -3,6 +3,9 @@
 
 from capfeedreader import CAPFeedReader
 from mowasfeedreader import MoWaSFeedReader
+import requests_cache
+
+requests_cache.install_cache('public-alert-feeder-cache')
 
 feedReaders = [
     CAPFeedReader('at-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-austria'),
