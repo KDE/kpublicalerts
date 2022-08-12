@@ -36,12 +36,10 @@ void AlertsManager::addAlert(const QString &id)
             qWarning() << reply->errorString();
             return;
         }
-        // TODO this isn't public API yet!
         KWeatherCore::CAPParser p(reply->readAll());
 
         AlertElement e;
-        // TODO make this a proper implicitly shared value type
-        e.alertData = *p.parse().get();
+        e.alertData = p.parse();
         if (e.alertData.infoVec().at(0).expireTime().isValid() && e.alertData.infoVec().at(0).expireTime() < QDateTime::currentDateTime()) {
             qDebug() << "dropping expired alert:" << e.alertData.identifier();
             return;

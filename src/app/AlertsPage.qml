@@ -39,6 +39,10 @@ Kirigami.ScrollablePage {
                     return "cross-shape";
                 if (model.alertInfo.categories & (AlertInfo.Safety | AlertInfo.Security))
                     return "security-high-symbolic";
+                if (model.alertInfo.categories & AlertInfo.Env)
+                    return "internet-services"
+                if (model.alertInfo.categories & AlertInfo.Infra)
+                    return "network-wireless-hotspot"
                 return "dialog-warning";
             }
             iconColor: {

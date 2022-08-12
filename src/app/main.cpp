@@ -4,6 +4,7 @@
  */
 
 #include "alertsmanager.h"
+#include "areamodel.h"
 #include "subscriptionmanager.h"
 
 #include <QCommandLineParser>
@@ -56,8 +57,12 @@ int main(int argc, char **argv)
     QQmlApplicationEngine engine;
 
     // TODO move to KWeatherCore itself
+    qRegisterMetaType<KWeatherCore::AlertEntry>();
+    qRegisterMetaType<KWeatherCore::AlertInfo>();
     qmlRegisterUncreatableType<KWeatherCore::AlertInfo>("org.kde.weathercore", 1, 0, "AlertInfo", {});
     qmlRegisterUncreatableType<KWeatherCore::AlertEntry>("org.kde.weathercore", 1, 0, "AlertEntry", {});
+
+    qmlRegisterType<KPublicAlerts::AreaModel>("org.kde.publicalerts", 1, 0, "AreaModel");
 
     QNetworkAccessManager nam;
     nam.setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);

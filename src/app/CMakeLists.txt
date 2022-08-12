@@ -5,6 +5,7 @@ add_executable(publicalerts)
 
 target_sources(publicalerts PRIVATE
     alertsmanager.cpp
+    areamodel.cpp
     main.cpp
     qml.qrc
     subscriptionmanager.cpp
@@ -18,6 +19,7 @@ target_link_libraries(publicalerts PRIVATE
     KF5::DBusAddons
     KF5::I18n
     Qt::Quick
+    Qt::Positioning
 )
 if (NOT ANDROID)
     target_link_libraries(publicalerts PRIVATE Qt::Widgets)
