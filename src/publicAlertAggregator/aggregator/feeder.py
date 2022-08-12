@@ -29,7 +29,7 @@ def post_alert(request, sourceId):
         return HttpResponse()
 
     # new alert
-    alert = Alert(issuerId = sourceId, alertId = data['alertId'], issueDate = data['issueDate'], expireDate = data.get('expireDate'), sourceUrl = data.get('capSource'))
+    alert = Alert(issuerId = sourceId, alertId = data['alertId'], issueDate = data['issueTime'], expireDate = data.get('expireTime'), sourceUrl = data.get('capSource'))
     if 'capData' in data:
         alert.capData = SimpleUploadedFile(f"{data['alertId']}.xml", data['capData'].encode('utf-8'), 'application/xml')
     alert.save()

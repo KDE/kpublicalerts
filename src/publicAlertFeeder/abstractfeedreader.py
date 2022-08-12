@@ -20,7 +20,7 @@ class AbstractFeedReader:
         alert = {}
         alert['issuerId'] = self.issuerId
         alert['alertId'] = alertId
-        alert['issueDate'] = issuedTime
+        alert['issueTime'] = issuedTime
         if expireTime:
             alert['expireTime'] = expireTime
         if capData:

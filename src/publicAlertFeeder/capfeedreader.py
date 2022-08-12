@@ -23,5 +23,6 @@ class CAPFeedReader(AbstractFeedReader):
             self.addAlert(
                 alertId = entry['cap_identifier'],
                 issuedTime = entry['cap_sent'],
+                expireTime = entry.get('cap_expires'),
                 capSource = capSource
             )
