@@ -99,6 +99,10 @@ class AbstractFeedReader:
             if polyNode.text:
                 hasGeo = True
                 break
+        for circleNode in capTree.findall('{urn:oasis:names:tc:emergency:cap:1.2}info/{urn:oasis:names:tc:emergency:cap:1.2}area/{urn:oasis:names:tc:emergency:cap:1.2}circle'):
+            if circleNode.text:
+                hasGeo = True
+                break
         if not hasGeo:
             print(f"{self.issuerId} - No geographic data available for {alertId} - skipping")
             return

@@ -12,6 +12,8 @@ feedReaders = [
     MoWaSFeedReader(),
     CAPFeedReader('fr-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-france'),
     CAPFeedReader('us-nws', 'https://alerts.weather.gov/cap/us.php?x=0'),
+    CAPFeedReader('us-ntwc', 'https://www.tsunami.gov/events/xml/PAAQAtom.xml'),
+    CAPFeedReader('us-ptwc', 'https://www.tsunami.gov/events/xml/PHEBAtom.xml'),
 ]
 
 for feedReader in feedReaders:
