@@ -54,7 +54,7 @@ class AbstractFeedReader:
                     print(f"can't expand code {codeName}: {codeValue}")
         return expanded
 
-    def addAlert(self, capSource = None, capData = None, expireTime = None):
+    def addAlert(self, capSource = None, capData = None):
         if not capSource and not capData:
             print(f"{self.issuerId} - Got no CAP alert message, skipping {alertId}")
             return
@@ -81,6 +81,12 @@ class AbstractFeedReader:
         if sentTimeNode == None or not sentTimeNode.text:
             print(f"{self.issuerId} - Couldn't find CAP alert message sent time, skipping {alertId}")
         sentTime = sentTimeNode.text
+
+        # find expire time
+        expireTimeNode = capTree.find('{urn:oasis:names:tc:emergency:cap:1.2}info/{urn:oasis:names:tc:emergency:cap:1.2}expires')
+        expireTime = None
+        if expireTimeNode != None:
+            expireTime = expireTimeNode.text
 
         # expand geocodes if necessary, and determine bounding box
         capDataModified |= self.expandGeoCodes(capTree)

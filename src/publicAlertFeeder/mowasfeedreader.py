@@ -30,16 +30,12 @@ class MoWaSFeedReader(AbstractFeedReader):
         req = requests.get(self.feedUrl)
         feedData = json.loads(req.content)
         for alert in feedData:
-            expireTime = None
             ET.register_namespace('', 'urn:oasis:names:tc:emergency:cap:1.2')
             root = ET.Element('{urn:oasis:names:tc:emergency:cap:1.2}alert')
             for prop in ['identifier', 'sender', 'sent', 'status', 'msgType', 'scope', 'note', 'references']:
                 MoWaSFeedReader.convertProperty(root, alert, prop)
 
             for alertInfo in alert['info']:
-                if 'expires' in alertInfo:
-                    expireTime = alertInfo['expires']
-
                 info = ET.SubElement(root, '{urn:oasis:names:tc:emergency:cap:1.2}info', {'lang': alertInfo['language']})
                 for category in alertInfo['category']:
                     cat = ET.SubElement(info, '{urn:oasis:names:tc:emergency:cap:1.2}category')
@@ -73,7 +69,4 @@ class MoWaSFeedReader(AbstractFeedReader):
                             MoWaSFeedReader.convertProperty(codeNode, code, prop)
                     # TODO more area content
 
-            self.addAlert(
-                expireTime = expireTime,
-                capData = ET.tostring(root, encoding='utf-8', xml_declaration=True).decode()
-            )
+            self.addAlert(capData = ET.tostring(root, encoding='utf-8', xml_declaration=True).decode())
