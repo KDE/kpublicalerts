@@ -89,15 +89,14 @@ class AbstractFeedReader:
         sentTime = sentTimeNode.text
 
         # find expire time
-        expireTimeNode = capTree.find('{urn:oasis:names:tc:emergency:cap:1.2}info/{urn:oasis:names:tc:emergency:cap:1.2}expires')
         expireTime = None
-        if expireTimeNode != None:
-            expireTime = expireTimeNode.text
-            dt = datetime.datetime.fromisoformat(expireTime)
-            now = datetime.datetime.now(datetime.timezone.utc)
-            if dt < now:
-                print(f"{self.issuerId} - skipping alert {alertId} expired on {dt}")
-                return
+        for expireTimeNode in capTree.findall('{urn:oasis:names:tc:emergency:cap:1.2}info/{urn:oasis:names:tc:emergency:cap:1.2}expires'):
+            dt = datetime.datetime.fromisoformat(expireTimeNode.text)
+            if expireTime == None or dt > expireTime:
+                expireTime = dt
+        if expireTime != None and expireTime < datetime.datetime.now(datetime.timezone.utc):
+            print(f"{self.issuerId} - skipping alert {alertId} expired on {dt}")
+            return
 
         # expand geocodes if necessary, and determine bounding box
         capDataModified |= self.expandGeoCodes(capTree)
@@ -124,7 +123,7 @@ class AbstractFeedReader:
         alert['alertId'] = alertId
         alert['issueTime'] = sentTime
         if expireTime:
-            alert['expireTime'] = expireTime
+            alert['expireTime'] = expireTime.isoformat()
         if capSource and not capDataModified:
             alert['capSource'] = capSource
         elif capData:

@@ -13,7 +13,9 @@ arguments = parser.parse_args()
 requests_cache.install_cache('public-alert-feeder-cache')
 
 feedReaders = [
+    CAPFeedReader('ar-smn', 'https://ssl.smn.gob.ar/CAP/AR.php'),
     CAPFeedReader('at-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-austria'),
+    CAPFeedReader('br-inmet', 'https://apiprevmet3.inmet.gov.br/avisos/rss'),
     MoWaSFeedReader(),
     CAPFeedReader('fr-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-france'),
     CAPFeedReader('in-imd', 'https://cap-sources.s3.amazonaws.com/in-imd-en/rss.xml'),
