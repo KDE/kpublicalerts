@@ -50,6 +50,9 @@ class MoWaSFeedReader(AbstractFeedReader):
                     paramNode = ET.SubElement(info, '{urn:oasis:names:tc:emergency:cap:1.2}parameter')
                     for prop in ['valueName', 'value' ]:
                         MoWaSFeedReader.convertProperty(paramNode, param, prop)
+                    if param['valueName'] == 'sender_signature':
+                        senderNameNode = ET.SubElement(info, '{urn:oasis:names:tc:emergency:cap:1.2}senderName')
+                        senderNameNode.text = param['value']
 
                 for area in alertInfo['area']:
                     areaNode = ET.SubElement(info, '{urn:oasis:names:tc:emergency:cap:1.2}area')
