@@ -17,9 +17,14 @@ class CAPFeedReader(AbstractFeedReader):
         print(feed['namespaces']) # TODO properly identify the CAP namespace
         for entry in feed['entries']:
             capSource = ''
+
+            # find the link to the CAP source
             for link in entry['links']:
                 if link['type'] == 'application/cap+xml':
                     capSource = link['href']
+            if not capSource and len(entry['links']) == 1:
+                capSource = entry['links'][0]['href']
+
             self.addAlert(
                 alertId = entry['cap_identifier'],
                 issuedTime = entry['cap_sent'],
