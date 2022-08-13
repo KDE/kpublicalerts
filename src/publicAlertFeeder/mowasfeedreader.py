@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
 import json
+import re
 import requests
 import xml.etree.ElementTree as ET
 
@@ -18,6 +19,9 @@ class MoWaSFeedReader(AbstractFeedReader):
             return
         node = ET.SubElement(xmlParent, '{urn:oasis:names:tc:emergency:cap:1.2}' + propertyName)
         node.text = mowasObj[propertyName];
+
+    def filterPolygon(polyData):
+        return re.sub(r'-1.0,-1.0 ', '', polyData)
 
     def updateFeed(self):
         req = requests.get(self.feedUrl)
@@ -59,7 +63,7 @@ class MoWaSFeedReader(AbstractFeedReader):
                     MoWaSFeedReader.convertProperty(areaNode, area, 'areaDesc')
                     for poly in area['polygon']:
                         polyNode = ET.SubElement(areaNode, '{urn:oasis:names:tc:emergency:cap:1.2}polygon')
-                        polyNode.text = poly
+                        polyNode.text = MoWaSFeedReader.filterPolygon(poly)
                     for code in area['geocode']:
                         codeNode = ET.SubElement(info, '{urn:oasis:names:tc:emergency:cap:1.2}geocode')
                         for prop in ['valueName', 'value' ]:
