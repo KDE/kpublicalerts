@@ -68,7 +68,12 @@ class AbstractFeedReader:
             capDataModified = True
 
         ET.register_namespace('', 'urn:oasis:names:tc:emergency:cap:1.2')
-        capTree = ET.fromstring(capData)
+        try:
+            capTree = ET.fromstring(capData)
+        except ET.ParseError as e:
+            print(f"{self.issuerId} - failed to parse CAP alert message XML: {e}")
+            print(capData)
+            return
 
         # find identifier
         idNode = capTree.find('{urn:oasis:names:tc:emergency:cap:1.2}identifier')
