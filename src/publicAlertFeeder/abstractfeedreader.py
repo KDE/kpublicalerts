@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
+import datetime
 import json
 import requests
 import os
@@ -87,6 +88,11 @@ class AbstractFeedReader:
         expireTime = None
         if expireTimeNode != None:
             expireTime = expireTimeNode.text
+            dt = datetime.datetime.fromisoformat(expireTime)
+            now = datetime.datetime.now(datetime.timezone.utc)
+            if dt < now:
+                print(f"{self.issuerId} - skipping alert {alertId} expired on {dt}")
+                return
 
         # expand geocodes if necessary, and determine bounding box
         capDataModified |= self.expandGeoCodes(capTree)
