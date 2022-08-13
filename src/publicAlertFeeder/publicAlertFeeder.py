@@ -11,6 +11,7 @@ feedReaders = [
     CAPFeedReader('at-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-austria'),
     MoWaSFeedReader(),
     CAPFeedReader('fr-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-france'),
+    CAPFeedReader('us-nws', 'https://alerts.weather.gov/cap/us.php?x=0'),
 ]
 
 for feedReader in feedReaders:

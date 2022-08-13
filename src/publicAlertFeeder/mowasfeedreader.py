@@ -71,8 +71,6 @@ class MoWaSFeedReader(AbstractFeedReader):
                     # TODO more area content
 
             self.addAlert(
-                alertId = alert['identifier'],
-                issuedTime = alert['sent'],
                 expireTime = expireTime,
                 capData = ET.tostring(root, encoding='utf-8', xml_declaration=True).decode()
             )

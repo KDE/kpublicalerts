@@ -20,7 +20,7 @@ class AbstractFeedReader:
     def loadCapData(self, capSource, capData):
         if capData:
             return capData
-        return requests.get(capSource).content
+        return requests.get(capSource).content.decode('utf-8')
 
     def geojsonPolygonToCAP(self, coords):
         poly = ''
@@ -28,11 +28,10 @@ class AbstractFeedReader:
             poly += f"{coord[0]},{coord[1]} "
         return poly.strip()
 
-    def expandGeoCodes(self, capData):
-        root = ET.fromstring(capData)
+    def expandGeoCodes(self, capTree):
         expanded = False
-        for area in root.findall('.//{urn:oasis:names:tc:emergency:cap:1.2}area'):
-            if area.find('polygon'):
+        for area in capTree.findall('.//{urn:oasis:names:tc:emergency:cap:1.2}area'):
+            if area.find('{urn:oasis:names:tc:emergency:cap:1.2}polygon'):
                 continue
             for geocode in area.findall('{urn:oasis:names:tc:emergency:cap:1.2}geocode'):
                 codeName = geocode.find('{urn:oasis:names:tc:emergency:cap:1.2}valueName').text
@@ -53,24 +52,59 @@ class AbstractFeedReader:
                         print(f"unhandled geometry type: {geojson['geometry']['type']}")
                 else:
                     print(f"can't expand code {codeName}: {codeValue}")
+        return expanded
 
-        if expanded:
-            capData = ET.tostring(root, encoding='utf-8', xml_declaration=True).decode()
-        return (capData, expanded)
-
-    def addAlert(self, alertId, issuedTime, capSource = None, capData = None, expireTime = None):
-        self.alertIds.append(alertId)
+    def addAlert(self, capSource = None, capData = None, expireTime = None):
+        if not capSource and not capData:
+            print(f"{self.issuerId} - Got no CAP alert message, skipping {alertId}")
+            return
 
         capData = self.loadCapData(capSource, capData)
-        (capData, geoCodesExpanded) = self.expandGeoCodes(capData)
+        capDataModified = False
+        # crude way to normalize to CAP v1.2, US NWS still uses v1.1 data
+        if 'urn:oasis:names:tc:emergency:cap:1.1' in capData:
+            capData = capData.replace('urn:oasis:names:tc:emergency:cap:1.1', 'urn:oasis:names:tc:emergency:cap:1.2')
+            capDataModified = True
 
+        ET.register_namespace('', 'urn:oasis:names:tc:emergency:cap:1.2')
+        capTree = ET.fromstring(capData)
+
+        # find identifier
+        idNode = capTree.find('{urn:oasis:names:tc:emergency:cap:1.2}identifier')
+        if idNode == None or not idNode.text:
+            print(f"{self.issuerId} - Couldn't find CAP alert message identifier, skipping")
+            return
+        alertId = idNode.text
+
+        # find sent time
+        sentTimeNode = capTree.find('{urn:oasis:names:tc:emergency:cap:1.2}sent')
+        if sentTimeNode == None or not sentTimeNode.text:
+            print(f"{self.issuerId} - Couldn't find CAP alert message sent time, skipping {alertId}")
+        sentTime = sentTimeNode.text
+
+        # expand geocodes if necessary, and determine bounding box
+        capDataModified |= self.expandGeoCodes(capTree)
+        if capDataModified:
+            capData = ET.tostring(capTree, encoding='utf-8', xml_declaration=True).decode()
+
+        # TODO determine bounding box and drop elements without
+        hasGeo = False
+        for polyNode in capTree.findall('{urn:oasis:names:tc:emergency:cap:1.2}info/{urn:oasis:names:tc:emergency:cap:1.2}area/{urn:oasis:names:tc:emergency:cap:1.2}polygon'):
+            if polyNode.text:
+                hasGeo = True
+                break
+        if not hasGeo:
+            print(f"{self.issuerId} - No geographic data available for {alertId} - skipping")
+            return
+
+        self.alertIds.append(alertId)
         alert = {}
         alert['issuerId'] = self.issuerId
         alert['alertId'] = alertId
-        alert['issueTime'] = issuedTime
+        alert['issueTime'] = sentTime
         if expireTime:
             alert['expireTime'] = expireTime
-        if capSource and not geoCodesExpanded:
+        if capSource and not capDataModified:
             alert['capSource'] = capSource
         elif capData:
             alert['capData'] = capData

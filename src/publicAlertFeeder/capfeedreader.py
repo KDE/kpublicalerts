@@ -26,8 +26,6 @@ class CAPFeedReader(AbstractFeedReader):
                 capSource = entry['links'][0]['href']
 
             self.addAlert(
-                alertId = entry['cap_identifier'],
-                issuedTime = entry['cap_sent'],
                 expireTime = entry.get('cap_expires'),
                 capSource = capSource
             )
