@@ -9,10 +9,11 @@ import xml.etree.ElementTree as ET
 from abstractfeedreader import AbstractFeedReader
 
 class MoWaSFeedReader(AbstractFeedReader):
-    feedUrl = 'https://warnung.bund.de/bbk.mowas/gefahrendurchsagen.json'
+    feedUrl = ''
 
-    def __init__(self):
-        self.issuerId = 'de-mowas'
+    def __init__(self, issuerId, feedUrl):
+        self.issuerId = issuerId
+        self.feedUrl = feedUrl
 
     def convertProperty(xmlParent, mowasObj, propertyName):
         if not propertyName in mowasObj:
