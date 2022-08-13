@@ -4,5 +4,8 @@
 from django.contrib import admin
 from .models import Alert, Subscription
 
-admin.site.register(Alert)
+class AlertAdmin(admin.ModelAdmin):
+    list_display = ('issuerId', 'alertId', 'issueDate', 'expireDate')
+
+admin.site.register(Alert, AlertAdmin)
 admin.site.register(Subscription)
