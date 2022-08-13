@@ -1,9 +1,14 @@
 # SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
+import argparse
 from capfeedreader import CAPFeedReader
 from mowasfeedreader import MoWaSFeedReader
 import requests_cache
+
+parser = argparse.ArgumentParser(description='CAP feed loader.')
+parser.add_argument('--only', type=str, help='only read a single feed')
+arguments = parser.parse_args()
 
 requests_cache.install_cache('public-alert-feeder-cache')
 
@@ -18,4 +23,5 @@ feedReaders = [
 ]
 
 for feedReader in feedReaders:
-    feedReader.update()
+    if arguments.only == None or arguments.only == feedReader.issuerId:
+        feedReader.update()
