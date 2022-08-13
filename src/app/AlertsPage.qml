@@ -37,6 +37,8 @@ Kirigami.ScrollablePage {
                     return "weather-storm";
                 if (model.alertInfo.categories & AlertInfo.Health)
                     return "cross-shape";
+                if (model.alertInfo.categories & AlertInfo.Geo)
+                    return "earthquake";
                 if (model.alertInfo.categories & (AlertInfo.Safety | AlertInfo.Security))
                     return "security-high-symbolic";
                 if (model.alertInfo.categories & AlertInfo.Env)

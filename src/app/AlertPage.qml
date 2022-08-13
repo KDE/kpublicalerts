@@ -56,7 +56,25 @@ Kirigami.ScrollablePage {
                         border.color: color
                         border.width: 2
                         path: modelData
-                        Component.onCompleted: console.log(path, model.polygons, model.polygons.path)
+                    }
+                }
+            }
+            Repeater {
+                model: areaModel
+                Repeater {
+                    model: circles
+
+                    QtLocation.MapCircle {
+                        color: Kirigami.Theme.negativeTextColor
+                        opacity: 0.25
+                        border.color: color
+                        border.width: 2
+                        center {
+                            latitude: modelData.latitude
+                            longitude: modelData.longitude
+                        }
+                        // needed in meters here, provided in kilometers
+                        radius: Math.max(1.0, modelData.radius) * 1000.0
                     }
                 }
             }

@@ -44,12 +44,13 @@ QVariant AreaModel::data(const QModelIndex &index, int role) const
         return {};
     }
 
+    const auto &area = m_alert.areas()[index.row()];
     switch (role) {
         case Qt::DisplayRole:
-            return m_alert.areas()[index.row()].description();
+            return area.description();
         case PolygonsRole:
         {
-            const auto &polygons = m_alert.areas()[index.row()].polygons();
+            const auto &polygons = area.polygons();
             if (polygons.empty()) {
                 return {};
             }
@@ -64,6 +65,14 @@ QVariant AreaModel::data(const QModelIndex &index, int role) const
             }
             return QVariant::fromValue(polys);
         }
+        case CirclesRole:
+        {
+            QList<KWeatherCore::CAPCircle> res;
+            const auto &circles = area.circles();
+            res.reserve(circles.size());
+            std::copy(circles.begin(), circles.end(), std::back_inserter(res));
+            return QVariant::fromValue(res);
+        }
     }
 
     return {};
@@ -73,5 +82,6 @@ QHash<int, QByteArray> AreaModel::roleNames() const
 {
     auto n = QAbstractListModel::roleNames();
     n.insert(PolygonsRole, "polygons");
+    n.insert(CirclesRole, "circles");
     return n;
 }
