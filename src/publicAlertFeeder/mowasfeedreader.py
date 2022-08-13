@@ -21,7 +21,10 @@ class MoWaSFeedReader(AbstractFeedReader):
         node.text = mowasObj[propertyName];
 
     def filterPolygon(polyData):
-        return re.sub(r'-1.0,-1.0 ', '', polyData)
+        # remove nonsense coordinates
+        polyData = re.sub(r'-1.0,-1.0 ', '', polyData)
+        # swap latitude/longitude pairs into the right order
+        return re.sub(r'(-?\d+\.\d+),(-?\d+\.\d+)',r'\2,\1', polyData)
 
     def updateFeed(self):
         req = requests.get(self.feedUrl)

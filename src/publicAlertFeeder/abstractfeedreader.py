@@ -25,7 +25,7 @@ class AbstractFeedReader:
     def geojsonPolygonToCAP(self, coords):
         poly = ''
         for coord in coords[0]:
-            poly += f"{coord[0]},{coord[1]} "
+            poly += f"{coord[1]},{coord[0]} "
         return poly.strip()
 
     def expandGeoCodes(self, capTree):

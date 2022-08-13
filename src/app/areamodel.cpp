@@ -59,7 +59,7 @@ QVariant AreaModel::data(const QModelIndex &index, int role) const
             for (const auto &p : polygons) {
                 QList<QGeoCoordinate> coords;
                 coords.reserve(p.size());
-                std::transform(p.begin(), p.end(), std::back_inserter(coords), [](const auto &c) { return QGeoCoordinate(c.second, c.first); });
+                std::transform(p.begin(), p.end(), std::back_inserter(coords), [](const auto &c) { return QGeoCoordinate(c.first, c.second); });
                 polys.push_back(coords);
             }
             return QVariant::fromValue(polys);
