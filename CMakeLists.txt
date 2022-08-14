@@ -7,6 +7,7 @@ project(kpublicalerts)
 
 set(PROJECT_VERSION "22.08")
 
+set(CMAKE_CXX_STANDARD 20)
 set(QT5_MIN_VERSION 5.15)
 set(KF5_MIN_VERSION 5.96)
 

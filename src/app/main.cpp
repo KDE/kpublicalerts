@@ -5,6 +5,7 @@
 
 #include "alertsmanager.h"
 #include "areamodel.h"
+#include "caputil.h"
 #include "subscriptionmanager.h"
 
 #include <QCommandLineParser>
@@ -59,10 +60,17 @@ int main(int argc, char **argv)
     // TODO move to KWeatherCore itself
     qRegisterMetaType<KWeatherCore::AlertEntry>();
     qRegisterMetaType<KWeatherCore::AlertInfo>();
+    qRegisterMetaType<KWeatherCore::AlertInfo::Categories>();
+    qRegisterMetaType<KWeatherCore::AlertInfo::ResponseTypes>();
+    qRegisterMetaType<KWeatherCore::AlertInfo::Severity>();
+    qRegisterMetaType<KWeatherCore::AlertInfo::Urgency>();
     qmlRegisterUncreatableType<KWeatherCore::AlertInfo>("org.kde.weathercore", 1, 0, "AlertInfo", {});
     qmlRegisterUncreatableType<KWeatherCore::AlertEntry>("org.kde.weathercore", 1, 0, "AlertEntry", {});
 
     qmlRegisterType<KPublicAlerts::AreaModel>("org.kde.publicalerts", 1, 0, "AreaModel");
+    qmlRegisterSingletonType("org.kde.publicalerts", 1, 0, "CAPUtil", [](QQmlEngine *engine, QJSEngine*) -> QJSValue {
+        return engine->toScriptValue(CAPUtil());
+    });
 
     QNetworkAccessManager nam;
     nam.setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);

@@ -6,6 +6,7 @@ add_executable(publicalerts)
 target_sources(publicalerts PRIVATE
     alertsmanager.cpp
     areamodel.cpp
+    caputil.cpp
     main.cpp
     qml.qrc
     subscriptionmanager.cpp

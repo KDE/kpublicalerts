@@ -90,16 +90,34 @@ Kirigami.ScrollablePage {
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Categories:")
-                text: alertInfo.categories // TODO
+                text: CAPUtil.categoriesDisplayStrings(alertInfo.categories).join('\n')
+                visible: alertInfo.categories != AlertInfo.Unknown
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Urgency:")
-                text: alertInfo.urgency // TODO
+                text: CAPUtil.urgencyDisplayString(alertInfo.urgency)
+                visible: alertInfo.urgency != AlertInfo.UnknownUrgency
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Severity:")
-                text: alertInfo.severity // TODO
+                text: CAPUtil.severityDisplayString(alertInfo.severity)
+                visible: alertInfo.severity != AlertInfo.UnknownSeverity
             }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Recommended response:")
+                text: CAPUtil.responseTypesStrings(alertInfo.responseTypes).join('\n')
+                visible: alertInfo.responseTypes != AlertInfo.UnknownResponseType
+            }
+
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Web:")
+                text: alertInfo.web // TODO link
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Contact:")
+                text: alertInfo.contact
+            }
+
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Effective:")
                 text: alertInfo.effectiveTime // TODO
