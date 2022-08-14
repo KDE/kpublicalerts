@@ -88,8 +88,32 @@ QVariant AlertsManager::data(const QModelIndex &index, int role) const
         case AlertRole:
             return QVariant::fromValue(info.alertData);
         case AlertInfoRole:
-            // TODO language selection
+        {
+            for (const auto &uiLang : QLocale().uiLanguages()) {
+                // exact match
+                for (const auto &info : info.alertData.infoVec()) {
+                    if (info.language().compare(uiLang, Qt::CaseInsensitive) == 0) {
+                        return QVariant::fromValue(info);
+                    }
+                }
+                // language-only match
+                for (const auto &info : info.alertData.infoVec()) {
+                    const auto lang = info.language();
+                    QStringView l1(lang);
+                    if (auto idx = l1.indexOf(QLatin1Char('-')); idx > 0) {
+                        l1 = l1.left(idx);
+                    }
+                    QStringView l2(uiLang);
+                    if (auto idx = l2.indexOf(QLatin1Char('-')); idx > 0) {
+                        l2 = l2.left(idx);
+                    }
+                    if (l1.compare(l2, Qt::CaseInsensitive) == 0) {
+                        return QVariant::fromValue(info);
+                    }
+                }
+            }
             return QVariant::fromValue(info.alertData.infoVec()[0]);
+        }
         case Qt::DisplayRole:
             return info.alertData.identifier();
     }
