@@ -1,12 +1,12 @@
 # SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
+from django.contrib.gis.geos import Polygon
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound, JsonResponse
 from json import loads
 from .models import Alert
 from .notify import notifyAlert
-
 #
 # API to be used by the feeder process
 # ### must be behind authentication
@@ -32,6 +32,14 @@ def post_alert(request, sourceId):
     alert = Alert(issuerId = sourceId, alertId = data['alertId'], issueDate = data['issueTime'], expireDate = data.get('expireTime'), sourceUrl = data.get('capSource'))
     if 'capData' in data:
         alert.capData = SimpleUploadedFile(f"{data['alertId']}.xml", data['capData'].encode('utf-8'), 'application/xml')
+
+    x1 = data['minlon']
+    x2 = data['maxlon']
+    y1 = data['minlat']
+    y2 = data['maxlat']
+    alert.bbox = Polygon.from_bbox((x1, y1, x2, y2))
+    print(alert.bbox, x1, y1, x2, y2)
+
     alert.save()
     notifyAlert(alert, { 'added': str(alert.id) })
     return JsonResponse({ 'id': alert.id })

@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
+# SPDX-License-Identifier: CC0-1.0
+
+version: '2'
+
+volumes:
+  db:
+
+services:
+  db:
+    image: postgis/postgis:14-3.2
+    restart: always
+    volumes:
+      - db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "127.0.0.1:5432:5432"

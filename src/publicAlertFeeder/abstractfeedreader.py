@@ -55,6 +55,40 @@ class AbstractFeedReader:
                     print(f"can't expand code {codeName}: {codeValue}")
         return expanded
 
+    def bboxForPoly(poly, minlat, minlon, maxlat, maxlon):
+        if not poly:
+            return (minlat, minlon, maxlat, maxlon)
+        for point in poly.split(' '):
+            coords = point.split(',')
+            if len(coords) != 2:
+                continue
+            try:
+                 lat = float(coords[0])
+                 lon = float(coords[1])
+            except ValueError:
+                continue
+            minlat = min(minlat, lat)
+            maxlat = max(maxlat, lat)
+            minlon = min(minlon, lon)
+            maxlon = max(maxlon, lon)
+        return (minlat, minlon, maxlat, maxlon)
+
+    def bboxForCircle(circle, minlat, minlon, maxlat, maxlon):
+        (center, radius) = circle.split(' ')
+        (lat, lon) = center.split(',')
+        try:
+            lat = float(lat)
+            lon = float(lon)
+        except ValueError:
+            return (minlat, minlon, maxlat, maxlon)
+
+        # TODO correct radius computation
+        minlat = min(minlat, lat - 1.0)
+        maxlat = max(maxlat, lat + 1.0)
+        minlon = min(minlon, lon - 1.0)
+        maxlon = max(maxlon, lon + 1.0)
+        return (minlat, minlon, maxlat, maxlon)
+
     def addAlert(self, capSource = None, capData = None):
         if not capSource and not capData:
             print(f"{self.issuerId} - Got no CAP alert message, skipping {alertId}")
@@ -103,17 +137,16 @@ class AbstractFeedReader:
         if capDataModified:
             capData = ET.tostring(capTree, encoding='utf-8', xml_declaration=True).decode()
 
-        # TODO determine bounding box and drop elements without
-        hasGeo = False
+        # determine bounding box and drop elements without
+        minlat = 180
+        minlon = 90
+        maxlat = -180
+        maxlon = -90
         for polyNode in capTree.findall('{urn:oasis:names:tc:emergency:cap:1.2}info/{urn:oasis:names:tc:emergency:cap:1.2}area/{urn:oasis:names:tc:emergency:cap:1.2}polygon'):
-            if polyNode.text:
-                hasGeo = True
-                break
+            (minlat, minlon, maxlat, maxlon) = AbstractFeedReader.bboxForPoly(polyNode.text, minlat, minlon, maxlat, maxlon)
         for circleNode in capTree.findall('{urn:oasis:names:tc:emergency:cap:1.2}info/{urn:oasis:names:tc:emergency:cap:1.2}area/{urn:oasis:names:tc:emergency:cap:1.2}circle'):
-            if circleNode.text:
-                hasGeo = True
-                break
-        if not hasGeo:
+            (minlat, minlon, maxlat, maxlon) = AbstractFeedReader.bboxForCircle(circleNode.text, minlat, minlon, maxlat, maxlon)
+        if minlat > maxlat or minlon > maxlon:
             print(f"{self.issuerId} - No geographic data available for {alertId} - skipping")
             return
 
@@ -122,6 +155,10 @@ class AbstractFeedReader:
         alert['issuerId'] = self.issuerId
         alert['alertId'] = alertId
         alert['issueTime'] = sentTime
+        alert['minlat'] = minlat
+        alert['minlon'] = minlon
+        alert['maxlat'] = maxlat
+        alert['maxlon'] = maxlon
         if expireTime:
             alert['expireTime'] = expireTime.isoformat()
         if capSource and not capDataModified:

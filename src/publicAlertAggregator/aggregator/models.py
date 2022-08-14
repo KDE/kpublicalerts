@@ -3,17 +3,19 @@
 
 from django.db import models
 from django.dispatch import receiver
-#from django.contrib.gis.db import models
+from django.contrib.gis.db import models
 import os
+import uuid
 
 # Alert records
 def alert_upload_path(instance, filename):
     return f"alerts/{instance.issuerId}/{filename}"
 
 class Alert(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     issuerId = models.CharField(max_length=255)
     alertId = models.CharField(max_length=255)
-    # TODO bbox = models.PolygonField()
+    bbox = models.PolygonField()
     capData = models.FileField(upload_to=alert_upload_path, null=True)
     issueDate = models.DateTimeField()
     expireDate = models.DateTimeField(null=True)
@@ -30,6 +32,7 @@ def auto_delete_capdata_on_delete(sender, instance, **kwargs):
 
 # Subscription records
 class Subscription(models.Model):
-    # TODO bbox = models.PolygonField()
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    bbox = models.PolygonField()
     upEndpoint = models.CharField(max_length=255)
     # TODO encryption key

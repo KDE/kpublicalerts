@@ -77,9 +77,12 @@ WSGI_APPLICATION = 'publicAlertAggregator.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.contrib.gis.db.backends.spatialite',
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'kpublicalerts',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': '127.0.0.1',
+        'POST': '5432',
     }
 }
 
