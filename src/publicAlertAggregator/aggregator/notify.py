@@ -6,8 +6,7 @@ import requests
 from .models import Alert, Subscription
 
 def notifyAlert(alert, msg):
-    # TODO bbox intersection
-    for subscription in Subscription.objects.all():
+    for subscription in Subscription.objects.filter(bbox__intersects = alert.bbox):
         print(subscription.upEndpoint, msg)
         requests.post(subscription.upEndpoint, json.dumps(msg))
     pass
