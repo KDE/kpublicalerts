@@ -18,6 +18,7 @@ target_link_libraries(publicalerts PRIVATE
     KF5::KWeatherCore
     KUnifiedPush
     KF5::DBusAddons
+    KF5::GuiAddons
     KF5::I18n
     Qt::Quick
     Qt::Positioning

@@ -8,6 +8,8 @@
 #include <KLocalizedString>
 #include <KLazyLocalizedString>
 
+#include <KColorUtils>
+
 #include <QDebug>
 #include <QLocale>
 
@@ -115,4 +117,9 @@ QStringList CAPUtil::responseTypesStrings(KWeatherCore::AlertInfo::ResponseTypes
 QStringList CAPUtil::responseTypesStrings(uint responseTypes)
 {
     return responseTypesStrings(KWeatherCore::AlertInfo::ResponseTypes(responseTypes));
+}
+
+QColor CAPUtil::colorMix(const QColor& c1, const QColor& c2, double bias)
+{
+    return KColorUtils::mix(c1, c2, bias);
 }

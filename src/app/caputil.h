@@ -8,6 +8,8 @@
 
 #include <KWeatherCore/AlertInfo>
 
+#include <QColor>
+
 namespace KPublicAlerts {
 
 /** Utility functions for using CAP data from QML. */
@@ -21,6 +23,8 @@ public:
     Q_INVOKABLE static QStringList categoriesDisplayStrings(uint categories);
     Q_INVOKABLE static QStringList responseTypesStrings(KWeatherCore::AlertInfo::ResponseTypes responseTypes);
     Q_INVOKABLE static QStringList responseTypesStrings(uint responseTypes);
+
+    Q_INVOKABLE static QColor colorMix(const QColor &c1, const QColor &c2, double bias = 0.5);
 };
 
 }

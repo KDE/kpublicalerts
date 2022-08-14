@@ -51,7 +51,7 @@ Kirigami.ScrollablePage {
                     model: polygons
 
                     QtLocation.MapPolygon {
-                        color: Kirigami.Theme.negativeTextColor
+                        color: applicationWindow().severityTextColor(alertInfo.severity)
                         opacity: 0.25
                         border.color: color
                         border.width: 2
@@ -65,7 +65,7 @@ Kirigami.ScrollablePage {
                     model: circles
 
                     QtLocation.MapCircle {
-                        color: Kirigami.Theme.negativeTextColor
+                        color: applicationWindow().severityTextColor(alertInfo.severity)
                         opacity: 0.25
                         border.color: color
                         border.width: 2
