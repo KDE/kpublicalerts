@@ -18,11 +18,6 @@ class AbstractFeedReader:
         requests.post(f"{self.aggregatorBaseUrl}feeder/{self.issuerId}/activeAlerts", json=self.alertIds)
         self.alertIds = []
 
-    def loadCapData(self, capSource, capData):
-        if capData:
-            return capData
-        return requests.get(capSource).content.decode('utf-8')
-
     def geojsonPolygonToCAP(self, coords):
         poly = ''
         for coord in coords[0]:
@@ -90,11 +85,10 @@ class AbstractFeedReader:
         return (minlat, minlon, maxlat, maxlon)
 
     def addAlert(self, capSource = None, capData = None):
-        if not capSource and not capData:
-            print(f"{self.issuerId} - Got no CAP alert message, skipping {alertId}")
+        if not capData:
+            print(f"{self.issuerId} - Got no CAP alert message, skipping")
             return
 
-        capData = self.loadCapData(capSource, capData)
         capDataModified = False
         # crude way to normalize to CAP v1.2, US NWS still uses v1.1 data
         if 'urn:oasis:names:tc:emergency:cap:1.1' in capData:
