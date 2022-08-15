@@ -51,7 +51,11 @@ Kirigami.ScrollablePage {
                     model: polygons
 
                     QtLocation.MapPolygon {
-                        color: applicationWindow().severityTextColor(alertInfo.severity)
+                        color: {
+                            if (alert.msgType == AlertEntry.Cancel)
+                                return Kirigami.Theme.disabledTextColor;
+                            applicationWindow().severityTextColor(alertInfo.severity)
+                        }
                         opacity: 0.25
                         border.color: color
                         border.width: 2
@@ -65,7 +69,11 @@ Kirigami.ScrollablePage {
                     model: circles
 
                     QtLocation.MapCircle {
-                        color: applicationWindow().severityTextColor(alertInfo.severity)
+                        color: {
+                            if (alert.msgType == AlertEntry.Cancel)
+                                return Kirigami.Theme.disabledTextColor;
+                            applicationWindow().severityTextColor(alertInfo.severity)
+                        }
                         opacity: 0.25
                         border.color: color
                         border.width: 2

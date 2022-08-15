@@ -49,7 +49,7 @@ Kirigami.ScrollablePage {
             }
             iconColor: {
                 if (model.alert.msgType == AlertEntry.Cancel)
-                    return Kirigami.Theme.positiveTextColor;
+                    return Kirigami.Theme.disabledTextColor;
                 return applicationWindow().severityTextColor(model.alertInfo.severity);
             }
             onClicked: {
