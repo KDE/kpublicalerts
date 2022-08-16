@@ -34,7 +34,7 @@ Kirigami.ScrollablePage {
                 if (model.alertInfo.categories & AlertInfo.Fire)
                     return "hotspot";
                 if (model.alertInfo.categories & AlertInfo.Met)
-                    return "weather-storm";
+                    return "cloudstatus";
                 if (model.alertInfo.categories & AlertInfo.Health)
                     return "cross-shape";
                 if (model.alertInfo.categories & AlertInfo.Geo)

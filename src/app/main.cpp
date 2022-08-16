@@ -64,6 +64,7 @@ int main(int argc, char **argv)
     qRegisterMetaType<KWeatherCore::AlertInfo::ResponseTypes>();
     qRegisterMetaType<KWeatherCore::AlertInfo::Severity>();
     qRegisterMetaType<KWeatherCore::AlertInfo::Urgency>();
+    qRegisterMetaType<KWeatherCore::AlertInfo::Certainty>();
     qmlRegisterUncreatableType<KWeatherCore::AlertInfo>("org.kde.weathercore", 1, 0, "AlertInfo", {});
     qmlRegisterUncreatableType<KWeatherCore::AlertEntry>("org.kde.weathercore", 1, 0, "AlertEntry", {});
 

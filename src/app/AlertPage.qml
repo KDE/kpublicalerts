@@ -112,6 +112,11 @@ Kirigami.ScrollablePage {
                 visible: alertInfo.severity != AlertInfo.UnknownSeverity
             }
             QQC2.Label {
+                Kirigami.FormData.label: i18n("Certainty:")
+                text: CAPUtil.certaintyDisplayString(alertInfo.certainty)
+                visible: alertInfo.certainty != AlertInfo.UnknownCertainty
+            }
+            QQC2.Label {
                 Kirigami.FormData.label: i18n("Recommended response:")
                 text: CAPUtil.responseTypesStrings(alertInfo.responseTypes).join('\n')
                 visible: alertInfo.responseTypes != AlertInfo.UnknownResponseType

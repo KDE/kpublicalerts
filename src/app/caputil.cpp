@@ -62,6 +62,13 @@ static constexpr const MapEntry<KWeatherCore::AlertInfo::Urgency> urgency_map[] 
     { KWeatherCore::AlertInfo::Urgency::Past, kli18n("Responsive action is no longer required") },
 };
 
+static constexpr const MapEntry<KWeatherCore::AlertInfo::Certainty> certainty_map[] = {
+    { KWeatherCore::AlertInfo::Certainty::Observed, kli18n("Occurred or ongoing") },
+    { KWeatherCore::AlertInfo::Certainty::Likely, kli18n("Likely (>50%)") },
+    { KWeatherCore::AlertInfo::Certainty::Possible, kli18n("Possible but not likely (<50%)") },
+    { KWeatherCore::AlertInfo::Certainty::Unlikely, kli18n("Not expected to occur") },
+};
+
 static constexpr const MapEntry<KWeatherCore::AlertInfo::Category> category_map[] = {
     { KWeatherCore::AlertInfo::Category::Geo, kli18n("Geophysical") },
     { KWeatherCore::AlertInfo::Category::Met, kli18n("Meteorological") },
@@ -97,6 +104,11 @@ QString CAPUtil::severityDisplayString(KWeatherCore::AlertInfo::Severity severit
 QString CAPUtil::urgencyDisplayString(KWeatherCore::AlertInfo::Urgency urgency)
 {
     return valueToString(urgency, urgency_map);
+}
+
+QString CAPUtil::certaintyDisplayString(KWeatherCore::AlertInfo::Certainty certainty)
+{
+    return valueToString(certainty, certainty_map);
 }
 
 QStringList CAPUtil::categoriesDisplayStrings(KWeatherCore::AlertInfo::Categories categories)

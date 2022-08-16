@@ -19,6 +19,7 @@ class CAPUtil
 public:
     Q_INVOKABLE static QString severityDisplayString(KWeatherCore::AlertInfo::Severity severity);
     Q_INVOKABLE static QString urgencyDisplayString(KWeatherCore::AlertInfo::Urgency urgency);
+    Q_INVOKABLE static QString certaintyDisplayString(KWeatherCore::AlertInfo::Certainty certainty);
     Q_INVOKABLE static QStringList categoriesDisplayStrings(KWeatherCore::AlertInfo::Categories categories);
     Q_INVOKABLE static QStringList categoriesDisplayStrings(uint categories);
     Q_INVOKABLE static QStringList responseTypesStrings(KWeatherCore::AlertInfo::ResponseTypes responseTypes);
