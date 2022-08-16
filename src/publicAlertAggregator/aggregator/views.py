@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
+from django.contrib.gis.geos import Polygon
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound, HttpResponsePermanentRedirect, HttpResponseRedirect, JsonResponse
 from json import loads
 from .models import Alert, Subscription
@@ -58,8 +59,16 @@ def get_alerts(request):
     if request.method != 'GET':
         return HttpResponseBadRequest('wrong HTTP method')
 
-    # TODO consider bbox
+    try:
+        y1 = float(request.GET.get('minlat'))
+        y2 = float(request.GET.get('maxlat'))
+        x1 = float(request.GET.get('minlon'))
+        x2 = float(request.GET.get('maxlon'))
+        request_bbox = Polygon.from_bbox((x1, y1, x2, y2))
+    except (ValueError, TypeError):
+        return HttpResponseBadRequest('invalid bounding box')
+
     res = []
-    for alert in Alert.objects.all():
+    for alert in Alert.objects.filter(bbox__intersects = request_bbox):
         res.append(str(alert.id))
     return JsonResponse(res, safe=False)

@@ -12,6 +12,7 @@
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QUrlQuery>
 
 using namespace KPublicAlerts;
 
@@ -54,7 +55,16 @@ void AlertsManager::addAlert(const QString &id)
 
 void AlertsManager::fetchAll()
 {
-    auto reply = m_nam->get(QNetworkRequest(QUrl(QLatin1String("http://localhost:8000/aggregator/alerts")))); // TODO hardcoded URL
+    QUrl url(QLatin1String("http://localhost:8000/aggregator/alerts")); // TODO hardcoded URL
+    QUrlQuery query;
+    // TODO
+    query.addQueryItem(QStringLiteral("minlat"), QString::number(48.0));
+    query.addQueryItem(QStringLiteral("maxlat"), QString::number(54.0));
+    query.addQueryItem(QStringLiteral("minlon"), QString::number(6.0));
+    query.addQueryItem(QStringLiteral("maxlon"), QString::number(14.0));
+    url.setQuery(query);
+
+    auto reply = m_nam->get(QNetworkRequest(url));
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         reply->deleteLater();
         if (reply->error() != QNetworkReply::NoError) {
