@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
+import datetime
 import feedparser
 import requests_cache
 
@@ -25,8 +26,18 @@ class CAPFeedReader(AbstractFeedReader):
                     capSource = link['href']
             if not capSource and len(entry['links']) == 1:
                 capSource = entry['links'][0]['href']
-
             if not capSource:
                 continue
+
+            # if we have expiry data available here already, check that
+            # to avoid additional downloads
+            try:
+                expireTime = datetime.datetime.fromisoformat(entry.get('cap_expires'))
+                if expireTime != None and expireTime < datetime.datetime.now(datetime.timezone.utc):
+                    print(f"{self.issuerId} - not downloading alert {capSource} expired on {expireTime}")
+                    continue
+            except TypeError as e:
+                pass
+
             capData = self.session.get(capSource).content.decode('utf-8')
             self.addAlert(capSource = capSource, capData = capData)
