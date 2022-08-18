@@ -26,6 +26,7 @@ feedReaders = [
     CAPFeedReader('gm-dwr', 'https://cap-sources.s3.amazonaws.com/gm-dwr-en/rss.xml'),
     CAPFeedReader('in-imd', 'https://cap-sources.s3.amazonaws.com/in-imd-en/rss.xml'),
     CAPFeedReader('no-met', 'https://alert.met.no/alerts'),
+    CAPFeedReader('nz-metservice', 'https://alerts.metservice.com/cap/rss'),
     CAPFeedReader('us-nws', 'https://alerts.weather.gov/cap/us.php?x=0'),
     CAPFeedReader('us-ntwc', 'https://www.tsunami.gov/events/xml/PAAQAtom.xml'),
     CAPFeedReader('us-ptwc', 'https://www.tsunami.gov/events/xml/PHEBAtom.xml'),

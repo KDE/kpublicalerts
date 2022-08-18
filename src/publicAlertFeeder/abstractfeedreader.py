@@ -66,6 +66,7 @@ class AbstractFeedReader:
             maxlat = max(maxlat, lat)
             minlon = min(minlon, lon)
             maxlon = max(maxlon, lon)
+            print(lat, lon, minlat, minlon, maxlat, maxlon)
         return (minlat, minlon, maxlat, maxlon)
 
     def bboxForCircle(circle, minlat, minlon, maxlat, maxlon):
@@ -132,10 +133,10 @@ class AbstractFeedReader:
             capData = ET.tostring(capTree, encoding='utf-8', xml_declaration=True).decode()
 
         # determine bounding box and drop elements without
-        minlat = 180
-        minlon = 90
-        maxlat = -180
-        maxlon = -90
+        minlat = 90
+        minlon = 180
+        maxlat = -90
+        maxlon = -180
         for polyNode in capTree.findall('{urn:oasis:names:tc:emergency:cap:1.2}info/{urn:oasis:names:tc:emergency:cap:1.2}area/{urn:oasis:names:tc:emergency:cap:1.2}polygon'):
             (minlat, minlon, maxlat, maxlon) = AbstractFeedReader.bboxForPoly(polyNode.text, minlat, minlon, maxlat, maxlon)
         for circleNode in capTree.findall('{urn:oasis:names:tc:emergency:cap:1.2}info/{urn:oasis:names:tc:emergency:cap:1.2}area/{urn:oasis:names:tc:emergency:cap:1.2}circle'):
