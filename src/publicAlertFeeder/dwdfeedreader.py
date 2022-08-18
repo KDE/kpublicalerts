@@ -3,7 +3,7 @@
 
 import datetime
 import io
-import requests_cache
+import requests
 import zipfile
 
 from abstractfeedreader import AbstractFeedReader
@@ -15,10 +15,9 @@ class DWDFeedReader(AbstractFeedReader):
     def __init__(self, issuerId, feedUrl):
         self.issuerId = issuerId
         self.feedUrl = feedUrl
-        self.session = requests_cache.session.CachedSession(cache_name = self.issuerId)
 
     def updateFeed(self):
-        feedData = self.session.get(self.feedUrl)
+        feedData = requests.get(self.feedUrl)
         zipFile = zipfile.ZipFile(io.BytesIO(feedData.content), 'r')
         for capFile in zipFile.namelist():
             capData = zipFile.read(capFile).decode('utf-8')
