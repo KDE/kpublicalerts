@@ -25,6 +25,8 @@ feedReaders = [
     CAPFeedReader('fr-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-france'),
     CAPFeedReader('gm-dwr', 'https://cap-sources.s3.amazonaws.com/gm-dwr-en/rss.xml'),
     CAPFeedReader('in-imd', 'https://cap-sources.s3.amazonaws.com/in-imd-en/rss.xml'),
+    CAPFeedReader('it-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-italy'),
+    CAPFeedReader('nl-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-netherlands'),
     CAPFeedReader('no-met', 'https://alert.met.no/alerts'),
     CAPFeedReader('nz-metservice', 'https://alerts.metservice.com/cap/rss'),
     CAPFeedReader('us-nws', 'https://alerts.weather.gov/cap/us.php?x=0'),
