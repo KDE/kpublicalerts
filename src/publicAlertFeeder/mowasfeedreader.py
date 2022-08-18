@@ -65,7 +65,7 @@ class MoWaSFeedReader(AbstractFeedReader):
                         polyNode = ET.SubElement(areaNode, '{urn:oasis:names:tc:emergency:cap:1.2}polygon')
                         polyNode.text = MoWaSFeedReader.filterPolygon(poly)
                     for code in area['geocode']:
-                        codeNode = ET.SubElement(info, '{urn:oasis:names:tc:emergency:cap:1.2}geocode')
+                        codeNode = ET.SubElement(areaNode, '{urn:oasis:names:tc:emergency:cap:1.2}geocode')
                         for prop in ['valueName', 'value' ]:
                             MoWaSFeedReader.convertProperty(codeNode, code, prop)
                     # TODO more area content
