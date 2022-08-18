@@ -45,12 +45,12 @@ class MoWaSFeedReader(AbstractFeedReader):
                 for prop in ['event', 'urgency', 'severity', 'certainty', 'headline', 'description', 'instruction', 'expires', 'web', 'contact' ]:
                     MoWaSFeedReader.convertProperty(info, alertInfo, prop)
 
-                for eventCode in alertInfo['eventCode']:
+                for eventCode in alertInfo.get('eventCode', []):
                     eventCodeNode = ET.SubElement(info, '{urn:oasis:names:tc:emergency:cap:1.2}eventCode')
                     for prop in ['valueName', 'value' ]:
                         MoWaSFeedReader.convertProperty(eventCodeNode, eventCode, prop)
 
-                for param in alertInfo['parameter']:
+                for param in alertInfo.get('parameter', []):
                     paramNode = ET.SubElement(info, '{urn:oasis:names:tc:emergency:cap:1.2}parameter')
                     for prop in ['valueName', 'value' ]:
                         MoWaSFeedReader.convertProperty(paramNode, param, prop)
