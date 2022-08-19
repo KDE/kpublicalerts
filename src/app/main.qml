@@ -15,6 +15,11 @@ Kirigami.ApplicationWindow {
 
     title: i18n("Public Alerts")
 
+    Component {
+        id: subscriptionsPage
+        SubscriptionsPage {}
+    }
+
     // should be in CAPUtil in C++, but that would require KF5::ConfigWidgets for the color scheme...
     function severityTextColor(severity)
     {
@@ -25,6 +30,19 @@ Kirigami.ApplicationWindow {
             case AlertInfo.Minor: return Kirigami.Theme.positiveTextColor;
         }
         return Kirigami.Theme.textColor;
+    }
+
+    globalDrawer: Kirigami.GlobalDrawer {
+        title: i18n("Public Alerts")
+        titleIcon: "weather-storm"
+        isMenu: true
+        actions: [
+            Kirigami.Action {
+                text: i18n("Areas of interest...")
+                iconName: "map-globe"
+                onTriggered: applicationWindow().pageStack.push(subscriptionsPage)
+            }
+        ]
     }
 
     pageStack.initialPage: AlertsPage {}

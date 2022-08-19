@@ -6,15 +6,20 @@
 #ifndef KPUBLICALERTS_SUBSCRIPTIONMANAGER_H
 #define KPUBLICALERTS_SUBSCRIPTIONMANAGER_H
 
+#include "subscription.h"
+
 #include <KUnifiedPush/Connector>
 
-#include <QObject>
+#include <QAbstractListModel>
+
+#include <vector>
 
 class QNetworkAccessManager;
+class QSettings;
 
 namespace KPublicAlerts {
 
-class SubscriptionManager : public QObject
+class SubscriptionManager : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -23,13 +28,30 @@ public:
 
     void setNetworkAccessManager(QNetworkAccessManager *nam);
 
+    int rowCount(const QModelIndex &parent) const override;
+    QVariant data(const QModelIndex &index, int role) const override;
+    QHash<int, QByteArray> roleNames() const override;
+    bool removeRows(int row, int count, const QModelIndex &parent) override;
+    Q_INVOKABLE bool removeRow(int row, const QModelIndex &parent = QModelIndex()); // not exported to QML by default...
+
+    // TODO temporary for development
+    Q_INVOKABLE void addSubscription(float lat, float lon, const QString &name);
+
 Q_SIGNALS:
     void alertAdded(const QString &id);
     void alertRemoved(const QString &id);
 
 private:
+    void doSubscribeAll();
+    void doSubscribeOne(const Subscription &sub);
+    void doUnsubscribeOne(const Subscription &sub);
+
+    void storeSubscriptionIds(QSettings &settings);
+
     QNetworkAccessManager *m_nam = nullptr;
     KUnifiedPush::Connector m_connector;
+
+    std::vector<Subscription> m_subscriptions;
 };
 
 }

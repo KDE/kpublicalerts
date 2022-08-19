@@ -9,6 +9,7 @@ target_sources(publicalerts PRIVATE
     caputil.cpp
     main.cpp
     qml.qrc
+    subscription.cpp
     subscriptionmanager.cpp
 )
 
