@@ -66,7 +66,6 @@ class AbstractFeedReader:
             maxlat = max(maxlat, lat)
             minlon = min(minlon, lon)
             maxlon = max(maxlon, lon)
-            print(lat, lon, minlat, minlon, maxlat, maxlon)
         return (minlat, minlon, maxlat, maxlon)
 
     def bboxForCircle(circle, minlat, minlon, maxlat, maxlon):
