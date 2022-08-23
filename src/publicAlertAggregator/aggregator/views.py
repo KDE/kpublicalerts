@@ -17,7 +17,12 @@ def post_subscription(request):
     # TODO validate input
     print(request, request.body)
     data = loads(request.body)
-    s = Subscription(upEndpoint = data['endpoint'])
+    y1 = float(data['minlat'])
+    y2 = float(data['maxlat'])
+    x1 = float(data['minlon'])
+    x2 = float(data['maxlon'])
+    bbox = Polygon.from_bbox((x1, y1, x2, y2))
+    s = Subscription(upEndpoint = data['endpoint'], bbox = bbox)
     s.save()
     print(s.id);
     return JsonResponse({ 'id': s.id })
