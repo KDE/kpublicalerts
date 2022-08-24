@@ -14,6 +14,17 @@ class QNetworkAccessManager;
 
 namespace KPublicAlerts {
 
+struct AlertElement {
+    QString id;
+    KWeatherCore::AlertEntry alertData;
+
+    bool operator<(const AlertElement &other) const;
+    bool operator<(const QString &otherId) const;
+
+    bool isValid() const;
+    bool isExpired() const;
+};
+
 class AlertsManager : public QAbstractListModel
 {
     Q_OBJECT
@@ -23,7 +34,7 @@ public:
 
     void setNetworkAccessManager(QNetworkAccessManager *nam);
 
-    void addAlert(const QString &id);
+    void fetchAlert(const QString &id);
     Q_INVOKABLE void fetchAll(); // TODO testing only, needs to take bbox argument
 
     enum {
@@ -36,15 +47,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
 private:
-    struct AlertElement {
-        // TODO id
-        KWeatherCore::AlertEntry alertData;
-
-        inline bool operator<(const AlertElement &other) const
-        {
-            return alertData.sentTime() > other.alertData.sentTime();
-        }
-    };
+    void addAlert(AlertElement &&e);
 
     std::vector<AlertElement> m_alerts;
     QNetworkAccessManager *m_nam = nullptr;

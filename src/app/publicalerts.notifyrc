@@ -1,0 +1,11 @@
+[Global]
+IconName=weather-storm
+DesktopEntry=org.kde.publicalerts
+Name=Public Alerts
+Comment=Emergency and weather alerts.
+
+[Event/severe-alert]
+Name=Severe Alert
+Comment=Extraordinary or significant threat to life or property.
+Action=Popup|Sound
+Urgency=Critical

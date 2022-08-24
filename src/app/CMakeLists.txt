@@ -18,6 +18,7 @@ target_include_directories(publicalerts PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(publicalerts PRIVATE
     KF5::KWeatherCore
     KUnifiedPush
+    KF5::Notifications
     KF5::DBusAddons
     KF5::GuiAddons
     KF5::I18n
@@ -32,3 +33,4 @@ install(TARGETS publicalerts ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.publicalerts.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 configure_file(org.kde.publicalerts.service.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.publicalerts.service)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.publicalerts.service DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})
+install(FILES publicalerts.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})

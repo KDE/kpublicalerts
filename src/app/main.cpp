@@ -87,7 +87,7 @@ int main(int argc, char **argv)
     AlertsManager alertsMgr;
     alertsMgr.setNetworkAccessManager(&nam);
     qmlRegisterSingletonInstance("org.kde.publicalerts", 1, 0, "AlertsManager", &alertsMgr);
-    QObject::connect(&subscriptionMgr, &SubscriptionManager::alertAdded, &alertsMgr, &AlertsManager::addAlert);
+    QObject::connect(&subscriptionMgr, &SubscriptionManager::alertAdded, &alertsMgr, &AlertsManager::fetchAlert);
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
