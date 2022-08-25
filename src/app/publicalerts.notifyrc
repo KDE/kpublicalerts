@@ -4,8 +4,26 @@ DesktopEntry=org.kde.publicalerts
 Name=Public Alerts
 Comment=Emergency and weather alerts.
 
-[Event/severe-alert]
-Name=Severe Alert
-Comment=Extraordinary or significant threat to life or property.
+[Event/extreme-alert]
+Name=Extreme Alert
+Comment=Extraordinary threat to life or property.
 Action=Popup|Sound
 Urgency=Critical
+
+[Event/severe-alert]
+Name=Severe Alert
+Comment=Significant threat to life or property.
+Action=Popup
+Urgency=High
+
+[Event/moderate-alert]
+Name=Moderate Alert
+Comment=Possible threat to life or property.
+Action=Popup
+Urgency=Normal
+
+[Event/minor-alert]
+Name=Minor Alert
+Comment=Minimal or no threat to life or property.
+Action=Popup
+Urgency=Low

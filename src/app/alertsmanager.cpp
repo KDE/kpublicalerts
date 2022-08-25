@@ -115,6 +115,16 @@ void AlertsManager::setNetworkAccessManager(QNetworkAccessManager *nam)
     m_nam = nam;
 }
 
+struct {
+    KWeatherCore::AlertInfo::Severity severity;
+    const char *eventName;
+} static constexpr const notification_map[] = {
+    { KWeatherCore::AlertInfo::Severity::Extreme, "extreme-alert" },
+    { KWeatherCore::AlertInfo::Severity::Severe, "severe-alert" },
+    { KWeatherCore::AlertInfo::Severity::Moderate, "moderate-alert" },
+    { KWeatherCore::AlertInfo::Severity::Minor, "minor-alert" },
+};
+
 void AlertsManager::fetchAlert(const QString &id)
 {
     if (const auto it = std::lower_bound(m_alerts.begin(), m_alerts.end(), id); it != m_alerts.end() && (*it).id == id) {
@@ -148,13 +158,22 @@ void AlertsManager::fetchAlert(const QString &id)
             qWarning() << f.fileName() << f.errorString();
         }
 
-        auto n = new KNotification(QStringLiteral("severe-alert"));
-        n->setTitle(e.alertData.infoVec()[0].event()); // TODO pick the right info element for the current language here!
-        n->setText(e.alertData.infoVec()[0].description());
-        n->setIconName(QStringLiteral("dialog-warning")); // TODO - move icon logic from AlertsPage.qml to CAPUtil
-        n->setFlags(KNotification::Persistent);
-        n->sendEvent();
-        // TODO react to activation with showing the details page
+        const auto info = e.info();
+        for (const auto &m : notification_map) {
+            if (m.severity == info.severity()) {
+                auto n = new KNotification(QLatin1String(m.eventName));
+                n->setTitle(info.event());
+                n->setText(info.description());
+                n->setIconName(CAPUtil::categoriesIconName(info.categories()));
+                if (info.severity() == KWeatherCore::AlertInfo::Severity::Extreme || info.severity() == KWeatherCore::AlertInfo::Severity::Severe) {
+                    n->setFlags(KNotification::Persistent);
+                }
+                n->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));
+                n->sendEvent();
+                // TODO react to activation with showing the details page
+                break;
+            }
+        }
 
         addAlert(std::move(e));
     });
