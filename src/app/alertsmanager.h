@@ -23,6 +23,8 @@ struct AlertElement {
 
     bool isValid() const;
     bool isExpired() const;
+
+    KWeatherCore::AlertInfo info() const;
 };
 
 class AlertsManager : public QAbstractListModel

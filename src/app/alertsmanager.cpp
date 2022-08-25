@@ -44,6 +44,36 @@ bool AlertElement::isExpired() const
     return alertData.infoVec().at(0).expireTime().isValid() && alertData.infoVec().at(0).expireTime() < QDateTime::currentDateTime();
 }
 
+KWeatherCore::AlertInfo AlertElement::info() const
+{
+    // TODO also handle alert message that contain multiple infos for the same language
+    for (const auto &uiLang : QLocale().uiLanguages()) {
+        // exact match
+        for (const auto &info : alertData.infoVec()) {
+            if (info.language().compare(uiLang, Qt::CaseInsensitive) == 0) {
+                return info;
+            }
+        }
+        // language-only match
+        for (const auto &info : alertData.infoVec()) {
+            const auto lang = info.language();
+            QStringView l1(lang);
+            if (auto idx = l1.indexOf(QLatin1Char('-')); idx > 0) {
+                l1 = l1.left(idx);
+            }
+            QStringView l2(uiLang);
+            if (auto idx = l2.indexOf(QLatin1Char('-')); idx > 0) {
+                l2 = l2.left(idx);
+            }
+            if (l1.compare(l2, Qt::CaseInsensitive) == 0) {
+                return info;
+            }
+        }
+    }
+
+    return alertData.infoVec()[0];
+}
+
 static QString basePath()
 {
     return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/cap/");
@@ -175,32 +205,7 @@ QVariant AlertsManager::data(const QModelIndex &index, int role) const
         case AlertRole:
             return QVariant::fromValue(info.alertData);
         case AlertInfoRole:
-        {
-            for (const auto &uiLang : QLocale().uiLanguages()) {
-                // exact match
-                for (const auto &info : info.alertData.infoVec()) {
-                    if (info.language().compare(uiLang, Qt::CaseInsensitive) == 0) {
-                        return QVariant::fromValue(info);
-                    }
-                }
-                // language-only match
-                for (const auto &info : info.alertData.infoVec()) {
-                    const auto lang = info.language();
-                    QStringView l1(lang);
-                    if (auto idx = l1.indexOf(QLatin1Char('-')); idx > 0) {
-                        l1 = l1.left(idx);
-                    }
-                    QStringView l2(uiLang);
-                    if (auto idx = l2.indexOf(QLatin1Char('-')); idx > 0) {
-                        l2 = l2.left(idx);
-                    }
-                    if (l1.compare(l2, Qt::CaseInsensitive) == 0) {
-                        return QVariant::fromValue(info);
-                    }
-                }
-            }
-            return QVariant::fromValue(info.alertData.infoVec()[0]);
-        }
+            return QVariant::fromValue(info.info());
         case Qt::DisplayRole:
             return info.alertData.identifier();
     }
