@@ -29,23 +29,7 @@ Kirigami.ScrollablePage {
             icon: {
                 if (model.alert.msgType == AlertEntry.Cancel)
                     return "dialog-ok";
-                if (model.alertInfo.categories & AlertInfo.CBRNE)
-                    return "office-chart-polar-stacked";
-                if (model.alertInfo.categories & AlertInfo.Fire)
-                    return "hotspot";
-                if (model.alertInfo.categories & AlertInfo.Met)
-                    return "cloudstatus";
-                if (model.alertInfo.categories & AlertInfo.Health)
-                    return "cross-shape";
-                if (model.alertInfo.categories & AlertInfo.Geo)
-                    return "earthquake";
-                if (model.alertInfo.categories & (AlertInfo.Safety | AlertInfo.Security))
-                    return "security-high-symbolic";
-                if (model.alertInfo.categories & AlertInfo.Env)
-                    return "internet-services"
-                if (model.alertInfo.categories & AlertInfo.Infra)
-                    return "network-wireless-hotspot"
-                return "dialog-warning";
+                return CAPUtil.categoriesIconName(model.alertInfo.categories);
             }
             iconColor: {
                 if (model.alert.msgType == AlertEntry.Cancel)

@@ -131,6 +131,39 @@ QStringList CAPUtil::responseTypesStrings(uint responseTypes)
     return responseTypesStrings(KWeatherCore::AlertInfo::ResponseTypes(responseTypes));
 }
 
+// sorted by priority
+struct {
+    KWeatherCore::AlertInfo::Categories categories;
+    const char *iconName;
+} static constexpr const category_icon_map[] = {
+    // TODO proper icons
+    { KWeatherCore::AlertInfo::Category::CBRNE, "office-char-polar-stacked" },
+    { KWeatherCore::AlertInfo::Category::Fire, "hotspot" },
+    { KWeatherCore::AlertInfo::Category::Met, "cloudstatus" },
+    { KWeatherCore::AlertInfo::Category::Health, "cross-shape" },
+    { KWeatherCore::AlertInfo::Category::Geo, "earthquake" },
+    { KWeatherCore::AlertInfo::Category::Safety, "security-high-symbolic" },
+    { KWeatherCore::AlertInfo::Category::Security, "security-high-symbolic" },
+    { KWeatherCore::AlertInfo::Category::Env, "internet-services" },
+    { KWeatherCore::AlertInfo::Category::Infra, "network-wireless-hotspot" },
+    { KWeatherCore::AlertInfo::Category::Transport, "car" },
+};
+
+QString CAPUtil::categoriesIconName(KWeatherCore::AlertInfo::Categories categories)
+{
+    for (const auto &m : category_icon_map) {
+        if ((m.categories & categories) == m.categories) {
+            return QLatin1String(m.iconName);
+        }
+    }
+    return QLatin1String("dialog-warning");
+}
+
+QString KPublicAlerts::CAPUtil::categoriesIconName(uint categories)
+{
+    return categoriesIconName(KWeatherCore::AlertInfo::Categories(categories));
+}
+
 QColor CAPUtil::colorMix(const QColor& c1, const QColor& c2, double bias)
 {
     return KColorUtils::mix(c1, c2, bias);

@@ -25,6 +25,9 @@ public:
     Q_INVOKABLE static QStringList responseTypesStrings(KWeatherCore::AlertInfo::ResponseTypes responseTypes);
     Q_INVOKABLE static QStringList responseTypesStrings(uint responseTypes);
 
+    Q_INVOKABLE static QString categoriesIconName(KWeatherCore::AlertInfo::Categories categories);
+    Q_INVOKABLE static QString categoriesIconName(uint categories);
+
     Q_INVOKABLE static QColor colorMix(const QColor &c1, const QColor &c2, double bias = 0.5);
 };
 
