@@ -186,6 +186,19 @@ void AlertsManager::fetchAll()
     });
 }
 
+void AlertsManager::removeAlert(const QString &id)
+{
+    const auto it = std::lower_bound(m_alerts.begin(), m_alerts.end(), id);
+    if (it == m_alerts.end() || (*it).id != id) {
+        return;
+    }
+
+    const auto row = std::distance(m_alerts.begin(), it);
+    beginRemoveRows({}, row, row);
+    m_alerts.erase(it);
+    endRemoveRows();
+}
+
 int AlertsManager::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {

@@ -26,7 +26,12 @@ SubscriptionManager::SubscriptionManager(QObject *parent)
     connect(&m_connector, &KUnifiedPush::Connector::messageReceived, this, [this](const QByteArray &msg) {
         qDebug() << msg;
         const auto msgObj = QJsonDocument::fromJson(msg).object();
-        Q_EMIT alertAdded(msgObj.value(QLatin1String("added")).toString());
+        if (const auto id = msgObj.value(QLatin1String("added")); id.isString()) {
+            Q_EMIT alertAdded(id.toString());
+        }
+        if (const auto id = msgObj.value(QLatin1String("removed")); id.isString()) {
+            Q_EMIT alertRemoved(id.toString());
+        }
     });
 
     QSettings settings;

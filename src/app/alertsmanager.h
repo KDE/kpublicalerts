@@ -38,6 +38,7 @@ public:
 
     void fetchAlert(const QString &id);
     Q_INVOKABLE void fetchAll(); // TODO testing only, needs to take bbox argument
+    void removeAlert(const QString &id);
 
     enum {
         AlertRole = Qt::UserRole,
