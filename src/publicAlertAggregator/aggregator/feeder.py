@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
+import datetime
 from django.contrib.gis.geos import Polygon
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound, JsonResponse
@@ -53,7 +54,13 @@ def post_active_alerts(request, sourceId):
     alerts = Alert.objects.filter(issuerId = sourceId)
     for alert in alerts:
         if alert.alertId not in alertIds:
-            # TODO notify about removal, if it wouldn't expire anyway shortly
+            skipNotify = False
+            if alert.expireDate != None:
+                # don't bother with sending removal notification if the alert is about to expire anyway
+                deltaToExpiry = alert.expireDate - datetime.datetime.now(datetime.timezone.utc)
+                skipNotify = deltaToExpiry.days <= 0 and deltaToExpiry.seconds <= (5*60)
+            if not skipNotify:
+                notifyAlert(alert, { 'removed': str(alert.id) })
             alert.delete()
 
     return HttpResponse()
