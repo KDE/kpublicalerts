@@ -24,7 +24,7 @@ Kirigami.ScrollablePage {
         id: listView
         model: AlertsManager
         delegate: Kirigami.BasicListItem {
-            text: model.alertInfo.headline
+            text: model.alertInfo.headline ? model.alertInfo.headline : model.alertInfo.event
             subtitle: model.alertInfo.description
             icon: {
                 if (model.alert.msgType == AlertEntry.Cancel)
