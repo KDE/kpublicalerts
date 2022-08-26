@@ -84,6 +84,13 @@ class AbstractFeedReader:
         maxlon = max(maxlon, lon + 1.0)
         return (minlat, minlon, maxlat, maxlon)
 
+    def flattenXml(node):
+        node.tail = None
+        if node.text != None:
+            node.text = node.text.strip()
+        for child in node:
+            AbstractFeedReader.flattenXml(child)
+
     def addAlert(self, capSource = None, capData = None):
         if not capData:
             print(f"{self.issuerId} - Got no CAP alert message, skipping")
@@ -128,7 +135,8 @@ class AbstractFeedReader:
 
         # expand geocodes if necessary, and determine bounding box
         capDataModified |= self.expandGeoCodes(capTree)
-        if capDataModified:
+        if capDataModified or capSource == None:
+            AbstractFeedReader.flattenXml(capTree)
             capData = ET.tostring(capTree, encoding='utf-8', xml_declaration=True).decode()
 
         # determine bounding box and drop elements without
