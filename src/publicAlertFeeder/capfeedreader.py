@@ -36,6 +36,8 @@ class CAPFeedReader(AbstractFeedReader):
                 if expireTime != None and expireTime < datetime.datetime.now(datetime.timezone.utc):
                     print(f"{self.issuerId} - not downloading alert {capSource} expired on {expireTime}")
                     continue
+            except ValueError as e:
+                print(f"Failed to parse expiry time: {entry.get('cap_expires')}")
             except TypeError as e:
                 pass
 
