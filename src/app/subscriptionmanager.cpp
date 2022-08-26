@@ -82,14 +82,34 @@ QHash<int, QByteArray> SubscriptionManager::roleNames() const
     return n;
 }
 
-bool SubscriptionManager::removeRow(int row, const QModelIndex &parent)
-{
-    return QAbstractListModel::removeRow(row, parent);
-}
-
 bool SubscriptionManager::removeRows(int row, int count, const QModelIndex &parent)
 {
-    // TODO
+    if (parent.isValid()) {
+        return false;
+    }
+
+    for (int i = row; i < row + count; ++i) {
+        const auto id = m_subscriptions[i].m_id;
+        QUrl url(QLatin1String("http://localhost:8000/aggregator/subscription/") + m_subscriptions[i].m_subscriptionId.toString(QUuid::WithoutBraces));
+        auto reply = m_nam->deleteResource(QNetworkRequest(url));
+        connect(reply, &QNetworkReply::finished, this, [this, reply, id]() {
+            reply->deleteLater();
+            if (reply->error() != QNetworkReply::NoError) {
+                qWarning() << reply->errorString();
+                // TODO
+            } else {
+                const auto it = std::lower_bound(m_subscriptions.begin(), m_subscriptions.end(), id);
+                if (it == m_subscriptions.end() || (*it).m_id != id) {
+                    return;
+                }
+                const auto row = std::distance(m_subscriptions.begin(), it);
+                beginRemoveRows({}, row, row);
+                m_subscriptions.erase(it);
+                endRemoveRows();
+            }
+        });
+    }
+
     return false;
 }
 

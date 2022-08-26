@@ -28,8 +28,20 @@ Kirigami.ScrollablePage {
     ListView {
         id: listView
         model: SubscriptionManager
-        delegate: Kirigami.BasicListItem {
-            text: model.display
+        delegate: Kirigami.SwipeListItem {
+            readonly property var sourceModel: ListView.view.model
+            QQC2.Label {
+                text: model.display
+            }
+            actions: [
+                Kirigami.Action {
+                    iconName: "edit-delete"
+                    text: i18n("Unsubscribe")
+                    onTriggered: {
+                        sourceModel.removeRows(model.index, 1)
+                    }
+                }
+            ]
         }
 
         Kirigami.PlaceholderMessage {
