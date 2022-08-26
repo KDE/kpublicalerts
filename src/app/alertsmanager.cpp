@@ -115,16 +115,6 @@ void AlertsManager::setNetworkAccessManager(QNetworkAccessManager *nam)
     m_nam = nam;
 }
 
-struct {
-    KWeatherCore::AlertInfo::Severity severity;
-    const char *eventName;
-} static constexpr const notification_map[] = {
-    { KWeatherCore::AlertInfo::Severity::Extreme, "extreme-alert" },
-    { KWeatherCore::AlertInfo::Severity::Severe, "severe-alert" },
-    { KWeatherCore::AlertInfo::Severity::Moderate, "moderate-alert" },
-    { KWeatherCore::AlertInfo::Severity::Minor, "minor-alert" },
-};
-
 void AlertsManager::fetchAlert(const QString &id)
 {
     if (const auto it = std::lower_bound(m_alerts.begin(), m_alerts.end(), id); it != m_alerts.end() && (*it).id == id) {
@@ -158,23 +148,7 @@ void AlertsManager::fetchAlert(const QString &id)
             qWarning() << f.fileName() << f.errorString();
         }
 
-        const auto info = e.info();
-        for (const auto &m : notification_map) {
-            if (m.severity == info.severity()) {
-                auto n = new KNotification(QLatin1String(m.eventName));
-                n->setTitle(info.event());
-                n->setText(info.description());
-                n->setIconName(CAPUtil::categoriesIconName(info.categories()));
-                if (info.severity() == KWeatherCore::AlertInfo::Severity::Extreme || info.severity() == KWeatherCore::AlertInfo::Severity::Severe) {
-                    n->setFlags(KNotification::Persistent);
-                }
-                n->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));
-                n->sendEvent();
-                // TODO react to activation with showing the details page
-                break;
-            }
-        }
-
+        showNotification(e);
         addAlert(std::move(e));
     });
 }
@@ -265,5 +239,39 @@ void AlertsManager::addAlert(AlertElement &&e)
         beginInsertRows({}, row, row);
         m_alerts.insert(it, std::move(e));
         endInsertRows();
+    }
+}
+
+struct {
+    KWeatherCore::AlertInfo::Severity severity;
+    const char *eventName;
+} static constexpr const notification_map[] = {
+    { KWeatherCore::AlertInfo::Severity::Extreme, "extreme-alert" },
+    { KWeatherCore::AlertInfo::Severity::Severe, "severe-alert" },
+    { KWeatherCore::AlertInfo::Severity::Moderate, "moderate-alert" },
+    { KWeatherCore::AlertInfo::Severity::Minor, "minor-alert" },
+};
+
+void AlertsManager::showNotification(const AlertElement &e)
+{
+    if (e.alertData.msgType() != KWeatherCore::AlertEntry::MsgType::Alert || e.alertData.status() != KWeatherCore::AlertEntry::Status::Actual) {
+        return;
+    }
+
+    const auto info = e.info();
+    for (const auto &m : notification_map) {
+        if (m.severity == info.severity()) {
+            auto n = new KNotification(QLatin1String(m.eventName));
+            n->setTitle(info.event());
+            n->setText(info.description());
+            n->setIconName(CAPUtil::categoriesIconName(info.categories()));
+            if (info.severity() == KWeatherCore::AlertInfo::Severity::Extreme || info.severity() == KWeatherCore::AlertInfo::Severity::Severe) {
+                n->setFlags(KNotification::Persistent);
+            }
+            n->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));
+            n->sendEvent();
+            // TODO react to activation with showing the details page
+            break;
+        }
     }
 }

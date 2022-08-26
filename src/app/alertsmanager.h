@@ -51,6 +51,7 @@ public:
 
 private:
     void addAlert(AlertElement &&e);
+    void showNotification(const AlertElement &e);
 
     std::vector<AlertElement> m_alerts;
     QNetworkAccessManager *m_nam = nullptr;
