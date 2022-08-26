@@ -265,7 +265,7 @@ void AlertsManager::showNotification(const AlertElement &e)
             n->setTitle(info.event());
             n->setText(info.description());
             n->setIconName(CAPUtil::categoriesIconName(info.categories()));
-            if (info.severity() == KWeatherCore::AlertInfo::Severity::Extreme || info.severity() == KWeatherCore::AlertInfo::Severity::Severe) {
+            if (info.severity() == KWeatherCore::AlertInfo::Severity::Extreme) {
                 n->setFlags(KNotification::Persistent);
             }
             n->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));
