@@ -32,12 +32,17 @@ feedReaders = [
     CAPFeedReader('id-bmkg', 'https://signature.bmkg.go.id/alert/public/en/rss.xml'),
     CAPFeedReader('in-imd', 'https://cap-sources.s3.amazonaws.com/in-imd-en/rss.xml'),
     CAPFeedReader('it-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-italy'),
+    CAPFeedReader('ke-kmd', 'https://cap-sources.s3.amazonaws.com/ke-kmd-en/rss.xml'),
+    CAPFeedReader('mx-smn', 'https://smn.conagua.gob.mx/tools/PHP/feedsmn/cap.php'),
     CAPFeedReader('nl-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-netherlands'),
     CAPFeedReader('no-met', 'https://alert.met.no/alerts'),
     CAPFeedReader('nz-metservice', 'https://alerts.metservice.com/cap/rss'),
+    CAPFeedReader('pl-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-poland'),
+    CAPFeedReader('pt-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-portugal'),
     CAPFeedReader('us-nws', 'https://alerts.weather.gov/cap/us.php?x=0'),
     CAPFeedReader('us-ntwc', 'https://www.tsunami.gov/events/xml/PAAQAtom.xml'),
     CAPFeedReader('us-ptwc', 'https://www.tsunami.gov/events/xml/PHEBAtom.xml'),
+    CAPFeedReader('za-weathersa', 'https://caps.weathersa.co.za/Home/RssFeed'),
 ]
 
 for feedReader in feedReaders:
