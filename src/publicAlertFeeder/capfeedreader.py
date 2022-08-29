@@ -41,5 +41,10 @@ class CAPFeedReader(AbstractFeedReader):
             except TypeError as e:
                 pass
 
-            capData = self.session.get(capSource).content.decode('utf-8')
+            req = self.session.get(capSource)
+            if not req.ok:
+                print(f"Fetch error {req.status_code}: {capSource}")
+                continue
+
+            capData = req.content.decode('utf-8')
             self.addAlert(capSource = capSource, capData = capData)
