@@ -9,6 +9,7 @@
 #include <KWeatherCore/AlertInfo>
 #include <KWeatherCore/CAPParser>
 
+#include <KLocalizedString>
 #include <KNotification>
 
 #include <QDir>
@@ -42,6 +43,11 @@ bool AlertElement::isExpired() const
 {
     // TODO check all alert info elements
     return alertData.infoVec().at(0).expireTime().isValid() && alertData.infoVec().at(0).expireTime() < QDateTime::currentDateTime();
+}
+
+KWeatherCore::AlertEntry AlertElement::alert() const
+{
+    return alertData;
 }
 
 KWeatherCore::AlertInfo AlertElement::info() const
@@ -100,7 +106,7 @@ AlertsManager::AlertsManager(QObject* parent)
         e.alertData = p.parse();
         if (!e.isValid() || e.isExpired()) {
             qDebug() << "dropping expired or invalid cache file:" << f.fileName();
-            QFile::remove(it.filePath());
+            f.remove();
             continue;
         }
 
@@ -269,9 +275,26 @@ void AlertsManager::showNotification(const AlertElement &e)
                 n->setFlags(KNotification::Persistent);
             }
             n->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));
+            n->setDefaultAction(i18n("Show alert details"));
+            n->setActions({i18n("Dismiss")});
+            const auto id = e.id;
+            connect(n, qOverload<uint>(&KNotification::activated), this, [this, id](uint action) {
+                if (action == 0) {
+                    Q_EMIT showAlert(id);
+                }
+            });
             n->sendEvent();
-            // TODO react to activation with showing the details page
             break;
         }
     }
+}
+
+KPublicAlerts::AlertElement AlertsManager::alertById(const QString &id) const
+{
+    const auto it = std::lower_bound(m_alerts.begin(), m_alerts.end(), id);
+    if (it == m_alerts.end() && (*it).id != id) {
+        return {};
+    }
+
+    return (*it);
 }

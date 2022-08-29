@@ -48,6 +48,16 @@ Kirigami.ScrollablePage {
         }
     }
 
+    Connections {
+        target: AlertsManager
+        onShowAlert: {
+            console.log(id);
+            const alert = AlertsManager.alertById(id);
+            // TODO replace rather than push
+            applicationWindow().pageStack.push(alertPage, { alert: alert.alert, alertInfo: alert.info });
+        }
+    }
+
     // TODO for testing
     Component.onCompleted: {
         AlertsManager.fetchAll();

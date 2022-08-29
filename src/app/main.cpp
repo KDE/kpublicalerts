@@ -68,6 +68,7 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<KWeatherCore::AlertInfo>("org.kde.weathercore", 1, 0, "AlertInfo", {});
     qmlRegisterUncreatableType<KWeatherCore::AlertEntry>("org.kde.weathercore", 1, 0, "AlertEntry", {});
 
+    qRegisterMetaType<KPublicAlerts::AlertElement>();
     qmlRegisterType<KPublicAlerts::AreaModel>("org.kde.publicalerts", 1, 0, "AreaModel");
     qmlRegisterSingletonType("org.kde.publicalerts", 1, 0, "CAPUtil", [](QQmlEngine *engine, QJSEngine*) -> QJSValue {
         return engine->toScriptValue(CAPUtil());

@@ -7,6 +7,7 @@
 #define KPUBLICALERTS_ALERTSMANAGER_H
 
 #include <KWeatherCore/AlertEntry>
+#include <KWeatherCore/AlertInfo>
 
 #include <QAbstractListModel>
 
@@ -14,7 +15,12 @@ class QNetworkAccessManager;
 
 namespace KPublicAlerts {
 
-struct AlertElement {
+class AlertElement {
+    Q_GADGET
+    Q_PROPERTY(KWeatherCore::AlertEntry alert READ alert)
+    Q_PROPERTY(KWeatherCore::AlertInfo info READ info)
+
+public:
     QString id;
     KWeatherCore::AlertEntry alertData;
 
@@ -24,6 +30,7 @@ struct AlertElement {
     bool isValid() const;
     bool isExpired() const;
 
+    KWeatherCore::AlertEntry alert() const;
     KWeatherCore::AlertInfo info() const;
 };
 
@@ -49,6 +56,11 @@ public:
     QVariant data(const QModelIndex & index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+    Q_INVOKABLE KPublicAlerts::AlertElement alertById(const QString &id) const;
+
+Q_SIGNALS:
+    void showAlert(const QString &id);
+
 private:
     void addAlert(AlertElement &&e);
     void showNotification(const AlertElement &e);
@@ -58,5 +70,7 @@ private:
 };
 
 }
+
+Q_DECLARE_METATYPE(KPublicAlerts::AlertElement)
 
 #endif // KPUBLICALERTS_ALERTSMANAGER_H
