@@ -53,7 +53,9 @@ Kirigami.ScrollablePage {
         onShowAlert: {
             console.log(id);
             const alert = AlertsManager.alertById(id);
-            // TODO replace rather than push
+            while (applicationWindow().pageStack.depth > 1) {
+                applicationWindow().pageStack.pop();
+            }
             applicationWindow().pageStack.push(alertPage, { alert: alert.alert, alertInfo: alert.info });
         }
     }
