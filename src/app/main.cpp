@@ -4,6 +4,7 @@
  */
 
 #include "alertsmanager.h"
+#include "alertssortproxymodel.h"
 #include "areamodel.h"
 #include "caputil.h"
 #include "subscriptionmanager.h"
@@ -69,6 +70,7 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<KWeatherCore::AlertEntry>("org.kde.weathercore", 1, 0, "AlertEntry", {});
 
     qRegisterMetaType<KPublicAlerts::AlertElement>();
+    qmlRegisterType<KPublicAlerts::AlertsSortProxyModel>("org.kde.publicalerts", 1, 0, "AlertsSortProxyModel");
     qmlRegisterType<KPublicAlerts::AreaModel>("org.kde.publicalerts", 1, 0, "AreaModel");
     qmlRegisterSingletonType("org.kde.publicalerts", 1, 0, "CAPUtil", [](QQmlEngine *engine, QJSEngine*) -> QJSValue {
         return engine->toScriptValue(CAPUtil());

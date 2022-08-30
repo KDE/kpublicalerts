@@ -22,7 +22,9 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: listView
-        model: AlertsManager
+        model: AlertsSortProxyModel {
+            sourceModel: AlertsManager
+        }
         delegate: Kirigami.BasicListItem {
             text: model.alertInfo.headline ? model.alertInfo.headline : model.alertInfo.event
             subtitle: model.alertInfo.description
