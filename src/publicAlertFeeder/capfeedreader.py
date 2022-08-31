@@ -41,7 +41,7 @@ class CAPFeedReader(AbstractFeedReader):
             except TypeError as e:
                 pass
 
-            req = self.session.get(capSource)
+            req = self.session.get(capSource, headers = { 'User-Agent': 'KDE public alerts feeder'})
             if not req.ok:
                 print(f"Fetch error {req.status_code}: {capSource}")
                 continue
