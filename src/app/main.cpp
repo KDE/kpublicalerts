@@ -25,7 +25,9 @@
 #include <KWeatherCore/AlertEntry>
 #include <KWeatherCore/AlertInfo>
 
+#ifndef Q_OS_ANDROID
 #include <KDBusService>
+#endif
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
@@ -33,6 +35,9 @@
 
 using namespace KPublicAlerts;
 
+#ifdef Q_OS_ANDROID
+Q_DECL_EXPORT
+#endif
 int main(int argc, char **argv)
 {
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -54,7 +59,9 @@ int main(int argc, char **argv)
     parser.addVersionOption();
     parser.process(app);
 
+#ifndef Q_OS_ANDROID
     KDBusService service(KDBusService::Unique);
+#endif
 
     QQmlApplicationEngine engine;
 

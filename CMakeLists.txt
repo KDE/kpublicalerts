@@ -29,11 +29,17 @@ ecm_setup_version(${PROJECT_VERSION}
 )
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT5_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControls2 Svg Positioning)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Kirigami2 DBusAddons I18n GuiAddons Notifications)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Kirigami2 I18n GuiAddons Notifications)
 find_package(KF5KWeatherCore REQUIRED)
 find_package(KUnifiedPush REQUIRED)
 if (NOT ANDROID)
+    find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS DBusAddons)
     find_package(Qt${QT_MAJOR_VERSION} ${QT5_MIN_VERSION} REQUIRED COMPONENTS Widgets)
+else()
+    if (NOT DEFINED BREEZEICONS_DIR AND EXISTS ${CMAKE_SOURCE_DIR}/../breeze-icons)
+        set(BREEZEICONS_DIR ${CMAKE_SOURCE_DIR}/../breeze-icons)
+    endif()
+    find_package(OpenSSL REQUIRED)
 endif()
 
 ki18n_install(po)
