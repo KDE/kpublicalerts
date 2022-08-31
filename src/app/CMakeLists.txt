@@ -10,6 +10,7 @@ target_sources(publicalerts PRIVATE
     caputil.cpp
     main.cpp
     qml.qrc
+    restapi.cpp
     subscription.cpp
     subscriptionmanager.cpp
 )

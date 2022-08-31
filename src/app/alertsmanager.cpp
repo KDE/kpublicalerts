@@ -5,6 +5,7 @@
 
 #include "alertsmanager.h"
 #include "caputil.h"
+#include "restapi.h"
 
 #include <KWeatherCore/AlertInfo>
 #include <KWeatherCore/CAPParser>
@@ -128,7 +129,7 @@ void AlertsManager::fetchAlert(const QString &id)
         return;
     }
 
-    auto reply = m_nam->get(QNetworkRequest(QUrl(QLatin1String("http://localhost:8000/aggregator/alert/") + id))); // TODO hardcoded URL
+    auto reply = m_nam->get(RestApi::alert(id));
     connect(reply, &QNetworkReply::finished, this, [this, id, reply]() {
         reply->deleteLater();
         if (reply->error() != QNetworkReply::NoError) {
@@ -161,16 +162,8 @@ void AlertsManager::fetchAlert(const QString &id)
 
 void AlertsManager::fetchAll()
 {
-    QUrl url(QLatin1String("http://localhost:8000/aggregator/alerts")); // TODO hardcoded URL
-    QUrlQuery query;
     // TODO
-    query.addQueryItem(QStringLiteral("minlat"), QString::number(48.0));
-    query.addQueryItem(QStringLiteral("maxlat"), QString::number(54.0));
-    query.addQueryItem(QStringLiteral("minlon"), QString::number(6.0));
-    query.addQueryItem(QStringLiteral("maxlon"), QString::number(14.0));
-    url.setQuery(query);
-
-    auto reply = m_nam->get(QNetworkRequest(url));
+    auto reply = m_nam->get(RestApi::alerts(QRectF(QPointF(6.0, 48.5), QPointF(14.0, 53.5))));
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         reply->deleteLater();
         if (reply->error() != QNetworkReply::NoError) {

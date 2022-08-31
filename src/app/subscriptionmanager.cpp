@@ -4,6 +4,7 @@
  */
 
 #include "subscriptionmanager.h"
+#include "restapi.h"
 
 #include <KUnifiedPush/Connector>
 
@@ -90,8 +91,7 @@ bool SubscriptionManager::removeRows(int row, int count, const QModelIndex &pare
 
     for (int i = row; i < row + count; ++i) {
         const auto id = m_subscriptions[i].m_id;
-        QUrl url(QLatin1String("http://localhost:8000/aggregator/subscription/") + m_subscriptions[i].m_subscriptionId.toString(QUuid::WithoutBraces));
-        auto reply = m_nam->deleteResource(QNetworkRequest(url));
+        auto reply = m_nam->deleteResource(RestApi::unsubscribe(m_subscriptions[i].m_subscriptionId));
         connect(reply, &QNetworkReply::finished, this, [this, reply, id]() {
             reply->deleteLater();
             if (reply->error() != QNetworkReply::NoError) {
@@ -158,7 +158,6 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
     const auto id = sub.m_id;
     const auto upEndpoint = m_connector.endpoint();
 
-    QUrl url(QLatin1String("http://localhost:8000/aggregator/subscription"));
     QJsonObject subCmd;
     subCmd.insert(QLatin1String("endpoint"), upEndpoint);
     subCmd.insert(QLatin1String("minlon"), sub.m_boundingBox.left());
@@ -166,7 +165,7 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
     subCmd.insert(QLatin1String("minlat"), sub.m_boundingBox.top());
     subCmd.insert(QLatin1String("maxlat"), sub.m_boundingBox.bottom());
 
-    auto reply = m_nam->post(QNetworkRequest(url), QJsonDocument(subCmd).toJson(QJsonDocument::Compact));
+    auto reply = m_nam->post(RestApi::subscribe(), QJsonDocument(subCmd).toJson(QJsonDocument::Compact));
     connect(reply, &QNetworkReply::finished, this, [this, reply, id, upEndpoint]() {
         reply->deleteLater();
         if (reply->error() != QNetworkReply::NoError) {
@@ -191,8 +190,7 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
 
 void SubscriptionManager::doUnsubscribeOne(const Subscription &sub)
 {
-    QUrl url(QLatin1String("http://localhost:8000/aggregator/subscription/") + sub.m_subscriptionId.toString(QUuid::WithoutBraces));
-    auto reply = m_nam->deleteResource(QNetworkRequest(url));
+    auto reply = m_nam->deleteResource(RestApi::unsubscribe(sub.m_subscriptionId));
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         reply->deleteLater();
         // TODO
