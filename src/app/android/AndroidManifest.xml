@@ -53,6 +53,18 @@
 
             <!-- auto screen scale factor -->
             <meta-data android:name="android.app.auto_screen_scale_factor" android:value="true"/>
+
         </activity>
+
+        <!-- UnifiedPush interface -->
+        <!-- TODO can we get the library to provide/inject this? -->
+        <receiver android:name="org.kde.kunifiedpush.MessageReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="org.unifiedpush.android.connector.NEW_ENDPOINT"/>
+                <action android:name="org.unifiedpush.android.connector.UNREGISTERED"/>
+                <action android:name="org.unifiedpush.android.connector.MESSAGE"/>
+                <action android:name="org.unifiedpush.android.connector.REGISTRATION_FAILED"/>
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
