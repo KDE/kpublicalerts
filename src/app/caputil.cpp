@@ -137,7 +137,7 @@ struct {
     const char *iconName;
 } static constexpr const category_icon_map[] = {
     // TODO proper icons
-    { KWeatherCore::AlertInfo::Category::CBRNE, "office-char-polar-stacked" },
+    { KWeatherCore::AlertInfo::Category::CBRNE, "office-chart-polar-stacked" },
     { KWeatherCore::AlertInfo::Category::Fire, "hotspot" },
     { KWeatherCore::AlertInfo::Category::Met, "cloudstatus" },
     { KWeatherCore::AlertInfo::Category::Health, "cross-shape" },
