@@ -28,7 +28,11 @@ public:
 
     void setNetworkAccessManager(QNetworkAccessManager *nam);
 
-    int rowCount(const QModelIndex &parent) const override;
+    enum Role {
+        SubscriptionRole = Qt::UserRole,
+    };
+
+    int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
     Q_INVOKABLE bool removeRows(int row, int count, const QModelIndex &parent = {}) override;

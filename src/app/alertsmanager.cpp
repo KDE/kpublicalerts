@@ -6,6 +6,7 @@
 #include "alertsmanager.h"
 #include "caputil.h"
 #include "restapi.h"
+#include "subscriptionmanager.h"
 
 #include <KWeatherCore/AlertInfo>
 #include <KWeatherCore/CAPParser>
@@ -160,22 +161,49 @@ void AlertsManager::fetchAlert(const QString &id)
     });
 }
 
-void AlertsManager::fetchAll()
+void AlertsManager::fetchAll(KPublicAlerts::SubscriptionManager *subscriptions)
 {
-    // TODO
-    auto reply = m_nam->get(RestApi::alerts(QRectF(QPointF(6.0, 48.5), QPointF(14.0, 53.5))));
-    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
-        reply->deleteLater();
-        if (reply->error() != QNetworkReply::NoError) {
-            qWarning() << reply->errorString();
-            return;
-        }
+    for (auto i = 0; i < subscriptions->rowCount(); ++i) {
+        const auto subscription = subscriptions->index(i, 0).data(SubscriptionManager::SubscriptionRole).value<Subscription>();
+        auto reply = m_nam->get(RestApi::alerts(subscription.m_boundingBox));
+        ++m_pendingFetchJobs;
+        connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+            reply->deleteLater();
+            --m_pendingFetchJobs;
+            if (reply->error() != QNetworkReply::NoError) {
+                qWarning() << reply->errorString();
+                return; // TODO with a single error during a full fetch we must not purge
+            }
 
-        const auto alertIds = QJsonDocument::fromJson(reply->readAll()).array();
-        for (const auto &alertId : alertIds) {
-            fetchAlert(alertId.toString());
+            const auto alertIds = QJsonDocument::fromJson(reply->readAll()).array();
+            for (const auto &alertId : alertIds) {
+                const auto id = alertId.toString();
+                m_fetchedAlertIds.push_back(id);
+                fetchAlert(id);
+            }
+
+            if (m_pendingFetchJobs == 0) {
+                purgeAlerts();
+            }
+        });
+    }
+}
+
+void AlertsManager::purgeAlerts()
+{
+    qDebug() << "fetch done, purging leftovers";
+    std::sort(m_fetchedAlertIds.begin(), m_fetchedAlertIds.end());
+    for (auto it = m_alerts.begin(); it != m_alerts.end();) {
+        if (std::binary_search(m_fetchedAlertIds.begin(), m_fetchedAlertIds.end(), (*it).id)) {
+            ++it;
+            continue;
         }
-    });
+        const auto row = std::distance(m_alerts.begin(), it);
+        beginRemoveRows({}, row, row);
+        QFile::remove(basePath() + (*it).id + QLatin1String(".xml"));
+        it = m_alerts.erase(it);
+        endRemoveRows();
+    }
 }
 
 void AlertsManager::removeAlert(const QString &id)
@@ -187,6 +215,7 @@ void AlertsManager::removeAlert(const QString &id)
 
     const auto row = std::distance(m_alerts.begin(), it);
     beginRemoveRows({}, row, row);
+    QFile::remove(basePath() + (*it).id + QLatin1String(".xml"));
     m_alerts.erase(it);
     endRemoveRows();
 }

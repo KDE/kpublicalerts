@@ -64,6 +64,6 @@ Kirigami.ScrollablePage {
 
     // TODO for testing
     Component.onCompleted: {
-        AlertsManager.fetchAll();
+        AlertsManager.fetchAll(SubscriptionManager);
     }
 }

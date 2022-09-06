@@ -72,6 +72,8 @@ QVariant SubscriptionManager::data(const QModelIndex &index, int role) const
     switch (role) {
         case Qt::DisplayRole:
             return sub.m_name;
+        case SubscriptionRole:
+            return QVariant::fromValue(sub);
     }
 
     return {};

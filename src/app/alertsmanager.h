@@ -15,6 +15,8 @@ class QNetworkAccessManager;
 
 namespace KPublicAlerts {
 
+class SubscriptionManager;
+
 class AlertElement {
     Q_GADGET
     Q_PROPERTY(KWeatherCore::AlertEntry alert READ alert)
@@ -44,7 +46,7 @@ public:
     void setNetworkAccessManager(QNetworkAccessManager *nam);
 
     void fetchAlert(const QString &id);
-    Q_INVOKABLE void fetchAll(); // TODO testing only, needs to take bbox argument
+    Q_INVOKABLE void fetchAll(KPublicAlerts::SubscriptionManager *subscriptions);
     void removeAlert(const QString &id);
 
     enum {
@@ -64,9 +66,13 @@ Q_SIGNALS:
 private:
     void addAlert(AlertElement &&e);
     void showNotification(const AlertElement &e);
+    void purgeAlerts();
 
     std::vector<AlertElement> m_alerts;
     QNetworkAccessManager *m_nam = nullptr;
+
+    int m_pendingFetchJobs = 0;
+    std::vector<QString> m_fetchedAlertIds;
 };
 
 }
