@@ -3,7 +3,7 @@
 
 import json
 import requests
-from .models import Alert, Subscription
+from aggregator.models import Alert, Subscription
 
 def notifyAlert(alert, msg):
     for subscription in Subscription.objects.filter(bbox__intersects = alert.bbox):

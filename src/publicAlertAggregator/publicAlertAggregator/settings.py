@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
-    'aggregator.apps.AggregatorConfig'
+    'aggregator.apps.AggregatorConfig',
+    'feeder.apps.FeederConfig',
 ]
 
 MIDDLEWARE = [

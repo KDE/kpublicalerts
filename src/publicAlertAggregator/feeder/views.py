@@ -6,8 +6,9 @@ from django.contrib.gis.geos import Polygon
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound, JsonResponse
 from json import loads
-from .models import Alert
+from aggregator.models import Alert
 from .notify import notifyAlert
+
 #
 # API to be used by the feeder process
 # ### must be behind authentication
@@ -64,3 +65,4 @@ def post_active_alerts(request, sourceId):
             alert.delete()
 
     return HttpResponse()
+from django.shortcuts import render

@@ -6,6 +6,9 @@ from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFou
 from json import loads
 from .models import Alert, Subscription
 
+def isValidBbox(x1, y1, x2, y2):
+    return x1 >= -180.0 and x1 <= 180.0 and x2 >= -180.0 and x2 <= 180.0 and y1 >= -90.0 and y1 <= 90.0 and y2 >= -90.0 and y2 <= 90.0 and x1 != x2 and y1 != y2
+
 #
 # Public subscription API
 #
@@ -14,17 +17,18 @@ from .models import Alert, Subscription
 def post_subscription(request):
     if request.method != 'POST':
         return HttpResponseBadRequest('wrong HTTP method')
-    # TODO validate input
-    print(request, request.body)
+
     data = loads(request.body)
     y1 = float(data['minlat'])
     y2 = float(data['maxlat'])
     x1 = float(data['minlon'])
     x2 = float(data['maxlon'])
+    if not isValidBbox(x1, y1, x2, y2):
+        return HttpResponseBadRequest('invalid bounding box')
+
     bbox = Polygon.from_bbox((x1, y1, x2, y2))
     s = Subscription(upEndpoint = data['endpoint'], bbox = bbox)
     s.save()
-    print(s.id);
     return JsonResponse({ 'id': s.id })
 
 # unsubscribe
@@ -69,6 +73,8 @@ def get_alerts(request):
         y2 = float(request.GET.get('maxlat'))
         x1 = float(request.GET.get('minlon'))
         x2 = float(request.GET.get('maxlon'))
+        if not isValidBbox(x1, y1, x2, y2):
+            return HttpResponseBadRequest('invalid bounding box')
         request_bbox = Polygon.from_bbox((x1, y1, x2, y2))
     except (ValueError, TypeError):
         return HttpResponseBadRequest('invalid bounding box')

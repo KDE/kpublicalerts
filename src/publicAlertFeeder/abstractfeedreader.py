@@ -8,7 +8,7 @@ import os
 import xml.etree.ElementTree as ET
 
 class AbstractFeedReader:
-    aggregatorBaseUrl = 'http://localhost:8000/aggregator/'
+    aggregatorBaseUrl = 'http://localhost:8000/feeder/'
     issuerId = ''
     alertIds = []
 
@@ -168,4 +168,6 @@ class AbstractFeedReader:
         elif capData:
             alert['capData'] = capData
 
-        requests.post(f"{self.aggregatorBaseUrl}feeder/{self.issuerId}/alert", json=alert)
+        req = requests.post(f"{self.aggregatorBaseUrl}feeder/{self.issuerId}/alert", json=alert)
+        if not req.ok:
+            print(f"Failed to post alert: {req.status_code}")
