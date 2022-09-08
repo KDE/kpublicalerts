@@ -3,6 +3,7 @@
 
 import datetime
 import feedparser
+import requests
 import requests_cache
 
 from abstractfeedreader import AbstractFeedReader
@@ -41,9 +42,13 @@ class CAPFeedReader(AbstractFeedReader):
             except TypeError as e:
                 pass
 
-            req = self.session.get(capSource, headers = { 'User-Agent': 'KDE public alerts feeder'})
-            if not req.ok:
-                print(f"Fetch error {req.status_code}: {capSource}")
+            try:
+                req = self.session.get(capSource, headers = { 'User-Agent': 'KDE public alerts feeder'})
+                if not req.ok:
+                    print(f"Fetch error {req.status_code}: {capSource}")
+                    continue
+            except requests.exceptions.ConnectionError as e:
+                print(f"Connection error: {capSource}")
                 continue
 
             capData = req.content.decode('utf-8')
