@@ -8,7 +8,7 @@ import os
 import xml.etree.ElementTree as ET
 
 class AbstractFeedReader:
-    aggregatorBaseUrl = 'http://localhost:8000/feeder/'
+    aggregatorBaseUrl = f"http://{os.environ.get('AGGREGATOR_HOST', '127.0.0.1')}:8000/feeder/"
     issuerId = ''
     alertIds = []
 

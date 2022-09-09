@@ -15,7 +15,7 @@ class CAPFeedReader(AbstractFeedReader):
     def __init__(self, issuerId, feedUrl):
         self.issuerId = issuerId
         self.feedUrl = feedUrl
-        self.session = requests_cache.session.CachedSession(cache_name = self.issuerId)
+        self.session = requests_cache.session.CachedSession(cache_name = 'cache/' + self.issuerId)
 
     def updateFeed(self):
         feed = feedparser.parse(self.feedUrl)

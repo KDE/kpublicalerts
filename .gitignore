@@ -13,3 +13,8 @@ heaptrack.*
 *.pyc
 __pycache__
 *.sqlite3
+*.sqlite
+
+src/publicAlertAggregator/cap
+src/publicAlertAggregator/static
+src/publicAlertFeeder/cache

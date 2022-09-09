@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
+# SPDX-License-Identifier: LGPL-2.0-or-later
+
 """
 Django settings for publicAlertAggregator project.
 
@@ -26,7 +29,7 @@ SECRET_KEY = 'django-insecure-%+arwizttre3&kuurnre!7@3(j3+$9@&@up==j#nyd%i@f9hud
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 'aggregator', 'localhost' ]
 
 
 # Application definition
@@ -79,11 +82,11 @@ WSGI_APPLICATION = 'publicAlertAggregator.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'kpublicalerts',
-        'USER': 'postgres',
-        'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
-        'POST': '5432',
+        'NAME': os.environ.get('POSTGRES_DATABASE', 'kpublicalerts'),
+        'USER': os.environ.get('POSTGRES_USER', 'postgres'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'password'),
+        'HOST': os.environ.get('POSTGRES_HOST', '127.0.0.1'),
+        'POST': os.environ.get('POSTGRES_PORT', '5432'),
     }
 }
 
@@ -123,9 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.getenv('DJANGO_STATIC_ROOT', BASE_DIR.joinpath('static'))
 
-MEDIA_URL = '/cap/'
-MEDIA_ROOT = os.getenv('DJANGO_STATIC_MEDIA', BASE_DIR.joinpath('cap'))
+MEDIA_URL = 'cap/'
+MEDIA_ROOT = os.getenv('DJANGO_MEDIA_ROOT', BASE_DIR.joinpath('cap'))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -11,4 +11,4 @@ RUN pip install -r requirements.txt
 COPY . /app
 
 EXPOSE 8000/tcp
-CMD uwsgi --http :8000 --wsgi-file /app/publicAlertAggregator/wsgi.py
+CMD /app/entry.sh
