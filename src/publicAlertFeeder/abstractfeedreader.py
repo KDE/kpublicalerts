@@ -15,7 +15,10 @@ class AbstractFeedReader:
     def update(self):
         self.alertIds = []
         self.updateFeed()
-        requests.post(f"{self.aggregatorBaseUrl}feeder/{self.issuerId}/activeAlerts", json=self.alertIds)
+        try:
+            requests.post(f"{self.aggregatorBaseUrl}feeder/{self.issuerId}/activeAlerts", json=self.alertIds)
+        except requests.exceptions.ConnectionError as e:
+            print(f"Could not connect to aggregator")
         self.alertIds = []
 
     def geojsonPolygonToCAP(self, coords):
@@ -168,6 +171,9 @@ class AbstractFeedReader:
         elif capData:
             alert['capData'] = capData
 
-        req = requests.post(f"{self.aggregatorBaseUrl}feeder/{self.issuerId}/alert", json=alert)
-        if not req.ok:
-            print(f"Failed to post alert: {req.status_code}")
+        try:
+            req = requests.post(f"{self.aggregatorBaseUrl}feeder/{self.issuerId}/alert", json=alert)
+            if not req.ok:
+                print(f"Failed to post alert: {req.status_code}")
+        except requests.exceptions.ConnectionError as e:
+            print(f"Could not connect to aggregator")
