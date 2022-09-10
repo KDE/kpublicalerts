@@ -14,8 +14,6 @@ services:
     restart: always
     volumes:
       - db:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_PASSWORD=password
     ports:
       - "127.0.0.1:5432:5432"
 
@@ -31,8 +29,6 @@ services:
       - DJANGO_MEDIA_ROOT=/app/cap
       - POSTGRES_HOST=db
       - POSTGRES_DATABASE=kpublicalerts
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
     ports:
       - "127.0.0.1:8000:8000"
     volumes:
