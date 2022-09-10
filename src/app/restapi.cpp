@@ -24,7 +24,7 @@ static QUrl baseUrl()
 
 static QLatin1String basePath()
 {
-    return QLatin1String("/aggregator/");
+    return QLatin1String("/public-alerts/aggregator/");
 }
 
 QNetworkRequest RestApi::alert(const QString &id)
