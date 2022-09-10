@@ -5,6 +5,4 @@
 python3 manage.py collectstatic --clear --no-input
 python3 manage.py migrate
 
-# TODO
-# CMD uwsgi --http :8000 --wsgi-file /app/publicAlertAggregator/wsgi.py
-python3 manage.py runserver 0.0.0.0:8000
+uwsgi --socket :3032 --http :8000 --wsgi-file /app/publicAlertAggregator/wsgi.py

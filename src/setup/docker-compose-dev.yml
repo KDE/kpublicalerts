@@ -13,3 +13,15 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
+
+  httpd:
+    image: httpd:2.4-bullseye
+    depends_on:
+      - aggregator
+    restart: always
+    volumes:
+      - /srv/www/public-alerts/cap:/srv/www/public-alerts/cap
+      - /srv/www/public-alerts/static:/srv/www/public-alerts/static
+      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
+    ports:
+      - "127.0.0.1:8000:80"

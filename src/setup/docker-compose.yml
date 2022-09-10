@@ -14,8 +14,6 @@ services:
     restart: always
     volumes:
       - db:/var/lib/postgresql/data
-    ports:
-      - "127.0.0.1:5432:5432"
 
   aggregator:
     image: kdeorg/public-alert-aggregator
@@ -30,7 +28,7 @@ services:
       - POSTGRES_HOST=db
       - POSTGRES_DATABASE=kpublicalerts
     ports:
-      - "127.0.0.1:8000:8000"
+      - "127.0.0.1:3031:3032"
     volumes:
       - /srv/www/public-alerts/cap:/app/cap
       - /srv/www/public-alerts/static:/app/static
