@@ -11,6 +11,7 @@ services:
 
   aggregator:
     environment:
+      - DJANGO_DEBUG=True
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
 
