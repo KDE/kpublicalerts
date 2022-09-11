@@ -14,7 +14,7 @@ arguments = parser.parse_args()
 
 os.makedirs(os.path.join(arguments.output, 'EMMA_ID'), exist_ok=True)
 
-include_countries = ['AT', 'BE', 'BG', 'CH', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'GR', 'HU', 'IT', 'LT', 'LU', 'LV', 'NL', 'PL', 'PT', 'SE']
+include_countries = ['AT', 'BE', 'BG', 'CH', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'GR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'NL', 'PL', 'PT', 'RO', 'SE', 'SK']
 include_aliases = [ 'FIPS', 'NUTS2', 'NUTS3' ]
 
 geocodesFile = open('geocodes.json')
