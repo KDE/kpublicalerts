@@ -77,6 +77,8 @@ int main(int argc, char **argv)
 
     // TODO move to KWeatherCore itself
     qRegisterMetaType<KWeatherCore::AlertEntry>();
+    qRegisterMetaType<KWeatherCore::AlertEntry::Status>();
+    qRegisterMetaType<KWeatherCore::AlertEntry::MsgType>();
     qRegisterMetaType<KWeatherCore::AlertInfo>();
     qRegisterMetaType<KWeatherCore::AlertInfo::Categories>();
     qRegisterMetaType<KWeatherCore::AlertInfo::ResponseTypes>();

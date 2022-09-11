@@ -28,6 +28,7 @@ Kirigami.ScrollablePage {
         width: parent.width
         QQC2.Label {
             Kirigami.FormData.isSection: true
+            Layout.fillWidth: true
             text: alertInfo.headline
             wrapMode: Text.WordWrap
         }
@@ -92,14 +93,36 @@ Kirigami.ScrollablePage {
 
         Kirigami.FormLayout {
             Layout.fillWidth: true
+            // for diagnostics only
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Status:")
-                text: alert.status
+                text: {
+                    switch(alert.status) {
+                        case AlertEntry.Actual: return "Actual"
+                        case AlertEntry.Exercise: return "Exercise"
+                    }
+                    return alert.status
+                }
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Message type:")
+                text: {
+                    switch(alert.msgType) {
+                        case AlertEntry.Alert: return "Alert"
+                        case AlertEntry.Update: return "Update"
+                        case AlertEntry.Cancel: return "Cancel"
+                        case AlertEntry.Ack: return "Ack"
+                        case AlertEntry.Error: return "Error"
+                    }
+                    return alert.msgType
+                }
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Categories:")
+                Layout.fillWidth: true
                 text: CAPUtil.categoriesDisplayStrings(alertInfo.categories).join('\n')
                 visible: alertInfo.categories != AlertInfo.Unknown
+                wrapMode: Text.WordWrap
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Urgency:")
@@ -118,30 +141,44 @@ Kirigami.ScrollablePage {
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Recommended response:")
+                Layout.fillWidth: true
                 text: CAPUtil.responseTypesStrings(alertInfo.responseTypes).join('\n')
                 visible: alertInfo.responseTypes != AlertInfo.UnknownResponseType
+                wrapMode: Text.WordWrap
             }
 
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Web:")
                 text: alertInfo.web // TODO link
+                visible: alertInfo.web
+                wrapMode: Text.Wrap
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Contact:")
                 text: alertInfo.contact
+                visible: alertInfo.contact
+                wrapMode: Text.WordWrap
             }
 
             QQC2.Label {
+                Kirigami.FormData.label: i18n("Sent:")
+                visible: !isNaN(alert.sentTime.getTime())
+                text: Qt.formatDateTime(alert.sentTime)
+            }
+            QQC2.Label {
                 Kirigami.FormData.label: i18n("Effective:")
-                text: alertInfo.effectiveTime // TODO
+                visible: !isNaN(alertInfo.effectiveTime.getTime())
+                text: Qt.formatDateTime(alertInfo.effectiveTime)
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Onset:")
-                text: alertInfo.onsetTime // TODO
+                visible: !isNaN(alertInfo.onsetTime.getTime())
+                text: Qt.formatDateTime(alertInfo.onsetTime)
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Expires:")
-                text: alertInfo.expireTime // TODO
+                visible: !isNaN(alertInfo.expireTime.getTime())
+                text: Qt.formatDateTime(alertInfo.expireTime)
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Sender:")
@@ -178,6 +215,7 @@ Kirigami.ScrollablePage {
             Repeater {
                 model: areaModel
                 QQC2.Label {
+                    Layout.fillWidth: true
                     text:model.display
                     wrapMode: Text.WordWrap
                 }

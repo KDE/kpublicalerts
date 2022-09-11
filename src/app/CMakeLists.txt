@@ -41,7 +41,7 @@ else()
         hotspot
         internet-services
         list-add
-        network-wireless-hostspot
+        network-wireless-hotspot
         office-chart-polar-stacked
         security-high-symbolic
         weather-storm
