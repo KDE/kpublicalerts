@@ -19,6 +19,7 @@ Kirigami.Page {
    actions.main: Kirigami.Action {
         icon.name: "list-add"
         text: i18n("Add area of interest")
+        enabled: nameField.text != ""
         onTriggered: {
             SubscriptionManager.addSubscription(map.center.latitude, map.center.longitude, nameField.text);
             applicationWindow().pageStack.pop();
