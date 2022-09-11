@@ -149,12 +149,14 @@ Kirigami.ScrollablePage {
 
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Web:")
+                Layout.fillWidth: true
                 text: alertInfo.web // TODO link
                 visible: alertInfo.web
                 wrapMode: Text.Wrap
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Contact:")
+                Layout.fillWidth: true
                 text: alertInfo.contact
                 visible: alertInfo.contact
                 wrapMode: Text.WordWrap
