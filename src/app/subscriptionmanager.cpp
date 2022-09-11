@@ -100,7 +100,7 @@ bool SubscriptionManager::removeRows(int row, int count, const QModelIndex &pare
         auto reply = m_nam->deleteResource(RestApi::unsubscribe(m_subscriptions[i].m_subscriptionId));
         connect(reply, &QNetworkReply::finished, this, [this, reply, id]() {
             reply->deleteLater();
-            if (reply->error() != QNetworkReply::NoError) {
+            if (reply->error() != QNetworkReply::NoError && reply->error() != QNetworkReply::ContentNotFoundError) {
                 qWarning() << reply->errorString();
                 // TODO
             } else {
