@@ -26,12 +26,26 @@ target_link_libraries(publicalerts PRIVATE
     KF5::GuiAddons
     KF5::I18n
     Qt::Quick
+    Qt::QuickControls2
     Qt::Positioning
 )
 if (NOT ANDROID)
     target_link_libraries(publicalerts PRIVATE Qt::Widgets KF5::DBusAddons)
 else()
     target_link_libraries(publicalerts PRIVATE OpenSSL::SSL Qt::Svg KF5::Kirigami2)
+    kirigami_package_breeze_icons(ICONS
+        car
+        cloudstatus
+        cross-shape
+        earthquake
+        hotspot
+        internet-services
+        list-add
+        network-wireless-hostspot
+        office-chart-polar-stacked
+        security-high-symbolic
+        weather-storm
+    )
 endif()
 
 install(TARGETS publicalerts ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -10,10 +10,12 @@
 #include "subscriptionmanager.h"
 
 #include <QCommandLineParser>
+#include <QIcon>
 #include <QNetworkAccessManager>
 #include <QNetworkDiskCache>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QQuickStyle>
 #include <QStandardPaths>
 
 #ifdef Q_OS_ANDROID
@@ -40,19 +42,27 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char **argv)
 {
-    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-
-#ifdef Q_OS_ANDROID
-    QGuiApplication app(argc, argv);
-#else
-    QApplication app(argc, argv);
-#endif
-
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
     QCoreApplication::setApplicationName(QStringLiteral("publicalerts"));
     QCoreApplication::setApplicationVersion(QStringLiteral(KPUBLICALERTS_VERSION_STRING));
     QGuiApplication::setApplicationDisplayName(i18n("Public Alerts"));
+
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+
+#ifdef Q_OS_ANDROID
+    QGuiApplication app(argc, argv);
+    QQuickStyle::setStyle(QStringLiteral("Material"));
+#else
+    QIcon::setFallbackThemeName(QStringLiteral("breeze"));
+    QApplication app(argc, argv); // for native file dialogs
+
+    // Default to org.kde.desktop style unless the user forces another style
+    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
+        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+    }
+#endif
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption(QStringLiteral("dbus-activated"), QStringLiteral("indicated D-Bus activation (internal)")));

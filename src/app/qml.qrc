@@ -4,6 +4,8 @@
 -->
 <RCC>
     <qresource prefix="/">
+        <file>qtquickcontrols2.conf</file>
+
         <file>AlertPage.qml</file>
         <file>AlertsPage.qml</file>
         <file>main.qml</file>
