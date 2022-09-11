@@ -58,7 +58,7 @@ def post_active_alerts(request, sourceId):
             if alert.expireTime != None:
                 # don't bother with sending removal notification if the alert is about to expire anyway
                 deltaToExpiry = alert.expireTime - datetime.datetime.now(datetime.timezone.utc)
-                skipNotify = deltaToExpiry.days <= 0 and deltaToExpiry.seconds <= (5*60)
+                skipNotify = deltaToExpiry.days < 0 or (deltaToExpiry.days == 0 and deltaToExpiry.seconds <= (5*60))
             if not skipNotify:
                 notifyAlert(alert, { 'removed': str(alert.id) })
             alert.delete()
