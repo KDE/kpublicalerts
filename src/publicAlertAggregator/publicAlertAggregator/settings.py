@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-%+arwizttre3&kuurnre!7@3(j3+$9@&@up==j#nyd%i@f9hud
 DEBUG = True
 
 ALLOWED_HOSTS = [ 'aggregator', 'localhost' ]
-
+FORCE_SCRIPT_NAME = '/public-alerts'
 
 # Application definition
 
