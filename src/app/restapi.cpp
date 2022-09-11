@@ -16,9 +16,9 @@ static QUrl baseUrl()
 {
     QUrl url;
     // TODO
-    url.setScheme(QStringLiteral("http"));
-    url.setHost(QStringLiteral("localhost"));
-    url.setPort(8000);
+    url.setScheme(QStringLiteral("https"));
+    url.setHost(QStringLiteral("volkerkrause.eu"));
+    url.setPort(443);
     return url;
 }
 
