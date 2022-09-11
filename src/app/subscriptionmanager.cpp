@@ -93,6 +93,10 @@ bool SubscriptionManager::removeRows(int row, int count, const QModelIndex &pare
 
     for (int i = row; i < row + count; ++i) {
         const auto id = m_subscriptions[i].m_id;
+        if (m_subscriptions[i].m_subscriptionId.isNull()) { // not subscribed, so we can just remove this
+            doRemoveOne(id);
+            continue;
+        }
         auto reply = m_nam->deleteResource(RestApi::unsubscribe(m_subscriptions[i].m_subscriptionId));
         connect(reply, &QNetworkReply::finished, this, [this, reply, id]() {
             reply->deleteLater();
@@ -100,19 +104,26 @@ bool SubscriptionManager::removeRows(int row, int count, const QModelIndex &pare
                 qWarning() << reply->errorString();
                 // TODO
             } else {
-                const auto it = std::lower_bound(m_subscriptions.begin(), m_subscriptions.end(), id);
-                if (it == m_subscriptions.end() || (*it).m_id != id) {
-                    return;
-                }
-                const auto row = std::distance(m_subscriptions.begin(), it);
-                beginRemoveRows({}, row, row);
-                m_subscriptions.erase(it);
-                endRemoveRows();
+                doRemoveOne(id);
             }
         });
     }
 
+    QSettings settings;
+    storeSubscriptionIds(settings);
     return false;
+}
+
+void SubscriptionManager::doRemoveOne(const QString& id)
+{
+    const auto it = std::lower_bound(m_subscriptions.begin(), m_subscriptions.end(), id);
+    if (it == m_subscriptions.end() || (*it).m_id != id) {
+        return;
+    }
+    const auto row = std::distance(m_subscriptions.begin(), it);
+    beginRemoveRows({}, row, row);
+    m_subscriptions.erase(it);
+    endRemoveRows();
 }
 
 void SubscriptionManager::addSubscription(float lat, float lon, const QString& name)

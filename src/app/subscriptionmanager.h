@@ -48,6 +48,7 @@ private:
     void doSubscribeAll();
     void doSubscribeOne(const Subscription &sub);
     void doUnsubscribeOne(const Subscription &sub);
+    void doRemoveOne(const QString &id);
 
     void storeSubscriptionIds(QSettings &settings);
 
