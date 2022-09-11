@@ -9,20 +9,20 @@ import uuid
 
 # Alert records
 def alert_upload_path(instance, filename):
-    return f"alerts/{instance.issuerId}/{filename}"
+    return f"alerts/{instance.sourceId}/{filename}"
 
 class Alert(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    issuerId = models.CharField(max_length=255)
+    sourceId = models.CharField(max_length=255)
     alertId = models.CharField(max_length=255)
     bbox = models.PolygonField()
     capData = models.FileField(upload_to=alert_upload_path, null=True)
-    issueDate = models.DateTimeField()
-    expireDate = models.DateTimeField(null=True)
+    issueTime = models.DateTimeField()
+    expireTime = models.DateTimeField(null=True)
     sourceUrl = models.CharField(max_length=255, null=True)
 
     class Meta:
-        constraints = [models.UniqueConstraint('issuerId', 'alertId', name='issuerId_alertId_unique')]
+        constraints = [models.UniqueConstraint('sourceId', 'alertId', name='sourceId_alertId_unique')]
 
 @receiver(models.signals.post_delete, sender=Alert)
 def auto_delete_capdata_on_delete(sender, instance, **kwargs):

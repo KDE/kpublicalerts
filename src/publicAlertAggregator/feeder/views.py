@@ -24,14 +24,14 @@ def post_alert(request, sourceId):
     # TODO input validation
 
     # check whether this already exists
-    alerts = Alert.objects.filter(issuerId = sourceId, alertId = data['alertId'])
+    alerts = Alert.objects.filter(sourceId = sourceId, alertId = data['alertId'])
     if len(alerts) == 1:
         alert = alerts[0]
-        # TODO look for changes and update/notifiy as needed
+        # TODO look for changes and update/notify as needed
         return HttpResponse()
 
     # new alert
-    alert = Alert(issuerId = sourceId, alertId = data['alertId'], issueDate = data['issueTime'], expireDate = data.get('expireTime'), sourceUrl = data.get('capSource'))
+    alert = Alert(sourceId = sourceId, alertId = data['alertId'], issueTime = data['issueTime'], expireTime = data.get('expireTime'), sourceUrl = data.get('capSource'))
     if 'capData' in data:
         alert.capData = SimpleUploadedFile(f"{data['alertId']}.xml", data['capData'].encode('utf-8'), 'application/xml')
 
@@ -40,7 +40,6 @@ def post_alert(request, sourceId):
     y1 = data['minlat']
     y2 = data['maxlat']
     alert.bbox = Polygon.from_bbox((x1, y1, x2, y2))
-    print(alert.bbox, x1, y1, x2, y2)
 
     alert.save()
     notifyAlert(alert, { 'added': str(alert.id) })
@@ -52,17 +51,16 @@ def post_active_alerts(request, sourceId):
         return HttpResponseBadRequest('wrong HTTP method')
     alertIds = loads(request.body)
     print(sourceId, alertIds)
-    alerts = Alert.objects.filter(issuerId = sourceId)
+    alerts = Alert.objects.filter(sourceId = sourceId)
     for alert in alerts:
         if alert.alertId not in alertIds:
             skipNotify = False
-            if alert.expireDate != None:
+            if alert.expireTime != None:
                 # don't bother with sending removal notification if the alert is about to expire anyway
-                deltaToExpiry = alert.expireDate - datetime.datetime.now(datetime.timezone.utc)
+                deltaToExpiry = alert.expireTime - datetime.datetime.now(datetime.timezone.utc)
                 skipNotify = deltaToExpiry.days <= 0 and deltaToExpiry.seconds <= (5*60)
             if not skipNotify:
                 notifyAlert(alert, { 'removed': str(alert.id) })
             alert.delete()
 
     return HttpResponse()
-from django.shortcuts import render

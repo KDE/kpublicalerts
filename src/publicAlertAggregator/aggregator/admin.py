@@ -5,7 +5,7 @@ from django.contrib.gis import admin
 from .models import Alert, Subscription
 
 class AlertAdmin(admin.GISModelAdmin):
-    list_display = ('issuerId', 'alertId', 'issueDate', 'expireDate')
+    list_display = ('sourceId', 'alertId', 'issueTime', 'expireTime')
 
 admin.site.register(Alert, AlertAdmin)
 admin.site.register(Subscription, admin.GISModelAdmin)
