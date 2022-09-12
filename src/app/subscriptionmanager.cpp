@@ -109,8 +109,6 @@ bool SubscriptionManager::removeRows(int row, int count, const QModelIndex &pare
         });
     }
 
-    QSettings settings;
-    storeSubscriptionIds(settings);
     return false;
 }
 
@@ -124,6 +122,9 @@ void SubscriptionManager::doRemoveOne(const QString& id)
     beginRemoveRows({}, row, row);
     m_subscriptions.erase(it);
     endRemoveRows();
+
+    QSettings settings;
+    storeSubscriptionIds(settings);
 }
 
 void SubscriptionManager::addSubscription(float lat, float lon, const QString& name)
