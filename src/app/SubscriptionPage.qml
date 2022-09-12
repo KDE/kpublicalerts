@@ -21,7 +21,7 @@ Kirigami.Page {
         text: i18n("Add area of interest")
         enabled: nameField.text != ""
         onTriggered: {
-            SubscriptionManager.addSubscription(map.center.latitude, map.center.longitude, nameField.text);
+            SubscriptionManager.addSubscription(map.center.latitude, map.center.longitude, 20000, nameField.text);
             applicationWindow().pageStack.pop();
         }
     }
@@ -45,7 +45,6 @@ Kirigami.Page {
             opacity: 0.25
             border.color: color
             border.width: 2
-            // needed in meters here, provided in kilometers
             radius: 20 * 1000.0
         }
 

@@ -38,7 +38,7 @@ public:
     Q_INVOKABLE bool removeRows(int row, int count, const QModelIndex &parent = {}) override;
 
     // TODO temporary for development
-    Q_INVOKABLE void addSubscription(float lat, float lon, const QString &name);
+    Q_INVOKABLE void addSubscription(float lat, float lon, float radius, const QString &name);
 
 Q_SIGNALS:
     void alertAdded(const QString &id);
