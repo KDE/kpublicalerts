@@ -38,6 +38,8 @@ Kirigami.Page {
         Layout.preferredHeight: root.height / 2
         plugin: mapPlugin
         anchors.fill: parent
+        gesture.acceptedGestures: QtLocation.MapGestureArea.PinchGesture | QtLocation.MapGestureArea.PanGesture
+        gesture.preventStealing: true
 
         QtLocation.MapCircle {
             color: Kirigami.Theme.highlightColor
