@@ -44,6 +44,8 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             Layout.preferredHeight: root.height / 2
             plugin: mapPlugin
+            gesture.acceptedGestures: QtLocation.MapGestureArea.PinchGesture | QtLocation.MapGestureArea.PanGesture
+            gesture.preventStealing: true
 
             Repeater {
                 model: areaModel
