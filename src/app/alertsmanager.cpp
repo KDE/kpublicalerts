@@ -167,6 +167,9 @@ void AlertsManager::fetchAll(KPublicAlerts::SubscriptionManager *subscriptions)
         const auto subscription = subscriptions->index(i, 0).data(SubscriptionManager::SubscriptionRole).value<Subscription>();
         auto reply = m_nam->get(RestApi::alerts(subscription.m_boundingBox));
         ++m_pendingFetchJobs;
+        if (m_pendingFetchJobs == 1) {
+            Q_EMIT fetchingChanged();
+        }
         connect(reply, &QNetworkReply::finished, this, [this, reply]() {
             reply->deleteLater();
             --m_pendingFetchJobs;
@@ -204,6 +207,7 @@ void AlertsManager::purgeAlerts()
         it = m_alerts.erase(it);
         endRemoveRows();
     }
+    Q_EMIT fetchingChanged();
 }
 
 void AlertsManager::removeAlert(const QString &id)
@@ -319,4 +323,9 @@ KPublicAlerts::AlertElement AlertsManager::alertById(const QString &id) const
     }
 
     return (*it);
+}
+
+bool AlertsManager::isFetching() const
+{
+    return m_pendingFetchJobs > 0;
 }

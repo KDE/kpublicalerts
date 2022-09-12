@@ -14,6 +14,7 @@ import org.kde.publicalerts 1.0
 Kirigami.ScrollablePage {
     id: root
     title: i18n("Current Alerts")
+    supportsRefreshing: true
 
     Component {
         id: alertPage
@@ -53,16 +54,23 @@ Kirigami.ScrollablePage {
     Connections {
         target: AlertsManager
         onShowAlert: {
-            console.log(id);
             const alert = AlertsManager.alertById(id);
             while (applicationWindow().pageStack.depth > 1) {
                 applicationWindow().pageStack.pop();
             }
             applicationWindow().pageStack.push(alertPage, { alert: alert.alert, alertInfo: alert.info });
         }
+        onFetchingChanged: {
+            root.refreshing = AlertsManager.fetching
+        }
     }
 
-    // TODO for testing
+    onRefreshingChanged: {
+        if (root.refreshing) {
+            AlertsManager.fetchAll(SubscriptionManager);
+        }
+    }
+
     Component.onCompleted: {
         AlertsManager.fetchAll(SubscriptionManager);
     }

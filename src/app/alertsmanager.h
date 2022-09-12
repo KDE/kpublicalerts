@@ -39,6 +39,7 @@ public:
 class AlertsManager : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(bool fetching READ isFetching NOTIFY fetchingChanged)
 public:
     explicit AlertsManager(QObject *parent = nullptr);
     ~AlertsManager();
@@ -60,8 +61,11 @@ public:
 
     Q_INVOKABLE KPublicAlerts::AlertElement alertById(const QString &id) const;
 
+    bool isFetching() const;
+
 Q_SIGNALS:
     void showAlert(const QString &id);
+    void fetchingChanged();
 
 private:
     void addAlert(AlertElement &&e);
