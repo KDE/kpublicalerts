@@ -90,7 +90,15 @@ Kirigami.ScrollablePage {
                 }
             }
 
-            Component.onCompleted: fitViewportToVisibleMapItems()
+            function centerOnArea() {
+                const center = areaModel.center();
+                map.center = QtPositioning.coordinate(center.y, center.x);
+                map.zoomLevel = areaModel.zoomLevel(map.width, map.height);
+            }
+
+            onWidthChanged: centerOnArea();
+            onHeightChanged: centerOnArea();
+            Component.onCompleted: centerOnArea();
         }
 
         Kirigami.FormLayout {
@@ -228,4 +236,5 @@ Kirigami.ScrollablePage {
             }
         }
     }
+
 }

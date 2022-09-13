@@ -9,6 +9,7 @@
 #include <KWeatherCore/AlertInfo>
 
 #include <QAbstractListModel>
+#include <QRectF>
 
 namespace KPublicAlerts {
 
@@ -34,6 +35,9 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+    QRectF boundingBox() const;
+    Q_INVOKABLE QPointF center() const;
+    Q_INVOKABLE float zoomLevel(float width, float height) const;
 Q_SIGNALS:
     void alertInfoChanged();
 

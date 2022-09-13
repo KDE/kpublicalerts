@@ -4,6 +4,7 @@
  */
 
 #include "subscriptionmanager.h"
+#include "geomath.h"
 #include "restapi.h"
 
 #include <KUnifiedPush/Connector>
@@ -129,32 +130,11 @@ void SubscriptionManager::doRemoveOne(const QString& id)
     storeSubscriptionIds(settings);
 }
 
-
-static constexpr float degToRad(float deg)
-{
-    return deg / 180.0f * M_PI;
-}
-
-// see https://en.wikipedia.org/wiki/Haversine_formula
-static float distance(float lat1, float lon1, float lat2, float lon2)
-{
-    constexpr const auto earthRadius = 6371000.0f; // in meters
-
-    const auto d_lat = degToRad(lat1 - lat2);
-    const auto d_lon = degToRad(lon1 - lon2);
-
-    const auto a = powf(sinf(d_lat / 2.0f), 2) + cosf(degToRad(lat1)) * cosf(degToRad(lat2)) * powf(sinf(d_lon / 2.0f), 2);
-    return 2.0f * earthRadius * atan2f(sqrtf(a), sqrtf(1.0f - a));
-}
-
 void SubscriptionManager::addSubscription(float lat, float lon, float radius, const QString& name)
 {
     Subscription s;
     s.m_id = QUuid::createUuid().toString(QUuid::WithoutBraces);
-
-    const auto dlon = radius / distance(lat, 0.0, lat, 1.0);
-    const auto dlat = radius / distance(0.0, lon, 1.0, lon);
-    s.m_boundingBox = QRectF(QPointF(lon - dlon, lat - dlat), QPointF(lon + dlon, lat + dlat));
+    s.m_boundingBox = GeoMath::boundingBoxForCircle(lat, lon, radius);
     s.m_name = name;
 
     const auto it = std::lower_bound(m_subscriptions.begin(), m_subscriptions.end(), s);

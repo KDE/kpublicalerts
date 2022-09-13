@@ -8,6 +8,7 @@ target_sources(publicalerts PRIVATE
     alertssortproxymodel.cpp
     areamodel.cpp
     caputil.cpp
+    geomath.cpp
     main.cpp
     qml.qrc
     restapi.cpp

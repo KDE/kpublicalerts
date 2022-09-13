@@ -4,9 +4,11 @@
  */
 
 #include "areamodel.h"
+#include "geomath.h"
 
 #include <KWeatherCore/CAPArea>
 
+#include <QDebug>
 #include <QGeoCoordinate>
 
 using namespace KPublicAlerts;
@@ -84,4 +86,51 @@ QHash<int, QByteArray> AreaModel::roleNames() const
     n.insert(PolygonsRole, "polygons");
     n.insert(CirclesRole, "circles");
     return n;
+}
+
+QRectF AreaModel::boundingBox() const
+{
+    float minlon = 180.0f;
+    float maxlon = -180.0f;
+    float minlat = 90.0f;
+    float maxlat = -90.0f;
+
+    for (const auto &area : m_alert.areas()) {
+        for (const auto &poly : area.polygons()) {
+            for (const auto &p : poly) {
+                minlon = std::min(p.second, minlon);
+                maxlon = std::max(p.second, maxlon);
+                minlat = std::min(p.first, minlat);
+                maxlat = std::max(p.first, maxlat);
+            }
+        }
+
+        for (const auto &circle : area.circles()) {
+            const auto bbox = GeoMath::boundingBoxForCircle(circle.latitude, circle.longitude, circle.radius);
+            minlon = std::min<float>(minlon, bbox.left());
+            maxlon = std::max<float>(maxlon, bbox.right());
+            minlat = std::min<float>(minlat, bbox.bottom());
+            maxlat = std::min<float>(maxlat, bbox.top());
+        }
+    }
+
+    return QRectF(QPointF(minlon, minlat), QPointF(maxlon, maxlat));
+}
+
+QPointF AreaModel::center() const
+{
+    return boundingBox().center();
+}
+
+float AreaModel::zoomLevel(float width, float height) const
+{
+    const auto bbox = boundingBox();
+    const auto p1 = GeoMath::mercatorProject(bbox.bottomLeft().y(), bbox.bottomLeft().x(), 1.0);
+    const auto p2 = GeoMath::mercatorProject(bbox.topRight().y(), bbox.topRight().x(), 1.0);
+
+    const auto zx = std::log2((width / (p2.x() - p1.x())));
+    const auto zy = std::log2((height / (p2.y() - p1.y())));
+    const auto z = std::min(zx, zy);
+
+    return z >= 1.0 && z <= 22.0 ? z : 5.0;
 }
