@@ -186,7 +186,9 @@ Kirigami.ScrollablePage {
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Sender:")
+                Layout.fillWidth: true
                 text: alertInfo.sender
+                wrapMode: Text.WordWrap
             }
 
             QQC2.Label {
