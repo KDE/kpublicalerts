@@ -198,6 +198,7 @@ Kirigami.ScrollablePage {
                 Layout.fillWidth: true
                 text: alertInfo.sender
                 wrapMode: Text.WordWrap
+                visible: text !== ""
             }
 
             QQC2.Label {
@@ -215,11 +216,14 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.isSection: true
                 Kirigami.FormData.label: i18n("Instruction")
                 Kirigami.Separator {}
+                visible: instructionText.visible
             }
             QQC2.Label {
+                id: instructionText
                 Kirigami.FormData.isSection: true
                 text: alertInfo.instruction
                 wrapMode: Text.WordWrap
+                visible: text !== ""
             }
 
             QQC2.Label {
