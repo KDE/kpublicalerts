@@ -20,6 +20,13 @@ Kirigami.ApplicationWindow {
         SubscriptionsPage {}
     }
 
+    Component {
+        id: aboutPage
+        Kirigami.AboutPage {
+            aboutData: AboutData
+        }
+    }
+
     // should be in CAPUtil in C++, but that would require KF5::ConfigWidgets for the color scheme...
     function severityTextColor(severity)
     {
@@ -41,6 +48,15 @@ Kirigami.ApplicationWindow {
                 text: i18n("Areas of interest...")
                 iconName: "map-globe"
                 onTriggered: applicationWindow().pageStack.push(subscriptionsPage)
+            },
+            Kirigami.Action {
+                text: i18n("About")
+                iconName: "help-about"
+                onTriggered: {
+                    if (applicationWindow().pageStack.layers.depth < 2) {
+                        applicationWindow().pageStack.layers.push(aboutPage)
+                    }
+                }
             }
         ]
     }

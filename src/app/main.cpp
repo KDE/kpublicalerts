@@ -27,6 +27,8 @@
 #include <KWeatherCore/AlertEntry>
 #include <KWeatherCore/AlertInfo>
 
+#include <KAboutData>
+
 #ifndef Q_OS_ANDROID
 #include <KDBusService>
 #endif
@@ -47,6 +49,8 @@ int main(int argc, char **argv)
     QCoreApplication::setApplicationName(QStringLiteral("publicalerts"));
     QCoreApplication::setApplicationVersion(QStringLiteral(KPUBLICALERTS_VERSION_STRING));
     QGuiApplication::setApplicationDisplayName(i18n("Public Alerts"));
+    QGuiApplication::setDesktopFileName(QStringLiteral("org.kde.publicalerts"));
+    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("weather-storm")));
 
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
@@ -63,6 +67,12 @@ int main(int argc, char **argv)
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
     }
 #endif
+
+    static auto aboutData = KAboutData::applicationData();
+    aboutData.setLicense(KAboutLicense::LGPL_V2, KAboutLicense::OrLaterVersions);
+    aboutData.setShortDescription(i18n("Weather and emergency alerts"));
+    aboutData.setCopyrightStatement(i18n("Copyright © 2022 The KDE Community"));
+    KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption(QStringLiteral("dbus-activated"), QStringLiteral("indicated D-Bus activation (internal)")));
@@ -93,6 +103,9 @@ int main(int argc, char **argv)
     qmlRegisterType<KPublicAlerts::AreaModel>("org.kde.publicalerts", 1, 0, "AreaModel");
     qmlRegisterSingletonType("org.kde.publicalerts", 1, 0, "CAPUtil", [](QQmlEngine *engine, QJSEngine*) -> QJSValue {
         return engine->toScriptValue(CAPUtil());
+    });
+    qmlRegisterSingletonType("org.kde.publicalerts", 1, 0, "AboutData", [](QQmlEngine *engine, QJSEngine*) -> QJSValue {
+        return engine->toScriptValue(aboutData);
     });
 
     QNetworkAccessManager nam;
