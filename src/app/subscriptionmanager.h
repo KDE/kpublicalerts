@@ -22,6 +22,7 @@ namespace KPublicAlerts {
 class SubscriptionManager : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(int count READ rowCount NOTIFY countChanged)
 public:
     explicit SubscriptionManager(QObject *parent = nullptr);
     ~SubscriptionManager();
@@ -43,6 +44,7 @@ public:
 Q_SIGNALS:
     void alertAdded(const QString &id);
     void alertRemoved(const QString &id);
+    void countChanged();
 
 private:
     void doSubscribeAll();

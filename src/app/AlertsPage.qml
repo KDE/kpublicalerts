@@ -47,7 +47,13 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             visible: listView.count == 0
-            text: "No alerts"
+            text: i18n("No alerts")
+            helpfulAction: Kirigami.Action {
+                icon.name: "list-add"
+                text: i18n("Add area of interest...")
+                onTriggered: applicationWindow().pageStack.push(subscriptionsPage)
+                enabled: SubscriptionManager.count == 0
+            }
         }
     }
 

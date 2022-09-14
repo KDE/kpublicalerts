@@ -47,6 +47,9 @@ SubscriptionManager::SubscriptionManager(QObject *parent)
     std::sort(m_subscriptions.begin(), m_subscriptions.end());
 
     m_connector.registerClient(i18n("Weather and emergency alert notifications.")); // TODO technically we only needs this when there is at least one subscription
+
+    connect(this, &QAbstractItemModel::rowsInserted, this, &SubscriptionManager::countChanged);
+    connect(this, &QAbstractItemModel::rowsRemoved, this, &SubscriptionManager::countChanged);
 }
 
 SubscriptionManager::~SubscriptionManager() = default;
