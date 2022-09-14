@@ -160,9 +160,10 @@ Kirigami.ScrollablePage {
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Web:")
                 Layout.fillWidth: true
-                text: alertInfo.web // TODO link
+                text: alertInfo.web
                 visible: alertInfo.web
                 wrapMode: Text.Wrap
+                onLinkActivated: Qt.openUrlExternally(link)
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Contact:")
