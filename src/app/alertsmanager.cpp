@@ -190,6 +190,10 @@ void AlertsManager::fetchAll(KPublicAlerts::SubscriptionManager *subscriptions)
             }
         });
     }
+
+    if (subscriptions->rowCount() == 0) {
+        purgeAlerts();
+    }
 }
 
 void AlertsManager::purgeAlerts()
