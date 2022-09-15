@@ -5,11 +5,14 @@
 
 #include "areamodel.h"
 #include "geomath.h"
+#include "polygonsimplifier.h"
 
 #include <KWeatherCore/CAPArea>
 
 #include <QDebug>
 #include <QGeoCoordinate>
+
+#include <span>
 
 using namespace KPublicAlerts;
 
@@ -60,9 +63,22 @@ QVariant AreaModel::data(const QModelIndex &index, int role) const
             QList<QList<QGeoCoordinate>> polys;
             polys.reserve(polygons.size());
             for (const auto &p : polygons) {
+                qDebug() << p.size();
+                KWeatherCore::CAPPolygon simplifiedPoly;
+                std::span<const KWeatherCore::CAPCoordinate> polyView;
+                if (p.size() > 500) {
+                    simplifiedPoly = PolygonSimplifier::douglasPeucker(p, 500);
+                    polyView = std::span<const KWeatherCore::CAPCoordinate>(simplifiedPoly.begin(), simplifiedPoly.end());
+                } else {
+                    polyView = std::span<const KWeatherCore::CAPCoordinate>(p.begin(), p.end());
+                }
+
                 QList<QGeoCoordinate> coords;
-                coords.reserve(p.size());
-                std::transform(p.begin(), p.end(), std::back_inserter(coords), [](const auto &c) { return QGeoCoordinate(c.first, c.second); });
+                coords.reserve(polyView.size());
+                std::transform(polyView.begin(), polyView.end(), std::back_inserter(coords), [](const auto &c) {
+                    return QGeoCoordinate(c.latitude, c.longitude);
+
+                });
                 polys.push_back(coords);
             }
             return QVariant::fromValue(polys);
@@ -90,31 +106,17 @@ QHash<int, QByteArray> AreaModel::roleNames() const
 
 QRectF AreaModel::boundingBox() const
 {
-    float minlon = 180.0f;
-    float maxlon = -180.0f;
-    float minlat = 90.0f;
-    float maxlat = -90.0f;
-
+    QRectF bbox;
     for (const auto &area : m_alert.areas()) {
         for (const auto &poly : area.polygons()) {
-            for (const auto &p : poly) {
-                minlon = std::min(p.second, minlon);
-                maxlon = std::max(p.second, maxlon);
-                minlat = std::min(p.first, minlat);
-                maxlat = std::max(p.first, maxlat);
-            }
+            bbox |= GeoMath::boundingBoxForPolygon(poly);
         }
 
         for (const auto &circle : area.circles()) {
-            const auto bbox = GeoMath::boundingBoxForCircle(circle.latitude, circle.longitude, circle.radius);
-            minlon = std::min<float>(minlon, bbox.left());
-            maxlon = std::max<float>(maxlon, bbox.right());
-            minlat = std::min<float>(minlat, bbox.bottom());
-            maxlat = std::min<float>(maxlat, bbox.top());
+            bbox |= GeoMath::boundingBoxForCircle(circle.latitude, circle.longitude, circle.radius);
         }
     }
-
-    return QRectF(QPointF(minlon, minlat), QPointF(maxlon, maxlat));
+    return bbox;
 }
 
 QPointF AreaModel::center() const

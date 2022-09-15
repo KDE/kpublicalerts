@@ -10,6 +10,7 @@ target_sources(publicalerts PRIVATE
     caputil.cpp
     geomath.cpp
     main.cpp
+    polygonsimplifier.cpp
     qml.qrc
     restapi.cpp
     subscription.cpp

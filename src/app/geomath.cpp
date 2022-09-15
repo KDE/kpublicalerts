@@ -5,6 +5,7 @@
 
 #include "geomath.h"
 
+#include <QLineF>
 #include <QRectF>
 
 using namespace KPublicAlerts;
@@ -19,6 +20,38 @@ double GeoMath::distance(double lat1, double lon1, double lat2, double lon2)
 
     const auto a = std::pow(std::sin(d_lat / 2.0), 2) + std::cos(degToRad(lat1)) * std::cos(degToRad(lat2)) * std::pow(std::sin(d_lon / 2.0f), 2);
     return 2.0 * earthRadius * std::atan2(std::sqrt(a), std::sqrt(1.0 - a));
+}
+
+double GeoMath::distance(KWeatherCore::CAPCoordinate l1, KWeatherCore::CAPCoordinate l2, KWeatherCore::CAPCoordinate p)
+{
+    QLineF line(QPointF(l1.longitude, l1.latitude), QPointF(l2.longitude, l2.latitude));
+    const auto len = line.length();
+    if (len == 0.0) {
+        return distance(l1.latitude, l1.longitude, p.latitude, p.longitude);
+    }
+
+    // project p on a line extending the line segment given by @p l1 and @p l2, and clamp to that to the segment
+    QPointF pf(p.longitude, p.latitude);
+    const auto r = qBound(0.0, QPointF::dotProduct(pf - line.p1(), line.p2() - line.p1()) / (len*len), 1.0);
+    const auto intersection = line.p1() + r * (line.p2() - line.p1());
+    return distance(intersection.y(), intersection.x(), p.latitude, p.longitude);
+}
+
+QRectF GeoMath::boundingBoxForPolygon(const KWeatherCore::CAPPolygon& poly)
+{
+    float minlon = 180.0f;
+    float maxlon = -180.0f;
+    float minlat = 90.0f;
+    float maxlat = -90.0f;
+
+    for (const auto &p : poly) {
+        minlon = std::min(p.longitude, minlon);
+        maxlon = std::max(p.longitude, maxlon);
+        minlat = std::min(p.latitude, minlat);
+        maxlat = std::max(p.latitude, maxlat);
+    }
+
+    return QRectF(QPointF(minlon, minlat), QPointF(maxlon, maxlat));
 }
 
 QRectF GeoMath::boundingBoxForCircle(double lat, double lon, double radius)
