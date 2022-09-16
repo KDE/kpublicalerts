@@ -32,6 +32,7 @@ feedReaders = [
     CAPFeedReader('ch-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-switzerland'),
     CAPFeedReader('ci-sodexam', 'https://cap-sources.s3.amazonaws.com/ci-sodexam-en/rss.xml'),
     CAPFeedReader('cm-meteo', 'https://cap-sources.s3.amazonaws.com/cm-meteo-en/rss.xml'),
+    #CAPFeedReader('cn-cma', 'http://alert-feed.worldweather.org/cn-cma-xx/rss.xml'), # TODO needs boundary polygons for "CPEAS Geographic Code"
     CAPFeedReader('cr-imn', 'https://cap-sources.s3.amazonaws.com/cr-imn-en/rss.xml'),
     CAPFeedReader('cw-meteo', 'https://cap-sources.s3.amazonaws.com/cw-meteo-en/rss.xml'),
     CAPFeedReader('cy-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-cyprus'),
@@ -54,6 +55,7 @@ feedReaders = [
     CAPFeedReader('gr-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-greece'),
     CAPFeedReader('gw-inm', 'https://cap-sources.s3.amazonaws.com/gw-inm-fr/rss.xml'),
     CAPFeedReader('gy-hydromet', 'https://hydromet.gov.gy/cap/en/alerts/rss.xml'),
+    CAPFeedReader('hk-weather', 'https://alerts.weather.gov.hk/V1/cap_atom.xml'),
     CAPFeedReader('hr-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-croatia'),
     CAPFeedReader('hu-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-hungary'),
     CAPFeedReader('id-bmkg', 'https://signature.bmkg.go.id/alert/public/en/rss.xml'),
@@ -78,6 +80,7 @@ feedReaders = [
     CAPFeedReader('ml-meteo', 'https://cap-sources.s3.amazonaws.com/ml-meteo-en/rss.xml'),
     #CAPFeedReader('mm-dmh', 'http://www.dmhwarning.gov.mm/eden/cap/public.rss'), # TODO server not responding
     CAPFeedReader('mn-namem', 'https://cap-sources.s3.amazonaws.com/mn-namem-en/rss.xml'),
+    CAPFeedReader('mo-smg', 'https://rss.smg.gov.mo/cap_rss.xml'),
     CAPFeedReader('mt-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-malta'),
     CAPFeedReader('mu-mms', 'https://cap-sources.s3.amazonaws.com/mu-mms-en/rss.xml'),
     CAPFeedReader('mw-met', 'https://cap-sources.s3.amazonaws.com/mw-met-en/rss.xml'),
@@ -87,6 +90,7 @@ feedReaders = [
     CAPFeedReader('no-met', 'https://alert.met.no/alerts'),
     CAPFeedReader('nz-metservice', 'https://alerts.metservice.com/cap/rss'),
     CAPFeedReader('om-met', 'https://cap-sources.s3.amazonaws.com/om-met-en/rss.xml'),
+    #CAPFeedReader('pg-pngmet', 'https://smartalert.pngmet.gov.pg/capfeed.php'), # TODO SSL certificate error
     CAPFeedReader('ph-pagasa', 'https://publicalert.pagasa.dost.gov.ph/feeds/'),
     CAPFeedReader('pl-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-poland'),
     CAPFeedReader('pt-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-portugal'),
@@ -95,6 +99,7 @@ feedReaders = [
     CAPFeedReader('rs-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-serbia'),
     CAPFeedReader('ru-meteoinfo', 'https://meteoinfo.ru/hmc-output/cap/cap-feed/en/atom.xml'),
     #CAPFeedReader('sa-ncm', 'https://ncm.gov.sa/Ar/alert/Pages/feedalerts.aspx'), # TODO no polygons or geo codes?
+    #CAPFeedReader('sb-met', 'https://smartalert.met.gov.sb/capfeed.php'), # TODO server no responding
     CAPFeedReader('sc-meteo', 'https://cap-sources.s3.amazonaws.com/sc-meteo-en/rss.xml'),
     CAPFeedReader('se-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-sweden'),
     CAPFeedReader('si-meteoalarm', 'https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-slovenia'),
@@ -104,7 +109,9 @@ feedReaders = [
     CAPFeedReader('sz-met', 'https://cap-sources.s3.amazonaws.com/sz-met-en/rss.xml'),
     CAPFeedReader('tg-dgmn', 'https://cap-sources.s3.amazonaws.com/tg-dgmn-en/rss.xml'),
     #CAPFeedReader('th-tmd', 'https://www.tmd.go.th/feeds/CAPfeeds.php'), # TODO needs ISO-3166-2 boundary polygons
+    CAPFeedReader('tl-dnmg', 'https://cap-sources.s3.amazonaws.com/tl-dnmg-en/rss.xml'),
     CAPFeedReader('tn-meteo', 'https://cap-sources.s3.amazonaws.com/tn-meteo-en/rss.xml'),
+    #CAPFeedReader('to-met', 'https://alerts.met.gov.to/capfeed.php'), # TODO SSL certificate error
     CAPFeedReader('tt-ttms', 'https://metproducts.gov.tt/ttms/public/api/feed?type=rss'),
     CAPFeedReader('tz-tma', 'https://cap-sources.s3.amazonaws.com/tz-tma-en/rss.xml'),
     CAPFeedReader('ug-unma', 'https://cap-sources.s3.amazonaws.com/ug-unma-en/rss.xml'),
@@ -113,6 +120,8 @@ feedReaders = [
     CAPFeedReader('us-ntwc', 'https://www.tsunami.gov/events/xml/PAAQAtom.xml'),
     CAPFeedReader('us-ptwc', 'https://www.tsunami.gov/events/xml/PHEBAtom.xml'),
     CAPFeedReader('vg-bviddm', 'https://cap-sources.s3.amazonaws.com/uk-bviddm-en/rss.xml'),
+    CAPFeedReader('vu-met', 'https://smartalert.vmgd.gov.vu/capfeed.php'),
+    #CAPFeedReader('ws-samet', 'http://alert.samet.gov.ws/capfeed.php'), # TODO server not respondings
     CAPFeedReader('za-weathersa', 'https://caps.weathersa.co.za/Home/RssFeed'),
     CAPFeedReader('zw-msd', 'https://cap-sources.s3.amazonaws.com/zw-msd-en/rss.xml'),
 ]
