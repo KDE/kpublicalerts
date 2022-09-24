@@ -70,9 +70,9 @@ QVariant AreaModel::data(const QModelIndex &index, int role) const
                     const auto bbox = GeoMath::boundingBoxForPolygon(p);
                     const auto d = GeoMath::distance(bbox.topLeft().y(), bbox.topLeft().x(), bbox.bottomRight().y(), bbox.bottomRight().x());
                     simplifiedPoly = PolygonSimplifier::douglasPeucker(p, std::max(500.0, d * 0.005));
-                    polyView = std::span<const KWeatherCore::CAPCoordinate>(simplifiedPoly.begin(), simplifiedPoly.end());
+                    polyView = std::span<const KWeatherCore::CAPCoordinate>(simplifiedPoly.data(), simplifiedPoly.size());
                 } else {
-                    polyView = std::span<const KWeatherCore::CAPCoordinate>(p.begin(), p.end());
+                    polyView = std::span<const KWeatherCore::CAPCoordinate>(p.data(), p.size());
                 }
 
                 QList<QGeoCoordinate> coords;
