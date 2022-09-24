@@ -31,10 +31,10 @@ Kirigami.ApplicationWindow {
     function severityTextColor(severity)
     {
         switch(severity) {
-            case AlertInfo.Extreme: return Kirigami.Theme.negativeTextColor;
-            case AlertInfo.Severe: return Kirigami.Theme.neutralTextColor;
-            case AlertInfo.Moderate: return CAPUtil.colorMix(Kirigami.Theme.neutralTextColor, Kirigami.Theme.positiveTextColor, 0.35);
-            case AlertInfo.Minor: return Kirigami.Theme.positiveTextColor;
+            case CAPAlertInfo.Extreme: return Kirigami.Theme.negativeTextColor;
+            case CAPAlertInfo.Severe: return Kirigami.Theme.neutralTextColor;
+            case CAPAlertInfo.Moderate: return CAPUtil.colorMix(Kirigami.Theme.neutralTextColor, Kirigami.Theme.positiveTextColor, 0.35);
+            case CAPAlertInfo.Minor: return Kirigami.Theme.positiveTextColor;
         }
         return Kirigami.Theme.textColor;
     }

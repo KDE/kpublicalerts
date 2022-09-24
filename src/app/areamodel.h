@@ -6,7 +6,7 @@
 #ifndef KPUBLICALERTS_AREAMODEL_H
 #define KPUBLICALERTS_AREAMODEL_H
 
-#include <KWeatherCore/AlertInfo>
+#include <KWeatherCore/CAPAlertInfo>
 
 #include <QAbstractListModel>
 #include <QRectF>
@@ -17,7 +17,7 @@ namespace KPublicAlerts {
 class AreaModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(KWeatherCore::AlertInfo alertInfo READ alertInfo WRITE setAlertInfo NOTIFY alertInfoChanged)
+    Q_PROPERTY(KWeatherCore::CAPAlertInfo alertInfo READ alertInfo WRITE setAlertInfo NOTIFY alertInfoChanged)
 
 public:
     explicit AreaModel(QObject *parent = nullptr);
@@ -28,8 +28,8 @@ public:
         CirclesRole,
     };
 
-    KWeatherCore::AlertInfo alertInfo() const;
-    void setAlertInfo(const KWeatherCore::AlertInfo &info);
+    KWeatherCore::CAPAlertInfo alertInfo() const;
+    void setAlertInfo(const KWeatherCore::CAPAlertInfo &info);
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
@@ -42,7 +42,7 @@ Q_SIGNALS:
     void alertInfoChanged();
 
 private:
-    KWeatherCore::AlertInfo m_alert;
+    KWeatherCore::CAPAlertInfo m_alert;
 };
 
 }

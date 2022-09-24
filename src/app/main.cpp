@@ -24,8 +24,8 @@
 #include <QApplication>
 #endif
 
-#include <KWeatherCore/AlertEntry>
-#include <KWeatherCore/AlertInfo>
+#include <KWeatherCore/CAPAlertMessage>
+#include <KWeatherCore/CAPAlertInfo>
 
 #include <KAboutData>
 
@@ -75,9 +75,11 @@ int main(int argc, char **argv)
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
-    parser.addOption(QCommandLineOption(QStringLiteral("dbus-activated"), QStringLiteral("indicated D-Bus activation (internal)")));
+    const auto serviceLaunchOpt = QCommandLineOption(QStringLiteral("dbus-activated"), QStringLiteral("indicated D-Bus activation (internal)"));
+    parser.addOption(serviceLaunchOpt);
     parser.addVersionOption();
     parser.process(app);
+    qDebug() << parser.isSet(serviceLaunchOpt);
 
 #ifndef Q_OS_ANDROID
     KDBusService service(KDBusService::Unique);
@@ -86,17 +88,17 @@ int main(int argc, char **argv)
     QQmlApplicationEngine engine;
 
     // TODO move to KWeatherCore itself
-    qRegisterMetaType<KWeatherCore::AlertEntry>();
-    qRegisterMetaType<KWeatherCore::AlertEntry::Status>();
-    qRegisterMetaType<KWeatherCore::AlertEntry::MsgType>();
-    qRegisterMetaType<KWeatherCore::AlertInfo>();
-    qRegisterMetaType<KWeatherCore::AlertInfo::Categories>();
-    qRegisterMetaType<KWeatherCore::AlertInfo::ResponseTypes>();
-    qRegisterMetaType<KWeatherCore::AlertInfo::Severity>();
-    qRegisterMetaType<KWeatherCore::AlertInfo::Urgency>();
-    qRegisterMetaType<KWeatherCore::AlertInfo::Certainty>();
-    qmlRegisterUncreatableType<KWeatherCore::AlertInfo>("org.kde.weathercore", 1, 0, "AlertInfo", {});
-    qmlRegisterUncreatableType<KWeatherCore::AlertEntry>("org.kde.weathercore", 1, 0, "AlertEntry", {});
+    qRegisterMetaType<KWeatherCore::CAPAlertMessage>();
+    qRegisterMetaType<KWeatherCore::CAPAlertMessage::Status>();
+    qRegisterMetaType<KWeatherCore::CAPAlertMessage::MessageType>();
+    qRegisterMetaType<KWeatherCore::CAPAlertInfo>();
+    qRegisterMetaType<KWeatherCore::CAPAlertInfo::Categories>();
+    qRegisterMetaType<KWeatherCore::CAPAlertInfo::ResponseTypes>();
+    qRegisterMetaType<KWeatherCore::CAPAlertInfo::Severity>();
+    qRegisterMetaType<KWeatherCore::CAPAlertInfo::Urgency>();
+    qRegisterMetaType<KWeatherCore::CAPAlertInfo::Certainty>();
+    qmlRegisterUncreatableType<KWeatherCore::CAPAlertInfo>("org.kde.weathercore", 1, 0, "CAPAlertInfo", {});
+    qmlRegisterUncreatableType<KWeatherCore::CAPAlertMessage>("org.kde.weathercore", 1, 0, "CAPAlertMessage", {});
 
     qRegisterMetaType<KPublicAlerts::AlertElement>();
     qmlRegisterType<KPublicAlerts::AlertsSortProxyModel>("org.kde.publicalerts", 1, 0, "AlertsSortProxyModel");

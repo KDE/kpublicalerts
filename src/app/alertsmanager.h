@@ -6,8 +6,8 @@
 #ifndef KPUBLICALERTS_ALERTSMANAGER_H
 #define KPUBLICALERTS_ALERTSMANAGER_H
 
-#include <KWeatherCore/AlertEntry>
-#include <KWeatherCore/AlertInfo>
+#include <KWeatherCore/CAPAlertMessage>
+#include <KWeatherCore/CAPAlertInfo>
 
 #include <QAbstractListModel>
 
@@ -19,12 +19,12 @@ class SubscriptionManager;
 
 class AlertElement {
     Q_GADGET
-    Q_PROPERTY(KWeatherCore::AlertEntry alert READ alert)
-    Q_PROPERTY(KWeatherCore::AlertInfo info READ info)
+    Q_PROPERTY(KWeatherCore::CAPAlertMessage alert READ alert)
+    Q_PROPERTY(KWeatherCore::CAPAlertInfo info READ info)
 
 public:
     QString id;
-    KWeatherCore::AlertEntry alertData;
+    KWeatherCore::CAPAlertMessage alertData;
 
     bool operator<(const AlertElement &other) const;
     bool operator<(const QString &otherId) const;
@@ -32,8 +32,8 @@ public:
     bool isValid() const;
     bool isExpired() const;
 
-    KWeatherCore::AlertEntry alert() const;
-    KWeatherCore::AlertInfo info() const;
+    KWeatherCore::CAPAlertMessage alert() const;
+    KWeatherCore::CAPAlertInfo info() const;
 };
 
 class AlertsManager : public QAbstractListModel

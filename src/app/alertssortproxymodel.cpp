@@ -20,12 +20,12 @@ AlertsSortProxyModel::~AlertsSortProxyModel() = default;
 
 bool AlertsSortProxyModel::lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const
 {
-    const auto lhsInfo = source_left.data(AlertsManager::AlertInfoRole).value<KWeatherCore::AlertInfo>();
-    const auto rhsInfo = source_right.data(AlertsManager::AlertInfoRole).value<KWeatherCore::AlertInfo>();
+    const auto lhsInfo = source_left.data(AlertsManager::AlertInfoRole).value<KWeatherCore::CAPAlertInfo>();
+    const auto rhsInfo = source_right.data(AlertsManager::AlertInfoRole).value<KWeatherCore::CAPAlertInfo>();
 
     if (lhsInfo.severity() == rhsInfo.severity()) {
-        const auto lhsAlert = source_left.data(AlertsManager::AlertRole).value<KWeatherCore::AlertEntry>();
-        const auto rhsAlert = source_right.data(AlertsManager::AlertRole).value<KWeatherCore::AlertEntry>();
+        const auto lhsAlert = source_left.data(AlertsManager::AlertRole).value<KWeatherCore::CAPAlertMessage>();
+        const auto rhsAlert = source_right.data(AlertsManager::AlertRole).value<KWeatherCore::CAPAlertMessage>();
         if (lhsAlert.sentTime() == rhsAlert.sentTime()) {
             return QSortFilterProxyModel::lessThan(source_left, source_right);
         }

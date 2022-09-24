@@ -8,7 +8,6 @@
 #include "restapi.h"
 #include "subscriptionmanager.h"
 
-#include <KWeatherCore/AlertInfo>
 #include <KWeatherCore/CAPParser>
 
 #include <KLocalizedString>
@@ -38,32 +37,32 @@ bool AlertElement::operator<(const QString &otherId) const
 bool AlertElement::isValid() const
 {
     // TODO should be in KWC instead?
-    return !alertData.infoVec().empty();
+    return !alertData.alertInfos().empty();
 }
 
 bool AlertElement::isExpired() const
 {
     // TODO check all alert info elements
-    return alertData.infoVec().at(0).expireTime().isValid() && alertData.infoVec().at(0).expireTime() < QDateTime::currentDateTime();
+    return alertData.alertInfos().at(0).expireTime().isValid() && alertData.alertInfos().at(0).expireTime() < QDateTime::currentDateTime();
 }
 
-KWeatherCore::AlertEntry AlertElement::alert() const
+KWeatherCore::CAPAlertMessage AlertElement::alert() const
 {
     return alertData;
 }
 
-KWeatherCore::AlertInfo AlertElement::info() const
+KWeatherCore::CAPAlertInfo AlertElement::info() const
 {
     // TODO also handle alert message that contain multiple infos for the same language
     for (const auto &uiLang : QLocale().uiLanguages()) {
         // exact match
-        for (const auto &info : alertData.infoVec()) {
+        for (const auto &info : alertData.alertInfos()) {
             if (info.language().compare(uiLang, Qt::CaseInsensitive) == 0) {
                 return info;
             }
         }
         // language-only match
-        for (const auto &info : alertData.infoVec()) {
+        for (const auto &info : alertData.alertInfos()) {
             const auto lang = info.language();
             QStringView l1(lang);
             if (auto idx = l1.indexOf(QLatin1Char('-')); idx > 0) {
@@ -79,7 +78,7 @@ KWeatherCore::AlertInfo AlertElement::info() const
         }
     }
 
-    return alertData.infoVec()[0];
+    return alertData.alertInfos()[0];
 }
 
 static QString basePath()
@@ -279,18 +278,18 @@ void AlertsManager::addAlert(AlertElement &&e)
 }
 
 struct {
-    KWeatherCore::AlertInfo::Severity severity;
+    KWeatherCore::CAPAlertInfo::Severity severity;
     const char *eventName;
 } static constexpr const notification_map[] = {
-    { KWeatherCore::AlertInfo::Severity::Extreme, "extreme-alert" },
-    { KWeatherCore::AlertInfo::Severity::Severe, "severe-alert" },
-    { KWeatherCore::AlertInfo::Severity::Moderate, "moderate-alert" },
-    { KWeatherCore::AlertInfo::Severity::Minor, "minor-alert" },
+    { KWeatherCore::CAPAlertInfo::Severity::Extreme, "extreme-alert" },
+    { KWeatherCore::CAPAlertInfo::Severity::Severe, "severe-alert" },
+    { KWeatherCore::CAPAlertInfo::Severity::Moderate, "moderate-alert" },
+    { KWeatherCore::CAPAlertInfo::Severity::Minor, "minor-alert" },
 };
 
 void AlertsManager::showNotification(const AlertElement &e)
 {
-    if (e.alertData.msgType() != KWeatherCore::AlertEntry::MsgType::Alert || e.alertData.status() != KWeatherCore::AlertEntry::Status::Actual) {
+    if (e.alertData.messageType() != KWeatherCore::CAPAlertMessage::MessageType::Alert || e.alertData.status() != KWeatherCore::CAPAlertMessage::Status::Actual) {
         return;
     }
 
@@ -301,7 +300,7 @@ void AlertsManager::showNotification(const AlertElement &e)
             n->setTitle(info.event());
             n->setText(info.description());
             n->setIconName(CAPUtil::categoriesIconName(info.categories()));
-            if (info.severity() == KWeatherCore::AlertInfo::Severity::Extreme) {
+            if (info.severity() == KWeatherCore::CAPAlertInfo::Severity::Extreme) {
                 n->setFlags(KNotification::Persistent);
             }
             n->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));

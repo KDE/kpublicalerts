@@ -55,7 +55,7 @@ Kirigami.ScrollablePage {
 
                     QtLocation.MapPolygon {
                         color: {
-                            if (alert.msgType == AlertEntry.Cancel)
+                            if (alert.msgType == CAPAlertMessage.Cancel)
                                 return Kirigami.Theme.disabledTextColor;
                             applicationWindow().severityTextColor(alertInfo.severity)
                         }
@@ -73,7 +73,7 @@ Kirigami.ScrollablePage {
 
                     QtLocation.MapCircle {
                         color: {
-                            if (alert.msgType == AlertEntry.Cancel)
+                            if (alert.msgType == CAPAlertMessage.Cancel)
                                 return Kirigami.Theme.disabledTextColor;
                             applicationWindow().severityTextColor(alertInfo.severity)
                         }
@@ -108,8 +108,8 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.label: i18n("Status:")
                 text: {
                     switch(alert.status) {
-                        case AlertEntry.Actual: return "Actual"
-                        case AlertEntry.Exercise: return "Exercise"
+                        case CAPAlertMessage.Actual: return "Actual"
+                        case CAPAlertMessage.Exercise: return "Exercise"
                     }
                     return alert.status
                 }
@@ -118,11 +118,11 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.label: i18n("Message type:")
                 text: {
                     switch(alert.msgType) {
-                        case AlertEntry.Alert: return "Alert"
-                        case AlertEntry.Update: return "Update"
-                        case AlertEntry.Cancel: return "Cancel"
-                        case AlertEntry.Ack: return "Ack"
-                        case AlertEntry.Error: return "Error"
+                        case CAPAlertMessage.Alert: return "Alert"
+                        case CAPAlertMessage.Update: return "Update"
+                        case CAPAlertMessage.Cancel: return "Cancel"
+                        case CAPAlertMessage.Ack: return "Ack"
+                        case CAPAlertMessage.Error: return "Error"
                     }
                     return alert.msgType
                 }
@@ -131,29 +131,29 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.label: i18n("Categories:")
                 Layout.fillWidth: true
                 text: CAPUtil.categoriesDisplayStrings(alertInfo.categories).join('\n')
-                visible: alertInfo.categories != AlertInfo.Unknown
+                visible: alertInfo.categories != CAPAlertInfo.Unknown
                 wrapMode: Text.WordWrap
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Urgency:")
                 text: CAPUtil.urgencyDisplayString(alertInfo.urgency)
-                visible: alertInfo.urgency != AlertInfo.UnknownUrgency
+                visible: alertInfo.urgency != CAPAlertInfo.UnknownUrgency
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Severity:")
                 text: CAPUtil.severityDisplayString(alertInfo.severity)
-                visible: alertInfo.severity != AlertInfo.UnknownSeverity
+                visible: alertInfo.severity != CAPAlertInfo.UnknownSeverity
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Certainty:")
                 text: CAPUtil.certaintyDisplayString(alertInfo.certainty)
-                visible: alertInfo.certainty != AlertInfo.UnknownCertainty
+                visible: alertInfo.certainty != CAPAlertInfo.UnknownCertainty
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Recommended response:")
                 Layout.fillWidth: true
                 text: CAPUtil.responseTypesStrings(alertInfo.responseTypes).join('\n')
-                visible: alertInfo.responseTypes != AlertInfo.UnknownResponseType
+                visible: alertInfo.responseTypes != CAPAlertInfo.UnknownResponseType
                 wrapMode: Text.WordWrap
             }
 

@@ -30,12 +30,12 @@ Kirigami.ScrollablePage {
             text: model.alertInfo.headline ? model.alertInfo.headline : model.alertInfo.event
             subtitle: model.alertInfo.description
             icon: {
-                if (model.alert.msgType == AlertEntry.Cancel)
+                if (model.alert.msgType == CAPAlertMessage.Cancel)
                     return "dialog-ok";
                 return CAPUtil.categoriesIconName(model.alertInfo.categories);
             }
             iconColor: {
-                if (model.alert.msgType == AlertEntry.Cancel)
+                if (model.alert.msgType == CAPAlertMessage.Cancel)
                     return Kirigami.Theme.disabledTextColor;
                 return applicationWindow().severityTextColor(model.alertInfo.severity);
             }

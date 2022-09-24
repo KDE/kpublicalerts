@@ -23,12 +23,12 @@ AreaModel::AreaModel(QObject *parent)
 
 AreaModel::~AreaModel() = default;
 
-KWeatherCore::AlertInfo AreaModel::alertInfo() const
+KWeatherCore::CAPAlertInfo AreaModel::alertInfo() const
 {
     return m_alert;
 }
 
-void AreaModel::setAlertInfo(const KWeatherCore::AlertInfo &info)
+void AreaModel::setAlertInfo(const KWeatherCore::CAPAlertInfo &info)
 {
     beginResetModel();
     m_alert = info;
