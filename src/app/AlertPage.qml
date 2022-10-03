@@ -117,11 +117,11 @@ Kirigami.ScrollablePage {
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Message type:")
                 text: {
-                    switch(alert.msgType) {
+                    switch(alert.messageType) {
                         case CAPAlertMessage.Alert: return "Alert"
                         case CAPAlertMessage.Update: return "Update"
                         case CAPAlertMessage.Cancel: return "Cancel"
-                        case CAPAlertMessage.Ack: return "Ack"
+                        case CAPAlertMessage.Acknowledge: return "Acknowledge"
                         case CAPAlertMessage.Error: return "Error"
                     }
                     return alert.msgType
