@@ -35,7 +35,7 @@ class AbstractFeedReader:
             for geocode in area.findall('{urn:oasis:names:tc:emergency:cap:1.2}geocode'):
                 codeName = geocode.find('{urn:oasis:names:tc:emergency:cap:1.2}valueName').text
                 codeValue = geocode.find('{urn:oasis:names:tc:emergency:cap:1.2}value').text
-                if not codeValue:
+                if not codeName or not codeValue:
                     continue
                 codeFile = os.path.join('data', codeName, f"{codeValue}.geojson")
                 if os.path.isfile(codeFile):
