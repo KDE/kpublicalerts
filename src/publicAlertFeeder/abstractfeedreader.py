@@ -131,7 +131,10 @@ class AbstractFeedReader:
         # find expire time
         expireTime = None
         for expireTimeNode in capTree.findall('{urn:oasis:names:tc:emergency:cap:1.2}info/{urn:oasis:names:tc:emergency:cap:1.2}expires'):
-            dt = datetime.datetime.fromisoformat(expireTimeNode.text)
+            try:
+                dt = datetime.datetime.fromisoformat(expireTimeNode.text)
+            except ValueError:
+                continue
             if expireTime == None or dt > expireTime:
                 expireTime = dt
         if expireTime != None and expireTime < datetime.datetime.now(datetime.timezone.utc):
