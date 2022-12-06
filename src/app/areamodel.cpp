@@ -138,3 +138,11 @@ float AreaModel::zoomLevel(float width, float height) const
 
     return z >= 1.0 && z <= 22.0 ? z : 5.0;
 }
+
+QString AreaModel::allAreaDescriptions() const
+{
+    QStringList l;
+    l.reserve(m_alert.areas().size());
+    std::transform(m_alert.areas().begin(), m_alert.areas().end(), std::back_inserter(l), [](const auto &area) { return area.description(); });
+    return l.join(QLatin1Char('\n'));
+}

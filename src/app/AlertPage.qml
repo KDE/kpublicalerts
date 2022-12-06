@@ -231,13 +231,10 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.label: i18n("Area")
                 Kirigami.Separator {}
             }
-            Repeater {
-                model: areaModel
-                QQC2.Label {
-                    Layout.fillWidth: true
-                    text:model.display
-                    wrapMode: Text.WordWrap
-                }
+            QQC2.Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+                text: areaModel.allAreaDescriptions
             }
         }
     }
