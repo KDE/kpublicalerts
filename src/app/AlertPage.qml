@@ -55,7 +55,7 @@ Kirigami.ScrollablePage {
 
                     QtLocation.MapPolygon {
                         color: {
-                            if (alert.msgType == CAPAlertMessage.Cancel)
+                            if (alert.messageType == CAPAlertMessage.Cancel)
                                 return Kirigami.Theme.disabledTextColor;
                             applicationWindow().severityTextColor(alertInfo.severity)
                         }
@@ -73,7 +73,7 @@ Kirigami.ScrollablePage {
 
                     QtLocation.MapCircle {
                         color: {
-                            if (alert.msgType == CAPAlertMessage.Cancel)
+                            if (alert.messageType == CAPAlertMessage.Cancel)
                                 return Kirigami.Theme.disabledTextColor;
                             applicationWindow().severityTextColor(alertInfo.severity)
                         }
@@ -124,7 +124,7 @@ Kirigami.ScrollablePage {
                         case CAPAlertMessage.Acknowledge: return "Acknowledge"
                         case CAPAlertMessage.Error: return "Error"
                     }
-                    return alert.msgType
+                    return alert.messageType
                 }
             }
             QQC2.Label {
