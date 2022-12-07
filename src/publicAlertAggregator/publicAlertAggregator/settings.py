@@ -127,4 +127,4 @@ MEDIA_ROOT = os.getenv('DJANGO_MEDIA_ROOT', BASE_DIR.joinpath('cap'))
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Data transfer size limit
-DATA_UPLOAD_MAX_MEMORY_SIZE = 4194304
+DATA_UPLOAD_MAX_MEMORY_SIZE = 8388608
