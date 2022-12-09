@@ -41,6 +41,8 @@ public:
     // TODO temporary for development
     Q_INVOKABLE void addSubscription(float lat, float lon, float radius, const QString &name);
 
+    const std::vector<Subscription> &subscriptions() const;
+
 Q_SIGNALS:
     void alertAdded(const QString &id);
     void alertRemoved(const QString &id);

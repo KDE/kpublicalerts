@@ -75,11 +75,11 @@ Kirigami.ScrollablePage {
 
     onRefreshingChanged: {
         if (root.refreshing) {
-            AlertsManager.fetchAll(SubscriptionManager);
+            AlertsManager.fetchAll();
         }
     }
 
     Component.onCompleted: {
-        AlertsManager.fetchAll(SubscriptionManager);
+        AlertsManager.fetchAll();
     }
 }

@@ -45,9 +45,9 @@ public:
     ~AlertsManager();
 
     void setNetworkAccessManager(QNetworkAccessManager *nam);
+    void setSubscriptionManager(SubscriptionManager *subMgr);
 
     void fetchAlert(const QString &id);
-    Q_INVOKABLE void fetchAll(KPublicAlerts::SubscriptionManager *subscriptions);
     void removeAlert(const QString &id);
 
     enum {
@@ -63,6 +63,9 @@ public:
 
     bool isFetching() const;
 
+public Q_SLOTS:
+    void fetchAll();
+
 Q_SIGNALS:
     void showAlert(const QString &id);
     void fetchingChanged();
@@ -71,9 +74,11 @@ private:
     void addAlert(AlertElement &&e);
     void showNotification(const AlertElement &e);
     void purgeAlerts();
+    bool intersectsSubscribedArea(const AlertElement &e) const;
 
     std::vector<AlertElement> m_alerts;
     QNetworkAccessManager *m_nam = nullptr;
+    SubscriptionManager *m_subMgr = nullptr;
 
     int m_pendingFetchJobs = 0;
     std::vector<QString> m_fetchedAlertIds;

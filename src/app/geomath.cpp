@@ -6,6 +6,7 @@
 #include "geomath.h"
 
 #include <QLineF>
+#include <QPolygonF>
 #include <QRectF>
 
 using namespace KPublicAlerts;
@@ -66,4 +67,20 @@ QPointF GeoMath::mercatorProject(double lat, double lon, double zoom)
     const auto x = (256.0 / (2.0 * M_PI)) * std::pow(2.0, zoom) * (degToRad(lon) + M_PI);
     const auto y = (256.0 / (2.0 * M_PI)) * std::pow(2.0, zoom) * (M_PI - std::log(std::tan(M_PI / 4.0 + degToRad(lat) / 2.0)));
     return QPointF(x, y);
+}
+
+bool GeoMath::intersects(const KWeatherCore::CAPPolygon &poly, const QRectF &box)
+{
+    QPolygonF p;
+    p.reserve(poly.size());
+    for (const auto &c : poly) {
+        p.push_back({c.longitude, c.latitude});
+    }
+    return p.intersects(box);
+}
+
+bool GeoMath::intersects(const KWeatherCore::CAPCircle &circle, const QRectF &box)
+{
+    // TODO - do this more precisely
+    return boundingBoxForCircle(circle.latitude, circle.longitude, circle.radius).intersects(box);
 }

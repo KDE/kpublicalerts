@@ -152,6 +152,11 @@ void SubscriptionManager::addSubscription(float lat, float lon, float radius, co
     doSubscribeAll();
 }
 
+const std::vector<Subscription> &SubscriptionManager::subscriptions() const
+{
+    return m_subscriptions;
+}
+
 void SubscriptionManager::doSubscribeAll()
 {
     const auto upEndpoint = m_connector.endpoint();

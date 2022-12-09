@@ -123,11 +123,12 @@ int main(int argc, char **argv)
     qmlRegisterSingletonInstance("org.kde.publicalerts", 1, 0, "SubscriptionManager", &subscriptionMgr);
     AlertsManager alertsMgr;
     alertsMgr.setNetworkAccessManager(&nam);
+    alertsMgr.setSubscriptionManager(&subscriptionMgr);
     qmlRegisterSingletonInstance("org.kde.publicalerts", 1, 0, "AlertsManager", &alertsMgr);
     QObject::connect(&subscriptionMgr, &SubscriptionManager::alertAdded, &alertsMgr, &AlertsManager::fetchAlert);
     QObject::connect(&subscriptionMgr, &SubscriptionManager::alertRemoved, &alertsMgr, &AlertsManager::removeAlert);
-    QObject::connect(&subscriptionMgr, &SubscriptionManager::rowsInserted, &alertsMgr, [&]() { alertsMgr.fetchAll(&subscriptionMgr); });
-    QObject::connect(&subscriptionMgr, &SubscriptionManager::rowsRemoved, &alertsMgr, [&]() { alertsMgr.fetchAll(&subscriptionMgr); });
+    QObject::connect(&subscriptionMgr, &SubscriptionManager::rowsInserted, &alertsMgr, &AlertsManager::fetchAll);
+    QObject::connect(&subscriptionMgr, &SubscriptionManager::rowsRemoved, &alertsMgr, &AlertsManager::fetchAll);
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));

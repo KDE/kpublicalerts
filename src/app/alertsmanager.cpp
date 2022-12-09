@@ -5,10 +5,12 @@
 
 #include "alertsmanager.h"
 #include "caputil.h"
+#include "geomath.h"
 #include "restapi.h"
 #include "subscriptionmanager.h"
 
 #include <KWeatherCore/CAPParser>
+#include <KWeatherCore/CAPArea>
 
 #include <KLocalizedString>
 #include <KNotification>
@@ -122,6 +124,11 @@ void AlertsManager::setNetworkAccessManager(QNetworkAccessManager *nam)
     m_nam = nam;
 }
 
+void AlertsManager::setSubscriptionManager(SubscriptionManager *subMgr)
+{
+    m_subMgr = subMgr;
+}
+
 void AlertsManager::fetchAlert(const QString &id)
 {
     if (const auto it = std::lower_bound(m_alerts.begin(), m_alerts.end(), id); it != m_alerts.end() && (*it).id == id) {
@@ -147,6 +154,13 @@ void AlertsManager::fetchAlert(const QString &id)
             return;
         }
 
+        // do precise hit detection rather than relying on any simplification the server works with
+        const auto hit = intersectsSubscribedArea(e);
+        if (!hit) {
+            qDebug() << "dropping alert failing precise hit detection:" << e.alertData.identifier();
+            return;
+        }
+
         const auto path = basePath();
         QDir().mkpath(path);
         if (QFile f(path + id + QLatin1String(".xml")); f.open(QFile::WriteOnly)) {
@@ -160,10 +174,9 @@ void AlertsManager::fetchAlert(const QString &id)
     });
 }
 
-void AlertsManager::fetchAll(KPublicAlerts::SubscriptionManager *subscriptions)
+void AlertsManager::fetchAll()
 {
-    for (auto i = 0; i < subscriptions->rowCount(); ++i) {
-        const auto subscription = subscriptions->index(i, 0).data(SubscriptionManager::SubscriptionRole).value<Subscription>();
+    for (const auto &subscription : m_subMgr->subscriptions()) {
         auto reply = m_nam->get(RestApi::alerts(subscription.m_boundingBox));
         ++m_pendingFetchJobs;
         if (m_pendingFetchJobs == 1) {
@@ -190,7 +203,7 @@ void AlertsManager::fetchAll(KPublicAlerts::SubscriptionManager *subscriptions)
         });
     }
 
-    if (subscriptions->rowCount() == 0) {
+    if (m_subMgr->subscriptions().empty()) {
         purgeAlerts();
     }
 }
@@ -331,4 +344,25 @@ KPublicAlerts::AlertElement AlertsManager::alertById(const QString &id) const
 bool AlertsManager::isFetching() const
 {
     return m_pendingFetchJobs > 0;
+}
+
+bool AlertsManager::intersectsSubscribedArea(const AlertElement &e) const
+{
+    for (const auto &area : e.info().areas()) {
+        for (const auto &poly : area.polygons()) {
+            for (const auto &sub : m_subMgr->subscriptions()) {
+                if (GeoMath::intersects(poly, sub.m_boundingBox)) {
+                    return true;
+                }
+            }
+        }
+        for (const auto &circle : area.circles()) {
+            for (const auto &sub : m_subMgr->subscriptions()) {
+                if (GeoMath::intersects(circle, sub.m_boundingBox)) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
 }

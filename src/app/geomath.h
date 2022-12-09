@@ -34,6 +34,11 @@ QRectF boundingBoxForPolygon(const KWeatherCore::CAPPolygon &poly);
 QRectF boundingBoxForCircle(double lat, double lon, double radius);
 
 QPointF mercatorProject(double lat, double lon, double zoom);
+
+/** Compute intersections. */
+bool intersects(const KWeatherCore::CAPPolygon &poly, const QRectF &box);
+bool intersects(const KWeatherCore::CAPCircle &circle, const QRectF &box);
+
 }
 
 }
