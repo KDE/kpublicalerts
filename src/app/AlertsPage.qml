@@ -37,6 +37,8 @@ Kirigami.ScrollablePage {
             iconColor: {
                 if (model.alert.messageType == CAPAlertMessage.Cancel)
                     return Kirigami.Theme.disabledTextColor;
+                if (model.alert.status == CAPAlertMessage.Exercise)
+                    return Kirigami.Theme.activeTextColor;
                 return applicationWindow().severityTextColor(model.alertInfo.severity);
             }
             onClicked: {
