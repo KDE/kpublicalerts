@@ -21,7 +21,7 @@ Kirigami.Page {
         text: i18n("Add area of interest")
         enabled: nameField.text != ""
         onTriggered: {
-            SubscriptionManager.addSubscription(map.center.latitude, map.center.longitude, 20000, nameField.text);
+            SubscriptionManager.addSubscription(map.center.latitude, map.center.longitude, radiusSlider.value, nameField.text);
             applicationWindow().pageStack.pop();
         }
     }
@@ -47,7 +47,7 @@ Kirigami.Page {
             opacity: 0.25
             border.color: color
             border.width: 2
-            radius: 20 * 1000.0
+            radius: radiusSlider.value
         }
 
         Component.onCompleted: fitViewportToVisibleMapItems()
@@ -57,6 +57,18 @@ Kirigami.Page {
         QQC2.TextField {
             id: nameField
             Kirigami.FormData.label: i18n("Name:")
+        }
+        RowLayout {
+            Kirigami.FormData.label: i18n("Radius (km)")
+            QQC2.Slider {
+                id: radiusSlider
+                from: 1000
+                to: 50000
+                value: 20000
+            }
+            QQC2.Label {
+                text: i18n("%1 km", radiusSlider.value / 1000.0)
+            }
         }
     }
 }
