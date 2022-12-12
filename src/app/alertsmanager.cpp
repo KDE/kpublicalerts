@@ -11,6 +11,7 @@
 
 #include <KWeatherCore/CAPParser>
 #include <KWeatherCore/CAPArea>
+#include <KWeatherCore/CAPReference>
 
 #include <KLocalizedString>
 #include <KNotification>
@@ -277,6 +278,19 @@ QHash<int, QByteArray> AlertsManager::roleNames() const
 
 void AlertsManager::addAlert(AlertElement &&e)
 {
+    if (e.alert().messageType() == KWeatherCore::CAPAlertMessage::MessageType::Update) {
+        for (const auto &ref : e.alert().references()) {
+            auto it = std::find_if(m_alerts.begin(), m_alerts.end(), [&ref](const auto &alert) {
+                return alert.alert().ownReference() == ref;
+            });
+            if (it == m_alerts.end()) {
+                continue;
+            }
+            qDebug() << "found existing alert that is being updated!";
+            // TODO remove those elements
+        }
+    }
+
     auto it = std::lower_bound(m_alerts.begin(), m_alerts.end(), e);
     if (it != m_alerts.end() && (*it).id == e.id) {
         (*it).alertData = std::move(e.alertData);
