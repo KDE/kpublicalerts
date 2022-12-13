@@ -43,10 +43,21 @@ bool AlertElement::isValid() const
     return !alertData.alertInfos().empty();
 }
 
+QDateTime AlertElement::expireTime() const
+{
+    QDateTime dt;
+    for (const auto &info : alertData.alertInfos()) {
+        if (info.expireTime().isValid()) {
+            dt = dt.isValid() ? std::max(dt, info.expireTime()) : info.expireTime();
+        }
+    }
+    return dt;
+}
+
 bool AlertElement::isExpired() const
 {
-    // TODO check all alert info elements
-    return alertData.alertInfos().at(0).expireTime().isValid() && alertData.alertInfos().at(0).expireTime() < QDateTime::currentDateTime();
+    const auto dt = expireTime();
+    return dt.isValid() && dt <= QDateTime::currentDateTime();
 }
 
 KWeatherCore::CAPAlertMessage AlertElement::alert() const
@@ -116,6 +127,11 @@ AlertsManager::AlertsManager(QObject* parent)
 
         addAlert(std::move(e));
     }
+
+    m_expireTimer.setTimerType(Qt::VeryCoarseTimer);
+    m_expireTimer.setSingleShot(true);
+    connect(&m_expireTimer, &QTimer::timeout, this, &AlertsManager::purgeExpired);
+    scheduleExpire();
 }
 
 AlertsManager::~AlertsManager() = default;
@@ -172,6 +188,7 @@ void AlertsManager::fetchAlert(const QString &id)
 
         showNotification(e);
         addAlert(std::move(e));
+        scheduleExpire();
     });
 }
 
@@ -379,4 +396,34 @@ bool AlertsManager::intersectsSubscribedArea(const AlertElement &e) const
         }
     }
     return false;
+}
+
+void AlertsManager::scheduleExpire()
+{
+    QDateTime dt;
+    for (const auto &alert : m_alerts) {
+        dt = dt.isValid() ? std::min(alert.expireTime(), dt) : alert.expireTime();
+    }
+    if (!dt.isValid()) {
+        return;
+    }
+    qDebug() << "next expiry:" << dt;
+    m_expireTimer.start(std::max(std::chrono::seconds(QDateTime::currentDateTime().secsTo(dt)), std::chrono::seconds(60)));
+}
+
+void AlertsManager::purgeExpired()
+{
+    qDebug() << "purging expired alerts";
+    for (auto it = m_alerts.begin(); it != m_alerts.end();) {
+        if ((*it).isExpired()) {
+            const auto row = std::distance(m_alerts.begin(), it);
+            beginRemoveRows({}, row, row);
+            it = m_alerts.erase(it);
+            // TODO delete alert file
+            endRemoveRows();
+        } else {
+            ++it;
+        }
+    }
+    scheduleExpire();
 }

@@ -10,6 +10,7 @@
 #include <KWeatherCore/CAPAlertInfo>
 
 #include <QAbstractListModel>
+#include <QTimer>
 
 class QNetworkAccessManager;
 
@@ -30,6 +31,7 @@ public:
     bool operator<(const QString &otherId) const;
 
     bool isValid() const;
+    QDateTime expireTime() const;
     bool isExpired() const;
 
     KWeatherCore::CAPAlertMessage alert() const;
@@ -76,9 +78,13 @@ private:
     void purgeAlerts();
     bool intersectsSubscribedArea(const AlertElement &e) const;
 
+    void scheduleExpire();
+    void purgeExpired();
+
     std::vector<AlertElement> m_alerts;
     QNetworkAccessManager *m_nam = nullptr;
     SubscriptionManager *m_subMgr = nullptr;
+    QTimer m_expireTimer;
 
     int m_pendingFetchJobs = 0;
     std::vector<QString> m_fetchedAlertIds;
