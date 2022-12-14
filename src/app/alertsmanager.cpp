@@ -297,14 +297,18 @@ void AlertsManager::addAlert(AlertElement &&e)
 {
     if (e.alert().messageType() == KWeatherCore::CAPAlertMessage::MessageType::Update) {
         for (const auto &ref : e.alert().references()) {
-            auto it = std::find_if(m_alerts.begin(), m_alerts.end(), [&ref](const auto &alert) {
+            const auto it = std::find_if(m_alerts.begin(), m_alerts.end(), [&ref](const auto &alert) {
                 return alert.alert().ownReference() == ref;
             });
             if (it == m_alerts.end()) {
                 continue;
             }
-            qDebug() << "found existing alert that is being updated!";
-            // TODO remove those elements
+            qDebug() << "found existing alert that is being updated!" << (*it).id;
+            const auto row = std::distance(m_alerts.begin(), it);
+            beginRemoveRows({}, row, row);
+            QFile::remove(basePath() + (*it).id + QLatin1String(".xml")); // ### do we need to ensure we are not reloading this one?
+            m_alerts.erase(it);
+            endRemoveRows();
         }
     }
 
