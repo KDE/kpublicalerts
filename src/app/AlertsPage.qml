@@ -13,7 +13,7 @@ import org.kde.publicalerts 1.0
 
 Kirigami.ScrollablePage {
     id: root
-    title: i18n("Current Alerts")
+    title: i18n("Active Alerts")
     supportsRefreshing: true
 
     Component {
@@ -45,6 +45,11 @@ Kirigami.ScrollablePage {
                 applicationWindow().pageStack.push(alertPage, { alert: model.alert, alertInfo: model.alertInfo })
             }
         }
+
+        section.property: "sectionTitle"
+        section.delegate: Kirigami.BasicListItem { text: section }
+        section.criteria: ViewSection.FullString
+        section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent

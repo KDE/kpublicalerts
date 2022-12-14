@@ -33,6 +33,7 @@ public:
     bool isValid() const;
     QDateTime expireTime() const;
     bool isExpired() const;
+    QDateTime onsetTime() const;
 
     KWeatherCore::CAPAlertMessage alert() const;
     KWeatherCore::CAPAlertInfo info() const;
@@ -55,6 +56,8 @@ public:
     enum {
         AlertRole = Qt::UserRole,
         AlertInfoRole,
+        OnsetTimeRole,
+        UserRole,
     };
 
     int rowCount(const QModelIndex &parent) const override;

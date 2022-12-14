@@ -60,6 +60,17 @@ bool AlertElement::isExpired() const
     return dt.isValid() && dt <= QDateTime::currentDateTime();
 }
 
+QDateTime AlertElement::onsetTime() const
+{
+    QDateTime dt;
+    for (const auto &info : alertData.alertInfos()) {
+        if (info.onsetTime().isValid()) {
+            dt = dt.isValid() ? std::min(dt, info.onsetTime()) : info.onsetTime();
+        }
+    }
+    return dt;
+}
+
 KWeatherCore::CAPAlertMessage AlertElement::alert() const
 {
     return alertData;
@@ -278,6 +289,8 @@ QVariant AlertsManager::data(const QModelIndex &index, int role) const
             return QVariant::fromValue(info.alertData);
         case AlertInfoRole:
             return QVariant::fromValue(info.info());
+        case OnsetTimeRole:
+            return info.onsetTime();
         case Qt::DisplayRole:
             return info.alertData.identifier();
     }

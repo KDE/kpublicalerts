@@ -7,6 +7,7 @@
 #define KPUBLICALERTS_ALERTSSORTPROXYMODEL_H
 
 #include <QSortFilterProxyModel>
+#include <QTimer>
 
 namespace KPublicAlerts {
 
@@ -18,8 +19,21 @@ public:
     explicit AlertsSortProxyModel(QObject *parent = nullptr);
     ~AlertsSortProxyModel();
 
+    enum Role {
+        SectionTitleRole = Qt::UserRole + 100,
+    };
+
+    QVariant data(const QModelIndex & index, int role) const override;
+    QHash<int, QByteArray> roleNames() const override;
+    void setSourceModel(QAbstractItemModel *sourceModel) override;
+
 protected:
     bool lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const override;
+
+private:
+    void scheduleRegrouping();
+
+    QTimer m_groupingInvalidationTimer;
 };
 
 }
