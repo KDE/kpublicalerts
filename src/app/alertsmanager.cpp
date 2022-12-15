@@ -206,8 +206,7 @@ void AlertsManager::fetchAlert(const QString &id)
             qWarning() << f.fileName() << f.errorString();
         }
 
-        showNotification(e);
-        addAlert(std::move(e));
+        showNotification(addAlert(std::move(e)));
         scheduleExpire();
     });
 }
@@ -257,6 +256,9 @@ void AlertsManager::purgeAlerts()
         }
         const auto row = std::distance(m_alerts.begin(), it);
         beginRemoveRows({}, row, row);
+        if ((*it).notification) {
+            (*it).notification->close();
+        }
         QFile::remove(basePath() + (*it).id + QLatin1String(".xml"));
         it = m_alerts.erase(it);
         endRemoveRows();
@@ -315,9 +317,10 @@ QHash<int, QByteArray> AlertsManager::roleNames() const
     return n;
 }
 
-void AlertsManager::addAlert(AlertElement &&e)
+AlertElement& AlertsManager::addAlert(AlertElement &&e)
 {
-    if (e.alert().messageType() == KWeatherCore::CAPAlertMessage::MessageType::Update) {
+    if (e.alert().messageType() == KWeatherCore::CAPAlertMessage::MessageType::Update ||
+        e.alert().messageType() == KWeatherCore::CAPAlertMessage::MessageType::Cancel) {
         for (const auto &ref : e.alert().references()) {
             const auto it = std::find_if(m_alerts.begin(), m_alerts.end(), [&ref](const auto &alert) {
                 return alert.alert().ownReference() == ref;
@@ -328,6 +331,13 @@ void AlertsManager::addAlert(AlertElement &&e)
             qDebug() << "found existing alert that is being updated!" << (*it).id;
             const auto row = std::distance(m_alerts.begin(), it);
             beginRemoveRows({}, row, row);
+            // move notification to the updated message, so it gets reused/updated when still active
+            if (!e.notification) {
+                e.notification.swap((*it).notification);
+            }
+            if ((*it).notification) {
+                (*it).notification->close();
+            }
             QFile::remove(basePath() + (*it).id + QLatin1String(".xml")); // ### do we need to ensure we are not reloading this one?
             m_alerts.erase(it);
             endRemoveRows();
@@ -339,11 +349,13 @@ void AlertsManager::addAlert(AlertElement &&e)
         (*it).alertData = std::move(e.alertData);
         const auto idx = index(std::distance(m_alerts.begin(), it), 0);
         Q_EMIT dataChanged(idx, idx);
+        return (*it);
     } else {
         const auto row = std::distance(m_alerts.begin(), it);
         beginInsertRows({}, row, row);
-        m_alerts.insert(it, std::move(e));
+        auto &alert = *m_alerts.insert(it, std::move(e));
         endInsertRows();
+        return alert;
     }
 }
 
@@ -357,35 +369,52 @@ struct {
     { KWeatherCore::CAPAlertInfo::Severity::Minor, "minor-alert" },
 };
 
-void AlertsManager::showNotification(const AlertElement &e)
+void AlertsManager::showNotification(AlertElement &e)
 {
-    if (e.alertData.messageType() != KWeatherCore::CAPAlertMessage::MessageType::Alert || e.alertData.status() != KWeatherCore::CAPAlertMessage::Status::Actual) {
+    // cancellations: close of we have a notification open, ignore otherwise
+    if (e.alertData.messageType() == KWeatherCore::CAPAlertMessage::MessageType::Cancel) {
+        if (e.notification) {
+            e.notification->close();
+        }
         return;
     }
 
     const auto info = e.info();
     for (const auto &m : notification_map) {
         if (m.severity == info.severity()) {
-            auto n = new KNotification(QLatin1String(m.eventName));
-            n->setTitle(info.event());
-            n->setText(info.description());
-            n->setIconName(CAPUtil::categoriesIconName(info.categories()));
-            if (info.severity() == KWeatherCore::CAPAlertInfo::Severity::Extreme) {
-                n->setFlags(KNotification::Persistent);
+            if (!e.notification) {
+                auto n = new KNotification(QLatin1String(m.eventName));
+                e.notification = n;
+                connect(e.notification.data(), qOverload<uint>(&KNotification::activated), this, [this, n](uint action) {
+                    if (action == 0) {
+                        notificationActivated(n);
+                    }
+                });
             }
-            n->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));
-            n->setDefaultAction(i18n("Show alert details"));
-            n->setActions({i18n("Dismiss")});
-            const auto id = e.id;
-            connect(n, qOverload<uint>(&KNotification::activated), this, [this, id](uint action) {
-                if (action == 0) {
-                    Q_EMIT showAlert(id);
-                }
-            });
-            n->sendEvent();
+            e.notification->setTitle(info.event());
+            e.notification->setText(info.description());
+            e.notification->setIconName(CAPUtil::categoriesIconName(info.categories()));
+            if (info.severity() == KWeatherCore::CAPAlertInfo::Severity::Extreme) {
+                e.notification->setFlags(KNotification::Persistent);
+            }
+            e.notification->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));
+            e.notification->setDefaultAction(i18n("Show alert details"));
+            e.notification->setActions({i18n("Dismiss")});
+            e.notification->sendEvent();
             break;
         }
     }
+}
+
+void AlertsManager::notificationActivated(const KNotification* notification)
+{
+    for (const auto &alert : m_alerts) {
+        if (alert.notification == notification) {
+            Q_EMIT showAlert(alert.id);
+            return;
+        }
+    }
+    qWarning() << "Notification for unknown alert activated?";
 }
 
 KPublicAlerts::AlertElement AlertsManager::alertById(const QString &id) const

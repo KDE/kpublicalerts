@@ -10,8 +10,10 @@
 #include <KWeatherCore/CAPAlertInfo>
 
 #include <QAbstractListModel>
+#include <QPointer>
 #include <QTimer>
 
+class KNotification;
 class QNetworkAccessManager;
 
 namespace KPublicAlerts {
@@ -37,6 +39,8 @@ public:
 
     KWeatherCore::CAPAlertMessage alert() const;
     KWeatherCore::CAPAlertInfo info() const;
+
+    QPointer<KNotification> notification;
 };
 
 class AlertsManager : public QAbstractListModel
@@ -76,8 +80,9 @@ Q_SIGNALS:
     void fetchingChanged();
 
 private:
-    void addAlert(AlertElement &&e);
-    void showNotification(const AlertElement &e);
+    AlertElement& addAlert(AlertElement &&e);
+    void showNotification(AlertElement &e);
+    void notificationActivated(const KNotification *notification);
     void purgeAlerts();
     bool intersectsSubscribedArea(const AlertElement &e) const;
 
