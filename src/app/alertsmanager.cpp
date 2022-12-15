@@ -182,6 +182,15 @@ void AlertsManager::fetchAlert(const QString &id)
             return;
         }
 
+        // drop all alert message we are supposed to ignore as a client
+        if (e.alertData.status() == KWeatherCore::CAPAlertMessage::Status::System ||
+            e.alertData.status() == KWeatherCore::CAPAlertMessage::Status::Test ||
+            e.alertData.status() == KWeatherCore::CAPAlertMessage::Status::Draft)
+        {
+            qDebug() << "ignoring alert message with internal status:" << e.alertData.identifier() << e.alertData.status();
+            return;
+        }
+
         // do precise hit detection rather than relying on any simplification the server works with
         const auto hit = intersectsSubscribedArea(e);
         if (!hit) {
