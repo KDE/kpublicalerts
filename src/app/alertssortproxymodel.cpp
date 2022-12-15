@@ -69,6 +69,7 @@ void AlertsSortProxyModel::setSourceModel(QAbstractItemModel *sourceModel)
 
 bool AlertsSortProxyModel::lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const
 {
+    // separate future and current alerts
     const auto now = QDateTime::currentDateTime();
     const auto lhsOnsetTime = source_left.data(AlertsManager::OnsetTimeRole).toDateTime();
     const auto rhsOnsetTime = source_right.data(AlertsManager::OnsetTimeRole).toDateTime();
@@ -79,12 +80,23 @@ bool AlertsSortProxyModel::lessThan(const QModelIndex &source_left, const QModel
         return false;
     }
 
+    // put cancellations behind still active alerts
+    const auto lhsAlert = source_left.data(AlertsManager::AlertRole).value<KWeatherCore::CAPAlertMessage>();
+    const auto rhsAlert = source_right.data(AlertsManager::AlertRole).value<KWeatherCore::CAPAlertMessage>();
+    if (lhsAlert.messageType() != rhsAlert.messageType()) {
+        if (rhsAlert.messageType() == KWeatherCore::CAPAlertMessage::MessageType::Cancel) {
+            return true;
+        }
+        if (lhsAlert.messageType() == KWeatherCore::CAPAlertMessage::MessageType::Cancel) {
+            return false;
+        }
+    }
+
+    // sort by severity and sent time
     const auto lhsInfo = source_left.data(AlertsManager::AlertInfoRole).value<KWeatherCore::CAPAlertInfo>();
     const auto rhsInfo = source_right.data(AlertsManager::AlertInfoRole).value<KWeatherCore::CAPAlertInfo>();
 
     if (lhsInfo.severity() == rhsInfo.severity()) {
-        const auto lhsAlert = source_left.data(AlertsManager::AlertRole).value<KWeatherCore::CAPAlertMessage>();
-        const auto rhsAlert = source_right.data(AlertsManager::AlertRole).value<KWeatherCore::CAPAlertMessage>();
         if (lhsAlert.sentTime() == rhsAlert.sentTime()) {
             return QSortFilterProxyModel::lessThan(source_left, source_right);
         }
