@@ -6,6 +6,7 @@ add_executable(publicalerts)
 target_sources(publicalerts PRIVATE
     alertsmanager.cpp
     alertssortproxymodel.cpp
+    application.cpp
     areamodel.cpp
     caputil.cpp
     geomath.cpp
