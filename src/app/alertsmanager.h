@@ -71,6 +71,7 @@ public:
     Q_INVOKABLE KPublicAlerts::AlertElement alertById(const QString &id) const;
 
     bool isFetching() const;
+    bool hasPendingNotifications() const;
 
 public Q_SLOTS:
     void fetchAll();
@@ -78,6 +79,7 @@ public Q_SLOTS:
 Q_SIGNALS:
     void showAlert(const QString &id);
     void fetchingChanged();
+    void notificationClosed();
 
 private:
     AlertElement& addAlert(AlertElement &&e);

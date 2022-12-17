@@ -42,6 +42,8 @@ Application::Application(QObject *parent)
     connect(&m_subscriptionMgr, &SubscriptionManager::rowsRemoved, &m_alertsMgr, &AlertsManager::fetchAll);
 
     connect(&m_alertsMgr, &AlertsManager::showAlert, this, &Application::showUi);
+    connect(&m_alertsMgr, &AlertsManager::notificationClosed, this, &Application::maybeQuit, Qt::QueuedConnection);
+    connect(&m_alertsMgr, &AlertsManager::fetchingChanged, this, &Application::maybeQuit, Qt::QueuedConnection);
 }
 
 Application::~Application() = default;
@@ -94,5 +96,12 @@ void Application::processDBusActivation(const QStringList &args)
 {
     if (!args.contains(QLatin1String("--dbus-activated"))) {
         showUi();
+    }
+}
+
+void Application::maybeQuit()
+{
+    if (!m_alertsMgr.hasPendingNotifications() && !m_alertsMgr.isFetching() && !m_qmlAppEngine) {
+        QCoreApplication::quit();
     }
 }

@@ -74,7 +74,10 @@ int main(int argc, char **argv)
     Application app;
     if (!parser.isSet(serviceLaunchOpt)) {
         app.showUi();
+    } else {
+        QTimer::singleShot(std::chrono::seconds(30), Qt::VeryCoarseTimer, &app, &Application::maybeQuit);
     }
+
 
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, &app, &Application::processDBusActivation);

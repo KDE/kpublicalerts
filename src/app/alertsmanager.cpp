@@ -390,6 +390,9 @@ void AlertsManager::showNotification(AlertElement &e)
                         notificationActivated(n);
                     }
                 });
+                connect(e.notification.data(), &KNotification::closed, this, [this]() {
+                    Q_EMIT notificationClosed();
+                });
             }
             e.notification->setTitle(info.event());
             e.notification->setText(info.description());
@@ -481,4 +484,9 @@ void AlertsManager::purgeExpired()
         }
     }
     scheduleExpire();
+}
+
+bool AlertsManager::hasPendingNotifications() const
+{
+    return std::any_of(m_alerts.begin(), m_alerts.end(), [](const auto &alert) { return alert.notification; });
 }

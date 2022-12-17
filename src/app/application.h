@@ -29,8 +29,10 @@ public:
 
     void showUi();
     void processDBusActivation(const QStringList &args);
+    void maybeQuit();
 
 private:
+
     QQmlApplicationEngine *m_qmlAppEngine = nullptr;
 
     QNetworkAccessManager m_nam;
