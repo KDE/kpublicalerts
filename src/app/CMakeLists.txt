@@ -3,6 +3,7 @@
 
 add_executable(publicalerts)
 
+target_compile_definitions(publicalerts PRIVATE -DTRANSLATION_DOMAIN=\"kpublicalerts\")
 target_sources(publicalerts PRIVATE
     alertsmanager.cpp
     alertssortproxymodel.cpp
