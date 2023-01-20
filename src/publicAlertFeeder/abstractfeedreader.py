@@ -5,6 +5,7 @@ import datetime
 import json
 import requests
 import os
+import traceback
 import xml.etree.ElementTree as ET
 
 class AbstractFeedReader:
@@ -14,7 +15,12 @@ class AbstractFeedReader:
 
     def update(self):
         self.alertIds = []
-        self.updateFeed()
+        try:
+            self.updateFeed()
+        except Exception as e:
+            print(f"Updating feed {self.issuerId} failed with an exception!")
+            traceback.print_exc()
+            return
         try:
             requests.post(f"{self.aggregatorBaseUrl}feeder/{self.issuerId}/activeAlerts", json=self.alertIds)
         except requests.exceptions.ConnectionError as e:
