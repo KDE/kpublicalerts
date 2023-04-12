@@ -28,8 +28,9 @@ Kirigami.Page {
 
     QtLocation.Plugin {
         id: mapPlugin
-        required.mapping: QtLocation.Plugin.AnyMappingFeatures
-        preferred: ["osm"]
+        name: "osm"
+        QtLocation.PluginParameter { name: "osm.useragent"; value: Application.name + "/" + Application.version + " (vkrause@kde.org)" }
+        QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
     }
 
     QtLocation.Map {
@@ -40,6 +41,7 @@ Kirigami.Page {
         anchors.fill: parent
         gesture.acceptedGestures: QtLocation.MapGestureArea.PinchGesture | QtLocation.MapGestureArea.PanGesture
         gesture.preventStealing: true
+        onCopyrightLinkActivated: Qt.openUrlExternally(link)
 
         QtLocation.MapCircle {
             color: Kirigami.Theme.highlightColor
