@@ -1,0 +1,89 @@
+{
+    "id": "org.kde.publicalerts",
+    "branch": "master",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.15-22.08",
+    "sdk": "org.kde.Sdk",
+    "command": "publicalerts",
+    "tags": [
+        "nightly"
+    ],
+    "desktop-file-name-suffix": " (Nightly)",
+    "finish-args": [
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--share=network",
+        "--talk-name=org.unifiedpush.Distributor.*"
+    ],
+    "modules": [
+        {
+            "name": "kunifiedpush",
+            "config-opts": [
+                "-DENABLE_TESTING=OFF",
+                "-DKUNIFIEDPUSH_CLIENT_ONLY=ON"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kunifiedpush",
+                    "branch": "master"
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/cmake",
+                "/mkspecs",
+                "/etc/xdg/*categories",
+                "/lib/libexec"
+            ]
+        },
+        {
+            "name": "kweathercore",
+            "config-opts": [
+                "-DENABLE_TESTING=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kweathercore",
+                    "branch": "master"
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/cmake",
+                "/mkspecs",
+                "/etc/xdg/*categories",
+                "/lib/libexec"
+            ]
+        },
+        {
+            "name": "icon",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir -p /app/share/icons/hicolor/32x32/apps/",
+                "install -D /usr/share/icons/breeze/applets/48/weather-storm.svg /app/share/icons/hicolor/32x32/apps/"
+            ]
+        },
+        {
+            "name": "publicalerts",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "."
+                }
+            ],
+            "cleanup": [
+                "/etc/xdg/*categories"
+            ]
+        }
+    ]
+}
