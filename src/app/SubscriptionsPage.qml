@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import org.kde.kirigami 2.15 as Kirigami
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
 
-import org.kde.publicalerts 1.0
+import org.kde.publicalerts
 
 Kirigami.ScrollablePage {
     id: root
@@ -19,23 +19,25 @@ Kirigami.ScrollablePage {
         SubscriptionPage {}
     }
 
-    actions.main: Kirigami.Action {
-        icon.name: "list-add"
-        text: i18n("Add...")
-        onTriggered: applicationWindow().pageStack.push(subscriptionPage)
-    }
+    actions: [
+        Kirigami.Action {
+            icon.name: "list-add"
+            text: i18n("Add...")
+            onTriggered: applicationWindow().pageStack.push(subscriptionPage)
+        }
+    ]
 
     ListView {
         id: listView
         model: SubscriptionManager
         delegate: Kirigami.SwipeListItem {
             readonly property var sourceModel: ListView.view.model
-            QQC2.Label {
+            contentItem: QQC2.Label {
                 text: model.display
             }
             actions: [
                 Kirigami.Action {
-                    iconName: "edit-delete"
+                    icon.name: "edit-delete"
                     text: i18n("Unsubscribe")
                     onTriggered: {
                         sourceModel.removeRows(model.index, 1)

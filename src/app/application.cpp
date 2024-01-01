@@ -64,8 +64,8 @@ void Application::showUi()
     qRegisterMetaType<KWeatherCore::CAPAlertInfo::Severity>();
     qRegisterMetaType<KWeatherCore::CAPAlertInfo::Urgency>();
     qRegisterMetaType<KWeatherCore::CAPAlertInfo::Certainty>();
-    qmlRegisterUncreatableType<KWeatherCore::CAPAlertInfo>("org.kde.weathercore", 1, 0, "CAPAlertInfo", {});
-    qmlRegisterUncreatableType<KWeatherCore::CAPAlertMessage>("org.kde.weathercore", 1, 0, "CAPAlertMessage", {});
+    qmlRegisterUncreatableMetaObject(KWeatherCore::CAPAlertInfo::staticMetaObject, "org.kde.weathercore", 1, 0, "CAPAlertInfo", {});
+    qmlRegisterUncreatableMetaObject(KWeatherCore::CAPAlertMessage::staticMetaObject, "org.kde.weathercore", 1, 0, "CAPAlertMessage", {});
 
     qRegisterMetaType<KPublicAlerts::AlertElement>();
     qmlRegisterType<KPublicAlerts::AlertsSortProxyModel>("org.kde.publicalerts", 1, 0, "AlertsSortProxyModel");

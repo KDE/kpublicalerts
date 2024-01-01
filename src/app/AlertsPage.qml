@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import org.kde.kirigami 2.15 as Kirigami
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
 
-import org.kde.weathercore 1.0
-import org.kde.publicalerts 1.0
+import org.kde.weathercore
+import org.kde.publicalerts
 
 Kirigami.ScrollablePage {
     id: root
@@ -23,23 +23,27 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: listView
+        clip: true
         model: AlertsSortProxyModel {
             sourceModel: AlertsManager
         }
-        delegate: Kirigami.BasicListItem {
-            text: model.alertInfo.headline ? model.alertInfo.headline : model.alertInfo.event
-            subtitle: model.alertInfo.description
-            icon: {
-                if (model.alert.messageType == CAPAlertMessage.Cancel)
-                    return "dialog-ok";
-                return CAPUtil.categoriesIconName(model.alertInfo.categories);
-            }
-            iconColor: {
-                if (model.alert.messageType == CAPAlertMessage.Cancel)
-                    return Kirigami.Theme.disabledTextColor;
-                if (model.alert.status == CAPAlertMessage.Exercise)
-                    return Kirigami.Theme.activeTextColor;
-                return applicationWindow().severityTextColor(model.alertInfo.severity);
+        delegate: QQC2.ItemDelegate {
+            width: ListView.view.width
+            contentItem: Kirigami.IconTitleSubtitle {
+                title: model.alertInfo.headline ? model.alertInfo.headline : model.alertInfo.event
+                subtitle: model.alertInfo.description
+                icon.name: {
+                    if (model.alert.messageType == CAPAlertMessage.Cancel)
+                        return "dialog-ok";
+                    return CAPUtil.categoriesIconName(model.alertInfo.categories);
+                }
+                icon.color: {
+                    if (model.alert.messageType == CAPAlertMessage.Cancel)
+                        return Kirigami.Theme.disabledTextColor;
+                    if (model.alert.status == CAPAlertMessage.Exercise)
+                        return Kirigami.Theme.activeTextColor;
+                    return applicationWindow().severityTextColor(model.alertInfo.severity);
+                }
             }
             onClicked: {
                 applicationWindow().pageStack.push(alertPage, { alert: model.alert, alertInfo: model.alertInfo })
@@ -47,7 +51,10 @@ Kirigami.ScrollablePage {
         }
 
         section.property: "sectionTitle"
-        section.delegate: Kirigami.BasicListItem { text: section }
+        section.delegate:Kirigami.ListSectionHeader {
+            label: section
+            width: ListView.view.width
+        }
         section.criteria: ViewSection.FullString
         section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
 

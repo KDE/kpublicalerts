@@ -385,11 +385,11 @@ void AlertsManager::showNotification(AlertElement &e)
             if (!e.notification) {
                 auto n = new KNotification(QLatin1String(m.eventName));
                 e.notification = n;
-                connect(e.notification.data(), qOverload<uint>(&KNotification::activated), this, [this, n](uint action) {
-                    if (action == 0) {
-                        notificationActivated(n);
-                    }
+                auto viewAction = n->addDefaultAction(i18n("Show alert details"));
+                connect(viewAction, &KNotificationAction::activated, this, [this, n]() {
+                    notificationActivated(n);
                 });
+                [[maybe_unused]] auto dismissAction = n->addAction(i18n("Dismiss"));
                 connect(e.notification.data(), &KNotification::closed, this, [this]() {
                     Q_EMIT notificationClosed();
                 });
@@ -401,8 +401,6 @@ void AlertsManager::showNotification(AlertElement &e)
                 e.notification->setFlags(KNotification::Persistent);
             }
             e.notification->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));
-            e.notification->setDefaultAction(i18n("Show alert details"));
-            e.notification->setActions({i18n("Dismiss")});
             e.notification->sendEvent();
             break;
         }

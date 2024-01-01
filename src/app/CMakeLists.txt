@@ -24,20 +24,20 @@ if (ANDROID)
 endif()
 
 target_link_libraries(publicalerts PRIVATE
-    KF5::KWeatherCore
+    KWeatherCore
     KUnifiedPush
-    KF5::CoreAddons
-    KF5::Notifications
-    KF5::GuiAddons
-    KF5::I18n
+    KF6::CoreAddons
+    KF6::Notifications
+    KF6::GuiAddons
+    KF6::I18n
     Qt::Quick
     Qt::QuickControls2
     Qt::Positioning
 )
 if (NOT ANDROID)
-    target_link_libraries(publicalerts PRIVATE Qt::Widgets KF5::DBusAddons)
+    target_link_libraries(publicalerts PRIVATE Qt::Widgets KF6::DBusAddons)
 else()
-    target_link_libraries(publicalerts PRIVATE OpenSSL::SSL Qt::Svg KF5::Kirigami2)
+    target_link_libraries(publicalerts PRIVATE OpenSSL::SSL Qt::Svg KF6::Kirigami)
     kirigami_package_breeze_icons(ICONS
         car
         cloudstatus
@@ -51,6 +51,7 @@ else()
         security-high-symbolic
         weather-storm
     )
+    ecm_add_android_apk(publicalerts ANDROID_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android)
 endif()
 
 install(TARGETS publicalerts ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

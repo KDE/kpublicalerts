@@ -204,7 +204,7 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
 
         const auto subRes = QJsonDocument::fromJson(reply->readAll()).object();
         qDebug() << subRes;
-        (*it).m_subscriptionId = subRes.value(QLatin1String("id")).toString();
+        (*it).m_subscriptionId = QUuid(subRes.value(QLatin1String("id")).toString());
         (*it).m_notificationEndpoint = upEndpoint;
 
         QSettings settings;

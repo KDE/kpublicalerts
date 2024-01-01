@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import org.kde.kirigami 2.15 as Kirigami
-import org.kde.weathercore 1.0
-import org.kde.publicalerts 1.0
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
+import org.kde.weathercore
+import org.kde.publicalerts
 
 Kirigami.ApplicationWindow {
     id: root
@@ -46,12 +46,12 @@ Kirigami.ApplicationWindow {
         actions: [
             Kirigami.Action {
                 text: i18n("Areas of interest...")
-                iconName: "map-globe"
+                icon.name: "map-globe"
                 onTriggered: applicationWindow().pageStack.push(subscriptionsPage)
             },
             Kirigami.Action {
                 text: i18n("About")
-                iconName: "help-about"
+                icon.name: "help-about"
                 onTriggered: {
                     if (applicationWindow().pageStack.layers.depth < 2) {
                         applicationWindow().pageStack.layers.push(aboutPage)

@@ -39,9 +39,6 @@ int main(int argc, char **argv)
     QGuiApplication::setDesktopFileName(QStringLiteral("org.kde.publicalerts"));
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("weather-storm")));
 
-    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-
 #ifdef Q_OS_ANDROID
     QGuiApplication qtApp(argc, argv);
     QQuickStyle::setStyle(QStringLiteral("Material"));
