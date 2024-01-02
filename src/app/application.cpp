@@ -86,7 +86,7 @@ void Application::showUi()
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
     m_qmlAppEngine->rootContext()->setContextObject(l10nContext);
 
-    m_qmlAppEngine->load(QUrl(QStringLiteral("qrc:///main.qml")));
+    m_qmlAppEngine->load(QUrl(QStringLiteral("qrc:/qt/qml/org/kde/publicalerts/main.qml")));
     if (m_qmlAppEngine->rootObjects().isEmpty()) {
         QCoreApplication::exit(-1);
     }

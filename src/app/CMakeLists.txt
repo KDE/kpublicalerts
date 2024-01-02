@@ -23,6 +23,15 @@ if (ANDROID)
     target_sources(publicalerts PRIVATE notifyrc.qrc)
 endif()
 
+qt_add_qml_module(publicalerts URI org.kde.publicalerts NO_PLUGIN QML_FILES
+    AlertPage.qml
+    AlertsPage.qml
+    main.qml
+    MapView.qml
+    SubscriptionPage.qml
+    SubscriptionsPage.qml
+)
+
 target_link_libraries(publicalerts PRIVATE
     KWeatherCore
     KUnifiedPush

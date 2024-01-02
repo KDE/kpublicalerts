@@ -5,12 +5,5 @@
 <RCC>
     <qresource prefix="/">
         <file>qtquickcontrols2.conf</file>
-
-        <file>AlertPage.qml</file>
-        <file>AlertsPage.qml</file>
-        <file>main.qml</file>
-        <file>MapView.qml</file>
-        <file>SubscriptionPage.qml</file>
-        <file>SubscriptionsPage.qml</file>
     </qresource>
 </RCC>
