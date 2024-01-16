@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
 import argparse
+import socket
 from capfeedreader import CAPFeedReader
 from dwdfeedreader import DWDFeedReader
 from mowasfeedreader import MoWaSFeedReader
@@ -9,6 +10,8 @@ from mowasfeedreader import MoWaSFeedReader
 parser = argparse.ArgumentParser(description='CAP feed loader.')
 parser.add_argument('--only', type=str, help='only read a single feed')
 arguments = parser.parse_args()
+
+socket.setdefaulttimeout(10)
 
 feedReaders = [
     # interesting data, but past-only :(
