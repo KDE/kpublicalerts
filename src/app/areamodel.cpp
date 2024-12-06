@@ -115,7 +115,8 @@ QRectF AreaModel::boundingBox() const
         }
 
         for (const auto &circle : area.circles()) {
-            bbox |= GeoMath::boundingBoxForCircle(circle.latitude, circle.longitude, circle.radius);
+            // CAP radius is given in kilometers, GeoMath expects meters
+            bbox |= GeoMath::boundingBoxForCircle(circle.latitude, circle.longitude, circle.radius * 1000.0);
         }
     }
     return bbox;
