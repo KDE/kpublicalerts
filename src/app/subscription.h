@@ -6,11 +6,11 @@
 #ifndef KPUBLICALERTS_SUBSCRIPTION_H
 #define KPUBLICALERTS_SUBSCRIPTION_H
 
+#include <QDateTime>
 #include <QMetaType>
 #include <QRectF>
 #include <QSettings>
 #include <QString>
-
 #include <QUuid>
 
 namespace KPublicAlerts {
@@ -37,6 +37,7 @@ public:
     QUuid m_subscriptionId;
     QString m_notificationEndpoint;
     QRectF m_boundingBox;
+    QDateTime m_lastHeartbeat;
 };
 
 }

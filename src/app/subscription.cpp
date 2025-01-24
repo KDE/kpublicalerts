@@ -5,28 +5,31 @@
 
 #include "subscription.h"
 
+using namespace Qt::Literals;
 using namespace KPublicAlerts;
 
 Subscription Subscription::load(const QString &id, QSettings &settings)
 {
     Subscription s;
-    settings.beginGroup(QLatin1String("Subscription-") + id);
+    settings.beginGroup("Subscription-"_L1 + id);
     s.m_id = id;
-    s.m_subscriptionId = settings.value(QLatin1String("SubscriptionId")).value<QUuid>();
-    s.m_name = settings.value(QLatin1String("Name")).value<QString>();
-    s.m_boundingBox = settings.value(QLatin1String("BoundingBox")).value<QRectF>();
-    s.m_notificationEndpoint = settings.value(QLatin1String("NotificationEndpoint")).value<QString>();
+    s.m_subscriptionId = QUuid::fromString(settings.value("SubscriptionId"_L1).value<QString>());
+    s.m_name = settings.value("Name"_L1).value<QString>();
+    s.m_boundingBox = settings.value("BoundingBox"_L1).value<QRectF>();
+    s.m_notificationEndpoint = settings.value("NotificationEndpoint"_L1).value<QString>();
+    s.m_lastHeartbeat = settings.value("LastHeartbeat"_L1).value<QDateTime>();
     settings.endGroup();
     return s;
 }
 
 void Subscription::store(QSettings &settings)
 {
-    settings.beginGroup(QLatin1String("Subscription-") + m_id);
-    settings.setValue(QLatin1String("Name"), m_name);
-    settings.setValue(QLatin1String("SubscriptionId"), m_subscriptionId);
-    settings.setValue(QLatin1String("BoundingBox"), m_boundingBox);
-    settings.setValue(QLatin1String("NotificationEndpoint"), m_notificationEndpoint);
+    settings.beginGroup("Subscription-"_L1 + m_id);
+    settings.setValue("Name"_L1, m_name);
+    settings.setValue("SubscriptionId"_L1, m_subscriptionId.toString(QUuid::WithoutBraces));
+    settings.setValue("BoundingBox"_L1, m_boundingBox);
+    settings.setValue("NotificationEndpoint"_L1, m_notificationEndpoint);
+    settings.setValue("LastHeartbeat"_L1, m_lastHeartbeat);
     settings.endGroup();
 }
 

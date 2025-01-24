@@ -16,6 +16,7 @@
 
 class QNetworkAccessManager;
 class QSettings;
+class QTimer;
 
 namespace KPublicAlerts {
 
@@ -56,8 +57,11 @@ private:
 
     void storeSubscriptionIds(QSettings &settings);
 
+    void checkHeartbeat();
+
     QNetworkAccessManager *m_nam = nullptr;
     KUnifiedPush::Connector m_connector;
+    QTimer *m_heartbeatTimer = nullptr;
 
     std::vector<Subscription> m_subscriptions;
 };

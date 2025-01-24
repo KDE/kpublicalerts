@@ -5,60 +5,77 @@
 
 #include "restapi.h"
 
+#include <QCoreApplication>
 #include <QNetworkRequest>
 #include <QRectF>
 #include <QUrlQuery>
-#include <QUuid>
 
+using namespace Qt::Literals;
 using namespace KPublicAlerts;
 
 static QUrl baseUrl()
 {
     QUrl url;
-    // TODO
-    url.setScheme(QStringLiteral("https"));
-    url.setHost(QStringLiteral("volkerkrause.eu"));
+    url.setScheme(u"https"_s);
+    url.setHost(u"alerts.kde.org"_s);
     url.setPort(443);
     return url;
 }
 
-static QLatin1String basePath()
+constexpr inline auto BASE_PATH = "/"_L1;
+
+[[nodiscard]] static QNetworkRequest makeRequest(const QUrl &url)
 {
-    return QLatin1String("/public-alerts/aggregator/");
+    QNetworkRequest req(url);
+    req.setHeader(QNetworkRequest::UserAgentHeader, (QCoreApplication::applicationName() + '/'_L1 + QCoreApplication::applicationVersion()).toUtf8());
+    return req;
 }
 
 QNetworkRequest RestApi::alert(const QString &id)
 {
     auto url = baseUrl();
-    url.setPath(basePath() + QLatin1String("alert/") + id);
-    return QNetworkRequest(url);
+    url.setPath(BASE_PATH + "alert/"_L1 + id);
+    return makeRequest(url);
 }
 
 QNetworkRequest RestApi::alerts(const QRectF &bbox)
 {
     auto url = baseUrl();
-    url.setPath(basePath() + QLatin1String("alerts"));
+    url.setPath(BASE_PATH + "alert/area"_L1);
 
     QUrlQuery query;
-    query.addQueryItem(QStringLiteral("minlat"), QString::number(bbox.top()));
-    query.addQueryItem(QStringLiteral("maxlat"), QString::number(bbox.bottom()));
-    query.addQueryItem(QStringLiteral("minlon"), QString::number(bbox.left()));
-    query.addQueryItem(QStringLiteral("maxlon"), QString::number(bbox.right()));
+    query.addQueryItem(u"min_lat"_s, QString::number(bbox.top()));
+    query.addQueryItem(u"max_lat"_s, QString::number(bbox.bottom()));
+    query.addQueryItem(u"min_lon"_s, QString::number(bbox.left()));
+    query.addQueryItem(u"max_lon"_s, QString::number(bbox.right()));
     url.setQuery(query);
 
-    return QNetworkRequest(url);
+    return makeRequest(url);
 }
 
 QNetworkRequest RestApi::subscribe()
 {
     auto url = baseUrl();
-    url.setPath(basePath() + QLatin1String("subscription"));
-    return QNetworkRequest(url);
+    url.setPath(BASE_PATH + "subscription/subscribe"_L1);
+    auto req = makeRequest(url);
+    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
+    return req;
 }
 
-QNetworkRequest RestApi::unsubscribe(const QUuid &id)
+QNetworkRequest RestApi::unsubscribe()
 {
     auto url = baseUrl();
-    url.setPath(basePath() + QLatin1String("subscription/") + id.toString(QUuid::WithoutBraces));
-    return QNetworkRequest(url);
+    url.setPath(BASE_PATH + "subscription/unsubscribe"_L1);
+    auto req = makeRequest(url);
+    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
+    return req;
+}
+
+QNetworkRequest RestApi::heartbeat()
+{
+    auto url = baseUrl();
+    url.setPath(BASE_PATH + "subscription/heartbeat"_L1);
+    auto req = makeRequest(url);
+    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
+    return req;
 }

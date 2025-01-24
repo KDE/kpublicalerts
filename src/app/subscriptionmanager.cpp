@@ -15,11 +15,14 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkAccessManager>
+#include <QNetworkInformation>
 #include <QNetworkReply>
 #include <QSettings>
+#include <QTimer>
 
 #include <cmath>
 
+using namespace Qt::Literals;
 using namespace KPublicAlerts;
 
 SubscriptionManager::SubscriptionManager(QObject *parent)
@@ -50,6 +53,23 @@ SubscriptionManager::SubscriptionManager(QObject *parent)
 
     connect(this, &QAbstractItemModel::rowsInserted, this, &SubscriptionManager::countChanged);
     connect(this, &QAbstractItemModel::rowsRemoved, this, &SubscriptionManager::countChanged);
+
+    m_heartbeatTimer = new QTimer(this);
+    m_heartbeatTimer->setTimerType(Qt::VeryCoarseTimer);
+    m_heartbeatTimer->setInterval(std::chrono::hours(4));
+    m_heartbeatTimer->setSingleShot(false);
+    connect(m_heartbeatTimer, &QTimer::timeout, this, &SubscriptionManager::checkHeartbeat);
+
+    QNetworkInformation::loadBackendByFeatures(QNetworkInformation::Feature::Reachability);
+    if (auto ni = QNetworkInformation::instance(); ni) {
+        connect(ni, &QNetworkInformation::reachabilityChanged, this, [this](auto reachability) {
+            if (reachability == QNetworkInformation::Reachability::Online) {
+                checkHeartbeat();
+            }
+        });
+    } else {
+        qWarning() << "No network status monitoring available!";
+    }
 }
 
 SubscriptionManager::~SubscriptionManager() = default;
@@ -58,6 +78,8 @@ void SubscriptionManager::setNetworkAccessManager(QNetworkAccessManager *nam)
 {
     m_nam = nam;
     doSubscribeAll();
+    checkHeartbeat();
+    m_heartbeatTimer->start();
 }
 
 int SubscriptionManager::rowCount(const QModelIndex &parent) const
@@ -103,7 +125,11 @@ bool SubscriptionManager::removeRows(int row, int count, const QModelIndex &pare
             doRemoveOne(id);
             continue;
         }
-        auto reply = m_nam->deleteResource(RestApi::unsubscribe(m_subscriptions[i].m_subscriptionId));
+
+        QJsonObject unsubCmd{
+            {"subscription_id"_L1, m_subscriptions[i].m_subscriptionId.toString(QUuid::WithoutBraces)}
+        };
+        auto reply = m_nam->post(RestApi::unsubscribe(), QJsonDocument(unsubCmd).toJson(QJsonDocument::Compact));
         connect(reply, &QNetworkReply::finished, this, [this, reply, id]() {
             reply->deleteLater();
             if (reply->error() != QNetworkReply::NoError && reply->error() != QNetworkReply::ContentNotFoundError) {
@@ -182,12 +208,13 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
     const auto id = sub.m_id;
     const auto upEndpoint = m_connector.endpoint();
 
-    QJsonObject subCmd;
-    subCmd.insert(QLatin1String("endpoint"), upEndpoint);
-    subCmd.insert(QLatin1String("minlon"), sub.m_boundingBox.left());
-    subCmd.insert(QLatin1String("maxlon"), sub.m_boundingBox.right());
-    subCmd.insert(QLatin1String("minlat"), sub.m_boundingBox.top());
-    subCmd.insert(QLatin1String("maxlat"), sub.m_boundingBox.bottom());
+    QJsonObject subCmd{
+        {"distributor_url"_L1, upEndpoint},
+        {"min_lon"_L1, sub.m_boundingBox.left()},
+        {"max_lon"_L1, sub.m_boundingBox.right()},
+        {"min_lat"_L1, sub.m_boundingBox.top()},
+        {"max_lat"_L1, sub.m_boundingBox.bottom()}
+    };
 
     auto reply = m_nam->post(RestApi::subscribe(), QJsonDocument(subCmd).toJson(QJsonDocument::Compact));
     connect(reply, &QNetworkReply::finished, this, [this, reply, id, upEndpoint]() {
@@ -206,6 +233,7 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
         qDebug() << subRes;
         (*it).m_subscriptionId = QUuid(subRes.value(QLatin1String("id")).toString());
         (*it).m_notificationEndpoint = upEndpoint;
+        (*it).m_lastHeartbeat = QDateTime::currentDateTime();
 
         QSettings settings;
         (*it).store(settings);
@@ -214,9 +242,15 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
 
 void SubscriptionManager::doUnsubscribeOne(const Subscription &sub)
 {
-    auto reply = m_nam->deleteResource(RestApi::unsubscribe(sub.m_subscriptionId));
-    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+    QJsonObject unsubCmd{
+        {"subscription_id"_L1, sub.m_subscriptionId.toString(QUuid::WithoutBraces)}
+    };
+    auto reply = m_nam->post(RestApi::unsubscribe(), QJsonDocument(unsubCmd).toJson(QJsonDocument::Compact));
+    connect(reply, &QNetworkReply::finished, this, [reply]() {
         reply->deleteLater();
+        if (reply->error() != QNetworkReply::NoError && reply->error() != QNetworkReply::ContentNotFoundError) {
+            qWarning() << reply->errorString();
+        }
         // TODO
     });
 }
@@ -227,6 +261,48 @@ void SubscriptionManager::storeSubscriptionIds(QSettings &settings)
     l.reserve(m_subscriptions.size());
     std::transform(m_subscriptions.begin(), m_subscriptions.end(), std::back_inserter(l), [](const auto &s) { return s.m_id; });
     settings.setValue(QLatin1String("SubscriptionIds"), l);
+}
+
+void SubscriptionManager::checkHeartbeat()
+{
+    const auto threshold = QDateTime::currentDateTime().addDays(-1); // TODO make this less aggressive
+    for (const auto &s : m_subscriptions) {
+        if (s.m_lastHeartbeat.isValid() && s.m_lastHeartbeat > threshold) {
+            continue;
+        }
+
+        qDebug() << s.m_id << s.m_subscriptionId << "needs a heartbeat";
+        const auto id = s.m_id;
+        QJsonObject heartbeatCmd{
+            {"subscription_id"_L1, s.m_subscriptionId.toString(QUuid::WithBraces)}
+        };
+        auto reply = m_nam->post(RestApi::heartbeat(), QJsonDocument(heartbeatCmd).toJson(QJsonDocument::Compact));
+        connect(reply, &QNetworkReply::finished, this, [reply, id, this]() {
+            reply->deleteLater();
+            const auto it = std::lower_bound(m_subscriptions.begin(), m_subscriptions.end(), id);
+            if (it == m_subscriptions.end() || (*it).m_id != id) {
+                return;
+            }
+
+            if (reply->error() == QNetworkReply::NoError && reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() == 200) {
+                (*it).m_lastHeartbeat = QDateTime::currentDateTime();
+                QSettings settings;
+                (*it).store(settings);
+                qDebug() << "subscription renewed" << id << (*it).m_lastHeartbeat;
+                return;
+            }
+
+            if (reply->error() == QNetworkReply::ContentNotFoundError) {
+                // subscription expired, resubscribe
+                qDebug() << "resubscription needed for" << id;
+                doSubscribeOne(*it);
+                return;
+            }
+
+            // we retry on network errors via QNetworkInformation reachability monitoring
+            qDebug() << reply->errorString() << reply->readAll() << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
+        });
+    }
 }
 
 #include "moc_subscriptionmanager.cpp"
