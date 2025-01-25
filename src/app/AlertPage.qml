@@ -29,7 +29,7 @@ Kirigami.ScrollablePage {
         QQC2.Label {
             Kirigami.FormData.isSection: true
             Layout.fillWidth: true
-            text: alertInfo.headline
+            text: root.alertInfo.headline
             wrapMode: Text.WordWrap
         }
 
@@ -46,7 +46,7 @@ Kirigami.ScrollablePage {
 
                     QtLocation.MapPolygon {
                         color: {
-                            if (alert.messageType == CAPAlertMessage.Cancel)
+                            if (root.alert.messageType == CAPAlertMessage.Cancel)
                                 return Kirigami.Theme.disabledTextColor;
                             applicationWindow().severityTextColor(alertInfo.severity)
                         }
@@ -64,7 +64,7 @@ Kirigami.ScrollablePage {
 
                     QtLocation.MapCircle {
                         color: {
-                            if (alert.messageType == CAPAlertMessage.Cancel)
+                            if (root.alert.messageType == CAPAlertMessage.Cancel)
                                 return Kirigami.Theme.disabledTextColor;
                             applicationWindow().severityTextColor(alertInfo.severity)
                         }
@@ -98,96 +98,96 @@ Kirigami.ScrollablePage {
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Status:")
                 text: {
-                    switch(alert.status) {
+                    switch(root.alert.status) {
                         case CAPAlertMessage.Actual: return "Actual"
                         case CAPAlertMessage.Exercise: return "Exercise"
                     }
-                    return alert.status
+                    return root.alert.status
                 }
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Message type:")
                 text: {
-                    switch(alert.messageType) {
+                    switch(root.alert.messageType) {
                         case CAPAlertMessage.Alert: return "Alert"
                         case CAPAlertMessage.Update: return "Update"
                         case CAPAlertMessage.Cancel: return "Cancel"
                         case CAPAlertMessage.Acknowledge: return "Acknowledge"
                         case CAPAlertMessage.Error: return "Error"
                     }
-                    return alert.messageType
+                    return root.alert.messageType
                 }
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Categories:")
                 Layout.fillWidth: true
-                text: CAPUtil.categoriesDisplayStrings(alertInfo.categories).join('\n')
-                visible: alertInfo.categories != CAPAlertInfo.Unknown
+                text: CAPUtil.categoriesDisplayStrings(root.alertInfo.categories).join('\n')
+                visible: root.alertInfo.categories != CAPAlertInfo.Unknown
                 wrapMode: Text.WordWrap
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Urgency:")
-                text: CAPUtil.urgencyDisplayString(alertInfo.urgency)
-                visible: alertInfo.urgency != CAPAlertInfo.UnknownUrgency
+                text: CAPUtil.urgencyDisplayString(root.alertInfo.urgency)
+                visible: root.alertInfo.urgency != CAPAlertInfo.UnknownUrgency
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Severity:")
-                text: CAPUtil.severityDisplayString(alertInfo.severity)
-                visible: alertInfo.severity != CAPAlertInfo.UnknownSeverity
+                text: CAPUtil.severityDisplayString(root.alertInfo.severity)
+                visible: root.alertInfo.severity != CAPAlertInfo.UnknownSeverity
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Certainty:")
-                text: CAPUtil.certaintyDisplayString(alertInfo.certainty)
-                visible: alertInfo.certainty != CAPAlertInfo.UnknownCertainty
+                text: CAPUtil.certaintyDisplayString(root.alertInfo.certainty)
+                visible: root.alertInfo.certainty != CAPAlertInfo.UnknownCertainty
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Recommended response:")
                 Layout.fillWidth: true
-                text: CAPUtil.responseTypesStrings(alertInfo.responseTypes).join('\n')
-                visible: alertInfo.responseTypes != CAPAlertInfo.UnknownResponseType
+                text: CAPUtil.responseTypesStrings(root.alertInfo.responseTypes).join('\n')
+                visible: root.alertInfo.responseTypes != CAPAlertInfo.UnknownResponseType
                 wrapMode: Text.WordWrap
             }
 
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Web:")
                 Layout.fillWidth: true
-                text: alertInfo.web
-                visible: alertInfo.web
+                text: root.alertInfo.web
+                visible: root.alertInfo.web
                 wrapMode: Text.Wrap
                 onLinkActivated: Qt.openUrlExternally(link)
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Contact:")
                 Layout.fillWidth: true
-                text: alertInfo.contact
-                visible: alertInfo.contact
+                text: root.alertInfo.contact
+                visible: root.alertInfo.contact
                 wrapMode: Text.WordWrap
             }
 
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Sent:")
-                visible: !isNaN(alert.sentTime.getTime())
-                text: Qt.formatDateTime(alert.sentTime)
+                visible: !isNaN(root.alert.sentTime.getTime())
+                text: Qt.formatDateTime(root.alert.sentTime)
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Effective:")
-                visible: !isNaN(alertInfo.effectiveTime.getTime())
-                text: Qt.formatDateTime(alertInfo.effectiveTime)
+                visible: !isNaN(root.alertInfo.effectiveTime.getTime())
+                text: Qt.formatDateTime(root.alertInfo.effectiveTime)
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Onset:")
-                visible: !isNaN(alertInfo.onsetTime.getTime())
-                text: Qt.formatDateTime(alertInfo.onsetTime)
+                visible: !isNaN(root.alertInfo.onsetTime.getTime())
+                text: Qt.formatDateTime(root.alertInfo.onsetTime)
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Expires:")
-                visible: !isNaN(alertInfo.expireTime.getTime())
-                text: Qt.formatDateTime(alertInfo.expireTime)
+                visible: !isNaN(root.alertInfo.expireTime.getTime())
+                text: Qt.formatDateTime(root.alertInfo.expireTime)
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Sender:")
                 Layout.fillWidth: true
-                text: alertInfo.sender
+                text: root.alertInfo.sender
                 wrapMode: Text.WordWrap
                 visible: text !== ""
             }
@@ -199,7 +199,7 @@ Kirigami.ScrollablePage {
             }
             QQC2.Label {
                 Kirigami.FormData.isSection: true
-                text: alertInfo.description
+                text: root.alertInfo.description
                 wrapMode: Text.WordWrap
             }
 
@@ -212,7 +212,7 @@ Kirigami.ScrollablePage {
             QQC2.Label {
                 id: instructionText
                 Kirigami.FormData.isSection: true
-                text: alertInfo.instruction
+                text: root.alertInfo.instruction
                 wrapMode: Text.WordWrap
                 visible: text !== ""
             }

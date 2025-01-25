@@ -28,7 +28,7 @@ Kirigami.ApplicationWindow {
     }
 
     // should be in CAPUtil in C++, but that would require KF5::ConfigWidgets for the color scheme...
-    function severityTextColor(severity)
+    function severityTextColor(severity: int): color
     {
         switch(severity) {
             case CAPAlertInfo.Extreme: return Kirigami.Theme.negativeTextColor;
