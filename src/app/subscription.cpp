@@ -29,3 +29,5 @@ void Subscription::store(QSettings &settings)
     settings.setValue(QLatin1String("NotificationEndpoint"), m_notificationEndpoint);
     settings.endGroup();
 }
+
+#include "moc_subscription.cpp"

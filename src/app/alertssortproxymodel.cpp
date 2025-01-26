@@ -126,3 +126,5 @@ void AlertsSortProxyModel::scheduleRegrouping()
         m_groupingInvalidationTimer.start(std::max(std::chrono::seconds(QDateTime::currentDateTime().secsTo(dt)), std::chrono::seconds(60)));
     }
 }
+
+#include "moc_alertssortproxymodel.cpp"

@@ -147,3 +147,5 @@ QString AreaModel::allAreaDescriptions() const
     std::transform(m_alert.areas().begin(), m_alert.areas().end(), std::back_inserter(l), [](const auto &area) { return area.description(); });
     return l.join(QLatin1Char('\n'));
 }
+
+#include "moc_areamodel.cpp"

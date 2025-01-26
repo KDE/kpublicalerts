@@ -490,3 +490,5 @@ bool AlertsManager::hasPendingNotifications() const
 {
     return std::any_of(m_alerts.begin(), m_alerts.end(), [](const auto &alert) { return alert.notification; });
 }
+
+#include "moc_alertsmanager.cpp"

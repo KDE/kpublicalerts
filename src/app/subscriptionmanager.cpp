@@ -228,3 +228,5 @@ void SubscriptionManager::storeSubscriptionIds(QSettings &settings)
     std::transform(m_subscriptions.begin(), m_subscriptions.end(), std::back_inserter(l), [](const auto &s) { return s.m_id; });
     settings.setValue(QLatin1String("SubscriptionIds"), l);
 }
+
+#include "moc_subscriptionmanager.cpp"

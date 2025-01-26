@@ -100,3 +100,5 @@ void Application::maybeQuit()
         QCoreApplication::quit();
     }
 }
+
+#include "moc_application.cpp"

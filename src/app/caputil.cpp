@@ -153,3 +153,5 @@ QColor CAPUtil::colorMix(const QColor& c1, const QColor& c2, double bias)
 {
     return KColorUtils::mix(c1, c2, bias);
 }
+
+#include "moc_caputil.cpp"
