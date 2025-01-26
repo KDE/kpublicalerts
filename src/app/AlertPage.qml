@@ -48,7 +48,9 @@ Kirigami.ScrollablePage {
                         color: {
                             if (root.alert.messageType == CAPAlertMessage.Cancel)
                                 return Kirigami.Theme.disabledTextColor;
-                            applicationWindow().severityTextColor(alertInfo.severity)
+                            if (root.alertInfo.severity === CAPAlertInfo.UnknownSeverity)
+                                return Kirigami.Theme.highlightColor;
+                            applicationWindow().severityTextColor(root.alertInfo.severity)
                         }
                         opacity: 0.25
                         border.color: color
@@ -64,9 +66,11 @@ Kirigami.ScrollablePage {
 
                     QtLocation.MapCircle {
                         color: {
-                            if (root.alert.messageType == CAPAlertMessage.Cancel)
+                            if (root.alert.messageType === CAPAlertMessage.Cancel)
                                 return Kirigami.Theme.disabledTextColor;
-                            applicationWindow().severityTextColor(alertInfo.severity)
+                            if (root.alert.severity === CAPAlertInfo.UnknownSeverity)
+                                return Kirigami.Theme.highlightColor;
+                            applicationWindow().severityTextColor(root.alertInfo.severity)
                         }
                         opacity: 0.25
                         border.color: color
