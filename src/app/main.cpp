@@ -24,6 +24,7 @@
 
 #include "version.h"
 
+using namespace Qt::Literals;
 using namespace KPublicAlerts;
 
 #ifdef Q_OS_ANDROID
@@ -59,8 +60,10 @@ int main(int argc, char **argv)
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
-    const auto serviceLaunchOpt = QCommandLineOption(QStringLiteral("dbus-activated"), QStringLiteral("indicated D-Bus activation (internal)"));
+    QCommandLineOption serviceLaunchOpt(u"dbus-activated"_s, u"indicates D-Bus activation (internal)"_s);
     parser.addOption(serviceLaunchOpt);
+    QCommandLineOption selfTestOpt(u"self-test"_s, u"for automated testing (internal)"_s);
+    parser.addOption(selfTestOpt);
     parser.addVersionOption();
     parser.process(*QCoreApplication::instance());
 
@@ -79,6 +82,10 @@ int main(int argc, char **argv)
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, &app, &Application::processDBusActivation);
 #endif
+
+    if (parser.isSet(selfTestOpt)) {
+        QTimer::singleShot(std::chrono::milliseconds(250), &app, &QCoreApplication::quit);
+    }
 
     return qtApp.exec();
 }
