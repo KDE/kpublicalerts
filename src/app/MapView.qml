@@ -11,11 +11,7 @@ import QtLocation as QtLocation
 /** QtLocation map view with standard intercation settings. */
 QtLocation.Map {
     id: map
-    plugin: QtLocation.Plugin {
-        name: "osm"
-        QtLocation.PluginParameter { name: "osm.useragent"; value: "org.kde.publicalerts" }
-        QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
-    }
+    plugin: OSMPlugin.plugin
     onCopyrightLinkActivated: (link) => Qt.openUrlExternally(link)
 
     property geoCoordinate startCentroid
