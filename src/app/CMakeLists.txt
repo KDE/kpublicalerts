@@ -39,6 +39,7 @@ target_link_libraries(publicalerts PRIVATE
     KF6::Notifications
     KF6::GuiAddons
     KF6::I18n
+    KF6::I18nQml
     Qt::Quick
     Qt::QuickControls2
     Qt::Positioning

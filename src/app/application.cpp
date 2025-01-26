@@ -14,7 +14,7 @@
 #include <KWeatherCore/CAPAlertInfo>
 
 #include <KAboutData>
-#include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 
 #include <QCoreApplication>
 #include <QCommandLineParser>
@@ -79,9 +79,7 @@ void Application::showUi()
 
     m_qmlAppEngine = new QQmlApplicationEngine(this);
 
-    auto l10nContext = new KLocalizedContext(m_qmlAppEngine);
-    l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
-    m_qmlAppEngine->rootContext()->setContextObject(l10nContext);
+    KLocalization::setupLocalizedContext(m_qmlAppEngine);
 
     m_qmlAppEngine->load(QUrl(QStringLiteral("qrc:/qt/qml/org/kde/publicalerts/main.qml")));
     if (m_qmlAppEngine->rootObjects().isEmpty()) {

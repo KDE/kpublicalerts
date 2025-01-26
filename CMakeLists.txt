@@ -9,7 +9,7 @@ set(PROJECT_VERSION "24.02")
 
 set(CMAKE_CXX_STANDARD 20)
 set(QT_MIN_VERSION 6.5)
-set(KF_MIN_VERSION 5.240)
+set(KF_MIN_VERSION 6.8)
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -24,6 +24,7 @@ include(ECMPoQmTools)
 include(ECMAddTests)
 include(ECMQmlModule)
 include(ECMAddAndroidApk)
+include(ECMDeprecationSettings)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KPUBLICALERTS
@@ -45,6 +46,11 @@ else()
 endif()
 
 ki18n_install(po)
+
+ecm_set_disabled_deprecation_versions(
+    QT 6.8
+    KF 6.10
+)
 
 add_subdirectory(src)
 if (BUILD_TESTING)
