@@ -73,9 +73,6 @@ void Application::showUi()
     qmlRegisterSingletonType("org.kde.publicalerts", 1, 0, "CAPUtil", [](QQmlEngine *engine, QJSEngine*) -> QJSValue {
         return engine->toScriptValue(CAPUtil());
     });
-    qmlRegisterSingletonType("org.kde.publicalerts", 1, 0, "AboutData", [](QQmlEngine *engine, QJSEngine*) -> QJSValue {
-        return engine->toScriptValue(KAboutData::applicationData());
-    });
 
     qmlRegisterSingletonInstance("org.kde.publicalerts", 1, 0, "SubscriptionManager", &m_subscriptionMgr);
     qmlRegisterSingletonInstance("org.kde.publicalerts", 1, 0, "AlertsManager", &m_alertsMgr);
