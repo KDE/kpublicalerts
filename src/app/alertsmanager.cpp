@@ -321,7 +321,8 @@ AlertElement& AlertsManager::addAlert(AlertElement &&e)
 {
     if (e.alert().messageType() == KWeatherCore::CAPAlertMessage::MessageType::Update ||
         e.alert().messageType() == KWeatherCore::CAPAlertMessage::MessageType::Cancel) {
-        for (const auto &ref : e.alert().references()) {
+        const auto alert = e.alert();
+        for (const auto &ref : alert.references()) {
             const auto it = std::find_if(m_alerts.begin(), m_alerts.end(), [&ref](const auto &alert) {
                 return alert.alert().ownReference() == ref;
             });
@@ -435,7 +436,8 @@ bool AlertsManager::isFetching() const
 
 bool AlertsManager::intersectsSubscribedArea(const AlertElement &e) const
 {
-    for (const auto &area : e.info().areas()) {
+    const auto alertInfo = e.info();
+    for (const auto &area : alertInfo.areas()) {
         for (const auto &poly : area.polygons()) {
             for (const auto &sub : m_subMgr->subscriptions()) {
                 if (GeoMath::intersects(poly, sub.m_boundingBox)) {
