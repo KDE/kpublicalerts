@@ -116,19 +116,9 @@ QStringList CAPUtil::categoriesDisplayStrings(KWeatherCore::CAPAlertInfo::Catego
     return flagToString(categories, category_map);
 }
 
-QStringList CAPUtil::categoriesDisplayStrings(uint categories)
-{
-    return categoriesDisplayStrings(KWeatherCore::CAPAlertInfo::Categories(categories));
-}
-
 QStringList CAPUtil::responseTypesStrings(KWeatherCore::CAPAlertInfo::ResponseTypes responseTypes)
 {
     return flagToString(responseTypes, response_map);
-}
-
-QStringList CAPUtil::responseTypesStrings(uint responseTypes)
-{
-    return responseTypesStrings(KWeatherCore::CAPAlertInfo::ResponseTypes(responseTypes));
 }
 
 // sorted by priority
@@ -157,11 +147,6 @@ QString CAPUtil::categoriesIconName(KWeatherCore::CAPAlertInfo::Categories categ
         }
     }
     return QLatin1String("dialog-warning");
-}
-
-QString KPublicAlerts::CAPUtil::categoriesIconName(uint categories)
-{
-    return categoriesIconName(KWeatherCore::CAPAlertInfo::Categories(categories));
 }
 
 QColor CAPUtil::colorMix(const QColor& c1, const QColor& c2, double bias)
