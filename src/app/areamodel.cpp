@@ -63,7 +63,6 @@ QVariant AreaModel::data(const QModelIndex &index, int role) const
             QList<QList<QGeoCoordinate>> polys;
             polys.reserve(polygons.size());
             for (const auto &p : polygons) {
-                qDebug() << p.size();
                 KWeatherCore::CAPPolygon simplifiedPoly;
                 std::span<const KWeatherCore::CAPCoordinate> polyView;
                 if (p.size() > 500) {

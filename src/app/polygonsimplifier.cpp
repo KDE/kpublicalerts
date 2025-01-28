@@ -49,12 +49,12 @@ static KWeatherCore::CAPCoordinate p2c(const QPointF &p)
 KWeatherCore::CAPPolygon PolygonSimplifier::douglasPeucker(const KWeatherCore::CAPPolygon &poly, double threshold)
 {
     auto result = ::douglasPeucker(poly.begin(), poly.end(), threshold);
-    qDebug() << "got" << poly.size() << "dropped" << poly.size() - result.size() << "remaining" << result.size() << "threshold" << threshold;
+    //qDebug() << "got" << poly.size() << "dropped" << poly.size() - result.size() << "remaining" << result.size() << "threshold" << threshold;
 
     // if the polygon itself is smaller than the threshold, the result can deteriorate into
     // an area-less structure, take the bounding rect in that case
     if (result.size() < 4) {
-        qDebug() << "  result deteriorated, taking bounding rect instead";
+        //qDebug() << "  result deteriorated, taking bounding rect instead";
         const auto bbox = GeoMath::boundingBoxForPolygon(poly);
         return KWeatherCore::CAPPolygon({ p2c(bbox.topLeft()), p2c(bbox.topRight()), p2c(bbox.bottomRight()), p2c(bbox.bottomLeft()), p2c(bbox.topLeft()) });
     }
