@@ -136,8 +136,8 @@ Kirigami.ScrollablePage {
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Severity:")
-                text: CAPUtil.severityDisplayString(root.alertInfo.severity)
-                visible: root.alertInfo.severity != CAPAlertInfo.UnknownSeverity
+                text: root.alertInfo.severity === CAPAlertInfo.UnknownSeverity ? CAPUtil.severityDisplayString(root.alertInfo.severity) : ""
+                visible: root.alertInfo.severity !== CAPAlertInfo.UnknownSeverity
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Certainty:")
