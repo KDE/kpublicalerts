@@ -24,14 +24,18 @@ if (ANDROID)
 endif()
 
 set_source_files_properties(OSMPlugin.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
-qt_add_qml_module(publicalerts URI org.kde.publicalerts NO_PLUGIN QML_FILES
-    AlertPage.qml
-    AlertsPage.qml
-    main.qml
-    MapView.qml
-    OSMPlugin.qml
-    SubscriptionPage.qml
-    SubscriptionsPage.qml
+ecm_add_qml_module(publicalerts URI "org.kde.publicalerts" NO_PLUGIN
+    QML_FILES
+        AlertPage.qml
+        AlertsPage.qml
+        Main.qml
+        MapView.qml
+        OSMPlugin.qml
+        SubscriptionPage.qml
+        SubscriptionsPage.qml
+    DEPENDENCIES
+        "org.kde.kirigami"
+        "QtQuick"
 )
 
 target_link_libraries(publicalerts PRIVATE

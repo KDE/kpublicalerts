@@ -81,10 +81,7 @@ void Application::showUi()
 
     KLocalization::setupLocalizedContext(m_qmlAppEngine);
 
-    m_qmlAppEngine->load(QUrl(QStringLiteral("qrc:/qt/qml/org/kde/publicalerts/main.qml")));
-    if (m_qmlAppEngine->rootObjects().isEmpty()) {
-        QCoreApplication::exit(-1);
-    }
+    m_qmlAppEngine->loadFromModule("org.kde.publicalerts", "Main");
 }
 
 void Application::processDBusActivation(const QStringList &args)
