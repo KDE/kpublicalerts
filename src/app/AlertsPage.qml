@@ -52,7 +52,8 @@ Kirigami.ScrollablePage {
 
         section.property: "sectionTitle"
         section.delegate:Kirigami.ListSectionHeader {
-            label: section
+            required property string section
+            text: section
             width: ListView.view.width
         }
         section.criteria: ViewSection.FullString
@@ -73,14 +74,14 @@ Kirigami.ScrollablePage {
 
     Connections {
         target: AlertsManager
-        onShowAlert: {
+        function onShowAlert() {
             const alert = AlertsManager.alertById(id);
             while (applicationWindow().pageStack.depth > 1) {
                 applicationWindow().pageStack.pop();
             }
             applicationWindow().pageStack.push(alertPage, { alert: alert.alert, alertInfo: alert.info });
         }
-        onFetchingChanged: {
+        function onFetchingChanged() {
             root.refreshing = AlertsManager.fetching
         }
     }

@@ -35,6 +35,8 @@ ecm_add_qml_module(publicalerts URI "org.kde.publicalerts" NO_PLUGIN
         SubscriptionsPage.qml
     DEPENDENCIES
         "org.kde.kirigami"
+        "org.kde.weathercore"
+        "QtLocation"
         "QtQuick"
 )
 

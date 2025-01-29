@@ -15,7 +15,7 @@ import org.kde.publicalerts
 
 Kirigami.ScrollablePage {
     id: root
-    property var alert
+    property capAlertMessage alert
     property alias alertInfo: areaModel.alertInfo
 
     title: alertInfo.event
@@ -65,6 +65,7 @@ Kirigami.ScrollablePage {
                     model: circles
 
                     QtLocation.MapCircle {
+                        required property capCircle modelData
                         color: {
                             if (root.alert.messageType === CAPAlertMessage.Cancel)
                                 return Kirigami.Theme.disabledTextColor;

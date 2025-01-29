@@ -54,19 +54,6 @@ void Application::showUi()
         return;
     }
 
-    // TODO move to KWeatherCore itself
-    qRegisterMetaType<KWeatherCore::CAPAlertMessage>();
-    qRegisterMetaType<KWeatherCore::CAPAlertMessage::Status>();
-    qRegisterMetaType<KWeatherCore::CAPAlertMessage::MessageType>();
-    qRegisterMetaType<KWeatherCore::CAPAlertInfo>();
-    qRegisterMetaType<KWeatherCore::CAPAlertInfo::Categories>();
-    qRegisterMetaType<KWeatherCore::CAPAlertInfo::ResponseTypes>();
-    qRegisterMetaType<KWeatherCore::CAPAlertInfo::Severity>();
-    qRegisterMetaType<KWeatherCore::CAPAlertInfo::Urgency>();
-    qRegisterMetaType<KWeatherCore::CAPAlertInfo::Certainty>();
-    qmlRegisterUncreatableMetaObject(KWeatherCore::CAPAlertInfo::staticMetaObject, "org.kde.weathercore", 1, 0, "CAPAlertInfo", {});
-    qmlRegisterUncreatableMetaObject(KWeatherCore::CAPAlertMessage::staticMetaObject, "org.kde.weathercore", 1, 0, "CAPAlertMessage", {});
-
     qRegisterMetaType<KPublicAlerts::AlertElement>();
     qmlRegisterType<KPublicAlerts::AlertsSortProxyModel>("org.kde.publicalerts", 1, 0, "AlertsSortProxyModel");
     qmlRegisterType<KPublicAlerts::AreaModel>("org.kde.publicalerts", 1, 0, "AreaModel");
