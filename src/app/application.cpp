@@ -5,7 +5,6 @@
 
 #include "application.h"
 
-#include "alertsmanager.h"
 #include "alertssortproxymodel.h"
 #include "areamodel.h"
 #include "caputil.h"

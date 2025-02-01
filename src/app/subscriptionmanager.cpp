@@ -7,7 +7,6 @@
 #include "geomath.h"
 #include "restapi.h"
 
-#include <KUnifiedPush/Connector>
 
 #include <KLocalizedString>
 
