@@ -35,9 +35,11 @@ find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControl
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons Kirigami I18n GuiAddons Notifications)
 find_package(KWeatherCore REQUIRED)
 find_package(KUnifiedPush REQUIRED)
+
 if (NOT ANDROID)
     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS DBusAddons)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Widgets)
+    find_package(KF6 ${KF_MIN_VERSION} OPTIONAL_COMPONENTS Crash)
 else()
     if (NOT DEFINED BREEZEICONS_DIR AND EXISTS ${CMAKE_SOURCE_DIR}/../breeze-icons)
         set(BREEZEICONS_DIR ${CMAKE_SOURCE_DIR}/../breeze-icons)

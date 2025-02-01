@@ -24,6 +24,10 @@
 
 #include "version.h"
 
+#if __has_include("KCrash")
+#include <KCrash>
+#endif
+
 using namespace Qt::Literals;
 using namespace KPublicAlerts;
 
@@ -58,7 +62,9 @@ int main(int argc, char **argv)
     aboutData.setShortDescription(i18nc("@info", "Weather and emergency alerts"));
     aboutData.setCopyrightStatement(i18nc("@info:credit", "Copyright © 2022 The KDE Community"));
     KAboutData::setApplicationData(aboutData);
-
+#if __has_include("KCrash")
+    KCrash::initialize();
+#endif
     QCommandLineParser parser;
     QCommandLineOption serviceLaunchOpt(u"dbus-activated"_s, u"indicates D-Bus activation (internal)"_s);
     parser.addOption(serviceLaunchOpt);
