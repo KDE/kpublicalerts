@@ -12,7 +12,7 @@ import org.kde.publicalerts
 
 Kirigami.ScrollablePage {
     id: root
-    title: i18n("Areas of interest")
+    title: i18nc("@title:window", "Areas of Interest")
 
     Component {
         id: subscriptionPage
@@ -22,7 +22,7 @@ Kirigami.ScrollablePage {
     actions: [
         Kirigami.Action {
             icon.name: "list-add"
-            text: i18n("Add...")
+            text: i18nc("@action:button", "Add…")
             onTriggered: applicationWindow().pageStack.push(subscriptionPage)
         }
     ]
@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
             actions: [
                 Kirigami.Action {
                     icon.name: "edit-delete"
-                    text: i18n("Unsubscribe")
+                    text: i18nc("@action:button", "Unsubscribe")
                     onTriggered: {
                         sourceModel.removeRows(model.index, 1)
                     }
@@ -49,10 +49,10 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             visible: listView.count == 0
-            text: i18n("No areas of interest chosen.")
+            text: i18nc("@info:placeholder", "No areas of interest chosen")
             helpfulAction: Kirigami.Action {
                 icon.name: "list-add"
-                text: i18n("Add...")
+                text: i18nc("@action:button", "Add…")
                 onTriggered: applicationWindow().pageStack.push(subscriptionPage)
             }
         }

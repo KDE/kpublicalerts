@@ -386,11 +386,11 @@ void AlertsManager::showNotification(AlertElement &e)
             if (!e.notification) {
                 auto n = new KNotification(QLatin1String(m.eventName));
                 e.notification = n;
-                auto viewAction = n->addDefaultAction(i18n("Show alert details"));
+                auto viewAction = n->addDefaultAction(i18nc("@action:button", "Show Alert Details"));
                 connect(viewAction, &KNotificationAction::activated, this, [this, n]() {
                     notificationActivated(n);
                 });
-                [[maybe_unused]] auto dismissAction = n->addAction(i18n("Dismiss"));
+                [[maybe_unused]] auto dismissAction = n->addAction(i18nc("@action:button", "Dismiss"));
                 connect(e.notification.data(), &KNotification::closed, this, [this]() {
                     Q_EMIT notificationClosed();
                 });

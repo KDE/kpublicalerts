@@ -13,7 +13,7 @@ import org.kde.publicalerts
 
 Kirigami.ScrollablePage {
     id: root
-    title: i18n("Active Alerts")
+    title: i18nc("@title:window", "Active Alerts")
     supportsRefreshing: true
 
     Component {
@@ -62,10 +62,10 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             visible: listView.count == 0
-            text: i18n("No alerts")
+            text: i18nc("@info:placeholder", "No alerts")
             helpfulAction: Kirigami.Action {
                 icon.name: "list-add"
-                text: i18n("Add area of interest...")
+                text: i18nc("@action:button", "Add Area of Interest…")
                 onTriggered: applicationWindow().pageStack.push(subscriptionsPage)
                 enabled: SubscriptionManager.count == 0
             }

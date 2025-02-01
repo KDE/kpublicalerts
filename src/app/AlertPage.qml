@@ -101,7 +101,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             // for diagnostics only
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Status:")
+                Kirigami.FormData.label: i18nc("@label", "Status:")
                 text: {
                     switch(root.alert.status) {
                         case CAPAlertMessage.Actual: return "Actual"
@@ -111,7 +111,7 @@ Kirigami.ScrollablePage {
                 }
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Message type:")
+                Kirigami.FormData.label: i18nc("@label", "Message type:")
                 text: {
                     switch(root.alert.messageType) {
                         case CAPAlertMessage.Alert: return "Alert"
@@ -124,29 +124,29 @@ Kirigami.ScrollablePage {
                 }
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Categories:")
+                Kirigami.FormData.label: i18nc("@label", "Categories:")
                 Layout.fillWidth: true
                 text: CAPUtil.categoriesDisplayStrings(root.alertInfo.categories).join('\n')
                 visible: root.alertInfo.categories != CAPAlertInfo.Unknown
                 wrapMode: Text.WordWrap
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Urgency:")
+                Kirigami.FormData.label: i18nc("@label", "Urgency:")
                 text: CAPUtil.urgencyDisplayString(root.alertInfo.urgency)
                 visible: root.alertInfo.urgency != CAPAlertInfo.UnknownUrgency
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Severity:")
+                Kirigami.FormData.label: i18nc("@label", "Severity:")
                 text: root.alertInfo.severity !== CAPAlertInfo.UnknownSeverity ? CAPUtil.severityDisplayString(root.alertInfo.severity) : ""
                 visible: root.alertInfo.severity !== CAPAlertInfo.UnknownSeverity
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Certainty:")
+                Kirigami.FormData.label: i18nc("@label", "Certainty:")
                 text: CAPUtil.certaintyDisplayString(root.alertInfo.certainty)
                 visible: root.alertInfo.certainty != CAPAlertInfo.UnknownCertainty
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Recommended response:")
+                Kirigami.FormData.label: i18nc("@label", "Recommended response:")
                 Layout.fillWidth: true
                 text: CAPUtil.responseTypesStrings(root.alertInfo.responseTypes).join('\n')
                 visible: root.alertInfo.responseTypes != CAPAlertInfo.UnknownResponseType
@@ -154,7 +154,7 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Web:")
+                Kirigami.FormData.label: i18nc("@label", "Web:")
                 Layout.fillWidth: true
                 text: root.alertInfo.web
                 visible: root.alertInfo.web
@@ -162,7 +162,7 @@ Kirigami.ScrollablePage {
                 onLinkActivated: Qt.openUrlExternally(link)
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Contact:")
+                Kirigami.FormData.label: i18nc("@label", "Contact:")
                 Layout.fillWidth: true
                 text: root.alertInfo.contact
                 visible: root.alertInfo.contact
@@ -170,27 +170,27 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Sent:")
+                Kirigami.FormData.label: i18nc("@label, time", "Sent:")
                 visible: !isNaN(root.alert.sentTime.getTime())
                 text: Qt.formatDateTime(root.alert.sentTime)
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Effective:")
+                Kirigami.FormData.label: i18nc("@label, time", "Effective:")
                 visible: !isNaN(root.alertInfo.effectiveTime.getTime())
                 text: Qt.formatDateTime(root.alertInfo.effectiveTime)
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Onset:")
+                Kirigami.FormData.label: i18nc("@label, time", "Onset:")
                 visible: !isNaN(root.alertInfo.onsetTime.getTime())
                 text: Qt.formatDateTime(root.alertInfo.onsetTime)
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Expires:")
+                Kirigami.FormData.label: i18nc("@label, time", "Expires:")
                 visible: !isNaN(root.alertInfo.expireTime.getTime())
                 text: Qt.formatDateTime(root.alertInfo.expireTime)
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Sender:")
+                Kirigami.FormData.label: i18nc("@label", "Sender:")
                 Layout.fillWidth: true
                 text: root.alertInfo.sender
                 wrapMode: Text.WordWrap
@@ -199,7 +199,7 @@ Kirigami.ScrollablePage {
 
             QQC2.Label {
                 Kirigami.FormData.isSection: true
-                Kirigami.FormData.label: i18n("Description")
+                Kirigami.FormData.label: i18nc("@label", "Description")
                 Kirigami.Separator {}
             }
             QQC2.Label {
@@ -210,7 +210,7 @@ Kirigami.ScrollablePage {
 
             QQC2.Label {
                 Kirigami.FormData.isSection: true
-                Kirigami.FormData.label: i18n("Instruction")
+                Kirigami.FormData.label: i18nc("@label", "Instruction")
                 Kirigami.Separator {}
                 visible: instructionText.visible
             }
@@ -224,7 +224,7 @@ Kirigami.ScrollablePage {
 
             QQC2.Label {
                 Kirigami.FormData.isSection: true
-                Kirigami.FormData.label: i18n("Area")
+                Kirigami.FormData.label: i18nc("@label", "Area")
                 Kirigami.Separator {}
             }
             QQC2.Label {

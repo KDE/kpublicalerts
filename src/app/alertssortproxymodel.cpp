@@ -39,9 +39,9 @@ QVariant AlertsSortProxyModel::data(const QModelIndex &index, int role) const
     if (role == SectionTitleRole) {
         const auto onsetTime = QSortFilterProxyModel::data(index, AlertsManager::OnsetTimeRole).toDateTime();
         if (onsetTime.isValid() && onsetTime > QDateTime::currentDateTime()) {
-            return i18n("Future");
+            return i18nc("@label", "Future");
         } else {
-            return i18n("Current");
+            return i18nc("@label", "Current");
         }
     }
 

@@ -14,12 +14,12 @@ import org.kde.publicalerts
 
 Kirigami.Page {
     id: root
-    title: i18n("Add area of interest")
+    title: i18nc("@title:window", "Add Area of Interest")
 
    actions: [
         Kirigami.Action {
             icon.name: "list-add"
-            text: i18n("Add area of interest")
+            text: i18nc("@action:button", "Add Area of Interest")
             enabled: nameField.text != ""
             onTriggered: {
                 SubscriptionManager.addSubscription(map.center.latitude, map.center.longitude, radiusSlider.value, nameField.text);
@@ -49,10 +49,10 @@ Kirigami.Page {
     footer: Kirigami.FormLayout {
         QQC2.TextField {
             id: nameField
-            Kirigami.FormData.label: i18n("Name:")
+            Kirigami.FormData.label: i18nc("@label", "Name:")
         }
         RowLayout {
-            Kirigami.FormData.label: i18n("Radius (km)")
+            Kirigami.FormData.label: i18nc("@label", "Radius (km)")
             QQC2.Slider {
                 id: radiusSlider
                 from: 1000
@@ -60,7 +60,7 @@ Kirigami.Page {
                 value: 20000
             }
             QQC2.Label {
-                text: i18n("%1 km", radiusSlider.value / 1000.0)
+                text: i18nc("@label", "%1 km", radiusSlider.value / 1000.0)
             }
         }
     }

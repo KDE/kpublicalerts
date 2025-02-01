@@ -49,10 +49,10 @@ static QStringList flagToString(FlagT value, const MapEntry<EnumT> (&map)[N])
 
 // see https://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2.html
 static constexpr const MapEntry<KWeatherCore::CAPAlertInfo::Severity> severity_map[] = {
-    { KWeatherCore::CAPAlertInfo::Severity::Extreme, kli18n("Extreme - Extraordinary threat to life or property") },
-    { KWeatherCore::CAPAlertInfo::Severity::Severe, kli18n("Severe - Significant threat to life or property") },
-    { KWeatherCore::CAPAlertInfo::Severity::Moderate, kli18n("Moderate - Possible threat to life or property") },
-    { KWeatherCore::CAPAlertInfo::Severity::Minor, kli18n("Minor - Minimal to no known threat to life or property") },
+    { KWeatherCore::CAPAlertInfo::Severity::Extreme, kli18n("Extreme — Extraordinary threat to life or property") },
+    { KWeatherCore::CAPAlertInfo::Severity::Severe, kli18n("Severe — Significant threat to life or property") },
+    { KWeatherCore::CAPAlertInfo::Severity::Moderate, kli18n("Moderate — Possible threat to life or property") },
+    { KWeatherCore::CAPAlertInfo::Severity::Minor, kli18n("Minor — Minimal to no known threat to life or property") },
 };
 
 static constexpr const MapEntry<KWeatherCore::CAPAlertInfo::Urgency> urgency_map[] = {
@@ -64,8 +64,8 @@ static constexpr const MapEntry<KWeatherCore::CAPAlertInfo::Urgency> urgency_map
 
 static constexpr const MapEntry<KWeatherCore::CAPAlertInfo::Certainty> certainty_map[] = {
     { KWeatherCore::CAPAlertInfo::Certainty::Observed, kli18n("Occurred or ongoing") },
-    { KWeatherCore::CAPAlertInfo::Certainty::Likely, kli18n("Likely (>50%)") },
-    { KWeatherCore::CAPAlertInfo::Certainty::Possible, kli18n("Possible but not likely (<50%)") },
+    { KWeatherCore::CAPAlertInfo::Certainty::Likely, kli18n("Likely (> 50%)") },
+    { KWeatherCore::CAPAlertInfo::Certainty::Possible, kli18n("Possible but not likely (< 50%)") },
     { KWeatherCore::CAPAlertInfo::Certainty::Unlikely, kli18n("Not expected to occur") },
 };
 
@@ -80,7 +80,7 @@ static constexpr const MapEntry<KWeatherCore::CAPAlertInfo::Category> category_m
     { KWeatherCore::CAPAlertInfo::Category::Environmental, kli18n("Pollution and other environmental event") },
     { KWeatherCore::CAPAlertInfo::Category::Transport, kli18n("Transportation") },
     { KWeatherCore::CAPAlertInfo::Category::Infrastructure, kli18n("Utility, telecommunication, other non-transport infrastructure") },
-    { KWeatherCore::CAPAlertInfo::Category::CBRNE, kli18n("Chemical, Biological, Radiological, Nuclear or High-Yield Explosive threat or attack") },
+    { KWeatherCore::CAPAlertInfo::Category::CBRNE, kli18n("Chemical, biological, radiological, nuclear or high-yield explosive threat or attack") },
     { KWeatherCore::CAPAlertInfo::Category::Other, kli18n("Other event") },
 };
 

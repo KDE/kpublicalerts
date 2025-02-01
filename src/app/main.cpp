@@ -36,7 +36,7 @@ int main(int argc, char **argv)
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
     QCoreApplication::setApplicationName(QStringLiteral("publicalerts"));
     QCoreApplication::setApplicationVersion(QStringLiteral(KPUBLICALERTS_VERSION_STRING));
-    QGuiApplication::setApplicationDisplayName(i18n("Public Alerts"));
+    QGuiApplication::setApplicationDisplayName(i18nc("@title:window", "Public Alerts"));
     QGuiApplication::setDesktopFileName(QStringLiteral("org.kde.publicalerts"));
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("weather-storm")));
 
@@ -55,8 +55,8 @@ int main(int argc, char **argv)
 
     static auto aboutData = KAboutData::applicationData();
     aboutData.setLicense(KAboutLicense::LGPL_V2, KAboutLicense::OrLaterVersions);
-    aboutData.setShortDescription(i18n("Weather and emergency alerts"));
-    aboutData.setCopyrightStatement(i18n("Copyright © 2022 The KDE Community"));
+    aboutData.setShortDescription(i18nc("@info", "Weather and emergency alerts"));
+    aboutData.setCopyrightStatement(i18nc("@info:credit", "Copyright © 2022 The KDE Community"));
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;

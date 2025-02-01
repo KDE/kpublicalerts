@@ -14,7 +14,7 @@ import org.kde.publicalerts
 Kirigami.ApplicationWindow {
     id: root
 
-    title: i18n("Public Alerts")
+    title: i18nc("@title:window", "Public Alerts")
 
     Component {
         id: subscriptionsPage
@@ -41,17 +41,17 @@ Kirigami.ApplicationWindow {
     }
 
     globalDrawer: Kirigami.GlobalDrawer {
-        title: i18n("Public Alerts")
+        title: i18nc("@title:window", "Public Alerts")
         titleIcon: "weather-storm"
         isMenu: true
         actions: [
             Kirigami.Action {
-                text: i18n("Areas of interest...")
+                text: i18nc("@action:inmenu", "Areas of Interest…")
                 icon.name: "map-globe"
                 onTriggered: applicationWindow().pageStack.push(subscriptionsPage)
             },
             Kirigami.Action {
-                text: i18n("About")
+                text: i18nc("@action:inmenu", "About")
                 icon.name: "help-about"
                 onTriggered: {
                     if (applicationWindow().pageStack.layers.depth < 2) {
