@@ -1,0 +1,402 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the kpublicalerts package.
+#
+# SPDX-FileCopyrightText: 2025 Matjaž Jeran <matjaz.jeran@amis.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: kpublicalerts\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-02-03 00:43+0000\n"
+"PO-Revision-Date: 2025-02-03 09:41+0100\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 24.12.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Matjaž Jeran"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "matjaz.jeran@amis.net"
+
+#: app/AlertPage.qml:104
+#, kde-format
+msgctxt "@label"
+msgid "Status:"
+msgstr "Status:"
+
+#: app/AlertPage.qml:114
+#, kde-format
+msgctxt "@label"
+msgid "Message type:"
+msgstr "Vrsta sporočila:"
+
+#: app/AlertPage.qml:127
+#, kde-format
+msgctxt "@label"
+msgid "Categories:"
+msgstr "Kategorije:"
+
+#: app/AlertPage.qml:134
+#, kde-format
+msgctxt "@label"
+msgid "Urgency:"
+msgstr "Nujnost:"
+
+#: app/AlertPage.qml:139
+#, kde-format
+msgctxt "@label"
+msgid "Severity:"
+msgstr "Resnost:"
+
+#: app/AlertPage.qml:144
+#, kde-format
+msgctxt "@label"
+msgid "Certainty:"
+msgstr "Gotovost:"
+
+#: app/AlertPage.qml:149
+#, kde-format
+msgctxt "@label"
+msgid "Recommended response:"
+msgstr "Priporočen odziv:"
+
+#: app/AlertPage.qml:157
+#, kde-format
+msgctxt "@label"
+msgid "Web:"
+msgstr "Splet:"
+
+#: app/AlertPage.qml:165
+#, kde-format
+msgctxt "@label"
+msgid "Contact:"
+msgstr "Kontakt:"
+
+#: app/AlertPage.qml:173
+#, kde-format
+msgctxt "@label, time"
+msgid "Sent:"
+msgstr "Poslano:"
+
+#: app/AlertPage.qml:178
+#, kde-format
+msgctxt "@label, time"
+msgid "Effective:"
+msgstr "Velja od:"
+
+#: app/AlertPage.qml:183
+#, kde-format
+msgctxt "@label, time"
+msgid "Onset:"
+msgstr "Začetek:"
+
+#: app/AlertPage.qml:188
+#, kde-format
+msgctxt "@label, time"
+msgid "Expires:"
+msgstr "Poteče:"
+
+#: app/AlertPage.qml:193
+#, kde-format
+msgctxt "@label"
+msgid "Sender:"
+msgstr "Pošiljatelj:"
+
+#: app/AlertPage.qml:202
+#, kde-format
+msgctxt "@label"
+msgid "Description"
+msgstr "Opis"
+
+#: app/AlertPage.qml:213
+#, kde-format
+msgctxt "@label"
+msgid "Instruction"
+msgstr "Navodilo"
+
+#: app/AlertPage.qml:227
+#, kde-format
+msgctxt "@label"
+msgid "Area"
+msgstr "Področje"
+
+#: app/alertsmanager.cpp:389
+#, kde-format
+msgctxt "@action:button"
+msgid "Show Alert Details"
+msgstr "Pokaži podrobnosti opozorila"
+
+#: app/alertsmanager.cpp:393
+#, kde-format
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Dismiss"
+
+#: app/AlertsPage.qml:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Active Alerts"
+msgstr "Dejavna opozorila"
+
+#: app/AlertsPage.qml:65
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No alerts"
+msgstr "Ni opozoril"
+
+#: app/AlertsPage.qml:68
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Area of Interest…"
+msgstr "Dodaj področje zanimanja..."
+
+#: app/alertssortproxymodel.cpp:42
+#, kde-format
+msgctxt "@label"
+msgid "Future"
+msgstr "V bodoče"
+
+#: app/alertssortproxymodel.cpp:44
+#, kde-format
+msgctxt "@label"
+msgid "Current"
+msgstr "Trenutno"
+
+#: app/caputil.cpp:52
+msgid "Extreme — Extraordinary threat to life or property"
+msgstr "Ekstremno — ekstremna nevarnost za življenje ali premoženje"
+
+#: app/caputil.cpp:53
+msgid "Severe — Significant threat to life or property"
+msgstr "Nujno — Resna nevarnost za življenje ali premoženje"
+
+#: app/caputil.cpp:54
+msgid "Moderate — Possible threat to life or property"
+msgstr "Zmerna — možna nevarnost za življenje ali premoženje"
+
+#: app/caputil.cpp:55
+msgid "Minor — Minimal to no known threat to life or property"
+msgstr "Manjša — Minimalna do neznatna nevarnost za življenje ali premoženje"
+
+#: app/caputil.cpp:59
+msgid "Responsive action should be taken immediately"
+msgstr "Ukrepati je treba takoj"
+
+#: app/caputil.cpp:60
+msgid "Responsive action should be taken soon"
+msgstr "Ukrepati je treba kmalu"
+
+#: app/caputil.cpp:61
+msgid "Responsive action be taken in the near future"
+msgstr "Ukrepati je treba v bližnji bodočnosti"
+
+#: app/caputil.cpp:62
+msgid "Responsive action is no longer required"
+msgstr "Ukrepati ni treba več"
+
+#: app/caputil.cpp:66
+msgid "Occurred or ongoing"
+msgstr "Se je pojavilo ali poteka"
+
+#: app/caputil.cpp:67
+msgid "Likely (> 50%)"
+msgstr "Verjetno (> 50%)"
+
+#: app/caputil.cpp:68
+msgid "Possible but not likely (< 50%)"
+msgstr "Možno a manj verjetno (< 50%)"
+
+#: app/caputil.cpp:69
+msgid "Not expected to occur"
+msgstr "Ni pričakovati, da se bo zgodilo"
+
+#: app/caputil.cpp:73
+msgid "Geophysical"
+msgstr "Geofizikalni"
+
+#: app/caputil.cpp:74
+msgid "Meteorological"
+msgstr "Meteorološki"
+
+#: app/caputil.cpp:75
+msgid "General emergency and public safety"
+msgstr "Splošna ogroženost in javna varnost"
+
+#: app/caputil.cpp:76
+msgid "Law enforcement, military, homeland and local/private security"
+msgstr "Organi pregona, vojska, državna in lokalna/zasebna varnost"
+
+#: app/caputil.cpp:77
+msgid "Rescue and recovery"
+msgstr "Reševanje in okrevanje"
+
+#: app/caputil.cpp:78
+msgid "Fire"
+msgstr "Požar"
+
+#: app/caputil.cpp:79
+msgid "Medical and public health"
+msgstr "Medicinsko in javno zdravje"
+
+#: app/caputil.cpp:80
+msgid "Pollution and other environmental event"
+msgstr "Onesnaženje in drugi okoljski dogodki"
+
+#: app/caputil.cpp:81
+msgid "Transportation"
+msgstr "Transport"
+
+#: app/caputil.cpp:82
+msgid "Utility, telecommunication, other non-transport infrastructure"
+msgstr "Komunalna, telekomunikacijska, druga neprometna infrastruktura"
+
+#: app/caputil.cpp:83
+msgid ""
+"Chemical, biological, radiological, nuclear or high-yield explosive threat "
+"or attack"
+msgstr ""
+"Kemijska, biološka, ​​radiološka, ​​jedrska grožnja ali nevarnost eksplozije "
+"velike moči ali napada"
+
+#: app/caputil.cpp:84
+msgid "Other event"
+msgstr "Drug dogodek"
+
+#: app/caputil.cpp:88
+msgid "Take shelter in place or per instructions."
+msgstr "Poiščite zaklon na mestu ali po navodilih."
+
+#: app/caputil.cpp:89
+msgid "Relocate as instructed."
+msgstr "Premaknite se po navodilih."
+
+#: app/caputil.cpp:90
+msgid "Make preparations as per the instructions."
+msgstr "Pripravite se v skladu z navodili."
+
+#: app/caputil.cpp:91
+msgid "Execute activities identified in the instructions."
+msgstr "Izvedite aktivnosti opredeljene v navodilih."
+
+#: app/caputil.cpp:92
+msgid "Avoid the subject event as per the instructions."
+msgstr "Izogibajte se omenjenemu dogodku v skladu z navodili."
+
+#: app/caputil.cpp:93
+msgid "Attend to information sources as described in the instructions."
+msgstr "Bodite pozorni na vire informacij, kot je opisano v navodilih."
+
+#: app/caputil.cpp:94
+msgid "Evaluate the information in this message."
+msgstr "Ocenite informacije v tem sporočilu."
+
+#: app/caputil.cpp:95
+msgid ""
+"The subject event no longer poses a threat or concern and any follow on "
+"action is described in the instructions."
+msgstr ""
+"Omenjeni dogodek ne predstavlja več grožnje ali skrbi in sledite dejanju, ki "
+"je opisano v navodilih."
+
+#: app/caputil.cpp:96
+msgid "No action recommended."
+msgstr "Ne priporočamo nobenega ukrepa."
+
+#: app/main.cpp:39 app/Main.qml:17 app/Main.qml:44
+#, kde-format
+msgctxt "@title:window"
+msgid "Public Alerts"
+msgstr "Javna opozorila"
+
+#: app/main.cpp:58
+#, kde-format
+msgctxt "@info"
+msgid "Weather and emergency alerts"
+msgstr "Vremenska in nujna opozorila"
+
+#: app/main.cpp:59
+#, kde-format
+msgctxt "@info:credit"
+msgid "Copyright © 2022 The KDE Community"
+msgstr "Copyright © 2022 Skupnost KDE"
+
+#: app/Main.qml:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Areas of Interest…"
+msgstr "Področja zanimanja…"
+
+#: app/Main.qml:54
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "About"
+msgstr "O programu"
+
+#: app/subscriptionmanager.cpp:51
+#, kde-format
+msgid "Weather and emergency alert notifications"
+msgstr "Obvestila o vremenu in nujnih opozorilih"
+
+#: app/SubscriptionPage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Area of Interest"
+msgstr "Dodaj področje zanimanja"
+
+#: app/SubscriptionPage.qml:22
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Area of Interest"
+msgstr "Dodaj področje zanimanja"
+
+#: app/SubscriptionPage.qml:52
+#, kde-format
+msgctxt "@label"
+msgid "Name:"
+msgstr "Ime:"
+
+#: app/SubscriptionPage.qml:55
+#, kde-format
+msgctxt "@label"
+msgid "Radius (km)"
+msgstr "Radij (km)"
+
+#: app/SubscriptionPage.qml:63
+#, kde-format
+msgctxt "@label"
+msgid "%1 km"
+msgstr "%1 km"
+
+#: app/SubscriptionsPage.qml:15
+#, kde-format
+msgctxt "@title:window"
+msgid "Areas of Interest"
+msgstr "Področja zanimanja"
+
+#: app/SubscriptionsPage.qml:25 app/SubscriptionsPage.qml:55
+#, kde-format
+msgctxt "@action:button"
+msgid "Add…"
+msgstr "Dodaj…"
+
+#: app/SubscriptionsPage.qml:41
+#, kde-format
+msgctxt "@action:button"
+msgid "Unsubscribe"
+msgstr "Odjavi se"
+
+#: app/SubscriptionsPage.qml:52
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No areas of interest chosen"
+msgstr "Ni izbranih interesnih področij"
