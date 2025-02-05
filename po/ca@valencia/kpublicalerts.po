@@ -1,401 +1,404 @@
-# Copyright (C) YEAR This file is copyright:
-# This file is distributed under the same license as the kpublicalerts package.
+# Translation of kpublicalerts.po to Catalan (Valencian)
+# Copyright (C) 2025 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2025.
+# Josep M. Ferrer <txemaq@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-03 00:43+0000\n"
-"PO-Revision-Date: 2025-02-03 09:16+0200\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
-"Language: uk\n"
+"PO-Revision-Date: 2025-02-03 10:28+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Юрій Чорноіван"
+msgstr "Josep M. Ferrer"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "yurchor@ukr.net"
+msgstr "txemaq@gmail.com"
 
 #: app/AlertPage.qml:104
 #, kde-format
 msgctxt "@label"
 msgid "Status:"
-msgstr "Стан:"
+msgstr "Estat:"
 
 #: app/AlertPage.qml:114
 #, kde-format
 msgctxt "@label"
 msgid "Message type:"
-msgstr "Тип повідомлення:"
+msgstr "Tipus de missatge:"
 
 #: app/AlertPage.qml:127
 #, kde-format
 msgctxt "@label"
 msgid "Categories:"
-msgstr "Категорії:"
+msgstr "Categories:"
 
 #: app/AlertPage.qml:134
 #, kde-format
 msgctxt "@label"
 msgid "Urgency:"
-msgstr "Терміновість:"
+msgstr "Urgència:"
 
 #: app/AlertPage.qml:139
 #, kde-format
 msgctxt "@label"
 msgid "Severity:"
-msgstr "Важливість:"
+msgstr "Gravetat:"
 
 #: app/AlertPage.qml:144
 #, kde-format
 msgctxt "@label"
 msgid "Certainty:"
-msgstr "Певність:"
+msgstr "Certesa:"
 
 #: app/AlertPage.qml:149
 #, kde-format
 msgctxt "@label"
 msgid "Recommended response:"
-msgstr "Рекомендована відповідь:"
+msgstr "Resposta recomanada:"
 
 #: app/AlertPage.qml:157
 #, kde-format
 msgctxt "@label"
 msgid "Web:"
-msgstr "Інтернет:"
+msgstr "Web:"
 
 #: app/AlertPage.qml:165
 #, kde-format
 msgctxt "@label"
 msgid "Contact:"
-msgstr "Контактна інформація:"
+msgstr "Contacte:"
 
 #: app/AlertPage.qml:173
 #, kde-format
 msgctxt "@label, time"
 msgid "Sent:"
-msgstr "Надсилання:"
+msgstr "Enviat:"
 
 #: app/AlertPage.qml:178
 #, kde-format
 msgctxt "@label, time"
 msgid "Effective:"
-msgstr "Ефективний:"
+msgstr "Efectiu:"
 
 #: app/AlertPage.qml:183
 #, kde-format
 msgctxt "@label, time"
 msgid "Onset:"
-msgstr "Початок:"
+msgstr "Inici:"
 
 #: app/AlertPage.qml:188
 #, kde-format
 msgctxt "@label, time"
 msgid "Expires:"
-msgstr "Строк дії:"
+msgstr "Caduca:"
 
 #: app/AlertPage.qml:193
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
-msgstr "Відправник:"
+msgstr "Remitent:"
 
 #: app/AlertPage.qml:202
 #, kde-format
 msgctxt "@label"
 msgid "Description"
-msgstr "Опис"
+msgstr "Descripció"
 
 #: app/AlertPage.qml:213
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
-msgstr "Настанови"
+msgstr "Instrucció"
 
 #: app/AlertPage.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Area"
-msgstr "Область"
+msgstr "Àrea"
 
 #: app/alertsmanager.cpp:389
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Alert Details"
-msgstr "Показати параметри нагадування"
+msgstr "Mostra els detalls de l'alerta"
 
 #: app/alertsmanager.cpp:393
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
-msgstr "Відкинути"
+msgstr "Descarta"
 
 #: app/AlertsPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Active Alerts"
-msgstr "Активні нагадування"
+msgstr "Alertes actives"
 
 #: app/AlertsPage.qml:65
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No alerts"
-msgstr "Немає нагадувань"
+msgstr "Sense alertes"
 
 #: app/AlertsPage.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest…"
-msgstr "Додати область зацікавлення…"
+msgstr "Afig una àrea d'interés…"
 
 #: app/alertssortproxymodel.cpp:42
 #, kde-format
 msgctxt "@label"
 msgid "Future"
-msgstr "Майбутні"
+msgstr "Futur"
 
 #: app/alertssortproxymodel.cpp:44
 #, kde-format
 msgctxt "@label"
 msgid "Current"
-msgstr "Поточні"
+msgstr "Actual"
 
 #: app/caputil.cpp:52
 msgid "Extreme — Extraordinary threat to life or property"
-msgstr "Надзвичайна — надзвичайна загроза життю або майну"
+msgstr "Extrema: Amenaça extraordinària a la vida o les propietats"
 
 #: app/caputil.cpp:53
 msgid "Severe — Significant threat to life or property"
-msgstr "Критична — значна загроза життю або майну"
+msgstr "Severa: Amenaça significativa a la vida o les propietats"
 
 #: app/caputil.cpp:54
 msgid "Moderate — Possible threat to life or property"
-msgstr "Помірна — можлива загроза життю або майну"
+msgstr "Moderada: Amenaça possible a la vida o les propietats"
 
 #: app/caputil.cpp:55
 msgid "Minor — Minimal to no known threat to life or property"
-msgstr "Незначна — мінімальна загроза життю або майну"
+msgstr "Menor: Amenaça mínima o no coneguda a la vida o les propietats"
 
 #: app/caputil.cpp:59
 msgid "Responsive action should be taken immediately"
-msgstr "Слід негайно вжити відповідних дій"
+msgstr "S'han d'emprendre immediatament accions de resposta"
 
 #: app/caputil.cpp:60
 msgid "Responsive action should be taken soon"
-msgstr "Слід якомога швидше вжити відповідних дій"
+msgstr "S'han d'emprendre prompte accions de resposta"
 
 #: app/caputil.cpp:61
 msgid "Responsive action be taken in the near future"
-msgstr "Невдовзі слід вжити відповідних дій"
+msgstr "S'han d'emprendre prompte accions de resposta en el futur pròxim"
 
 #: app/caputil.cpp:62
 msgid "Responsive action is no longer required"
-msgstr "У відповіді більше немає потреби"
+msgstr "No s'han d'emprendre accions de resposta"
 
 #: app/caputil.cpp:66
 msgid "Occurred or ongoing"
-msgstr "Сталося або буде"
+msgstr "Ha ocorregut o està en curs"
 
 #: app/caputil.cpp:67
 msgid "Likely (> 50%)"
-msgstr "Ймовірне (> 50%)"
+msgstr "Probable (> 50%)"
 
 #: app/caputil.cpp:68
 msgid "Possible but not likely (< 50%)"
-msgstr "Можливе, але не надто ймовірне (< 50%)"
+msgstr "Possible però no probable (< 50%)"
 
 #: app/caputil.cpp:69
 msgid "Not expected to occur"
-msgstr "Навряд чи станеться"
+msgstr "No s'espera que passe"
 
 #: app/caputil.cpp:73
 msgid "Geophysical"
-msgstr "Геофізика"
+msgstr "Geofísic"
 
 #: app/caputil.cpp:74
 msgid "Meteorological"
-msgstr "Метеорологія"
+msgstr "Meteorològic"
 
 #: app/caputil.cpp:75
 msgid "General emergency and public safety"
-msgstr "Загальні попередження та громадська безпека"
+msgstr "Emergència general i seguretat pública"
 
 #: app/caputil.cpp:76
 msgid "Law enforcement, military, homeland and local/private security"
-msgstr "Охорона порядку, військо, державна та місцева/приватна безпека"
+msgstr "Ordre públic, militar, seguretat nacional i local/privada"
 
 #: app/caputil.cpp:77
 msgid "Rescue and recovery"
-msgstr "Порятунок і відновлення"
+msgstr "Salvament i recuperació"
 
 #: app/caputil.cpp:78
 msgid "Fire"
-msgstr "Вогонь"
+msgstr "Foc"
 
 #: app/caputil.cpp:79
 msgid "Medical and public health"
-msgstr "Медицина або громадське здоров'я"
+msgstr "Salut mèdica i pública"
 
 #: app/caputil.cpp:80
 msgid "Pollution and other environmental event"
-msgstr "Забруднення та інші події з середовищем"
+msgstr "Contaminació i altres esdeveniments mediambientals"
 
 #: app/caputil.cpp:81
 msgid "Transportation"
-msgstr "Транспорт"
+msgstr "Transports"
 
 #: app/caputil.cpp:82
 msgid "Utility, telecommunication, other non-transport infrastructure"
-msgstr "Допоміжна, телекомунікаційна та інша нетранспортна інфраструктура"
+msgstr ""
+"Instal·lacions, telecomunicacions, altres infraestructures no de transport"
 
 #: app/caputil.cpp:83
 msgid ""
 "Chemical, biological, radiological, nuclear or high-yield explosive threat "
 "or attack"
-msgstr ""
-"Хімічна, біологічна, радіологічна, ядерна та вибухова загроза або атака"
+msgstr "Amenaça o atac químic, biològic, radiològic, nuclear o explosiu potent"
 
 #: app/caputil.cpp:84
 msgid "Other event"
-msgstr "Інша %d подія"
+msgstr "Altres esdeveniments"
 
 #: app/caputil.cpp:88
 msgid "Take shelter in place or per instructions."
-msgstr "Прямуйте до місцевого або рекомендованого сховища."
+msgstr "Busqueu refugi al lloc o segons instruccions."
 
 #: app/caputil.cpp:89
 msgid "Relocate as instructed."
-msgstr "Переїжджайте за рекомендацією."
+msgstr "Traslladeu-vos segons les instruccions."
 
 #: app/caputil.cpp:90
 msgid "Make preparations as per the instructions."
-msgstr "Готуйтеся за настановами."
+msgstr "Feu els preparatius segons les instruccions."
 
 #: app/caputil.cpp:91
 msgid "Execute activities identified in the instructions."
-msgstr "Виконайте дії, які вказано у настановах."
+msgstr "Executeu les activitats identificades a les instruccions."
 
 #: app/caputil.cpp:92
 msgid "Avoid the subject event as per the instructions."
-msgstr "Уникайте місця події за настановами."
+msgstr "Eviteu l'esdeveniment de l'assumpte segons les instruccions."
 
 #: app/caputil.cpp:93
 msgid "Attend to information sources as described in the instructions."
-msgstr "Ознайомтеся з джерелами інформації, як це описано у настановах."
+msgstr ""
+"Presteu atenció a les fonts d'informació tal com es descriu en les "
+"instruccions."
 
 #: app/caputil.cpp:94
 msgid "Evaluate the information in this message."
-msgstr "Ознайомтеся із інформацією у цьому повідомленні."
+msgstr "Avalueu la informació d'este missatge."
 
 #: app/caputil.cpp:95
 msgid ""
 "The subject event no longer poses a threat or concern and any follow on "
 "action is described in the instructions."
 msgstr ""
-"Подія вже не становить небезпеки або причини непокоїтися, виконайте дії, які "
-"описано у настановах."
+"L'esdeveniment de l'assumpte ja no suposa una amenaça o preocupació i "
+"qualsevol seguiment de l'acció es descriu a les instruccions."
 
 #: app/caputil.cpp:96
 msgid "No action recommended."
-msgstr "Дій не рекомендовано."
+msgstr "No es recomana cap acció."
 
 #: app/main.cpp:39 app/Main.qml:17 app/Main.qml:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
-msgstr "Попередження цивільного захисту"
+msgstr "Alertes públiques"
 
 #: app/main.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "Weather and emergency alerts"
-msgstr "Попередження про природні та аварійні ситуації"
+msgstr "Alertes meteorològiques i d'emergències"
 
 #: app/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
-msgstr "© Спільнота KDE, 2022"
+msgstr "Copyright © 2022 The Comunitat KDE"
 
 #: app/Main.qml:49
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
-msgstr "Області зацікавленості…"
+msgstr "Àrees d'interés…"
 
 #: app/Main.qml:54
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"
-msgstr "Про програму"
+msgstr "Quant a"
 
 #: app/subscriptionmanager.cpp:51
 #, kde-format
 msgid "Weather and emergency alert notifications"
-msgstr "Сповіщення про природні та аварійні ситуації"
+msgstr "Notificacions meteorològiques i alertes d'emergències"
 
 #: app/SubscriptionPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Area of Interest"
-msgstr "Додавання області зацікавлення"
+msgstr "Afig una àrea d'interés"
 
 #: app/SubscriptionPage.qml:22
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest"
-msgstr "Додати область зацікавлення"
+msgstr "Afig una àrea d'interés"
 
 #: app/SubscriptionPage.qml:52
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr "Назва:"
+msgstr "Nom:"
 
 #: app/SubscriptionPage.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "Radius (km)"
-msgstr "Радіус (км)"
+msgstr "Radi (km)"
 
 #: app/SubscriptionPage.qml:63
 #, kde-format
 msgctxt "@label"
 msgid "%1 km"
-msgstr "%1 км"
+msgstr "%1 km"
 
 #: app/SubscriptionsPage.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Areas of Interest"
-msgstr "Області зацікавленості"
+msgstr "Àrees d'interés"
 
 #: app/SubscriptionsPage.qml:25 app/SubscriptionsPage.qml:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Add…"
-msgstr "Додати…"
+msgstr "Afig…"
 
 #: app/SubscriptionsPage.qml:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Unsubscribe"
-msgstr "Скасувати підписку"
+msgstr "Cancel·la la subscripció"
 
 #: app/SubscriptionsPage.qml:52
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
-msgstr "Не вибрано областей зацікавленості"
+msgstr "No s'ha triat cap àrea d'interés"
