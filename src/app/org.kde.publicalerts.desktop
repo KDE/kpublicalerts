@@ -1,8 +1,10 @@
 [Desktop Entry]
 Name=Public Alerts
 Name[ca]=Alertes públiques
+Name[ca@valencia]=Alertes públiques
 Name[es]=Alertas públicas
 Name[eu]=Alerta publikoak
+Name[fr]=Alertes publiques
 Name[he]=התראות ציבוריות
 Name[nl]=Publieke waarschuwingen
 Name[sl]=Public Alerts
@@ -15,8 +17,10 @@ Icon=weather-storm
 Type=Application
 Comment=Weather and emergency alerts.
 Comment[ca]=Alertes meteorològiques i d'emergències.
+Comment[ca@valencia]=Alertes meteorològiques i d'emergències.
 Comment[es]=Alertas meteorológicas y de emergencia.
 Comment[eu]=Eguraldi eta emergentzia alertak.
+Comment[fr]=Alertes météorologiques et d'urgence.
 Comment[he]=התראות מזג אוויר וחירום.
 Comment[nl]=Weer en noodgeval waarschuwingen.
 Comment[sl]=Vremenska in nujna opozorila.
