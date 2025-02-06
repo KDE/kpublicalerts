@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-03 00:43+0000\n"
+"POT-Creation-Date: 2025-02-06 00:43+0000\n"
 "PO-Revision-Date: 2025-02-03 13:58+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -307,19 +307,19 @@ msgstr ""
 msgid "No action recommended."
 msgstr "Geen actie aanbevolen."
 
-#: app/main.cpp:39 app/Main.qml:17 app/Main.qml:44
+#: app/main.cpp:43 app/Main.qml:17 app/Main.qml:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
 msgstr "Publieke waarschuwingen"
 
-#: app/main.cpp:58
+#: app/main.cpp:62
 #, kde-format
 msgctxt "@info"
 msgid "Weather and emergency alerts"
 msgstr "Weer en noodgeval waarschuwingen"
 
-#: app/main.cpp:59
+#: app/main.cpp:63
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
