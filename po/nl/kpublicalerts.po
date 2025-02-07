@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-06 00:43+0000\n"
-"PO-Revision-Date: 2025-02-03 13:58+0100\n"
+"PO-Revision-Date: 2025-02-06 11:34+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -49,7 +49,7 @@ msgstr "Categorieën:"
 #, kde-format
 msgctxt "@label"
 msgid "Urgency:"
-msgstr ""
+msgstr "Urgentie:"
 
 #: app/AlertPage.qml:139
 #, kde-format
@@ -67,7 +67,7 @@ msgstr "Zekerheid:"
 #, kde-format
 msgctxt "@label"
 msgid "Recommended response:"
-msgstr ""
+msgstr "Aanbevolen reactie:"
 
 #: app/AlertPage.qml:157
 #, kde-format
@@ -97,7 +97,7 @@ msgstr "Effectief:"
 #, kde-format
 msgctxt "@label, time"
 msgid "Onset:"
-msgstr ""
+msgstr "Aanvang:"
 
 #: app/AlertPage.qml:188
 #, kde-format
@@ -133,7 +133,7 @@ msgstr "Gebied"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Alert Details"
-msgstr ""
+msgstr "Details van alarmering tonen"
 
 #: app/alertsmanager.cpp:393
 #, kde-format
@@ -145,19 +145,19 @@ msgstr "Verwerpen"
 #, kde-format
 msgctxt "@title:window"
 msgid "Active Alerts"
-msgstr ""
+msgstr "Actieve alarmeringen"
 
 #: app/AlertsPage.qml:65
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No alerts"
-msgstr ""
+msgstr "Geen alarmeringen"
 
 #: app/AlertsPage.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest…"
-msgstr ""
+msgstr "Aandachtsgebied toevoegen…"
 
 #: app/alertssortproxymodel.cpp:42
 #, kde-format
@@ -173,39 +173,39 @@ msgstr "Huidige"
 
 #: app/caputil.cpp:52
 msgid "Extreme — Extraordinary threat to life or property"
-msgstr ""
+msgstr "Extreem — buitengewone bedreiging voor leven of eigendom"
 
 #: app/caputil.cpp:53
 msgid "Severe — Significant threat to life or property"
-msgstr ""
+msgstr "Ernstig — aanzienlijke bedreiging voor leven of eigendom"
 
 #: app/caputil.cpp:54
 msgid "Moderate — Possible threat to life or property"
-msgstr ""
+msgstr "Matig — mogelijke bedreiging voor leven of eigendom"
 
 #: app/caputil.cpp:55
 msgid "Minor — Minimal to no known threat to life or property"
-msgstr ""
+msgstr "Minimaal — minimale bedreiging voor leven of eigendom"
 
 #: app/caputil.cpp:59
 msgid "Responsive action should be taken immediately"
-msgstr ""
+msgstr "Beantwoordende actie zou onmiddellijk genomen moeten worden"
 
 #: app/caputil.cpp:60
 msgid "Responsive action should be taken soon"
-msgstr ""
+msgstr "Beantwoordende actie zou spoedig genomen moeten worden"
 
 #: app/caputil.cpp:61
 msgid "Responsive action be taken in the near future"
-msgstr ""
+msgstr "Beantwoordende actie zou in de nabije toekomst genomen moeten worden"
 
 #: app/caputil.cpp:62
 msgid "Responsive action is no longer required"
-msgstr ""
+msgstr "Beantwoordende actie is niet langer vereist"
 
 #: app/caputil.cpp:66
 msgid "Occurred or ongoing"
-msgstr ""
+msgstr "Gebeurd of gaande"
 
 #: app/caputil.cpp:67
 msgid "Likely (> 50%)"
@@ -213,31 +213,31 @@ msgstr "Waarschijnlijk (> 50%)"
 
 #: app/caputil.cpp:68
 msgid "Possible but not likely (< 50%)"
-msgstr ""
+msgstr "Mogelijk maar niet waarschijnlijk (< 50%)"
 
 #: app/caputil.cpp:69
 msgid "Not expected to occur"
-msgstr ""
+msgstr "Niet verwacht te gebeuren"
 
 #: app/caputil.cpp:73
 msgid "Geophysical"
-msgstr ""
+msgstr "Geofysisch"
 
 #: app/caputil.cpp:74
 msgid "Meteorological"
-msgstr ""
+msgstr "Meteorologisch"
 
 #: app/caputil.cpp:75
 msgid "General emergency and public safety"
-msgstr ""
+msgstr "Algemeen noodgeval en publieke veiligheid"
 
 #: app/caputil.cpp:76
 msgid "Law enforcement, military, homeland and local/private security"
-msgstr ""
+msgstr "Politieactie, militair, binnenland en lokale/private veiligheid"
 
 #: app/caputil.cpp:77
 msgid "Rescue and recovery"
-msgstr ""
+msgstr "Redding en herstel"
 
 #: app/caputil.cpp:78
 msgid "Fire"
@@ -245,11 +245,11 @@ msgstr "Vuur"
 
 #: app/caputil.cpp:79
 msgid "Medical and public health"
-msgstr ""
+msgstr "Medische en publieke gezondheid"
 
 #: app/caputil.cpp:80
 msgid "Pollution and other environmental event"
-msgstr ""
+msgstr "Vervuiling en andere omgevingsgebeurtenis"
 
 #: app/caputil.cpp:81
 msgid "Transportation"
@@ -257,41 +257,44 @@ msgstr "Vervoer"
 
 #: app/caputil.cpp:82
 msgid "Utility, telecommunication, other non-transport infrastructure"
-msgstr ""
+msgstr "Nutsbedrijf, telecommunicatie, andere niet-transport infrastructuur"
 
 #: app/caputil.cpp:83
 msgid ""
 "Chemical, biological, radiological, nuclear or high-yield explosive threat "
 "or attack"
 msgstr ""
+"Chemische, biologische, radiologische, nucleaire of hoog explosieve "
+"bedreiging of aanval"
 
 #: app/caputil.cpp:84
 msgid "Other event"
-msgstr ""
+msgstr "Andere gebeurtenis"
 
 #: app/caputil.cpp:88
 msgid "Take shelter in place or per instructions."
-msgstr ""
+msgstr "Zoek een schuilplaats ter plekke of per instructies."
 
 #: app/caputil.cpp:89
 msgid "Relocate as instructed."
-msgstr ""
+msgstr "Vlucht zoals geïnstrueerd."
 
 #: app/caputil.cpp:90
 msgid "Make preparations as per the instructions."
-msgstr ""
+msgstr "Neem voorzorg zoals geïnstrueerd."
 
 #: app/caputil.cpp:91
 msgid "Execute activities identified in the instructions."
-msgstr ""
+msgstr "Voer activiteiten uit zoals aangegeven in de instructies."
 
 #: app/caputil.cpp:92
 msgid "Avoid the subject event as per the instructions."
-msgstr ""
+msgstr "Vermijd de aangegeven gebeurtenis zoals geïnstrueerd."
 
 #: app/caputil.cpp:93
 msgid "Attend to information sources as described in the instructions."
 msgstr ""
+"Geef aandacht aan informatiebronnen zoals beschreven in de instructies."
 
 #: app/caputil.cpp:94
 msgid "Evaluate the information in this message."
@@ -302,6 +305,8 @@ msgid ""
 "The subject event no longer poses a threat or concern and any follow on "
 "action is described in the instructions."
 msgstr ""
+"De aangegeven gebeurtenis is niet langer een bedreiging of zorg en elke "
+"opvolgende actie is beschreven in de instructies."
 
 #: app/caputil.cpp:96
 msgid "No action recommended."
@@ -346,7 +351,7 @@ msgstr "Weer en noodgeval waarschuwingsmeldingen"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Area of Interest"
-msgstr ""
+msgstr "Aandachtsgebied toevoegen"
 
 #: app/SubscriptionPage.qml:22
 #, kde-format
@@ -364,7 +369,7 @@ msgstr "Naam:"
 #, kde-format
 msgctxt "@label"
 msgid "Radius (km)"
-msgstr ""
+msgstr "Straal (km)"
 
 #: app/SubscriptionPage.qml:63
 #, kde-format
@@ -376,13 +381,13 @@ msgstr "%1 km"
 #, kde-format
 msgctxt "@title:window"
 msgid "Areas of Interest"
-msgstr ""
+msgstr "Aandachtsgebied"
 
 #: app/SubscriptionsPage.qml:25 app/SubscriptionsPage.qml:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Add…"
-msgstr ""
+msgstr "Toevoegen…"
 
 #: app/SubscriptionsPage.qml:41
 #, kde-format
@@ -394,4 +399,4 @@ msgstr "Uitschrijven"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
-msgstr ""
+msgstr "Geen aandachtsgebieden gekozen"
