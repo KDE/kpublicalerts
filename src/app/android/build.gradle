@@ -58,6 +58,8 @@ android {
     defaultConfig {
         minSdkVersion qtMinSdkVersion
         targetSdkVersion qtTargetSdkVersion
+        applicationId "org.kde.publicalerts"
+        namespace "org.kde.publicalerts"
     }
 }
 

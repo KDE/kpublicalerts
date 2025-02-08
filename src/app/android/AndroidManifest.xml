@@ -19,7 +19,8 @@
                   android:name="org.qtproject.qt.android.bindings.QtActivity"
                   android:label="Public Alerts"
                   android:windowSoftInputMode="adjustResize"
-                  android:launchMode="singleTop">
+                  android:launchMode="singleTop"
+                  android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -27,7 +28,6 @@
             </intent-filter>
 
             <meta-data android:name="android.app.lib_name" android:value="publicalerts"/>
-            <meta-data android:name="android.app.qt_sources_resource_id" android:resource="@array/qt_sources"/>
             <meta-data android:name="android.app.repository" android:value="default"/>
             <meta-data android:name="android.app.qt_libs_resource_id" android:resource="@array/qt_libs"/>
             <meta-data android:name="android.app.bundled_libs_resource_id" android:resource="@array/bundled_libs"/>
