@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2025 Volker Krause <vkrause@kde.org>
+
+# data files for ki18n that we don't need
+share/iso-codes/json/schema-.*
+share/iso-codes/json/iso_.*\.json
+share/locale/.*/LC_MESSAGES/iso_.*\.mo
+
+# other KF6 data files we don't need
+share/mime/packages/kde6\.xml
+
+# unused image formats
+plugins/imageformats/.*_(qico|qgif)_.*\.so
+
+# translation catalogs of dependencies not needed here
+share/locale/.*/LC_MESSAGES/(karchive6|kconfig6|kitemviews6|knotifications6|kwidgetsaddons6|libkholidays6)_qt\.qm
+share/locale/.*/LC_MESSAGES/(kcolorscheme6|kiconthemes6)\.mo
+
+# unused Qt translation catalogs
+translations/(qtconnectivity|qtdeclarative|qtlocations|qtmultimedia|qtwebsockets)_.*\.qm
