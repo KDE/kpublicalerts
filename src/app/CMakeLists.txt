@@ -13,7 +13,6 @@ target_sources(publicalerts PRIVATE
     geomath.cpp
     main.cpp
     polygonsimplifier.cpp
-    qml.qrc
     restapi.cpp
     subscription.cpp
     subscriptionmanager.cpp
@@ -64,9 +63,12 @@ else()
         cloudstatus
         cross-shape
         earthquake
+        edit-delete
+        help-about
         hotspot
         internet-services
         list-add
+        map-globe
         network-wireless-hotspot
         office-chart-polar-stacked
         security-high-symbolic

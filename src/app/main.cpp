@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 
 #ifdef Q_OS_ANDROID
     QGuiApplication qtApp(argc, argv);
-    QQuickStyle::setStyle(QStringLiteral("Material"));
+    QQuickStyle::setStyle(u"org.kde.breeze"_s);
 #else
     QIcon::setFallbackThemeName(QStringLiteral("breeze"));
     QApplication qtApp(argc, argv); // for native file dialogs
