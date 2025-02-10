@@ -10,9 +10,33 @@
   <content_rating type="oars-1.1"/>
   <developer_name translate="no">KDE</developer_name>
   <name>Public Alerts</name>
+  <name xml:lang="ca">Alertes públiques</name>
+  <name xml:lang="ca-valencia">Alertes públiques</name>
+  <name xml:lang="es">Alertas públicas</name>
+  <name xml:lang="he">התראות ציבוריות</name>
+  <name xml:lang="sl">Javna opozorila</name>
+  <name xml:lang="sv">Allmänna varningar</name>
+  <name xml:lang="uk">Попередження цивільного захисту</name>
+  <name xml:lang="x-test">xxPublic Alertsxx</name>
   <summary>Emergency and weather alerts</summary>
+  <summary xml:lang="ca">Alertes d'emergències i meteorològiques</summary>
+  <summary xml:lang="ca-valencia">Alertes d'emergències i meteorològiques</summary>
+  <summary xml:lang="es">Alertas meteorológicas y de emergencias</summary>
+  <summary xml:lang="he">התראות חירום ומזג אוויר</summary>
+  <summary xml:lang="sl">Izredne razmere in vremenska opozorila</summary>
+  <summary xml:lang="sv">Nöd- och vädervarningar</summary>
+  <summary xml:lang="uk">Попередження про аварійні та природні ситуації</summary>
+  <summary xml:lang="x-test">xxEmergency and weather alertsxx</summary>
   <description>
     <p>Receive emergency and weather alert notifications in about 100 countries.</p>
+    <p xml:lang="ca">Rebeu notificacions d'emergències i alertes meteorològiques en uns 100 països.</p>
+    <p xml:lang="ca-valencia">Rebeu notificacions d'emergències i alertes meteorològiques en uns 100 països.</p>
+    <p xml:lang="es">Reciba notificaciones de alertas meteorológicas y de emergencias en unos 100 países.</p>
+    <p xml:lang="he">קבלת התראות חירום ומזג אוויר בקרוב ל־100 מדינות.</p>
+    <p xml:lang="sl">Prejemajte nujna in vremenska opozorila v približno 100 državah.</p>
+    <p xml:lang="sv">Ta emot nöd- och vädervarningar i cirka 100 länder.</p>
+    <p xml:lang="uk">Отримання сповіщень про природні та аварійні ситуації у майже 100 країнах.</p>
+    <p xml:lang="x-test">xxReceive emergency and weather alert notifications in about 100 countries.xx</p>
   </description>
   <categories>
     <category>Utilities</category>
