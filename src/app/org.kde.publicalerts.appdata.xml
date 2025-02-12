@@ -13,8 +13,10 @@
   <name xml:lang="ca">Alertes públiques</name>
   <name xml:lang="ca-valencia">Alertes públiques</name>
   <name xml:lang="es">Alertas públicas</name>
+  <name xml:lang="fr">Alertes publiques</name>
   <name xml:lang="he">התראות ציבוריות</name>
   <name xml:lang="ka">საჯარო განგაშები</name>
+  <name xml:lang="nl">Publieke waarschuwingen</name>
   <name xml:lang="sl">Javna opozorila</name>
   <name xml:lang="sv">Allmänna varningar</name>
   <name xml:lang="tr">Acil Durum İkazları</name>
@@ -24,8 +26,10 @@
   <summary xml:lang="ca">Alertes d'emergències i meteorològiques</summary>
   <summary xml:lang="ca-valencia">Alertes d'emergències i meteorològiques</summary>
   <summary xml:lang="es">Alertas meteorológicas y de emergencias</summary>
+  <summary xml:lang="fr">Alertes d'urgence et météorologiques</summary>
   <summary xml:lang="he">התראות חירום ומזג אוויר</summary>
   <summary xml:lang="ka">გადაუდებელი და ამინდის განგაშები</summary>
+  <summary xml:lang="nl">Noodgevallen en weer waarschuwingen.</summary>
   <summary xml:lang="sl">Izredne razmere in vremenska opozorila</summary>
   <summary xml:lang="sv">Nöd- och vädervarningar</summary>
   <summary xml:lang="tr">Acil durum ve hava durumu ikazları</summary>
@@ -36,8 +40,10 @@
     <p xml:lang="ca">Rebeu notificacions d'emergències i alertes meteorològiques en uns 100 països.</p>
     <p xml:lang="ca-valencia">Rebeu notificacions d'emergències i alertes meteorològiques en uns 100 països.</p>
     <p xml:lang="es">Reciba notificaciones de alertas meteorológicas y de emergencias en unos 100 países.</p>
+    <p xml:lang="fr">Recevez des notifications d'alertes d'urgence et météorologiques dans une centaine de pays.</p>
     <p xml:lang="he">קבלת התראות חירום ומזג אוויר בקרוב ל־100 מדינות.</p>
     <p xml:lang="ka">მიიღეთ გადაუდებელი და ამინდის გაფრთხილების შეტყობინებები დაახლოებით 100 ქვეყანაში.</p>
+    <p xml:lang="nl">Ontvang meldingen over noodgevallen en weer waarschuwingen in ongeveer 100 landen.</p>
     <p xml:lang="sl">Prejemajte nujna in vremenska opozorila v približno 100 državah.</p>
     <p xml:lang="sv">Ta emot nöd- och vädervarningar i cirka 100 länder.</p>
     <p xml:lang="tr">Yaklaşık 100 ülkede acil durum ve hava durumu bildirimlerini alın.</p>
