@@ -1,0 +1,398 @@
+# German translations for kpublicalerts package
+# German translation for kpublicalerts.
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the kpublicalerts package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kpublicalerts\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-02-06 00:43+0000\n"
+"PO-Revision-Date: 2025-02-06 08:51+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: app/AlertPage.qml:104
+#, kde-format
+msgctxt "@label"
+msgid "Status:"
+msgstr ""
+
+#: app/AlertPage.qml:114
+#, kde-format
+msgctxt "@label"
+msgid "Message type:"
+msgstr ""
+
+#: app/AlertPage.qml:127
+#, kde-format
+msgctxt "@label"
+msgid "Categories:"
+msgstr ""
+
+#: app/AlertPage.qml:134
+#, kde-format
+msgctxt "@label"
+msgid "Urgency:"
+msgstr ""
+
+#: app/AlertPage.qml:139
+#, kde-format
+msgctxt "@label"
+msgid "Severity:"
+msgstr ""
+
+#: app/AlertPage.qml:144
+#, kde-format
+msgctxt "@label"
+msgid "Certainty:"
+msgstr ""
+
+#: app/AlertPage.qml:149
+#, kde-format
+msgctxt "@label"
+msgid "Recommended response:"
+msgstr ""
+
+#: app/AlertPage.qml:157
+#, kde-format
+msgctxt "@label"
+msgid "Web:"
+msgstr ""
+
+#: app/AlertPage.qml:165
+#, kde-format
+msgctxt "@label"
+msgid "Contact:"
+msgstr ""
+
+#: app/AlertPage.qml:173
+#, kde-format
+msgctxt "@label, time"
+msgid "Sent:"
+msgstr ""
+
+#: app/AlertPage.qml:178
+#, kde-format
+msgctxt "@label, time"
+msgid "Effective:"
+msgstr ""
+
+#: app/AlertPage.qml:183
+#, kde-format
+msgctxt "@label, time"
+msgid "Onset:"
+msgstr ""
+
+#: app/AlertPage.qml:188
+#, kde-format
+msgctxt "@label, time"
+msgid "Expires:"
+msgstr ""
+
+#: app/AlertPage.qml:193
+#, kde-format
+msgctxt "@label"
+msgid "Sender:"
+msgstr ""
+
+#: app/AlertPage.qml:202
+#, kde-format
+msgctxt "@label"
+msgid "Description"
+msgstr ""
+
+#: app/AlertPage.qml:213
+#, kde-format
+msgctxt "@label"
+msgid "Instruction"
+msgstr ""
+
+#: app/AlertPage.qml:227
+#, kde-format
+msgctxt "@label"
+msgid "Area"
+msgstr ""
+
+#: app/alertsmanager.cpp:389
+#, kde-format
+msgctxt "@action:button"
+msgid "Show Alert Details"
+msgstr ""
+
+#: app/alertsmanager.cpp:393
+#, kde-format
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr ""
+
+#: app/AlertsPage.qml:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Active Alerts"
+msgstr ""
+
+#: app/AlertsPage.qml:65
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No alerts"
+msgstr ""
+
+#: app/AlertsPage.qml:68
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Area of Interest…"
+msgstr ""
+
+#: app/alertssortproxymodel.cpp:42
+#, kde-format
+msgctxt "@label"
+msgid "Future"
+msgstr ""
+
+#: app/alertssortproxymodel.cpp:44
+#, kde-format
+msgctxt "@label"
+msgid "Current"
+msgstr ""
+
+#: app/caputil.cpp:52
+msgid "Extreme — Extraordinary threat to life or property"
+msgstr ""
+
+#: app/caputil.cpp:53
+msgid "Severe — Significant threat to life or property"
+msgstr ""
+
+#: app/caputil.cpp:54
+msgid "Moderate — Possible threat to life or property"
+msgstr ""
+
+#: app/caputil.cpp:55
+msgid "Minor — Minimal to no known threat to life or property"
+msgstr ""
+
+#: app/caputil.cpp:59
+msgid "Responsive action should be taken immediately"
+msgstr ""
+
+#: app/caputil.cpp:60
+msgid "Responsive action should be taken soon"
+msgstr ""
+
+#: app/caputil.cpp:61
+msgid "Responsive action be taken in the near future"
+msgstr ""
+
+#: app/caputil.cpp:62
+msgid "Responsive action is no longer required"
+msgstr ""
+
+#: app/caputil.cpp:66
+msgid "Occurred or ongoing"
+msgstr ""
+
+#: app/caputil.cpp:67
+msgid "Likely (> 50%)"
+msgstr ""
+
+#: app/caputil.cpp:68
+msgid "Possible but not likely (< 50%)"
+msgstr ""
+
+#: app/caputil.cpp:69
+msgid "Not expected to occur"
+msgstr ""
+
+#: app/caputil.cpp:73
+msgid "Geophysical"
+msgstr ""
+
+#: app/caputil.cpp:74
+msgid "Meteorological"
+msgstr ""
+
+#: app/caputil.cpp:75
+msgid "General emergency and public safety"
+msgstr ""
+
+#: app/caputil.cpp:76
+msgid "Law enforcement, military, homeland and local/private security"
+msgstr ""
+
+#: app/caputil.cpp:77
+msgid "Rescue and recovery"
+msgstr ""
+
+#: app/caputil.cpp:78
+msgid "Fire"
+msgstr ""
+
+#: app/caputil.cpp:79
+msgid "Medical and public health"
+msgstr ""
+
+#: app/caputil.cpp:80
+msgid "Pollution and other environmental event"
+msgstr ""
+
+#: app/caputil.cpp:81
+msgid "Transportation"
+msgstr ""
+
+#: app/caputil.cpp:82
+msgid "Utility, telecommunication, other non-transport infrastructure"
+msgstr ""
+
+#: app/caputil.cpp:83
+msgid ""
+"Chemical, biological, radiological, nuclear or high-yield explosive threat "
+"or attack"
+msgstr ""
+
+#: app/caputil.cpp:84
+msgid "Other event"
+msgstr ""
+
+#: app/caputil.cpp:88
+msgid "Take shelter in place or per instructions."
+msgstr ""
+
+#: app/caputil.cpp:89
+msgid "Relocate as instructed."
+msgstr ""
+
+#: app/caputil.cpp:90
+msgid "Make preparations as per the instructions."
+msgstr ""
+
+#: app/caputil.cpp:91
+msgid "Execute activities identified in the instructions."
+msgstr ""
+
+#: app/caputil.cpp:92
+msgid "Avoid the subject event as per the instructions."
+msgstr ""
+
+#: app/caputil.cpp:93
+msgid "Attend to information sources as described in the instructions."
+msgstr ""
+
+#: app/caputil.cpp:94
+msgid "Evaluate the information in this message."
+msgstr ""
+
+#: app/caputil.cpp:95
+msgid ""
+"The subject event no longer poses a threat or concern and any follow on "
+"action is described in the instructions."
+msgstr ""
+
+#: app/caputil.cpp:96
+msgid "No action recommended."
+msgstr ""
+
+#: app/main.cpp:43 app/Main.qml:17 app/Main.qml:44
+#, kde-format
+msgctxt "@title:window"
+msgid "Public Alerts"
+msgstr ""
+
+#: app/main.cpp:62
+#, kde-format
+msgctxt "@info"
+msgid "Weather and emergency alerts"
+msgstr ""
+
+#: app/main.cpp:63
+#, kde-format
+msgctxt "@info:credit"
+msgid "Copyright © 2022 The KDE Community"
+msgstr ""
+
+#: app/Main.qml:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Areas of Interest…"
+msgstr ""
+
+#: app/Main.qml:54
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "About"
+msgstr ""
+
+#: app/subscriptionmanager.cpp:51
+#, kde-format
+msgid "Weather and emergency alert notifications"
+msgstr ""
+
+#: app/SubscriptionPage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Area of Interest"
+msgstr ""
+
+#: app/SubscriptionPage.qml:22
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Area of Interest"
+msgstr ""
+
+#: app/SubscriptionPage.qml:52
+#, kde-format
+msgctxt "@label"
+msgid "Name:"
+msgstr ""
+
+#: app/SubscriptionPage.qml:55
+#, kde-format
+msgctxt "@label"
+msgid "Radius (km)"
+msgstr ""
+
+#: app/SubscriptionPage.qml:63
+#, kde-format
+msgctxt "@label"
+msgid "%1 km"
+msgstr ""
+
+#: app/SubscriptionsPage.qml:15
+#, kde-format
+msgctxt "@title:window"
+msgid "Areas of Interest"
+msgstr ""
+
+#: app/SubscriptionsPage.qml:25 app/SubscriptionsPage.qml:55
+#, kde-format
+msgctxt "@action:button"
+msgid "Add…"
+msgstr ""
+
+#: app/SubscriptionsPage.qml:41
+#, kde-format
+msgctxt "@action:button"
+msgid "Unsubscribe"
+msgstr ""
+
+#: app/SubscriptionsPage.qml:52
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No areas of interest chosen"
+msgstr ""
