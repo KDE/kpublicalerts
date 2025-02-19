@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-06 00:43+0000\n"
-"PO-Revision-Date: 2025-02-07 22:54+0900\n"
+"PO-Revision-Date: 2025-02-18 15:33+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -61,7 +61,7 @@ msgstr "嚴重程度："
 #, kde-format
 msgctxt "@label"
 msgid "Certainty:"
-msgstr ""
+msgstr "確定性："
 
 #: app/AlertPage.qml:149
 #, kde-format
@@ -97,7 +97,7 @@ msgstr "生效："
 #, kde-format
 msgctxt "@label, time"
 msgid "Onset:"
-msgstr ""
+msgstr "開始："
 
 #: app/AlertPage.qml:188
 #, kde-format
@@ -196,9 +196,8 @@ msgid "Responsive action should be taken soon"
 msgstr "反應動作應該趕快進行"
 
 #: app/caputil.cpp:61
-#, fuzzy
 msgid "Responsive action be taken in the near future"
-msgstr "反應動作應該在"
+msgstr "反應動作應該在近期進行"
 
 #: app/caputil.cpp:62
 msgid "Responsive action is no longer required"
@@ -222,11 +221,11 @@ msgstr "沒有預期會發生"
 
 #: app/caputil.cpp:73
 msgid "Geophysical"
-msgstr ""
+msgstr "地球物理"
 
 #: app/caputil.cpp:74
 msgid "Meteorological"
-msgstr ""
+msgstr "氣象"
 
 #: app/caputil.cpp:75
 msgid "General emergency and public safety"
@@ -258,13 +257,13 @@ msgstr "交通"
 
 #: app/caputil.cpp:82
 msgid "Utility, telecommunication, other non-transport infrastructure"
-msgstr ""
+msgstr "公用設施、電信、其他非交通的基礎建設"
 
 #: app/caputil.cpp:83
 msgid ""
 "Chemical, biological, radiological, nuclear or high-yield explosive threat "
 "or attack"
-msgstr ""
+msgstr "化學、生物學、輻射、核能或其他高能量爆炸性威脅或攻擊"
 
 #: app/caputil.cpp:84
 msgid "Other event"
@@ -272,37 +271,37 @@ msgstr "其他事件"
 
 #: app/caputil.cpp:88
 msgid "Take shelter in place or per instructions."
-msgstr ""
+msgstr "就地避難或依指示避難。"
 
 #: app/caputil.cpp:89
 msgid "Relocate as instructed."
-msgstr ""
+msgstr "依指示移動位置。"
 
 #: app/caputil.cpp:90
 msgid "Make preparations as per the instructions."
-msgstr ""
+msgstr "依指示做準備。"
 
 #: app/caputil.cpp:91
 msgid "Execute activities identified in the instructions."
-msgstr ""
+msgstr "執行指示中所指定的動作。"
 
 #: app/caputil.cpp:92
 msgid "Avoid the subject event as per the instructions."
-msgstr ""
+msgstr "依指示迴避該事件。"
 
 #: app/caputil.cpp:93
 msgid "Attend to information sources as described in the instructions."
-msgstr ""
+msgstr "依指示說明追蹤資訊來源。"
 
 #: app/caputil.cpp:94
 msgid "Evaluate the information in this message."
-msgstr ""
+msgstr "評斷這個訊息中的資訊。"
 
 #: app/caputil.cpp:95
 msgid ""
 "The subject event no longer poses a threat or concern and any follow on "
 "action is described in the instructions."
-msgstr ""
+msgstr "該事件已不再構成威脅或擔憂，之後的動作會在指示中說明。"
 
 #: app/caputil.cpp:96
 msgid "No action recommended."
