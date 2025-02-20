@@ -125,10 +125,7 @@ bool SubscriptionManager::removeRows(int row, int count, const QModelIndex &pare
             continue;
         }
 
-        QJsonObject unsubCmd{
-            {"subscription_id"_L1, m_subscriptions[i].m_subscriptionId.toString(QUuid::WithoutBraces)}
-        };
-        auto reply = m_nam->post(RestApi::unsubscribe(), QJsonDocument(unsubCmd).toJson(QJsonDocument::Compact));
+        auto reply = m_nam->deleteResource(RestApi::unsubscribe(m_subscriptions[i].m_subscriptionId));
         connect(reply, &QNetworkReply::finished, this, [this, reply, id]() {
             reply->deleteLater();
             if (reply->error() != QNetworkReply::NoError && reply->error() != QNetworkReply::ContentNotFoundError) {
@@ -208,7 +205,8 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
     const auto upEndpoint = m_connector.endpoint();
 
     QJsonObject subCmd{
-        {"distributor_url"_L1, upEndpoint},
+        {"push_service"_L1, "UNIFIED_PUSH"_L1},
+        {"token"_L1, upEndpoint},
         {"min_lon"_L1, sub.m_boundingBox.left()},
         {"max_lon"_L1, sub.m_boundingBox.right()},
         {"min_lat"_L1, sub.m_boundingBox.top()},
@@ -230,7 +228,7 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
 
         const auto subRes = QJsonDocument::fromJson(reply->readAll()).object();
         qDebug() << subRes;
-        (*it).m_subscriptionId = QUuid(subRes.value(QLatin1String("id")).toString());
+        (*it).m_subscriptionId = QUuid(subRes.value(QLatin1String("subscription_id")).toString());
         (*it).m_notificationEndpoint = upEndpoint;
         (*it).m_lastHeartbeat = QDateTime::currentDateTime();
 
@@ -241,10 +239,7 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
 
 void SubscriptionManager::doUnsubscribeOne(const Subscription &sub)
 {
-    QJsonObject unsubCmd{
-        {"subscription_id"_L1, sub.m_subscriptionId.toString(QUuid::WithoutBraces)}
-    };
-    auto reply = m_nam->post(RestApi::unsubscribe(), QJsonDocument(unsubCmd).toJson(QJsonDocument::Compact));
+    auto reply = m_nam->deleteResource(RestApi::unsubscribe(sub.m_subscriptionId));
     connect(reply, &QNetworkReply::finished, this, [reply]() {
         reply->deleteLater();
         if (reply->error() != QNetworkReply::NoError && reply->error() != QNetworkReply::ContentNotFoundError) {
@@ -272,10 +267,7 @@ void SubscriptionManager::checkHeartbeat()
 
         qDebug() << s.m_id << s.m_subscriptionId << "needs a heartbeat";
         const auto id = s.m_id;
-        QJsonObject heartbeatCmd{
-            {"subscription_id"_L1, s.m_subscriptionId.toString(QUuid::WithBraces)}
-        };
-        auto reply = m_nam->post(RestApi::heartbeat(), QJsonDocument(heartbeatCmd).toJson(QJsonDocument::Compact));
+        auto reply = m_nam->put(RestApi::heartbeat(s.m_subscriptionId), QByteArray());
         connect(reply, &QNetworkReply::finished, this, [reply, id, this]() {
             reply->deleteLater();
             const auto it = std::lower_bound(m_subscriptions.begin(), m_subscriptions.end(), id);

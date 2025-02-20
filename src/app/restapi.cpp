@@ -9,6 +9,7 @@
 #include <QNetworkRequest>
 #include <QRectF>
 #include <QUrlQuery>
+#include <QUuid>
 
 using namespace Qt::Literals;
 using namespace KPublicAlerts;
@@ -56,25 +57,30 @@ QNetworkRequest RestApi::alerts(const QRectF &bbox)
 QNetworkRequest RestApi::subscribe()
 {
     auto url = baseUrl();
-    url.setPath(BASE_PATH + "subscription/subscribe"_L1);
+    url.setPath(BASE_PATH + "subscription/"_L1);
     auto req = makeRequest(url);
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     return req;
 }
 
-QNetworkRequest RestApi::unsubscribe()
+QNetworkRequest RestApi::unsubscribe(const QUuid &id)
 {
     auto url = baseUrl();
-    url.setPath(BASE_PATH + "subscription/unsubscribe"_L1);
+    url.setPath(BASE_PATH + "subscription/"_L1);
+    QUrlQuery query;
+    query.addQueryItem(u"subscription_id"_s, id.toString(QUuid::WithoutBraces));
+    url.setQuery(query);
     auto req = makeRequest(url);
-    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     return req;
 }
 
-QNetworkRequest RestApi::heartbeat()
+QNetworkRequest RestApi::heartbeat(const QUuid &id)
 {
     auto url = baseUrl();
-    url.setPath(BASE_PATH + "subscription/heartbeat"_L1);
+    url.setPath(BASE_PATH + "subscription/"_L1);
+    QUrlQuery query;
+    query.addQueryItem(u"subscription_id"_s, id.toString(QUuid::WithoutBraces));
+    url.setQuery(query);
     auto req = makeRequest(url);
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     return req;

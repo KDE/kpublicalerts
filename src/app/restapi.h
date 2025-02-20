@@ -9,6 +9,7 @@
 class QNetworkRequest;
 class QRectF;
 class QString;
+class QUuid;
 
 namespace KPublicAlerts {
 
@@ -19,9 +20,9 @@ namespace RestApi
 [[nodiscard]] QNetworkRequest alerts(const QRectF &bbox);
 
 [[nodiscard]] QNetworkRequest subscribe();
-[[nodiscard]] QNetworkRequest unsubscribe();
+[[nodiscard]] QNetworkRequest unsubscribe(const QUuid &id);
 
-[[nodiscard]] QNetworkRequest heartbeat();
+[[nodiscard]] QNetworkRequest heartbeat(const QUuid &id);
 }
 
 }
