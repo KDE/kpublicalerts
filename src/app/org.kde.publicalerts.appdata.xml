@@ -17,6 +17,7 @@
   <name xml:lang="fr">Alertes publiques</name>
   <name xml:lang="gl">Alertas cidadás</name>
   <name xml:lang="he">התראות ציבוריות</name>
+  <name xml:lang="it">Allerta pubbliche</name>
   <name xml:lang="ka">საჯარო განგაშები</name>
   <name xml:lang="lv">Sabiedrības brīdinājumi</name>
   <name xml:lang="nl">Publieke waarschuwingen</name>
@@ -35,6 +36,7 @@
   <summary xml:lang="fr">Alertes d'urgence et météorologiques</summary>
   <summary xml:lang="gl">Alertas de emerxencias e meteorolóxicas.</summary>
   <summary xml:lang="he">התראות חירום ומזג אוויר</summary>
+  <summary xml:lang="it">Allerta meteo ed emergenze</summary>
   <summary xml:lang="ka">გადაუდებელი და ამინდის განგაშები</summary>
   <summary xml:lang="lv">Ārkārtas stāvokļu un laikapstākļu brīdinājumi</summary>
   <summary xml:lang="nl">Noodgevallen en weer waarschuwingen.</summary>
@@ -54,6 +56,7 @@
     <p xml:lang="fr">Recevez des notifications d'alertes d'urgence et météorologiques dans une centaine de pays.</p>
     <p xml:lang="gl">Reciba notificacións de alertas de emerxencias e meteorolóxicas en arredor de 100 países.</p>
     <p xml:lang="he">קבלת התראות חירום ומזג אוויר בקרוב ל־100 מדינות.</p>
+    <p xml:lang="it">Ricevi notifiche di allerte meteo ed emergenze in circa 100 paesi.</p>
     <p xml:lang="ka">მიიღეთ გადაუდებელი და ამინდის გაფრთხილების შეტყობინებები დაახლოებით 100 ქვეყანაში.</p>
     <p xml:lang="lv">Saņemiet brīdinājumus par ārkārtas stāvokļiem un bīstamiem laikapstākļiem aptuveni 100 valstīs.</p>
     <p xml:lang="nl">Ontvang meldingen over noodgevallen en weer waarschuwingen in ongeveer 100 landen.</p>
