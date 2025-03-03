@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-06 00:43+0000\n"
-"PO-Revision-Date: 2025-02-09 13:23+0100\n"
-"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"PO-Revision-Date: 2025-03-02 09:01+0100\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
@@ -270,6 +270,7 @@ msgstr ""
 msgid "Other event"
 msgstr "Outra situación"
 
+# skip-rule: trasno-search_reverse
 #: app/caputil.cpp:88
 msgid "Take shelter in place or per instructions."
 msgstr "Busque refuxio onde está ou seguindo as instrucións."
