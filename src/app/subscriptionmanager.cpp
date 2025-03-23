@@ -48,6 +48,7 @@ SubscriptionManager::SubscriptionManager(QObject *parent)
     }
     std::sort(m_subscriptions.begin(), m_subscriptions.end());
 
+    m_connector.setVapidPublicKeyRequired(true);
     m_connector.registerClient(i18n("Weather and emergency alert notifications")); // TODO technically we only needs this when there is at least one subscription
 
     connect(this, &QAbstractItemModel::rowsInserted, this, &SubscriptionManager::countChanged);
@@ -76,6 +77,7 @@ SubscriptionManager::~SubscriptionManager() = default;
 void SubscriptionManager::setNetworkAccessManager(QNetworkAccessManager *nam)
 {
     m_nam = nam;
+    fetchVapidKey();
     doSubscribeAll();
     checkHeartbeat();
     m_heartbeatTimer->start();
@@ -294,6 +296,25 @@ void SubscriptionManager::checkHeartbeat()
             qDebug() << reply->errorString() << reply->readAll() << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
         });
     }
+}
+
+void SubscriptionManager::fetchVapidKey()
+{
+    if (!m_connector.vapidPublicKey().isEmpty()) {
+        return;
+    }
+
+    auto reply = m_nam->get(RestApi::vapidKey());
+    connect(reply, &QNetworkReply::finished, this, [reply, this]() {
+        reply->deleteLater();
+        if (reply->error() != QNetworkReply::NoError) {
+            qWarning() << "Failed to fetch VAPID key:" << reply->errorString();
+            return;
+        }
+
+        const auto response = QJsonDocument::fromJson(reply->readAll()).object();
+        m_connector.setVapidPublicKey(response.value("vapid-key"_L1).toString());
+    });
 }
 
 #include "moc_subscriptionmanager.cpp"

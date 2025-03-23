@@ -58,6 +58,7 @@ private:
     void storeSubscriptionIds(QSettings &settings);
 
     void checkHeartbeat();
+    void fetchVapidKey();
 
     QNetworkAccessManager *m_nam = nullptr;
     KUnifiedPush::Connector m_connector;

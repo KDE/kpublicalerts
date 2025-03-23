@@ -19,6 +19,7 @@ namespace RestApi
 [[nodiscard]] QNetworkRequest alert(const QString &id);
 [[nodiscard]] QNetworkRequest alerts(const QRectF &bbox);
 
+[[nodiscard]] QNetworkRequest vapidKey();
 [[nodiscard]] QNetworkRequest subscribe();
 [[nodiscard]] QNetworkRequest unsubscribe(const QUuid &id);
 
