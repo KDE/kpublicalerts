@@ -54,6 +54,16 @@ QNetworkRequest RestApi::alerts(const QRectF &bbox)
     return makeRequest(url);
 }
 
+QNetworkRequest RestApi::vapidKey()
+{
+    auto url = baseUrl();
+    url.setPath(BASE_PATH + "subscription/"_L1);
+    QUrlQuery query;
+    query.addQueryItem(u"type"_s, u"webpush"_s);
+    url.setQuery(query);
+    return makeRequest(url);
+}
+
 QNetworkRequest RestApi::subscribe()
 {
     auto url = baseUrl();
