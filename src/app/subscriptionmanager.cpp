@@ -212,14 +212,16 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
         {"min_lon"_L1, sub.m_boundingBox.left()},
         {"max_lon"_L1, sub.m_boundingBox.right()},
         {"min_lat"_L1, sub.m_boundingBox.top()},
-        {"max_lat"_L1, sub.m_boundingBox.bottom()}
+        {"max_lat"_L1, sub.m_boundingBox.bottom()},
+        {"p256dh_key"_L1, QString::fromLatin1(m_connector.contentEncryptionPublicKey().toBase64(QByteArray::Base64UrlEncoding))},
+        {"auth_key"_L1, QString::fromLatin1(m_connector.contentEncryptionAuthSecret().toBase64(QByteArray::Base64UrlEncoding))},
     };
 
     auto reply = m_nam->post(RestApi::subscribe(), QJsonDocument(subCmd).toJson(QJsonDocument::Compact));
     connect(reply, &QNetworkReply::finished, this, [this, reply, id, upEndpoint]() {
         reply->deleteLater();
         if (reply->error() != QNetworkReply::NoError) {
-            qWarning() << reply->errorString(); // TODO
+            qWarning() << reply->errorString() << reply->readAll(); // TODO
             return;
         }
 
