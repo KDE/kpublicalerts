@@ -70,6 +70,7 @@ else()
         list-add
         map-globe
         network-wireless-hotspot
+        notifications
         office-chart-polar-stacked
         security-high-symbolic
         weather-storm

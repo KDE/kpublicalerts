@@ -8,6 +8,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.coreaddons as KCoreAddons
 import org.kde.kirigami as Kirigami
+import org.kde.notification as KNotification
 import org.kde.weathercore
 import org.kde.publicalerts
 
@@ -15,6 +16,25 @@ Kirigami.ApplicationWindow {
     id: root
 
     title: i18nc("@title:window", "Public Alerts")
+
+    header: Kirigami.InlineMessage {
+        id: notificationPermissionWarning
+        text: i18n("Missing notification permission!")
+        type: Kirigami.MessageType.Error
+        position: Kirigami.InlineMessage.Header
+        visible: !KNotification.NotificationPermission.checkPermission()
+
+        function permissionCallback(success) {
+            notificationPermissionWarning.visible = !success;
+        }
+        actions: [
+            Kirigami.Action {
+                icon.name: "notifications"
+                text: i18n("Request permission…")
+                onTriggered: KNotification.NotificationPermission.requestPermission(notificationPermissionWarning.permissionCallback)
+            }
+        ]
+    }
 
     Component {
         id: subscriptionsPage
