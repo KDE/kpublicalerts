@@ -74,7 +74,7 @@ Kirigami.ScrollablePage {
 
     Connections {
         target: AlertsManager
-        function onShowAlert() {
+        function onShowAlert(id) {
             const alert = AlertsManager.alertById(id);
             while (applicationWindow().pageStack.depth > 1) {
                 applicationWindow().pageStack.pop();
