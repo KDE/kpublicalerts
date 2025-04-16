@@ -17,8 +17,9 @@ share/mime/packages/kde6\.xml
 plugins/imageformats/.*_(qico|qgif)_.*\.so
 
 # translation catalogs of dependencies not needed here
-share/locale/.*/LC_MESSAGES/(karchive6|kconfig6|kitemviews6|knotifications6|kwidgetsaddons6|libkholidays6)_qt\.qm
-share/locale/.*/LC_MESSAGES/(kcolorscheme6|kiconthemes6)\.mo
+share/locale/.*/LC_MESSAGES/(karchive6|kcodecs6|kconfig6|kitemviews6|knotifications6|kwidgetsaddons6|libkholidays6)_qt\.qm
+share/locale/.*/LC_MESSAGES/(kcolorscheme6|kconfigwidgets6|kiconthemes6)\.mo
+share/locale/.*/kf6_entry.desktop
 
 # unused Qt translation catalogs
-translations/(qtconnectivity|qtdeclarative|qtlocations|qtmultimedia|qtwebsockets)_.*\.qm
+translations/(qtconnectivity|qtdeclarative|qtlocation|qtmultimedia|qtwebsockets)_.*\.qm
