@@ -49,6 +49,8 @@ Q_SIGNALS:
     void alertRemoved(const QString &id);
     void countChanged();
 
+    void unhandledPushNotifications();
+
 private:
     void doSubscribeAll();
     void doSubscribeOne(const Subscription &sub);

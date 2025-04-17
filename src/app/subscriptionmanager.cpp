@@ -32,12 +32,17 @@ SubscriptionManager::SubscriptionManager(QObject *parent)
     connect(&m_connector, &KUnifiedPush::Connector::messageReceived, this, [this](const QByteArray &msg) {
         qDebug() << msg;
         const auto msgObj = QJsonDocument::fromJson(msg).object();
-        if (const auto id = msgObj.value(QLatin1String("added")); id.isString()) {
+        if (const auto id = msgObj.value("added"_L1); id.isString()) {
             Q_EMIT alertAdded(id.toString());
+            return;
         }
-        if (const auto id = msgObj.value(QLatin1String("removed")); id.isString()) {
+        if (const auto id = msgObj.value("removed"_L1); id.isString()) {
             Q_EMIT alertRemoved(id.toString());
+            return;
         }
+        // the server tries to tell us something but we don't know what,
+        // so try to update everything
+        Q_EMIT unhandledPushNotifications();
     });
 
     QSettings settings;

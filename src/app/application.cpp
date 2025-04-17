@@ -39,6 +39,7 @@ Application::Application(QObject *parent)
     connect(&m_subscriptionMgr, &SubscriptionManager::alertRemoved, &m_alertsMgr, &AlertsManager::removeAlert);
     connect(&m_subscriptionMgr, &SubscriptionManager::rowsInserted, &m_alertsMgr, &AlertsManager::fetchAll);
     connect(&m_subscriptionMgr, &SubscriptionManager::rowsRemoved, &m_alertsMgr, &AlertsManager::fetchAll);
+    connect(&m_subscriptionMgr, &SubscriptionManager::unhandledPushNotifications, &m_alertsMgr, &AlertsManager::fetchAll);
 
     connect(&m_alertsMgr, &AlertsManager::showAlert, this, &Application::showUi);
     connect(&m_alertsMgr, &AlertsManager::notificationClosed, this, &Application::maybeQuit, Qt::QueuedConnection);
