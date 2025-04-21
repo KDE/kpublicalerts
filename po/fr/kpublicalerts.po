@@ -1,11 +1,10 @@
-#
 # SPDX-FileCopyrightText: 2025 Xavier Besnard <xavier.besnard@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-18 00:44+0000\n"
-"PO-Revision-Date: 2025-02-04 09:37+0100\n"
+"PO-Revision-Date: 2025-04-19 09:15+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -13,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -337,12 +336,12 @@ msgstr "Copyright © 2022 La communauté de KDE"
 #: app/Main.qml:22
 #, kde-format
 msgid "Missing notification permission!"
-msgstr ""
+msgstr "Autorisation de notification manquante !"
 
 #: app/Main.qml:33
 #, kde-format
 msgid "Request permission…"
-msgstr ""
+msgstr "Demander l'autorisation..."
 
 #: app/Main.qml:69
 #, kde-format
