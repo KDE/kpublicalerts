@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-18 00:44+0000\n"
-"PO-Revision-Date: 2025-04-06 23:59+0200\n"
+"PO-Revision-Date: 2025-04-22 01:25+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -328,12 +328,12 @@ msgstr "Copyright © 2022 The KDE Community"
 #: app/Main.qml:22
 #, kde-format
 msgid "Missing notification permission!"
-msgstr ""
+msgstr "알림 권한이 없습니다!"
 
 #: app/Main.qml:33
 #, kde-format
 msgid "Request permission…"
-msgstr ""
+msgstr "권한 요청 중…"
 
 #: app/Main.qml:69
 #, kde-format
