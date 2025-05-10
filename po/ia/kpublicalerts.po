@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kpublicalerts package.
 #
-# giovanni <g.sora@tiscali.it>, 2025.
+# SPDX-FileCopyrightText: 2025 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-18 00:44+0000\n"
-"PO-Revision-Date: 2025-03-25 15:57+0100\n"
+"PO-Revision-Date: 2025-05-09 17:22+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -311,7 +311,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
-msgstr ""
+msgstr "Alertas public"
 
 #: app/main.cpp:62
 #, kde-format
@@ -333,7 +333,7 @@ msgstr ""
 #: app/Main.qml:33
 #, kde-format
 msgid "Request permission…"
-msgstr ""
+msgstr "Demanda Permission…"
 
 #: app/Main.qml:69
 #, kde-format
