@@ -46,6 +46,8 @@ Kirigami.ScrollablePage {
                 }
             }
             onClicked: {
+                while (applicationWindow().pageStack.depth > 1)
+                    applicationWindow().pageStack.pop();
                 applicationWindow().pageStack.push(alertPage, { alert: model.alert, alertInfo: model.alertInfo })
             }
         }
