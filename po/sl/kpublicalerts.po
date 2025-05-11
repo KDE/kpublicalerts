@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-18 00:44+0000\n"
+"POT-Creation-Date: 2025-05-11 00:45+0000\n"
 "PO-Revision-Date: 2025-04-17 06:59+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -148,13 +148,13 @@ msgctxt "@title:window"
 msgid "Active Alerts"
 msgstr "Dejavna opozorila"
 
-#: app/AlertsPage.qml:65
+#: app/AlertsPage.qml:67
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No alerts"
 msgstr "Ni opozoril"
 
-#: app/AlertsPage.qml:68
+#: app/AlertsPage.qml:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest…"
@@ -352,7 +352,7 @@ msgctxt "@action:inmenu"
 msgid "About"
 msgstr "O programu"
 
-#: app/subscriptionmanager.cpp:57
+#: app/subscriptionmanager.cpp:64
 #, kde-format
 msgid "Weather and emergency alert notifications"
 msgstr "Obvestila o vremenu in nujnih opozorilih"
