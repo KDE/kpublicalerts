@@ -2,6 +2,7 @@
 Name=Public Alerts
 Name[ca]=Alertes públiques
 Name[ca@valencia]=Alertes públiques
+Name[de]=Öffentliche Warnungen
 Name[es]=Alertas públicas
 Name[eu]=Alerta publikoak
 Name[fi]=Yleiset hälytykset
@@ -27,6 +28,7 @@ Type=Application
 Comment=Weather and emergency alerts.
 Comment[ca]=Alertes meteorològiques i d'emergències.
 Comment[ca@valencia]=Alertes meteorològiques i d'emergències.
+Comment[de]=Wetter- und Notfallwarnungen.
 Comment[es]=Alertas meteorológicas y de emergencia.
 Comment[eu]=Eguraldi eta emergentzia alertak.
 Comment[fi]=Sää- ja hätätilahälytykset.
