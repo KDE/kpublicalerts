@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Public Alerts
+Name[ar]=الإنذارات العامة
 Name[ca]=Alertes públiques
 Name[ca@valencia]=Alertes públiques
 Name[de]=Öffentliche Warnungen
@@ -26,6 +27,7 @@ Exec=publicalerts
 Icon=weather-storm
 Type=Application
 Comment=Weather and emergency alerts.
+Comment[ar]=إنذارات الطقس والطوارئ.
 Comment[ca]=Alertes meteorològiques i d'emergències.
 Comment[ca@valencia]=Alertes meteorològiques i d'emergències.
 Comment[de]=Wetter- und Notfallwarnungen.

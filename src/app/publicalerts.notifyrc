@@ -2,6 +2,7 @@
 IconName=weather-storm
 DesktopEntry=org.kde.publicalerts
 Name=Public Alerts
+Name[ar]=الإنذارات العامة
 Name[ca]=Alertes públiques
 Name[ca@valencia]=Alertes públiques
 Name[de]=Öffentliche Warnungen
@@ -25,6 +26,7 @@ Name[uk]=Попередження цивільного захисту
 Name[x-test]=xxPublic Alertsxx
 Name[zh_TW]=公共警報
 Comment=Emergency and weather alerts.
+Comment[ar]=إنذارات الطوارئ والطقس.
 Comment[ca]=Alertes d'emergències i meteorològiques.
 Comment[ca@valencia]=Alertes d'emergències i meteorològiques.
 Comment[de]=Notfall- und Wetterwarnungen.
@@ -49,6 +51,7 @@ Comment[zh_TW]=緊急事件與天氣警報。
 
 [Event/extreme-alert]
 Name=Extreme Alert
+Name[ar]=إنذار بالغ الخطورة
 Name[ca]=Alerta extrema
 Name[ca@valencia]=Alerta extrema
 Name[de]=Höchste Alarmstufe
@@ -71,6 +74,7 @@ Name[uk]=Попередження про надзвичайні ситуації
 Name[x-test]=xxExtreme Alertxx
 Name[zh_TW]=重大警報
 Comment=Extraordinary threat to life or property.
+Comment[ar]=تهديد خطير للغاية على الحياة أو الممتلكات.
 Comment[ca]=Amenaça extraordinària a la vida o les propietats.
 Comment[ca@valencia]=Amenaça extraordinària a la vida o les propietats.
 Comment[de]=Außerordentliche Bedrohung für Leib und Leben oder Eigentum.
@@ -97,6 +101,7 @@ Urgency=Critical
 
 [Event/severe-alert]
 Name=Severe Alert
+Name[ar]=إنذار شديد
 Name[ca]=Alerta severa
 Name[ca@valencia]=Alerta severa
 Name[de]=Schwerwiegende Alarmstufe
@@ -119,6 +124,7 @@ Name[uk]=Попередження про критичні ситуації
 Name[x-test]=xxSevere Alertxx
 Name[zh_TW]=嚴重警報
 Comment=Significant threat to life or property.
+Comment[ar]=خطر كبير على الحياة أو الممتلكات.
 Comment[ca]=Amenaça significativa a la vida o les propietats.
 Comment[ca@valencia]=Amenaça significativa a la vida o les propietats.
 Comment[de]=Erhebliche Bedrohung für Leib und Leben oder Eigentum.
@@ -145,6 +151,7 @@ Urgency=High
 
 [Event/moderate-alert]
 Name=Moderate Alert
+Name[ar]=إنذار متوسط
 Name[ca]=Alerta moderada
 Name[ca@valencia]=Alerta moderada
 Name[de]=Mittlere Alarmstufe
@@ -167,6 +174,7 @@ Name[uk]=Попередження про значну загрозу
 Name[x-test]=xxModerate Alertxx
 Name[zh_TW]=中等警報
 Comment=Possible threat to life or property.
+Comment[ar]=خطر محتمل على الحياة أو الممتلكات.
 Comment[ca]=Amenaça possible a la vida o les propietats.
 Comment[ca@valencia]=Amenaça possible a la vida o les propietats.
 Comment[de]=Mögliche Bedrohung für Leib und Leben oder Eigentum.
@@ -193,6 +201,7 @@ Urgency=Normal
 
 [Event/minor-alert]
 Name=Minor Alert
+Name[ar]=إنذار بسيط
 Name[ca]=Alerta menor
 Name[ca@valencia]=Alerta menor
 Name[de]=Leichte Alarmstufe
@@ -215,6 +224,7 @@ Name[uk]=Попередження про незначну загрозу
 Name[x-test]=xxMinor Alertxx
 Name[zh_TW]=小型警報
 Comment=Minimal or no threat to life or property.
+Comment[ar]=الحد الأدنى أو عدم وجود تهديد على الحياة أو الممتلكات.
 Comment[ca]=Amenaça mínima o cap a la vida o les propietats.
 Comment[ca@valencia]=Amenaça mínima o cap a la vida o les propietats.
 Comment[de]=Minimale bis keine bekannte Bedrohung für Leib und Leben oder Eigentum.
