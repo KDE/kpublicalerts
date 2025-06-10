@@ -10,6 +10,7 @@
   <content_rating type="oars-1.1"/>
   <developer_name translate="no">KDE</developer_name>
   <name>Public Alerts</name>
+  <name xml:lang="ar">الإنذارات العامة</name>
   <name xml:lang="ca">Alertes públiques</name>
   <name xml:lang="ca-valencia">Alertes públiques</name>
   <name xml:lang="de">Öffentliche Warnungen</name>
@@ -32,6 +33,7 @@
   <name xml:lang="x-test">xxPublic Alertsxx</name>
   <name xml:lang="zh-TW">公共警報</name>
   <summary>Emergency and weather alerts</summary>
+  <summary xml:lang="ar">إنذارات الطوارئ والطقس</summary>
   <summary xml:lang="ca">Alertes d'emergències i meteorològiques</summary>
   <summary xml:lang="ca-valencia">Alertes d'emergències i meteorològiques</summary>
   <summary xml:lang="de">Notfall- und Wetterwarnungen</summary>
@@ -54,6 +56,7 @@
   <summary xml:lang="zh-TW">緊急事件與天氣警報</summary>
   <description>
     <p>Receive emergency and weather alert notifications in about 100 countries.</p>
+    <p xml:lang="ar">تلقي إنذارات الطوارئ وتنبيهات الطقس في حوالي 100 دولة.</p>
     <p xml:lang="ca">Rebeu notificacions d'emergències i alertes meteorològiques en uns 100 països.</p>
     <p xml:lang="ca-valencia">Rebeu notificacions d'emergències i alertes meteorològiques en uns 100 països.</p>
     <p xml:lang="de">Erhalten Sie Notfall- und Wetterwarnmeldungen in etwa 100 Ländern.</p>
