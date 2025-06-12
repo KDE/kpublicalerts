@@ -14,6 +14,7 @@
 
 #include <span>
 
+using namespace Qt::Literals;
 using namespace KPublicAlerts;
 
 AreaModel::AreaModel(QObject *parent)
@@ -143,7 +144,13 @@ QString AreaModel::allAreaDescriptions() const
 {
     QStringList l;
     l.reserve(m_alert.areas().size());
-    std::transform(m_alert.areas().begin(), m_alert.areas().end(), std::back_inserter(l), [](const auto &area) { return area.description(); });
+    std::ranges::transform(m_alert.areas(), std::back_inserter(l), [](const auto &area) {
+        if (area.description().startsWith("polygon"_L1, Qt::CaseInsensitive) || area.description().endsWith("polygon"_L1, Qt::CaseInsensitive)) {
+            return QString();
+        }
+        return area.description();
+    });
+    l.erase(std::remove_if(l.begin(), l.end(), std::mem_fn(&QString::isEmpty)), l.end());
     return l.join(QLatin1Char('\n'));
 }
 

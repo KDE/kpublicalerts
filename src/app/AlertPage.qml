@@ -226,11 +226,14 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.isSection: true
                 Kirigami.FormData.label: i18nc("@label", "Area")
                 Kirigami.Separator {}
+                visible: areaDescLabel.visible
             }
             QQC2.Label {
+                id: areaDescLabel
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
                 text: areaModel.allAreaDescriptions
+                visible: text !== ""
             }
         }
     }
