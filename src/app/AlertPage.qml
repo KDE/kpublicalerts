@@ -46,7 +46,7 @@ Kirigami.ScrollablePage {
 
                     QtLocation.MapPolygon {
                         color: {
-                            if (root.alert.messageType == CAPAlertMessage.Cancel)
+                            if (root.alert.messageType === CAPAlertMessage.Cancel || root.alertInfo.responseTypes === CAPAlertInfo.AllClear)
                                 return Kirigami.Theme.disabledTextColor;
                             if (root.alertInfo.severity === CAPAlertInfo.UnknownSeverity)
                                 return Kirigami.Theme.highlightColor;
@@ -67,7 +67,7 @@ Kirigami.ScrollablePage {
                     QtLocation.MapCircle {
                         required property capCircle modelData
                         color: {
-                            if (root.alert.messageType === CAPAlertMessage.Cancel)
+                            if (root.alert.messageType === CAPAlertMessage.Cancel || root.alertInfo.responseTypes === CAPAlertInfo.AllClear)
                                 return Kirigami.Theme.disabledTextColor;
                             if (root.alert.severity === CAPAlertInfo.UnknownSeverity)
                                 return Kirigami.Theme.highlightColor;

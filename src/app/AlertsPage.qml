@@ -28,27 +28,30 @@ Kirigami.ScrollablePage {
             sourceModel: AlertsManager
         }
         delegate: QQC2.ItemDelegate {
+            id: delegateRoot
+            required property capAlertMessage alert
+            required property capAlertInfo alertInfo
             width: ListView.view.width
             contentItem: Kirigami.IconTitleSubtitle {
-                title: model.alertInfo.headline ? model.alertInfo.headline : model.alertInfo.event
-                subtitle: model.alertInfo.description
+                title: delegateRoot.alertInfo.headline ? delegateRoot.alertInfo.headline : delegateRoot.alertInfo.event
+                subtitle: delegateRoot.alertInfo.description
                 icon.name: {
-                    if (model.alert.messageType == CAPAlertMessage.Cancel)
+                    if (delegateRoot.alert.messageType === CAPAlertMessage.Cancel || delegateRoot.alertInfo.responseTypes === CAPAlertInfo.AllClear)
                         return "dialog-ok";
-                    return CAPUtil.categoriesIconName(model.alertInfo.categories);
+                    return CAPUtil.categoriesIconName(delegateRoot.alertInfo.categories);
                 }
                 icon.color: {
-                    if (model.alert.messageType == CAPAlertMessage.Cancel)
+                    if (delegateRoot.alert.messageType === CAPAlertMessage.Cancel || delegateRoot.alertInfo.responseTypes === CAPAlertInfo.AllClear)
                         return Kirigami.Theme.disabledTextColor;
-                    if (model.alert.status == CAPAlertMessage.Exercise)
+                    if (delegateRoot.alert.status === CAPAlertMessage.Exercise)
                         return Kirigami.Theme.activeTextColor;
-                    return applicationWindow().severityTextColor(model.alertInfo.severity);
+                    return applicationWindow().severityTextColor(delegateRoot.alertInfo.severity);
                 }
             }
             onClicked: {
                 while (applicationWindow().pageStack.depth > 1)
                     applicationWindow().pageStack.pop();
-                applicationWindow().pageStack.push(alertPage, { alert: model.alert, alertInfo: model.alertInfo })
+                applicationWindow().pageStack.push(alertPage, { alert: delegateRoot.alert, alertInfo: delegateRoot.alertInfo })
             }
         }
 
