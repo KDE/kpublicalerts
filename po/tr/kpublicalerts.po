@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-11 00:45+0000\n"
+"POT-Creation-Date: 2025-06-22 00:46+0000\n"
 "PO-Revision-Date: 2025-04-21 11:07+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -147,13 +147,13 @@ msgctxt "@title:window"
 msgid "Active Alerts"
 msgstr "Etkin İkazlar"
 
-#: app/AlertsPage.qml:67
+#: app/AlertsPage.qml:70
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No alerts"
 msgstr "İkaz yok"
 
-#: app/AlertsPage.qml:70
+#: app/AlertsPage.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest…"

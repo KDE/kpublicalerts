@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-11 00:45+0000\n"
+"POT-Creation-Date: 2025-06-22 00:46+0000\n"
 "PO-Revision-Date: 2025-04-19 09:15+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -144,13 +144,13 @@ msgctxt "@title:window"
 msgid "Active Alerts"
 msgstr "Alertes actives"
 
-#: app/AlertsPage.qml:67
+#: app/AlertsPage.qml:70
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No alerts"
 msgstr "Aucune alerte"
 
-#: app/AlertsPage.qml:70
+#: app/AlertsPage.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest…"
