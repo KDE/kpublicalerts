@@ -16,14 +16,16 @@ using namespace KPublicAlerts;
 
 static QUrl baseUrl()
 {
+    if (qEnvironmentVariableIsSet("KPUBLICALERTS_SERVER")) [[unlikely]] {
+        return QUrl(qEnvironmentVariable("KPUBLICALERTS_SERVER"));
+    }
     QUrl url;
     url.setScheme(u"https"_s);
     url.setHost(u"alerts.kde.org"_s);
     url.setPort(443);
+    url.setPath(u"/"_s);
     return url;
 }
-
-constexpr inline auto BASE_PATH = "/"_L1;
 
 [[nodiscard]] static QNetworkRequest makeRequest(const QUrl &url)
 {
@@ -35,14 +37,14 @@ constexpr inline auto BASE_PATH = "/"_L1;
 QNetworkRequest RestApi::alert(const QString &id)
 {
     auto url = baseUrl();
-    url.setPath(BASE_PATH + "alert/"_L1 + id);
+    url.setPath(url.path() + "alert/"_L1 + id);
     return makeRequest(url);
 }
 
 QNetworkRequest RestApi::alerts(const QRectF &bbox)
 {
     auto url = baseUrl();
-    url.setPath(BASE_PATH + "alert/area"_L1);
+    url.setPath(url.path() + "alert/area"_L1);
 
     QUrlQuery query;
     query.addQueryItem(u"min_lat"_s, QString::number(bbox.top()));
@@ -57,7 +59,7 @@ QNetworkRequest RestApi::alerts(const QRectF &bbox)
 QNetworkRequest RestApi::vapidKey()
 {
     auto url = baseUrl();
-    url.setPath(BASE_PATH + "subscription/"_L1);
+    url.setPath(url.path() + "subscription/"_L1);
     QUrlQuery query;
     query.addQueryItem(u"type"_s, u"webpush"_s);
     url.setQuery(query);
@@ -67,7 +69,7 @@ QNetworkRequest RestApi::vapidKey()
 QNetworkRequest RestApi::subscribe()
 {
     auto url = baseUrl();
-    url.setPath(BASE_PATH + "subscription/"_L1);
+    url.setPath(url.path() + "subscription/"_L1);
     auto req = makeRequest(url);
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     return req;
@@ -76,7 +78,7 @@ QNetworkRequest RestApi::subscribe()
 QNetworkRequest RestApi::unsubscribe(const QUuid &id)
 {
     auto url = baseUrl();
-    url.setPath(BASE_PATH + "subscription/"_L1);
+    url.setPath(url.path() + "subscription/"_L1);
     QUrlQuery query;
     query.addQueryItem(u"subscription_id"_s, id.toString(QUuid::WithoutBraces));
     url.setQuery(query);
@@ -87,7 +89,7 @@ QNetworkRequest RestApi::unsubscribe(const QUuid &id)
 QNetworkRequest RestApi::heartbeat(const QUuid &id)
 {
     auto url = baseUrl();
-    url.setPath(BASE_PATH + "subscription/"_L1);
+    url.setPath(url.path() + "subscription/"_L1);
     QUrlQuery query;
     query.addQueryItem(u"subscription_id"_s, id.toString(QUuid::WithoutBraces));
     url.setQuery(query);
