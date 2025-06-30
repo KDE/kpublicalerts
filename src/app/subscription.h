@@ -19,6 +19,9 @@ namespace KPublicAlerts {
 class Subscription
 {
     Q_GADGET
+    Q_PROPERTY(QString name MEMBER m_name)
+    Q_PROPERTY(bool isSubscribed READ isSubscribed)
+
 public:
     inline bool operator<(const Subscription &other) const
     {
@@ -28,6 +31,8 @@ public:
     {
         return m_id < id;
     }
+
+    [[nodiscard]] bool isSubscribed() const;
 
     static Subscription load(const QString &id, QSettings &settings);
     void store(QSettings &settings);

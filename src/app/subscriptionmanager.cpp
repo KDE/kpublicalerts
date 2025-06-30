@@ -123,6 +123,7 @@ QVariant SubscriptionManager::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> SubscriptionManager::roleNames() const
 {
     auto n = QAbstractListModel::roleNames();
+    n.insert(SubscriptionRole, "subscription");
     return n;
 }
 
@@ -198,14 +199,14 @@ void SubscriptionManager::doSubscribeAll()
     const auto upEndpoint = m_connector.endpoint();
     for (const auto &s : m_subscriptions) {
         if (!upEndpoint.isEmpty()) { // push notifications available
-            if (!s.m_subscriptionId.isNull() && s.m_notificationEndpoint != upEndpoint) { // push notification endpoint changed
+            if (s.isSubscribed() && s.m_notificationEndpoint != upEndpoint) { // push notification endpoint changed
                 doUnsubscribeOne(s);
             }
-            if (s.m_subscriptionId.isNull() || s.m_notificationEndpoint != upEndpoint) {
+            if (!s.isSubscribed() || s.m_notificationEndpoint != upEndpoint) {
                 doSubscribeOne(s);
             }
         } else { // push notifications not available
-            if (!s.m_subscriptionId.isNull()) {
+            if (s.isSubscribed()) {
                 doUnsubscribeOne(s);
             }
         }
@@ -256,12 +257,21 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
 void SubscriptionManager::doUnsubscribeOne(const Subscription &sub)
 {
     auto reply = m_nam->deleteResource(RestApi::unsubscribe(sub.m_subscriptionId));
-    connect(reply, &QNetworkReply::finished, this, [reply]() {
+    connect(reply, &QNetworkReply::finished, this, [reply, sub, this]() {
         reply->deleteLater();
         if (reply->error() != QNetworkReply::NoError && reply->error() != QNetworkReply::ContentNotFoundError) {
             qWarning() << reply->errorString();
         }
-        // TODO
+        const auto it = std::lower_bound(m_subscriptions.begin(), m_subscriptions.end(), sub.m_id);
+        if (it != m_subscriptions.end() && (*it).m_id == sub.m_id && (*it).m_subscriptionId == sub.m_subscriptionId) {
+            (*it).m_subscriptionId = {};
+
+            QSettings settings;
+            (*it).store(settings);
+
+            const auto idx = index(std::distance(m_subscriptions.begin(), it), 0);
+            Q_EMIT dataChanged(idx, idx);
+        }
     });
 }
 

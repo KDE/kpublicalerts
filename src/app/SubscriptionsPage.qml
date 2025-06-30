@@ -31,16 +31,21 @@ Kirigami.ScrollablePage {
         id: listView
         model: SubscriptionManager
         delegate: Kirigami.SwipeListItem {
+            id: delegateRoot
+            required property var subscription
+            required property int index
+
             readonly property var sourceModel: ListView.view.model
-            contentItem: QQC2.Label {
-                text: model.display
+            contentItem: Kirigami.IconTitleSubtitle {
+                icon.name: delegateRoot.subscription.isSubscribed ? "dialog-ok" : "dialog-error"
+                title: delegateRoot.subscription.name
             }
             actions: [
                 Kirigami.Action {
                     icon.name: "edit-delete"
                     text: i18nc("@action:button", "Unsubscribe")
                     onTriggered: {
-                        sourceModel.removeRows(model.index, 1)
+                        delegateRoot.sourceModel.removeRows(delegateRoot.index, 1)
                     }
                 }
             ]

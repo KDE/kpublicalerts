@@ -8,6 +8,11 @@
 using namespace Qt::Literals;
 using namespace KPublicAlerts;
 
+bool Subscription::isSubscribed() const
+{
+    return !m_subscriptionId.isNull();
+}
+
 Subscription Subscription::load(const QString &id, QSettings &settings)
 {
     Subscription s;
