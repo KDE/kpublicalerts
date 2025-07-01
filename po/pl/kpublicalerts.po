@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-22 00:46+0000\n"
+"POT-Creation-Date: 2025-07-01 00:45+0000\n"
 "PO-Revision-Date: 2025-02-08 17:50+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -392,19 +392,19 @@ msgctxt "@title:window"
 msgid "Areas of Interest"
 msgstr "Obszary zainteresowania"
 
-#: app/SubscriptionsPage.qml:25 app/SubscriptionsPage.qml:55
+#: app/SubscriptionsPage.qml:25 app/SubscriptionsPage.qml:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Add…"
 msgstr "Dodaj…"
 
-#: app/SubscriptionsPage.qml:41
+#: app/SubscriptionsPage.qml:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Unsubscribe"
 msgstr "Przestań śledzić"
 
-#: app/SubscriptionsPage.qml:52
+#: app/SubscriptionsPage.qml:57
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
