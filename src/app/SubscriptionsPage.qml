@@ -33,11 +33,17 @@ Kirigami.ScrollablePage {
         delegate: Kirigami.SwipeListItem {
             id: delegateRoot
             required property var subscription
+            required property bool isSubscribed
+            required property bool awaitsConfirmation
             required property int index
 
             readonly property var sourceModel: ListView.view.model
             contentItem: Kirigami.IconTitleSubtitle {
-                icon.name: delegateRoot.subscription.isSubscribed ? "dialog-ok" : "dialog-error"
+                icon.name: {
+                    if (!delegateRoot.isSubscribed)
+                        return "dialog-error";
+                    return delegateRoot.awaitsConfirmation ? "dialog-ok" : "dialog-positive";
+                }
                 title: delegateRoot.subscription.name
             }
             actions: [

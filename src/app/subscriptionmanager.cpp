@@ -7,7 +7,6 @@
 #include "geomath.h"
 #include "restapi.h"
 
-
 #include <KLocalizedString>
 
 #include <QDebug>
@@ -45,7 +44,28 @@ SubscriptionManager::SubscriptionManager(QObject *parent)
                 return;
             }
         }
-        // TODO handle "subscribe" and "unsubscribe"
+        if (type == "subscribe"_L1) {
+            const auto confirmationId = msgObj.value("confirmation_id"_L1).toString();
+            const auto it = std::find_if(m_subscriptions.begin(), m_subscriptions.end(), [confirmationId](const auto &sub) {
+                return sub.m_pendingConfirmation == confirmationId;
+            });
+            if (confirmationId.isEmpty()) {
+                qWarning() << "incomplete subscription push notification:" << msgObj;
+                return;
+            }
+            if (it != m_subscriptions.end()) {
+                (*it).m_pendingConfirmation.clear();
+                QSettings settings;
+                (*it).store(settings);
+                const int row = (int)std::distance(m_subscriptions.begin(), it);
+                Q_EMIT dataChanged(index(row, 0), index(row, 0));
+                qDebug() << "got confirmation for subscription" << (*it).m_name;
+            } else {
+                m_confirmations.insert(confirmationId);
+                qDebug() << "got confirmation for not yet completed subscription" << confirmationId;
+            }
+        }
+        // TODO handle "unsubscribe"
 
         // the server tries to tell us something but we don't know what,
         // so try to update everything
@@ -115,6 +135,10 @@ QVariant SubscriptionManager::data(const QModelIndex &index, int role) const
             return sub.m_name;
         case SubscriptionRole:
             return QVariant::fromValue(sub);
+        case IsSubscribedRole:
+            return sub.isSubscribed();
+        case AwaitsConfirmationRole:
+            return sub.awaitsConfirmation();
     }
 
     return {};
@@ -124,6 +148,8 @@ QHash<int, QByteArray> SubscriptionManager::roleNames() const
 {
     auto n = QAbstractListModel::roleNames();
     n.insert(SubscriptionRole, "subscription");
+    n.insert(IsSubscribedRole, "isSubscribed");
+    n.insert(AwaitsConfirmationRole, "awaitsConfirmation");
     return n;
 }
 
@@ -245,12 +271,22 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
 
         const auto subRes = QJsonDocument::fromJson(reply->readAll()).object();
         qDebug() << subRes;
-        (*it).m_subscriptionId = QUuid(subRes.value(QLatin1String("subscription_id")).toString());
+        (*it).m_subscriptionId = QUuid(subRes.value("subscription_id"_L1).toString());
+        (*it).m_pendingConfirmation = subRes.value("confirmation_id"_L1).toString();
+        // got the push notification before the REST response
+        if (auto cit = m_confirmations.find((*it).m_pendingConfirmation); cit != m_confirmations.end()) {
+            m_confirmations.erase(cit);
+            (*it).m_pendingConfirmation.clear();
+            qDebug() << "subcription has already been confirmed";
+        }
         (*it).m_notificationEndpoint = upEndpoint;
         (*it).m_lastHeartbeat = QDateTime::currentDateTime();
 
         QSettings settings;
         (*it).store(settings);
+
+        const auto row = (int)std::distance(m_subscriptions.begin(), it);
+        Q_EMIT dataChanged(index(row, 0), index(row, 0));
     });
 }
 

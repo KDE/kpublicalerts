@@ -12,6 +12,7 @@
 
 #include <QAbstractListModel>
 
+#include <unordered_set>
 #include <vector>
 
 class QNetworkAccessManager;
@@ -32,6 +33,8 @@ public:
 
     enum Role {
         SubscriptionRole = Qt::UserRole,
+        IsSubscribedRole,
+        AwaitsConfirmationRole,
     };
 
     int rowCount(const QModelIndex &parent = {}) const override;
@@ -67,6 +70,7 @@ private:
     QTimer *m_heartbeatTimer = nullptr;
 
     std::vector<Subscription> m_subscriptions;
+    std::unordered_set<QString> m_confirmations;
 };
 
 }

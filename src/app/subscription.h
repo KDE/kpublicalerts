@@ -21,6 +21,7 @@ class Subscription
     Q_GADGET
     Q_PROPERTY(QString name MEMBER m_name)
     Q_PROPERTY(bool isSubscribed READ isSubscribed)
+    Q_PROPERTY(bool awaitsConfirmation READ awaitsConfirmation)
 
 public:
     inline bool operator<(const Subscription &other) const
@@ -33,6 +34,7 @@ public:
     }
 
     [[nodiscard]] bool isSubscribed() const;
+    [[nodiscard]] bool awaitsConfirmation() const;
 
     static Subscription load(const QString &id, QSettings &settings);
     void store(QSettings &settings);
@@ -43,6 +45,7 @@ public:
     QString m_notificationEndpoint;
     QRectF m_boundingBox;
     QDateTime m_lastHeartbeat;
+    QString m_pendingConfirmation;
 };
 
 }
