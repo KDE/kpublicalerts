@@ -35,7 +35,8 @@ Application::Application(QObject *parent)
     m_subscriptionMgr.setNetworkAccessManager(&m_nam);
     m_alertsMgr.setNetworkAccessManager(&m_nam);
     m_alertsMgr.setSubscriptionManager(&m_subscriptionMgr);
-    connect(&m_subscriptionMgr, &SubscriptionManager::alertAdded, &m_alertsMgr, &AlertsManager::fetchAlert);
+    connect(&m_subscriptionMgr, &SubscriptionManager::alertAdded, &m_alertsMgr, [this](const QString &id) { m_alertsMgr.fetchAlert(id, false); });
+    connect(&m_subscriptionMgr, &SubscriptionManager::alertUpdated, &m_alertsMgr, [this](const QString &id) { m_alertsMgr.fetchAlert(id, true); });
     connect(&m_subscriptionMgr, &SubscriptionManager::alertRemoved, &m_alertsMgr, &AlertsManager::removeAlert);
     connect(&m_subscriptionMgr, &SubscriptionManager::rowsInserted, &m_alertsMgr, &AlertsManager::fetchAll);
     connect(&m_subscriptionMgr, &SubscriptionManager::rowsRemoved, &m_alertsMgr, &AlertsManager::fetchAll);

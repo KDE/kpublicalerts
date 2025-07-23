@@ -49,6 +49,7 @@ public:
 
 Q_SIGNALS:
     void alertAdded(const QString &id);
+    void alertUpdated(const QString &id);
     void alertRemoved(const QString &id);
     void countChanged();
 

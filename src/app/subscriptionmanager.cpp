@@ -38,6 +38,12 @@ SubscriptionManager::SubscriptionManager(QObject *parent)
                 return;
             }
         }
+        if (type == "update"_L1) {
+            if (const auto id = msgObj.value("alert_id"_L1).toString(); !id.isEmpty()) {
+                Q_EMIT alertUpdated(id);
+                return;
+            }
+        }
         if (type == "removed"_L1) {
             if (const auto id = msgObj.value("alert_id"_L1).toString(); !id.isEmpty()) {
                 Q_EMIT alertRemoved(id);

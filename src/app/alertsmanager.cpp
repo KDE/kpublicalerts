@@ -157,11 +157,13 @@ void AlertsManager::setSubscriptionManager(SubscriptionManager *subMgr)
     m_subMgr = subMgr;
 }
 
-void AlertsManager::fetchAlert(const QString &id)
+void AlertsManager::fetchAlert(const QString &id, bool force)
 {
-    if (const auto it = std::lower_bound(m_alerts.begin(), m_alerts.end(), id); it != m_alerts.end() && (*it).id == id) {
-        qDebug() << "alert" << id << "already known, not fetching";
-        return;
+    if (!force) {
+        if (const auto it = std::lower_bound(m_alerts.begin(), m_alerts.end(), id); it != m_alerts.end() && (*it).id == id) {
+            qDebug() << "alert" << id << "already known, not fetching";
+            return;
+        }
     }
 
     auto reply = m_nam->get(RestApi::alert(id));

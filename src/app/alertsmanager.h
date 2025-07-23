@@ -54,7 +54,7 @@ public:
     void setNetworkAccessManager(QNetworkAccessManager *nam);
     void setSubscriptionManager(SubscriptionManager *subMgr);
 
-    void fetchAlert(const QString &id);
+    void fetchAlert(const QString &id, bool force = false);
     void removeAlert(const QString &id);
 
     enum {
