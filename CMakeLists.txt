@@ -31,7 +31,7 @@ ecm_setup_version(${PROJECT_VERSION}
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
 )
 
-find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControls2 Svg Positioning)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControls2 Svg Positioning Location)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons Kirigami I18n GuiAddons Notifications)
 find_package(KWeatherCore REQUIRED)
 find_package(KUnifiedPush REQUIRED)
