@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-24 00:46+0000\n"
-"PO-Revision-Date: 2025-06-09 23:07+0400\n"
+"PO-Revision-Date: 2025-08-03 22:19+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -357,7 +357,7 @@ msgstr "عن"
 #: app/subscriptionmanager.cpp:90
 #, kde-format
 msgid "Weather and emergency alert notifications"
-msgstr "إشعارات الطقس والتنبيهات في حالات الطوارئ"
+msgstr "إشعارات الطقس والتحذيرات في حالات الطوارئ"
 
 #: app/SubscriptionPage.qml:17
 #, kde-format
