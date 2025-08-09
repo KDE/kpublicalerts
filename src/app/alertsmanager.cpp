@@ -436,9 +436,22 @@ bool AlertsManager::isFetching() const
     return m_pendingFetchJobs > 0;
 }
 
+[[nodiscard]] static bool hasGeometry(const KWeatherCore::CAPAlertInfo &info)
+{
+    return std::ranges::any_of(info.areas(), [](const auto &area) { return !area.polygons().empty() || !area.circles().empty(); });
+}
+
 bool AlertsManager::intersectsSubscribedArea(const AlertElement &e) const
 {
     const auto alertInfo = e.info();
+    if (hasGeometry(alertInfo)) {
+        return intersectsSubscribedArea(alertInfo);
+    }
+    return std::ranges::any_of(e.alertData.alertInfos(), [this](const auto &info) { return intersectsSubscribedArea(info); });
+}
+
+bool AlertsManager::intersectsSubscribedArea(const KWeatherCore::CAPAlertInfo &alertInfo) const
+{
     for (const auto &area : alertInfo.areas()) {
         for (const auto &poly : area.polygons()) {
             for (const auto &sub : m_subMgr->subscriptions()) {

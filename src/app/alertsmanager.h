@@ -87,6 +87,7 @@ private:
     void notificationActivated(const KNotification *notification);
     void purgeAlerts();
     [[nodiscard]] bool intersectsSubscribedArea(const AlertElement &e) const;
+    [[nodiscard]] bool intersectsSubscribedArea(const KWeatherCore::CAPAlertInfo &alertInfo) const;
 
     void scheduleExpire();
     void purgeExpired();
