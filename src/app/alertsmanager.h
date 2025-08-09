@@ -32,13 +32,13 @@ public:
     bool operator<(const AlertElement &other) const;
     bool operator<(const QString &otherId) const;
 
-    bool isValid() const;
-    QDateTime expireTime() const;
-    bool isExpired() const;
-    QDateTime onsetTime() const;
+    [[nodiscard]] bool isValid() const;
+    [[nodiscard]] QDateTime expireTime() const;
+    [[nodiscard]] bool isExpired() const;
+    [[nodiscard]] QDateTime onsetTime() const;
 
-    KWeatherCore::CAPAlertMessage alert() const;
-    KWeatherCore::CAPAlertInfo info() const;
+    [[nodiscard]] KWeatherCore::CAPAlertMessage alert() const;
+    [[nodiscard]] KWeatherCore::CAPAlertInfo info() const;
 
     QPointer<KNotification> notification;
 };
@@ -64,14 +64,14 @@ public:
         UserRole,
     };
 
-    int rowCount(const QModelIndex &parent) const override;
-    QVariant data(const QModelIndex & index, int role) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QVariant data(const QModelIndex & index, int role) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE KPublicAlerts::AlertElement alertById(const QString &id) const;
+    Q_INVOKABLE [[nodiscard]] KPublicAlerts::AlertElement alertById(const QString &id) const;
 
-    bool isFetching() const;
-    bool hasPendingNotifications() const;
+    [[nodiscard]] bool isFetching() const;
+    [[nodiscard]] bool hasPendingNotifications() const;
 
 public Q_SLOTS:
     void fetchAll();
@@ -86,7 +86,7 @@ private:
     void showNotification(AlertElement &e);
     void notificationActivated(const KNotification *notification);
     void purgeAlerts();
-    bool intersectsSubscribedArea(const AlertElement &e) const;
+    [[nodiscard]] bool intersectsSubscribedArea(const AlertElement &e) const;
 
     void scheduleExpire();
     void purgeExpired();
