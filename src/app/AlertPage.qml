@@ -10,6 +10,7 @@ import QtLocation as QtLocation
 import QtPositioning
 import org.kde.kirigami as Kirigami
 
+import org.kde.coreaddons
 import org.kde.weathercore
 import org.kde.publicalerts
 
@@ -157,17 +158,20 @@ Kirigami.ScrollablePage {
             QQC2.Label {
                 Kirigami.FormData.label: i18nc("@label", "Web:")
                 Layout.fillWidth: true
-                text: root.alertInfo.web
+                text: KTextToHTML.convertToHtml(root.alertInfo.web, KTextToHTMLOptions.PreserveSpaces)
+                textFormat: Text.RichText
                 visible: root.alertInfo.web
                 wrapMode: Text.Wrap
-                onLinkActivated: Qt.openUrlExternally(link)
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18nc("@label", "Contact:")
                 Layout.fillWidth: true
-                text: root.alertInfo.contact
+                text: KTextToHTML.convertToHtml(root.alertInfo.contact, KTextToHTMLOptions.PreserveSpaces | KTextToHTMLOptions.ConvertPhoneNumbers)
+                textFormat: Text.RichText
                 visible: root.alertInfo.contact
                 wrapMode: Text.WordWrap
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
             }
 
             QQC2.Label {
@@ -205,8 +209,10 @@ Kirigami.ScrollablePage {
             }
             QQC2.Label {
                 Kirigami.FormData.isSection: true
-                text: root.alertInfo.description
+                text: KTextToHTML.convertToHtml(root.alertInfo.description, KTextToHTMLOptions.PreserveSpaces)
+                textFormat: Text.RichText
                 wrapMode: Text.WordWrap
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
             }
 
             QQC2.Label {
