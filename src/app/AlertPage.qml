@@ -248,6 +248,42 @@ Kirigami.ScrollablePage {
                 text: areaModel.allAreaDescriptions
                 visible: text !== ""
             }
+
+            QQC2.Label {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18nc("@label", "Additional Resources")
+                visible: resourcesRepeater.count > 0
+            }
+        }
+        Repeater {
+            id: resourcesRepeater
+            model: root.alertInfo.resources
+            delegate: Kirigami.FormLayout {
+                id: delegateRoot
+                required property capResource modelData
+                Layout.fillWidth: true
+
+                QQC2.Label {
+                    Kirigami.FormData.isSection: true
+                    Kirigami.FormData.label: delegateRoot.modelData.description
+                }
+                Image {
+                    fillMode: Image.PreserveAspectFit
+                    Layout.maximumWidth: implicitWidth
+                    Layout.fillWidth: true
+                    source: delegateRoot.modelData.mimeTypeName === "image/png" || delegateRoot.modelData.mimeTypeName === "image/jpeg" ? delegateRoot.modelData.uri : ""
+                }
+                QQC2.Label {
+                    text: delegateRoot.modelData.hasSize
+                        ? i18n("%1 (%2)", delegateRoot.modelData.mimeType.comment, Format.formatByteSize(delegateRoot.modelData.size))
+                        : delegateRoot.modelData.mimeType.comment
+                }
+                QQC2.Button {
+                    text: i18n("Open…")
+                    icon.name: delegateRoot.modelData.mimeType.iconName
+                    onClicked: Qt.openUrlExternally(delegateRoot.modelData.uri)
+                }
+            }
         }
     }
 
