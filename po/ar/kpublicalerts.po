@@ -340,7 +340,7 @@ msgstr "إذن الإشعار مفقود!"
 #: app/Main.qml:33
 #, kde-format
 msgid "Request permission…"
-msgstr "اطلب التصريح…"
+msgstr "اطلب الإذن…"
 
 #: app/Main.qml:69
 #, kde-format
