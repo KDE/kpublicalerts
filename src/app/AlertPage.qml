@@ -35,6 +35,7 @@ Kirigami.ScrollablePage {
 
         MapView {
             id: map
+            visible: root.alertInfo.hasGeometry
             Layout.fillWidth: true
             Layout.preferredHeight: root.height / 2
 
