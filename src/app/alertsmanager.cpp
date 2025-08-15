@@ -78,32 +78,7 @@ KWeatherCore::CAPAlertMessage AlertElement::alert() const
 
 KWeatherCore::CAPAlertInfo AlertElement::info() const
 {
-    // TODO also handle alert message that contain multiple infos for the same language
-    for (const auto &uiLang : QLocale().uiLanguages()) {
-        // exact match
-        for (const auto &info : alertData.alertInfos()) {
-            if (info.language().compare(uiLang, Qt::CaseInsensitive) == 0) {
-                return info;
-            }
-        }
-        // language-only match
-        for (const auto &info : alertData.alertInfos()) {
-            const auto lang = info.language();
-            QStringView l1(lang);
-            if (auto idx = l1.indexOf(QLatin1Char('-')); idx > 0) {
-                l1 = l1.left(idx);
-            }
-            QStringView l2(uiLang);
-            if (auto idx = l2.indexOf(QLatin1Char('-')); idx > 0) {
-                l2 = l2.left(idx);
-            }
-            if (l1.compare(l2, Qt::CaseInsensitive) == 0) {
-                return info;
-            }
-        }
-    }
-
-    return alertData.alertInfos()[0];
+    return alertData.alertInfos()[alertData.preferredInfoIndexForLocale()];
 }
 
 static QString basePath()
