@@ -33,19 +33,31 @@ Kirigami.ScrollablePage {
             wrapMode: Text.WordWrap
         }
 
+        QQC2.ComboBox {
+            id: infoSelector
+            Layout.fillWidth: true
+
+            model: root.alert.alertInfos
+            textRole: "languageDisplayName"
+            currentIndex: root.alert.preferredInfoIndexForLocale
+            visible: count > 1
+
+            onCurrentIndexChanged: root.alertInfo = root.alert.alertInfos[currentIndex];
+        }
+
         MapView {
             id: map
             visible: root.alertInfo.hasGeometry
             Layout.fillWidth: true
             Layout.preferredHeight: root.height / 2
 
-            Repeater {
+            QtLocation.MapItemView {
                 model: areaModel
-
-                Repeater {
+                delegate: QtLocation.MapItemView {
+                    required property var polygons
                     model: polygons
-
-                    QtLocation.MapPolygon {
+                    delegate: QtLocation.MapPolygon {
+                        required property var modelData
                         color: {
                             if (root.alert.messageType === CAPAlertMessage.Cancel || root.alertInfo.responseTypes === CAPAlertInfo.AllClear)
                                 return Kirigami.Theme.disabledTextColor;
@@ -60,12 +72,12 @@ Kirigami.ScrollablePage {
                     }
                 }
             }
-            Repeater {
+            QtLocation.MapItemView {
                 model: areaModel
-                Repeater {
+                delegate: QtLocation.MapItemView {
+                    required property var circles
                     model: circles
-
-                    QtLocation.MapCircle {
+                    delegate: QtLocation.MapCircle {
                         required property capCircle modelData
                         color: {
                             if (root.alert.messageType === CAPAlertMessage.Cancel || root.alertInfo.responseTypes === CAPAlertInfo.AllClear)
