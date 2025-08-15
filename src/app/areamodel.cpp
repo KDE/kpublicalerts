@@ -34,6 +34,7 @@ void AreaModel::setAlertInfo(const KWeatherCore::CAPAlertInfo &info)
     beginResetModel();
     m_alert = info;
     endResetModel();
+    Q_EMIT alertInfoChanged();
 }
 
 int AreaModel::rowCount(const QModelIndex &parent) const
