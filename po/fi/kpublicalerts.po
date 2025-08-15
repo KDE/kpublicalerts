@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-24 00:46+0000\n"
+"POT-Creation-Date: 2025-08-15 00:50+0000\n"
 "PO-Revision-Date: 2025-05-25 17:37+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -27,103 +27,103 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: app/AlertPage.qml:104
+#: app/AlertPage.qml:105
 #, kde-format
 msgctxt "@label"
 msgid "Status:"
 msgstr "Tila:"
 
-#: app/AlertPage.qml:114
+#: app/AlertPage.qml:115
 #, kde-format
 msgctxt "@label"
 msgid "Message type:"
 msgstr "Viestityyppi:"
 
-#: app/AlertPage.qml:127
+#: app/AlertPage.qml:128
 #, kde-format
 msgctxt "@label"
 msgid "Categories:"
 msgstr "Luokat:"
 
-#: app/AlertPage.qml:134
+#: app/AlertPage.qml:135
 #, kde-format
 msgctxt "@label"
 msgid "Urgency:"
 msgstr "Kiireellisyys:"
 
-#: app/AlertPage.qml:139
+#: app/AlertPage.qml:140
 #, kde-format
 msgctxt "@label"
 msgid "Severity:"
 msgstr "Vakavuus:"
 
-#: app/AlertPage.qml:144
+#: app/AlertPage.qml:145
 #, kde-format
 msgctxt "@label"
 msgid "Certainty:"
 msgstr "Varmuus:"
 
-#: app/AlertPage.qml:149
+#: app/AlertPage.qml:150
 #, kde-format
 msgctxt "@label"
 msgid "Recommended response:"
 msgstr "Suositeltu reaktio:"
 
-#: app/AlertPage.qml:157
+#: app/AlertPage.qml:158
 #, kde-format
 msgctxt "@label"
 msgid "Web:"
 msgstr "Verkko:"
 
-#: app/AlertPage.qml:165
+#: app/AlertPage.qml:166
 #, kde-format
 msgctxt "@label"
 msgid "Contact:"
 msgstr "Yhteystiedot:"
 
-#: app/AlertPage.qml:173
+#: app/AlertPage.qml:174
 #, kde-format
 msgctxt "@label, time"
 msgid "Sent:"
 msgstr "Lähetetty:"
 
-#: app/AlertPage.qml:178
+#: app/AlertPage.qml:179
 #, kde-format
 msgctxt "@label, time"
 msgid "Effective:"
 msgstr "Voimassa:"
 
-#: app/AlertPage.qml:183
+#: app/AlertPage.qml:184
 #, kde-format
 msgctxt "@label, time"
 msgid "Onset:"
 msgstr "Alku:"
 
-#: app/AlertPage.qml:188
+#: app/AlertPage.qml:189
 #, kde-format
 msgctxt "@label, time"
 msgid "Expires:"
 msgstr "Vanhenee:"
 
-#: app/AlertPage.qml:193
+#: app/AlertPage.qml:194
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Lähettäjä:"
 
-#: app/AlertPage.qml:202
+#: app/AlertPage.qml:203
 #, kde-format
 msgctxt "@label"
 msgid "Description"
 msgstr "Kuvaus"
 
-#: app/AlertPage.qml:213
+#: app/AlertPage.qml:214
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
 msgstr "Ohje"
 
-#: app/AlertPage.qml:227
+#: app/AlertPage.qml:228
 #, kde-format
 msgctxt "@label"
 msgid "Area"
