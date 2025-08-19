@@ -19,16 +19,18 @@ namespace KPublicAlerts {
 class Subscription
 {
     Q_GADGET
+    Q_PROPERTY(QString id MEMBER m_id)
     Q_PROPERTY(QString name MEMBER m_name)
     Q_PROPERTY(bool isSubscribed READ isSubscribed)
     Q_PROPERTY(bool awaitsConfirmation READ awaitsConfirmation)
+    Q_PROPERTY(QRectF area MEMBER m_boundingBox)
 
 public:
-    inline bool operator<(const Subscription &other) const
+    [[nodiscard]] bool operator<(const Subscription &other) const
     {
         return m_id < other.m_id;
     }
-    inline bool operator<(const QString &id) const
+    [[nodiscard]] bool operator<(const QString &id) const
     {
         return m_id < id;
     }

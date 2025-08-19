@@ -23,7 +23,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             icon.name: "list-add"
             text: i18nc("@action:button", "Add…")
-            onTriggered: applicationWindow().pageStack.push(subscriptionPage)
+            onTriggered: applicationWindow().pageStack.push(subscriptionPage, { subscription: SubscriptionManager.makeSubscription() })
         }
     ]
 
@@ -33,6 +33,7 @@ Kirigami.ScrollablePage {
         delegate: Kirigami.SwipeListItem {
             id: delegateRoot
             required property var subscription
+            required property string name
             required property bool isSubscribed
             required property bool awaitsConfirmation
             required property int index
@@ -44,7 +45,7 @@ Kirigami.ScrollablePage {
                         return "dialog-error";
                     return delegateRoot.awaitsConfirmation ? "dialog-ok" : "dialog-positive";
                 }
-                title: delegateRoot.subscription.name
+                title: delegateRoot.name
             }
             actions: [
                 Kirigami.Action {
@@ -55,6 +56,7 @@ Kirigami.ScrollablePage {
                     }
                 }
             ]
+            onClicked: applicationWindow().pageStack.push(subscriptionPage, { subscription: delegateRoot.subscription })
         }
 
         Kirigami.PlaceholderMessage {

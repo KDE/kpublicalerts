@@ -6,7 +6,6 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import QtLocation as QtLocation
 import QtPositioning
 import org.kde.kirigami as Kirigami
 
@@ -15,16 +14,32 @@ import org.kde.publicalerts
 Kirigami.Page {
     id: root
     title: i18nc("@title:window", "Add Area of Interest")
+    property var subscription
 
    actions: [
         Kirigami.Action {
             icon.name: "list-add"
             text: i18nc("@action:button", "Add Area of Interest")
-            enabled: nameField.text != ""
+            enabled: nameField.text !== "" && marker.topLeft.isValid
             onTriggered: {
-                SubscriptionManager.addSubscription(map.center.latitude, map.center.longitude, radiusSlider.value, nameField.text);
+                root.subscription.name = nameField.text;
+                root.subscription.area = Qt.rect(marker.topLeft.longitude, marker.bottomRight.latitude, marker.bottomRight.longitude - marker.topLeft.longitude, marker.topLeft.latitude - marker.bottomRight.latitude);
+                SubscriptionManager.add(root.subscription);
                 applicationWindow().pageStack.pop();
             }
+            visible: root.subscription.id === ""
+        },
+        Kirigami.Action {
+            icon.name: "document-save"
+            text: i18nc("@action:button", "Save")
+            enabled: nameField.text !== ""
+            onTriggered: {
+                root.subscription.name = nameField.text;
+                root.subscription.area = Qt.rect(marker.topLeft.longitude, marker.bottomRight.latitude, marker.bottomRight.longitude - marker.topLeft.longitude, marker.topLeft.latitude - marker.bottomRight.latitude);
+                SubscriptionManager.update(root.subscription);
+                applicationWindow().pageStack.pop();
+            }
+            visible: root.subscription.id !== ""
         }
     ]
 
@@ -34,35 +49,42 @@ Kirigami.Page {
         Layout.preferredHeight: root.height / 2
         anchors.fill: parent
 
-        QtLocation.MapCircle {
-            color: Kirigami.Theme.highlightColor
-            center: map.center
-            opacity: 0.25
-            border.color: color
-            border.width: 2
-            radius: radiusSlider.value
+        SubscriptionArea {
+            id: marker
+            topLeft: root.subscription.id !== "" ? QtPositioning.coordinate(root.subscription.area.top, root.subscription.area.left) : undefined
+            bottomRight: root.subscription.id !== "" ? QtPositioning.coordinate(root.subscription.area.bottom, root.subscription.area.right) : undefined
+            Component.onCompleted: marker.normalize()
         }
 
-        Component.onCompleted: fitViewportToVisibleMapItems()
+        TapHandler {
+            acceptedButtons: Qt.LeftButton
+            onTapped: (eventPoint) => {
+                const isFirstClick = !marker.topLeft.isValid;
+                marker.setCenter(map.toCoordinate(eventPoint.position));
+                if (isFirstClick)
+                    map.fitViewportToVisibleMapItems();
+            }
+        }
     }
 
     footer: Kirigami.FormLayout {
         QQC2.TextField {
             id: nameField
             Kirigami.FormData.label: i18nc("@label", "Name:")
-        }
-        RowLayout {
-            Kirigami.FormData.label: i18nc("@label", "Radius (km)")
-            QQC2.Slider {
-                id: radiusSlider
-                from: 1000
-                to: 50000
-                value: 20000
-            }
-            QQC2.Label {
-                text: i18nc("@label", "%1 km", radiusSlider.value / 1000.0)
-            }
+            text: root.subscription.name
         }
     }
+
+    Timer {
+        id: editPositionTimer
+        repeat: false
+        interval: 100
+        onTriggered: {
+            map.fitViewportToVisibleMapItems()
+            map.zoomLevel = map.zoomLevel - 1;
+        }
+    }
+
+    Component.onCompleted: editPositionTimer.start()
 }
 

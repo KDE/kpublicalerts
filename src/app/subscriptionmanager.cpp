@@ -153,6 +153,7 @@ QVariant SubscriptionManager::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> SubscriptionManager::roleNames() const
 {
     auto n = QAbstractListModel::roleNames();
+    n.insert(Qt::DisplayRole, "name");
     n.insert(SubscriptionRole, "subscription");
     n.insert(IsSubscribedRole, "isSubscribed");
     n.insert(AwaitsConfirmationRole, "awaitsConfirmation");
@@ -202,23 +203,45 @@ void SubscriptionManager::doRemoveOne(const QString& id)
     storeSubscriptionIds(settings);
 }
 
-void SubscriptionManager::addSubscription(float lat, float lon, float radius, const QString& name)
+void SubscriptionManager::add(Subscription sub)
 {
-    Subscription s;
-    s.m_id = QUuid::createUuid().toString(QUuid::WithoutBraces);
-    s.m_boundingBox = GeoMath::boundingBoxForCircle(lat, lon, radius);
-    s.m_name = name;
-
-    const auto it = std::lower_bound(m_subscriptions.begin(), m_subscriptions.end(), s);
-    beginInsertRows({}, std::distance(m_subscriptions.begin(), it), std::distance(m_subscriptions.begin(), it));
-    m_subscriptions.insert(it, std::move(s));
-    endInsertRows();
+    sub.m_id = QUuid::createUuid().toString(QUuid::WithoutBraces);
 
     QSettings settings;
-    s.store(settings);
-    storeSubscriptionIds(settings);
+    sub.store(settings);
 
+    const auto it = std::lower_bound(m_subscriptions.begin(), m_subscriptions.end(), sub);
+    beginInsertRows({}, (int)std::distance(m_subscriptions.begin(), it), (int)std::distance(m_subscriptions.begin(), it));
+    m_subscriptions.insert(it, std::move(sub));
+    endInsertRows();
+
+    storeSubscriptionIds(settings);
     doSubscribeAll();
+}
+
+void SubscriptionManager::update(Subscription sub)
+{
+    const auto it = std::lower_bound(m_subscriptions.begin(), m_subscriptions.end(), sub);
+    if ((*it).isSubscribed() && (*it).m_boundingBox != sub.m_boundingBox) {
+        doUnsubscribeOne(sub);
+        sub.m_subscriptionId = {};
+    }
+    (*it) = std::move(sub);
+
+    QSettings settings;
+    (*it).store(settings);
+
+    const auto idx = index((int)std::distance(m_subscriptions.begin(), it), 0);
+    Q_EMIT dataChanged(idx, idx);
+
+    if (!(*it).isSubscribed()) {
+        doSubscribeAll();
+    }
+}
+
+Subscription SubscriptionManager::makeSubscription()
+{
+    return {};
 }
 
 const std::vector<Subscription> &SubscriptionManager::subscriptions() const

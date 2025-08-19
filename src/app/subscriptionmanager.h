@@ -42,8 +42,15 @@ public:
     QHash<int, QByteArray> roleNames() const override;
     Q_INVOKABLE bool removeRows(int row, int count, const QModelIndex &parent = {}) override;
 
-    // TODO temporary for development
-    Q_INVOKABLE void addSubscription(float lat, float lon, float radius, const QString &name);
+    /** Add a new subscription. */
+    Q_INVOKABLE void add(Subscription sub);
+    /** Update an existing subscription. */
+    Q_INVOKABLE void update(Subscription sub);
+
+    /** Subscription factory function for QML.
+     *  TODO: remove this once Subscription is registered as a structurally constructable value type.
+     */
+    Q_INVOKABLE [[nodiscard]] static Subscription makeSubscription();
 
     const std::vector<Subscription> &subscriptions() const;
 

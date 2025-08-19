@@ -30,6 +30,7 @@ ecm_add_qml_module(publicalerts URI "org.kde.publicalerts" NO_PLUGIN
         Main.qml
         MapView.qml
         OSMPlugin.qml
+        SubscriptionArea.qml
         SubscriptionPage.qml
         SubscriptionsPage.qml
     DEPENDENCIES
