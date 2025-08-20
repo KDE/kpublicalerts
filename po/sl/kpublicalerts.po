@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 00:50+0000\n"
+"POT-Creation-Date: 2025-08-20 00:46+0000\n"
 "PO-Revision-Date: 2025-04-17 06:59+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -28,115 +28,115 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net"
 
-#: app/AlertPage.qml:105
+#: app/AlertPage.qml:117
 #, kde-format
 msgctxt "@label"
 msgid "Status:"
 msgstr "Status:"
 
-#: app/AlertPage.qml:115
+#: app/AlertPage.qml:127
 #, kde-format
 msgctxt "@label"
 msgid "Message type:"
 msgstr "Vrsta sporočila:"
 
-#: app/AlertPage.qml:128
+#: app/AlertPage.qml:140
 #, kde-format
 msgctxt "@label"
 msgid "Categories:"
 msgstr "Kategorije:"
 
-#: app/AlertPage.qml:135
+#: app/AlertPage.qml:147
 #, kde-format
 msgctxt "@label"
 msgid "Urgency:"
 msgstr "Nujnost:"
 
-#: app/AlertPage.qml:140
+#: app/AlertPage.qml:152
 #, kde-format
 msgctxt "@label"
 msgid "Severity:"
 msgstr "Resnost:"
 
-#: app/AlertPage.qml:145
+#: app/AlertPage.qml:157
 #, kde-format
 msgctxt "@label"
 msgid "Certainty:"
 msgstr "Gotovost:"
 
-#: app/AlertPage.qml:150
+#: app/AlertPage.qml:162
 #, kde-format
 msgctxt "@label"
 msgid "Recommended response:"
 msgstr "Priporočen odziv:"
 
-#: app/AlertPage.qml:158
+#: app/AlertPage.qml:170
 #, kde-format
 msgctxt "@label"
 msgid "Web:"
 msgstr "Splet:"
 
-#: app/AlertPage.qml:166
+#: app/AlertPage.qml:178
 #, kde-format
 msgctxt "@label"
 msgid "Contact:"
 msgstr "Kontakt:"
 
-#: app/AlertPage.qml:174
+#: app/AlertPage.qml:186
 #, kde-format
 msgctxt "@label, time"
 msgid "Sent:"
 msgstr "Poslano:"
 
-#: app/AlertPage.qml:179
+#: app/AlertPage.qml:191
 #, kde-format
 msgctxt "@label, time"
 msgid "Effective:"
 msgstr "Velja od:"
 
-#: app/AlertPage.qml:184
+#: app/AlertPage.qml:196
 #, kde-format
 msgctxt "@label, time"
 msgid "Onset:"
 msgstr "Začetek:"
 
-#: app/AlertPage.qml:189
+#: app/AlertPage.qml:201
 #, kde-format
 msgctxt "@label, time"
 msgid "Expires:"
 msgstr "Poteče:"
 
-#: app/AlertPage.qml:194
+#: app/AlertPage.qml:206
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Pošiljatelj:"
 
-#: app/AlertPage.qml:203
+#: app/AlertPage.qml:215
 #, kde-format
 msgctxt "@label"
 msgid "Description"
 msgstr "Opis"
 
-#: app/AlertPage.qml:214
+#: app/AlertPage.qml:226
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
 msgstr "Navodilo"
 
-#: app/AlertPage.qml:228
+#: app/AlertPage.qml:240
 #, kde-format
 msgctxt "@label"
 msgid "Area"
 msgstr "Področje"
 
-#: app/alertsmanager.cpp:391
+#: app/alertsmanager.cpp:366
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Alert Details"
 msgstr "Pokaži podrobnosti opozorila"
 
-#: app/alertsmanager.cpp:395
+#: app/alertsmanager.cpp:370
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"

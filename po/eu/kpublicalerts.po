@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 00:50+0000\n"
+"POT-Creation-Date: 2025-08-20 00:46+0000\n"
 "PO-Revision-Date: 2025-07-23 15:33+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -30,115 +30,115 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: app/AlertPage.qml:105
+#: app/AlertPage.qml:117
 #, kde-format
 msgctxt "@label"
 msgid "Status:"
 msgstr "Egoera:"
 
-#: app/AlertPage.qml:115
+#: app/AlertPage.qml:127
 #, kde-format
 msgctxt "@label"
 msgid "Message type:"
 msgstr "Mezu-mota:"
 
-#: app/AlertPage.qml:128
+#: app/AlertPage.qml:140
 #, kde-format
 msgctxt "@label"
 msgid "Categories:"
 msgstr "Kategoriak:"
 
-#: app/AlertPage.qml:135
+#: app/AlertPage.qml:147
 #, kde-format
 msgctxt "@label"
 msgid "Urgency:"
 msgstr "Premia:"
 
-#: app/AlertPage.qml:140
+#: app/AlertPage.qml:152
 #, kde-format
 msgctxt "@label"
 msgid "Severity:"
 msgstr "Larritasuna:"
 
-#: app/AlertPage.qml:145
+#: app/AlertPage.qml:157
 #, kde-format
 msgctxt "@label"
 msgid "Certainty:"
 msgstr "Ziurtasuna:"
 
-#: app/AlertPage.qml:150
+#: app/AlertPage.qml:162
 #, kde-format
 msgctxt "@label"
 msgid "Recommended response:"
 msgstr "Erantzun gomendatua:"
 
-#: app/AlertPage.qml:158
+#: app/AlertPage.qml:170
 #, kde-format
 msgctxt "@label"
 msgid "Web:"
 msgstr "Web:"
 
-#: app/AlertPage.qml:166
+#: app/AlertPage.qml:178
 #, kde-format
 msgctxt "@label"
 msgid "Contact:"
 msgstr "Kontaktua:"
 
-#: app/AlertPage.qml:174
+#: app/AlertPage.qml:186
 #, kde-format
 msgctxt "@label, time"
 msgid "Sent:"
 msgstr "Bidalita:"
 
-#: app/AlertPage.qml:179
+#: app/AlertPage.qml:191
 #, kde-format
 msgctxt "@label, time"
 msgid "Effective:"
 msgstr "Eraginkorra:"
 
-#: app/AlertPage.qml:184
+#: app/AlertPage.qml:196
 #, kde-format
 msgctxt "@label, time"
 msgid "Onset:"
 msgstr "Hasiera:"
 
-#: app/AlertPage.qml:189
+#: app/AlertPage.qml:201
 #, kde-format
 msgctxt "@label, time"
 msgid "Expires:"
 msgstr "Iraungitzea:"
 
-#: app/AlertPage.qml:194
+#: app/AlertPage.qml:206
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Bidaltzailea:"
 
-#: app/AlertPage.qml:203
+#: app/AlertPage.qml:215
 #, kde-format
 msgctxt "@label"
 msgid "Description"
 msgstr "Deskribapena"
 
-#: app/AlertPage.qml:214
+#: app/AlertPage.qml:226
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
 msgstr "Jarraibidea"
 
-#: app/AlertPage.qml:228
+#: app/AlertPage.qml:240
 #, kde-format
 msgctxt "@label"
 msgid "Area"
 msgstr "Eremua"
 
-#: app/alertsmanager.cpp:391
+#: app/alertsmanager.cpp:366
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Alert Details"
 msgstr "Erakutsi alertaren xehetasunak"
 
-#: app/alertsmanager.cpp:395
+#: app/alertsmanager.cpp:370
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"

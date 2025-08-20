@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 00:50+0000\n"
+"POT-Creation-Date: 2025-08-20 00:46+0000\n"
 "PO-Revision-Date: 2025-04-30 01:57+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -27,115 +27,115 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: app/AlertPage.qml:105
+#: app/AlertPage.qml:117
 #, kde-format
 msgctxt "@label"
 msgid "Status:"
 msgstr "狀態："
 
-#: app/AlertPage.qml:115
+#: app/AlertPage.qml:127
 #, kde-format
 msgctxt "@label"
 msgid "Message type:"
 msgstr "訊息類型："
 
-#: app/AlertPage.qml:128
+#: app/AlertPage.qml:140
 #, kde-format
 msgctxt "@label"
 msgid "Categories:"
 msgstr "分類："
 
-#: app/AlertPage.qml:135
+#: app/AlertPage.qml:147
 #, kde-format
 msgctxt "@label"
 msgid "Urgency:"
 msgstr "緊急程度："
 
-#: app/AlertPage.qml:140
+#: app/AlertPage.qml:152
 #, kde-format
 msgctxt "@label"
 msgid "Severity:"
 msgstr "嚴重程度："
 
-#: app/AlertPage.qml:145
+#: app/AlertPage.qml:157
 #, kde-format
 msgctxt "@label"
 msgid "Certainty:"
 msgstr "確定性："
 
-#: app/AlertPage.qml:150
+#: app/AlertPage.qml:162
 #, kde-format
 msgctxt "@label"
 msgid "Recommended response:"
 msgstr "建議反應："
 
-#: app/AlertPage.qml:158
+#: app/AlertPage.qml:170
 #, kde-format
 msgctxt "@label"
 msgid "Web:"
 msgstr "網站："
 
-#: app/AlertPage.qml:166
+#: app/AlertPage.qml:178
 #, kde-format
 msgctxt "@label"
 msgid "Contact:"
 msgstr "聯絡："
 
-#: app/AlertPage.qml:174
+#: app/AlertPage.qml:186
 #, kde-format
 msgctxt "@label, time"
 msgid "Sent:"
 msgstr "送出："
 
-#: app/AlertPage.qml:179
+#: app/AlertPage.qml:191
 #, kde-format
 msgctxt "@label, time"
 msgid "Effective:"
 msgstr "生效："
 
-#: app/AlertPage.qml:184
+#: app/AlertPage.qml:196
 #, kde-format
 msgctxt "@label, time"
 msgid "Onset:"
 msgstr "開始："
 
-#: app/AlertPage.qml:189
+#: app/AlertPage.qml:201
 #, kde-format
 msgctxt "@label, time"
 msgid "Expires:"
 msgstr "失效："
 
-#: app/AlertPage.qml:194
+#: app/AlertPage.qml:206
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "送出者："
 
-#: app/AlertPage.qml:203
+#: app/AlertPage.qml:215
 #, kde-format
 msgctxt "@label"
 msgid "Description"
 msgstr "描述"
 
-#: app/AlertPage.qml:214
+#: app/AlertPage.qml:226
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
 msgstr "指示"
 
-#: app/AlertPage.qml:228
+#: app/AlertPage.qml:240
 #, kde-format
 msgctxt "@label"
 msgid "Area"
 msgstr "區域"
 
-#: app/alertsmanager.cpp:391
+#: app/alertsmanager.cpp:366
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Alert Details"
 msgstr "顯示警示詳細資料"
 
-#: app/alertsmanager.cpp:395
+#: app/alertsmanager.cpp:370
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
