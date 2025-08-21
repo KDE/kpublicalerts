@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-20 00:46+0000\n"
+"POT-Creation-Date: 2025-08-21 00:46+0000\n"
 "PO-Revision-Date: 2025-07-23 15:33+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -131,6 +131,22 @@ msgstr "Jarraibidea"
 msgctxt "@label"
 msgid "Area"
 msgstr "Eremua"
+
+#: app/AlertPage.qml:254
+#, kde-format
+msgctxt "@label"
+msgid "Additional Resources"
+msgstr ""
+
+#: app/AlertPage.qml:278
+#, kde-format
+msgid "%1 (%2)"
+msgstr ""
+
+#: app/AlertPage.qml:282
+#, kde-format
+msgid "Open…"
+msgstr ""
 
 #: app/alertsmanager.cpp:366
 #, kde-format

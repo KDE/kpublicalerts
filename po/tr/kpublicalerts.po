@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-20 00:46+0000\n"
+"POT-Creation-Date: 2025-08-21 00:46+0000\n"
 "PO-Revision-Date: 2025-04-21 11:07+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -128,6 +128,22 @@ msgstr "Yönerge"
 msgctxt "@label"
 msgid "Area"
 msgstr "Alan"
+
+#: app/AlertPage.qml:254
+#, kde-format
+msgctxt "@label"
+msgid "Additional Resources"
+msgstr ""
+
+#: app/AlertPage.qml:278
+#, kde-format
+msgid "%1 (%2)"
+msgstr ""
+
+#: app/AlertPage.qml:282
+#, kde-format
+msgid "Open…"
+msgstr ""
 
 #: app/alertsmanager.cpp:366
 #, kde-format
