@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-21 00:46+0000\n"
-"PO-Revision-Date: 2025-04-17 10:17+0200\n"
+"PO-Revision-Date: 2025-08-21 09:35+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -135,17 +135,17 @@ msgstr "Àrea"
 #, kde-format
 msgctxt "@label"
 msgid "Additional Resources"
-msgstr ""
+msgstr "Recursos addicionals"
 
 #: app/AlertPage.qml:278
 #, kde-format
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: app/AlertPage.qml:282
 #, kde-format
 msgid "Open…"
-msgstr ""
+msgstr "Obre…"
 
 #: app/alertsmanager.cpp:366
 #, kde-format
