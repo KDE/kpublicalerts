@@ -23,7 +23,8 @@ QtLocation.MapItemGroup {
         autoFadeIn: false
         referenceSurface: QtLocation.QtLocation.ReferenceSurface.Globe
 
-        DragHandler {}
+        DragHandler { cursorShape: Qt.ClosedHandCursor }
+        HoverHandler { cursorShape: Qt.OpenHandCursor }
     }
 
     function setCenter(pos) {
@@ -54,6 +55,7 @@ QtLocation.MapItemGroup {
 
     component Handle : QtLocation.MapQuickItem {
         id: handleRoot
+        property alias cursorShape: hoverHandler.cursorShape
         signal dragFinished()
 
         anchorPoint { x: Kirigami.Units.largeSpacing; y: Kirigami.Units.largeSpacing }
@@ -70,11 +72,15 @@ QtLocation.MapItemGroup {
                     handleRoot.dragFinished()
             }
         }
+        HoverHandler {
+            id: hoverHandler
+        }
     }
 
     Handle {
         id: topLeftHandle
         coordinate: background.topLeft
+        cursorShape: Qt.SizeFDiagCursor
         onCoordinateChanged: background.topLeft = coordinate
         onDragFinished: root.normalize()
     }
@@ -82,6 +88,7 @@ QtLocation.MapItemGroup {
     Handle {
         id: topRightHandle
         coordinate: QtPositioning.QtPositioning.coordinate(background.topLeft.latitude, background.bottomRight.longitude)
+        cursorShape: Qt.SizeBDiagCursor
         onCoordinateChanged: {
             background.topLeft.latitude = coordinate.latitude;
             background.bottomRight.longitude = coordinate.longitude;
@@ -92,6 +99,7 @@ QtLocation.MapItemGroup {
     Handle {
         id: bottomLeftHandle
         coordinate: QtPositioning.QtPositioning.coordinate(background.bottomRight.latitude, background.topLeft.longitude)
+        cursorShape: Qt.SizeBDiagCursor
         onCoordinateChanged: {
             background.topLeft.longitude = coordinate.longitude;
             background.bottomRight.latitude = coordinate.latitude;
@@ -102,6 +110,7 @@ QtLocation.MapItemGroup {
     Handle {
         id: bottomRightHandle
         coordinate: background.bottomRight
+        cursorShape: Qt.SizeFDiagCursor
         onCoordinateChanged: background.bottomRight = coordinate
         onDragFinished: root.normalize()
     }
