@@ -8,6 +8,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtPositioning
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as KirigamiAddons
 
 import org.kde.publicalerts
 
@@ -15,33 +16,7 @@ Kirigami.Page {
     id: root
     title: i18nc("@title:window", "Add Area of Interest")
     property var subscription
-
-   actions: [
-        Kirigami.Action {
-            icon.name: "list-add"
-            text: i18nc("@action:button", "Add Area of Interest")
-            enabled: nameField.text !== "" && marker.topLeft.isValid
-            onTriggered: {
-                root.subscription.name = nameField.text;
-                root.subscription.area = Qt.rect(marker.topLeft.longitude, marker.bottomRight.latitude, marker.bottomRight.longitude - marker.topLeft.longitude, marker.topLeft.latitude - marker.bottomRight.latitude);
-                SubscriptionManager.add(root.subscription);
-                applicationWindow().pageStack.pop();
-            }
-            visible: root.subscription.id === ""
-        },
-        Kirigami.Action {
-            icon.name: "document-save"
-            text: i18nc("@action:button", "Save")
-            enabled: nameField.text !== ""
-            onTriggered: {
-                root.subscription.name = nameField.text;
-                root.subscription.area = Qt.rect(marker.topLeft.longitude, marker.bottomRight.latitude, marker.bottomRight.longitude - marker.topLeft.longitude, marker.topLeft.latitude - marker.bottomRight.latitude);
-                SubscriptionManager.update(root.subscription);
-                applicationWindow().pageStack.pop();
-            }
-            visible: root.subscription.id !== ""
-        }
-    ]
+    padding: 0
 
     MapView {
         id: map
@@ -67,11 +42,34 @@ Kirigami.Page {
         }
     }
 
-    footer: Kirigami.FormLayout {
-        QQC2.TextField {
-            id: nameField
-            Kirigami.FormData.label: i18nc("@label", "Name:")
-            text: root.subscription.name
+    KirigamiAddons.FloatingToolBar {
+        anchors {
+            bottom: parent.bottom
+            margins: Kirigami.Units.largeSpacing
+            horizontalCenter: parent.horizontalCenter
+        }
+
+        contentItem: RowLayout {
+            QQC2.TextField {
+                id: nameField
+                placeholderText: i18n("Name")
+                text: root.subscription.name
+            }
+            QQC2.ToolButton {
+                icon.name: root.subscription.id === "" ? "list-add" : "document-save"
+                text: root.subscription.id === "" ? i18nc("@action:button", "Add") : i18nc("@action:button", "Save")
+                enabled: nameField.text !== "" && marker.topLeft.isValid
+                onClicked: {
+                    root.subscription.name = nameField.text;
+                    root.subscription.area = Qt.rect(marker.topLeft.longitude, marker.bottomRight.latitude, marker.bottomRight.longitude - marker.topLeft.longitude, marker.topLeft.latitude - marker.bottomRight.latitude);
+                    if (root.subscription.id === "") {
+                        SubscriptionManager.add(root.subscription);
+                    } else {
+                        SubscriptionManager.update(root.subscription);
+                    }
+                    QQC2.ApplicationWindow.window.pageStack.pop();
+                }
+            }
         }
     }
 
