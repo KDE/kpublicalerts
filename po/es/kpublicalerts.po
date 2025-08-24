@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-21 00:46+0000\n"
+"POT-Creation-Date: 2025-08-24 00:45+0000\n"
 "PO-Revision-Date: 2025-08-21 11:08+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -377,7 +377,7 @@ msgstr "Acerca de"
 msgid "Weather and emergency alert notifications"
 msgstr "Notificaciones de alertas meteorológicas y de emergencia"
 
-#: app/SubscriptionPage.qml:17
+#: app/SubscriptionPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Area of Interest"
@@ -389,23 +389,17 @@ msgctxt "@action:button"
 msgid "Add Area of Interest"
 msgstr "Añadir área de interés"
 
-#: app/SubscriptionPage.qml:52
+#: app/SubscriptionPage.qml:34
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: app/SubscriptionPage.qml:73
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
 msgstr "Nombre:"
-
-#: app/SubscriptionPage.qml:55
-#, kde-format
-msgctxt "@label"
-msgid "Radius (km)"
-msgstr "Radio (km)"
-
-#: app/SubscriptionPage.qml:63
-#, kde-format
-msgctxt "@label"
-msgid "%1 km"
-msgstr "%1 km"
 
 #: app/SubscriptionsPage.qml:15
 #, kde-format
@@ -413,20 +407,28 @@ msgctxt "@title:window"
 msgid "Areas of Interest"
 msgstr "Áreas de interés"
 
-#: app/SubscriptionsPage.qml:25 app/SubscriptionsPage.qml:66
+#: app/SubscriptionsPage.qml:25 app/SubscriptionsPage.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Add…"
 msgstr "Añadir…"
 
-#: app/SubscriptionsPage.qml:52
+#: app/SubscriptionsPage.qml:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Unsubscribe"
 msgstr "Cancelar suscripción"
 
-#: app/SubscriptionsPage.qml:63
+#: app/SubscriptionsPage.qml:65
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
 msgstr "No se han elegido áreas de interés"
+
+#~ msgctxt "@label"
+#~ msgid "Radius (km)"
+#~ msgstr "Radio (km)"
+
+#~ msgctxt "@label"
+#~ msgid "%1 km"
+#~ msgstr "%1 km"
