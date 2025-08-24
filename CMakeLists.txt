@@ -33,6 +33,7 @@ ecm_setup_version(${PROJECT_VERSION}
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControls2 Svg Positioning Location)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons Kirigami I18n GuiAddons Notifications)
+find_package(KF6KirigamiAddons 1.9.0 REQUIRED)
 find_package(KWeatherCore REQUIRED)
 find_package(KUnifiedPush REQUIRED)
 

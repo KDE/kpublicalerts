@@ -8,6 +8,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.coreaddons as KCoreAddons
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.notification as KNotification
 import org.kde.weathercore
 import org.kde.publicalerts
@@ -43,7 +44,7 @@ Kirigami.ApplicationWindow {
 
     Component {
         id: aboutPage
-        Kirigami.AboutPage {
+        FormCard.AboutPage {
             aboutData: KCoreAddons.AboutData
         }
     }

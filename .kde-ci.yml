@@ -12,6 +12,7 @@ Dependencies:
     'frameworks/knotifications': '@latest-kf6'
     'libraries/kunifiedpush': '@latest-kf6'
     'libraries/kweathercore': '@latest-kf6'
+    'libraries/kirigami-addons': '@latest-kf6'
  - 'on': ['Linux', 'FreeBSD']
    'require':
     'frameworks/kdbusaddons': '@latest-kf6'
