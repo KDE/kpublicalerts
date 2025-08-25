@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-24 00:45+0000\n"
-"PO-Revision-Date: 2025-05-03 14:36+0300\n"
+"POT-Creation-Date: 2025-08-25 00:45+0000\n"
+"PO-Revision-Date: 2025-08-22 13:53+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -134,17 +134,17 @@ msgstr "Apgabals"
 #, kde-format
 msgctxt "@label"
 msgid "Additional Resources"
-msgstr ""
+msgstr "Papildu resursi"
 
 #: app/AlertPage.qml:278
 #, kde-format
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: app/AlertPage.qml:282
 #, kde-format
 msgid "Open…"
-msgstr ""
+msgstr "Atvērt…"
 
 #: app/alertsmanager.cpp:366
 #, kde-format
@@ -329,7 +329,7 @@ msgstr ""
 msgid "No action recommended."
 msgstr "Nav ieteicamo darbību."
 
-#: app/main.cpp:43 app/Main.qml:18 app/Main.qml:64
+#: app/main.cpp:43 app/Main.qml:19 app/Main.qml:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
@@ -347,23 +347,23 @@ msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
 msgstr "Autortiesības © 2022 KDE kopiena"
 
-#: app/Main.qml:22
+#: app/Main.qml:23
 #, kde-format
 msgid "Missing notification permission!"
 msgstr "Trūkst atļaujas paziņojuma rādīšanai!"
 
-#: app/Main.qml:33
+#: app/Main.qml:34
 #, kde-format
 msgid "Request permission…"
 msgstr "Pieprasīt atļauju…"
 
-#: app/Main.qml:69
+#: app/Main.qml:70
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
 msgstr "Interesējošie apgabali…"
 
-#: app/Main.qml:74
+#: app/Main.qml:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"
@@ -374,29 +374,32 @@ msgstr "Par"
 msgid "Weather and emergency alert notifications"
 msgstr "Laikapstākļu un ārkārtas stāvokļu paziņojumi"
 
-#: app/SubscriptionPage.qml:16
+#: app/SubscriptionPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Area of Interest"
 msgstr "Pievienot interesējošo apgabalu"
 
-#: app/SubscriptionPage.qml:22
-#, kde-format
-msgctxt "@action:button"
-msgid "Add Area of Interest"
-msgstr "Pievienot interesējošo apgabalu"
+#: app/SubscriptionPage.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Name:"
+msgid "Name"
+msgstr "Nosaukums:"
 
-#: app/SubscriptionPage.qml:34
+#: app/SubscriptionPage.qml:60
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add…"
+msgctxt "@action:button"
+msgid "Add"
+msgstr "Pievienot…"
+
+#: app/SubscriptionPage.qml:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr ""
-
-#: app/SubscriptionPage.qml:73
-#, kde-format
-msgctxt "@label"
-msgid "Name:"
-msgstr "Nosaukums:"
 
 #: app/SubscriptionsPage.qml:15
 #, kde-format
@@ -421,6 +424,10 @@ msgstr "Beigt abonēt"
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
 msgstr "Nav izvēlēti interesējošie apgabali"
+
+#~ msgctxt "@action:button"
+#~ msgid "Add Area of Interest"
+#~ msgstr "Pievienot interesējošo apgabalu"
 
 #~ msgctxt "@label"
 #~ msgid "Radius (km)"

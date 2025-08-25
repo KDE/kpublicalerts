@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-24 00:45+0000\n"
-"PO-Revision-Date: 2025-08-21 09:35+0200\n"
+"POT-Creation-Date: 2025-08-25 00:45+0000\n"
+"PO-Revision-Date: 2025-08-24 10:49+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -330,7 +330,7 @@ msgstr ""
 msgid "No action recommended."
 msgstr "No es recomana cap acció."
 
-#: app/main.cpp:43 app/Main.qml:18 app/Main.qml:64
+#: app/main.cpp:43 app/Main.qml:19 app/Main.qml:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
@@ -348,23 +348,23 @@ msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
 msgstr "Copyright © 2022 The KDE Community"
 
-#: app/Main.qml:22
+#: app/Main.qml:23
 #, kde-format
 msgid "Missing notification permission!"
 msgstr "Manca el permís de notificació!"
 
-#: app/Main.qml:33
+#: app/Main.qml:34
 #, kde-format
 msgid "Request permission…"
 msgstr "Sol·licita el permís…"
 
-#: app/Main.qml:69
+#: app/Main.qml:70
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
 msgstr "Àrees d'interès…"
 
-#: app/Main.qml:74
+#: app/Main.qml:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"
@@ -375,29 +375,32 @@ msgstr "Quant al"
 msgid "Weather and emergency alert notifications"
 msgstr "Notificacions meteorològiques i alertes d'emergències"
 
-#: app/SubscriptionPage.qml:16
+#: app/SubscriptionPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Area of Interest"
 msgstr "Afegeix una àrea d'interès"
 
-#: app/SubscriptionPage.qml:22
-#, kde-format
-msgctxt "@action:button"
-msgid "Add Area of Interest"
-msgstr "Afegeix una àrea d'interès"
+#: app/SubscriptionPage.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Name:"
+msgid "Name"
+msgstr "Nom:"
 
-#: app/SubscriptionPage.qml:34
+#: app/SubscriptionPage.qml:60
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add…"
+msgctxt "@action:button"
+msgid "Add"
+msgstr "Afegeix…"
+
+#: app/SubscriptionPage.qml:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
-
-#: app/SubscriptionPage.qml:73
-#, kde-format
-msgctxt "@label"
-msgid "Name:"
-msgstr "Nom:"
+msgstr "Desa"
 
 #: app/SubscriptionsPage.qml:15
 #, kde-format
@@ -422,6 +425,10 @@ msgstr "Cancel·la la subscripció"
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
 msgstr "No s'ha triat cap àrea d'interès"
+
+#~ msgctxt "@action:button"
+#~ msgid "Add Area of Interest"
+#~ msgstr "Afegeix una àrea d'interès"
 
 #~ msgctxt "@label"
 #~ msgid "Radius (km)"
