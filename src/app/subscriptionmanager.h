@@ -71,10 +71,11 @@ private:
     void storeSubscriptionIds(QSettings &settings);
 
     void checkHeartbeat();
+    void pushMessageReceived(const QByteArray &msg);
     void fetchVapidKey();
 
     QNetworkAccessManager *m_nam = nullptr;
-    KUnifiedPush::Connector m_connector;
+    std::unique_ptr<KUnifiedPush::Connector> m_connector;
     QTimer *m_heartbeatTimer = nullptr;
 
     std::vector<Subscription> m_subscriptions;

@@ -25,58 +25,12 @@ using namespace KPublicAlerts;
 
 SubscriptionManager::SubscriptionManager(QObject *parent)
     : QAbstractListModel(parent)
-    , m_connector(QStringLiteral("org.kde.publicalerts"))
+    , m_connector(std::make_unique<KUnifiedPush::Connector>(u"org.kde.publicalerts"_s))
 {
-    connect(&m_connector, &KUnifiedPush::Connector::endpointChanged, this, &SubscriptionManager::doSubscribeAll);
-    connect(&m_connector, &KUnifiedPush::Connector::messageReceived, this, [this](const QByteArray &msg) {
-        qDebug() << msg;
-        const auto msgObj = QJsonDocument::fromJson(msg).object();
-        const auto type = msgObj.value("type"_L1).toString();
-        if (type == "added"_L1) {
-            if (const auto id = msgObj.value("alert_id"_L1).toString(); !id.isEmpty()) {
-                Q_EMIT alertAdded(id);
-                return;
-            }
-        }
-        if (type == "update"_L1) {
-            if (const auto id = msgObj.value("alert_id"_L1).toString(); !id.isEmpty()) {
-                Q_EMIT alertUpdated(id);
-                return;
-            }
-        }
-        if (type == "removed"_L1) {
-            if (const auto id = msgObj.value("alert_id"_L1).toString(); !id.isEmpty()) {
-                Q_EMIT alertRemoved(id);
-                return;
-            }
-        }
-        if (type == "subscribe"_L1) {
-            const auto confirmationId = msgObj.value("confirmation_id"_L1).toString();
-            const auto it = std::find_if(m_subscriptions.begin(), m_subscriptions.end(), [confirmationId](const auto &sub) {
-                return sub.m_pendingConfirmation == confirmationId;
-            });
-            if (confirmationId.isEmpty()) {
-                qWarning() << "incomplete subscription push notification:" << msgObj;
-                return;
-            }
-            if (it != m_subscriptions.end()) {
-                (*it).m_pendingConfirmation.clear();
-                QSettings settings;
-                (*it).store(settings);
-                const int row = (int)std::distance(m_subscriptions.begin(), it);
-                Q_EMIT dataChanged(index(row, 0), index(row, 0));
-                qDebug() << "got confirmation for subscription" << (*it).m_name;
-            } else {
-                m_confirmations.insert(confirmationId);
-                qDebug() << "got confirmation for not yet completed subscription" << confirmationId;
-            }
-        }
-        // TODO handle "unsubscribe"
-
-        // the server tries to tell us something but we don't know what,
-        // so try to update everything
-        Q_EMIT unhandledPushNotifications();
-    });
+    connect(m_connector.get(), &KUnifiedPush::Connector::endpointChanged, this, &SubscriptionManager::doSubscribeAll);
+    connect(m_connector.get(), &KUnifiedPush::Connector::messageReceived, this, &SubscriptionManager::pushMessageReceived);
+    m_connector->setVapidPublicKeyRequired(true);
+    m_connector->registerClient(i18n("Weather and emergency alert notifications")); // TODO technically we only needs this when there is at least one subscription
 
     QSettings settings;
     const auto subIds = settings.value(QLatin1String("SubscriptionIds"), QStringList()).toStringList();
@@ -85,9 +39,6 @@ SubscriptionManager::SubscriptionManager(QObject *parent)
         m_subscriptions.push_back(Subscription::load(subId, settings));
     }
     std::sort(m_subscriptions.begin(), m_subscriptions.end());
-
-    m_connector.setVapidPublicKeyRequired(true);
-    m_connector.registerClient(i18n("Weather and emergency alert notifications")); // TODO technically we only needs this when there is at least one subscription
 
     connect(this, &QAbstractItemModel::rowsInserted, this, &SubscriptionManager::countChanged);
     connect(this, &QAbstractItemModel::rowsRemoved, this, &SubscriptionManager::countChanged);
@@ -251,7 +202,11 @@ const std::vector<Subscription> &SubscriptionManager::subscriptions() const
 
 void SubscriptionManager::doSubscribeAll()
 {
-    const auto upEndpoint = m_connector.endpoint();
+    if (m_subscriptions.empty()) {
+        return;
+    }
+
+    const auto upEndpoint = m_connector->endpoint();
     for (const auto &s : m_subscriptions) {
         if (!upEndpoint.isEmpty()) { // push notifications available
             if (s.isSubscribed() && s.m_notificationEndpoint != upEndpoint) { // push notification endpoint changed
@@ -272,7 +227,7 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
 {
     // TODO sub needs a "(un)subscribing" flag
     const auto id = sub.m_id;
-    const auto upEndpoint = m_connector.endpoint();
+    const auto upEndpoint = m_connector->endpoint();
 
     QJsonObject subCmd{
         {"push_service"_L1, "UNIFIED_PUSH_ENCRYPTED"_L1},
@@ -281,8 +236,8 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
         {"max_lon"_L1, sub.m_boundingBox.right()},
         {"min_lat"_L1, sub.m_boundingBox.top()},
         {"max_lat"_L1, sub.m_boundingBox.bottom()},
-        {"p256dh_key"_L1, QString::fromLatin1(m_connector.contentEncryptionPublicKey().toBase64(QByteArray::Base64UrlEncoding))},
-        {"auth_key"_L1, QString::fromLatin1(m_connector.contentEncryptionAuthSecret().toBase64(QByteArray::Base64UrlEncoding))},
+        {"p256dh_key"_L1, QString::fromLatin1(m_connector->contentEncryptionPublicKey().toBase64(QByteArray::Base64UrlEncoding))},
+        {"auth_key"_L1, QString::fromLatin1(m_connector->contentEncryptionAuthSecret().toBase64(QByteArray::Base64UrlEncoding))},
     };
 
     auto reply = m_nam->post(RestApi::subscribe(), QJsonDocument(subCmd).toJson(QJsonDocument::Compact));
@@ -387,9 +342,60 @@ void SubscriptionManager::checkHeartbeat()
     }
 }
 
+void SubscriptionManager::pushMessageReceived(const QByteArray &msg)
+{
+    qDebug() << msg;
+    const auto msgObj = QJsonDocument::fromJson(msg).object();
+    const auto type = msgObj.value("type"_L1).toString();
+    if (type == "added"_L1) {
+        if (const auto id = msgObj.value("alert_id"_L1).toString(); !id.isEmpty()) {
+            Q_EMIT alertAdded(id);
+            return;
+        }
+    }
+    if (type == "update"_L1) {
+        if (const auto id = msgObj.value("alert_id"_L1).toString(); !id.isEmpty()) {
+            Q_EMIT alertUpdated(id);
+            return;
+        }
+    }
+    if (type == "removed"_L1) {
+        if (const auto id = msgObj.value("alert_id"_L1).toString(); !id.isEmpty()) {
+            Q_EMIT alertRemoved(id);
+            return;
+        }
+    }
+    if (type == "subscribe"_L1) {
+        const auto confirmationId = msgObj.value("confirmation_id"_L1).toString();
+        if (confirmationId.isEmpty()) {
+            qWarning() << "incomplete subscription push notification:" << msgObj;
+            return;
+        }
+        const auto it = std::ranges::find_if(m_subscriptions, [confirmationId](const auto &sub) {
+            return sub.m_pendingConfirmation == confirmationId;
+        });
+        if (it != m_subscriptions.end()) {
+            (*it).m_pendingConfirmation.clear();
+            QSettings settings;
+            (*it).store(settings);
+            const int row = (int)std::distance(m_subscriptions.begin(), it);
+            Q_EMIT dataChanged(index(row, 0), index(row, 0));
+            qDebug() << "got confirmation for subscription" << (*it).m_name;
+        } else {
+            m_confirmations.insert(confirmationId);
+            qDebug() << "got confirmation for not yet completed subscription" << confirmationId;
+        }
+    }
+    // TODO handle "unsubscribe"
+
+    // the server tries to tell us something but we don't know what,
+    // so try to update everything
+    Q_EMIT unhandledPushNotifications();
+}
+
 void SubscriptionManager::fetchVapidKey()
 {
-    if (!m_connector.vapidPublicKey().isEmpty()) {
+    if (!m_connector || !m_connector->vapidPublicKey().isEmpty()) {
         return;
     }
 
@@ -402,7 +408,7 @@ void SubscriptionManager::fetchVapidKey()
         }
 
         const auto response = QJsonDocument::fromJson(reply->readAll()).object();
-        m_connector.setVapidPublicKey(response.value("vapid-key"_L1).toString());
+        m_connector->setVapidPublicKey(response.value("vapid-key"_L1).toString());
     });
 }
 
