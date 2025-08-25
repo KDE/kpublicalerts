@@ -23,7 +23,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             icon.name: "list-add"
             text: i18nc("@action:button", "Add…")
-            onTriggered: applicationWindow().pageStack.push(subscriptionPage, { subscription: SubscriptionManager.makeSubscription() })
+            onTriggered: applicationWindow().pageStack.layers.push(subscriptionPage, { subscription: SubscriptionManager.makeSubscription() })
         }
     ]
 
@@ -56,7 +56,7 @@ Kirigami.ScrollablePage {
                     }
                 }
             ]
-            onClicked: applicationWindow().pageStack.push(subscriptionPage, { subscription: delegateRoot.subscription })
+            onClicked: applicationWindow().pageStack.layers.push(subscriptionPage, { subscription: delegateRoot.subscription })
         }
 
         Kirigami.PlaceholderMessage {
@@ -66,7 +66,7 @@ Kirigami.ScrollablePage {
             helpfulAction: Kirigami.Action {
                 icon.name: "list-add"
                 text: i18nc("@action:button", "Add…")
-                onTriggered: applicationWindow().pageStack.push(subscriptionPage)
+                onTriggered: applicationWindow().pageStack.layers.push(subscriptionPage, { subscription: SubscriptionManager.makeSubscription() })
             }
         }
     }

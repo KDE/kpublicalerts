@@ -71,7 +71,7 @@ Kirigami.ScrollablePage {
             helpfulAction: Kirigami.Action {
                 icon.name: "list-add"
                 text: i18nc("@action:button", "Add Area of Interest…")
-                onTriggered: applicationWindow().pageStack.push(subscriptionsPage)
+                onTriggered: applicationWindow().pageStack.layers.push(subscriptionsPage)
                 enabled: SubscriptionManager.count == 0
             }
         }

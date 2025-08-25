@@ -67,7 +67,7 @@ Kirigami.Page {
                     } else {
                         SubscriptionManager.update(root.subscription);
                     }
-                    QQC2.ApplicationWindow.window.pageStack.pop();
+                    QQC2.ApplicationWindow.window.pageStack.layers.pop();
                 }
             }
         }

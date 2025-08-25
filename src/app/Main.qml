@@ -18,6 +18,15 @@ Kirigami.ApplicationWindow {
 
     title: i18nc("@title:window", "Public Alerts")
 
+    // HACK work around Kirigami KF 6.17 mobile mode regression
+    pageStack {
+        columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
+        globalToolBar {
+            style: Kirigami.ApplicationHeaderStyle.ToolBar
+            showNavigationButtons: pageStack.currentIndex > 0 || pageStack.layers.depth > 1 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : 0
+        }
+    }
+
     header: Kirigami.InlineMessage {
         id: notificationPermissionWarning
         text: i18n("Missing notification permission!")
@@ -69,16 +78,13 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18nc("@action:inmenu", "Areas of Interest…")
                 icon.name: "map-globe"
-                onTriggered: applicationWindow().pageStack.push(subscriptionsPage)
+                enabled: applicationWindow().pageStack.layers.depth <= 1
+                onTriggered: applicationWindow().pageStack.layers.push(subscriptionsPage)
             },
             Kirigami.Action {
                 text: i18nc("@action:inmenu", "About")
                 icon.name: "help-about"
-                onTriggered: {
-                    if (applicationWindow().pageStack.layers.depth < 2) {
-                        applicationWindow().pageStack.layers.push(aboutPage)
-                    }
-                }
+                onTriggered: applicationWindow().pageStack.pushDialogLayer(aboutPage)
             }
         ]
     }
