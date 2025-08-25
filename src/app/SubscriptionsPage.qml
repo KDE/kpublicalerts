@@ -7,6 +7,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.kitemmodels
 
 import org.kde.publicalerts
 
@@ -29,7 +30,12 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: listView
-        model: SubscriptionManager
+        model: KSortFilterProxyModel {
+            sourceModel: SubscriptionManager
+            sortRoleName: "name"
+            dynamicSortFilter: true
+            isSortLocaleAware: true
+        }
         delegate: Kirigami.SwipeListItem {
             id: delegateRoot
             required property var subscription
