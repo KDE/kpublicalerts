@@ -1,0 +1,5 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+[D-BUS Service]
+Name=org.kde.kpublicalerts
+Exec=@KDE_INSTALL_FULL_BINDIR@/kpublicalerts --dbus-activated

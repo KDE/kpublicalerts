@@ -25,7 +25,7 @@ using namespace KPublicAlerts;
 
 SubscriptionManager::SubscriptionManager(QObject *parent)
     : QAbstractListModel(parent)
-    , m_connector(std::make_unique<KUnifiedPush::Connector>(u"org.kde.publicalerts"_s))
+    , m_connector(std::make_unique<KUnifiedPush::Connector>(u"org.kde.kpublicalerts"_s))
 {
     connect(m_connector.get(), &KUnifiedPush::Connector::endpointChanged, this, &SubscriptionManager::doSubscribeAll);
     connect(m_connector.get(), &KUnifiedPush::Connector::messageReceived, this, &SubscriptionManager::pushMessageReceived);

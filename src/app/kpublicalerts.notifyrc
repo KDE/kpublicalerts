@@ -1,6 +1,6 @@
 [Global]
 IconName=weather-storm
-DesktopEntry=org.kde.publicalerts
+DesktopEntry=org.kde.kpublicalerts
 Name=Public Alerts
 Name[ar]=الإنذارات العامة
 Name[ca]=Alertes públiques

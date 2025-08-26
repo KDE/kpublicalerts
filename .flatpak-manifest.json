@@ -1,10 +1,10 @@
 {
-    "id": "org.kde.publicalerts",
+    "id": "org.kde.kpublicalerts",
     "branch": "master",
     "runtime": "org.kde.Platform",
     "runtime-version": "6.8",
     "sdk": "org.kde.Sdk",
-    "command": "publicalerts",
+    "command": "kpublicalerts",
     "tags": [
         "nightly"
     ],
@@ -90,7 +90,7 @@
             ]
         },
         {
-            "name": "publicalerts",
+            "name": "kpublicalerts",
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "sources": [

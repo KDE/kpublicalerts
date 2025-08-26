@@ -38,10 +38,10 @@ int main(int argc, char **argv)
 {
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
-    QCoreApplication::setApplicationName(QStringLiteral("publicalerts"));
+    QCoreApplication::setApplicationName(QStringLiteral("kpublicalerts"));
     QCoreApplication::setApplicationVersion(QStringLiteral(KPUBLICALERTS_VERSION_STRING));
     QGuiApplication::setApplicationDisplayName(i18nc("@title:window", "Public Alerts"));
-    QGuiApplication::setDesktopFileName(QStringLiteral("org.kde.publicalerts"));
+    QGuiApplication::setDesktopFileName(QStringLiteral("org.kde.kpublicalerts"));
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("weather-storm")));
 
 #ifdef Q_OS_ANDROID

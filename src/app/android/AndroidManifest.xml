@@ -4,7 +4,7 @@
     SPDX-License-Identifier: CC0-1.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="org.kde.publicalerts"
+          package="org.kde.kpublicalerts"
           android:versionName="0.0.1"
           android:versionCode="1"
           android:installLocation="auto">

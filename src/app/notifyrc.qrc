@@ -4,6 +4,6 @@
 -->
 <RCC>
     <qresource prefix="/knotifications6">
-        <file>publicalerts.notifyrc</file>
+        <file>kpublicalerts.notifyrc</file>
     </qresource>
 </RCC>

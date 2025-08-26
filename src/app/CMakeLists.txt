@@ -1,10 +1,10 @@
 # SPDX-FileCopyrightText: 2022 Volker Krause
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_executable(publicalerts)
+add_executable(kpublicalerts)
 
-target_compile_definitions(publicalerts PRIVATE -DTRANSLATION_DOMAIN=\"kpublicalerts\")
-target_sources(publicalerts PRIVATE
+target_compile_definitions(kpublicalerts PRIVATE -DTRANSLATION_DOMAIN=\"kpublicalerts\")
+target_sources(kpublicalerts PRIVATE
     alertsmanager.cpp
     alertssortproxymodel.cpp
     application.cpp
@@ -17,13 +17,13 @@ target_sources(publicalerts PRIVATE
     subscription.cpp
     subscriptionmanager.cpp
 )
-target_include_directories(publicalerts PRIVATE ${CMAKE_BINARY_DIR})
+target_include_directories(kpublicalerts PRIVATE ${CMAKE_BINARY_DIR})
 if (ANDROID)
-    target_sources(publicalerts PRIVATE notifyrc.qrc)
+    target_sources(kpublicalerts PRIVATE notifyrc.qrc)
 endif()
 
 set_source_files_properties(OSMPlugin.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
-ecm_add_qml_module(publicalerts URI "org.kde.publicalerts" NO_PLUGIN
+ecm_add_qml_module(kpublicalerts URI "org.kde.publicalerts" NO_PLUGIN
     QML_FILES
         AlertPage.qml
         AlertsPage.qml
@@ -40,7 +40,7 @@ ecm_add_qml_module(publicalerts URI "org.kde.publicalerts" NO_PLUGIN
         "QtQuick"
 )
 
-target_link_libraries(publicalerts PRIVATE
+target_link_libraries(kpublicalerts PRIVATE
     KWeatherCore
     KUnifiedPush
     KF6::CoreAddons
@@ -53,12 +53,12 @@ target_link_libraries(publicalerts PRIVATE
     Qt::Positioning
 )
 if (NOT ANDROID)
-    target_link_libraries(publicalerts PRIVATE Qt::Widgets KF6::DBusAddons)
+    target_link_libraries(kpublicalerts PRIVATE Qt::Widgets KF6::DBusAddons)
     if (TARGET KF6::Crash)
-        target_link_libraries(publicalerts PRIVATE KF6::Crash)
+        target_link_libraries(kpublicalerts PRIVATE KF6::Crash)
     endif()
 else()
-    target_link_libraries(publicalerts PRIVATE OpenSSL::SSL Qt::Svg KF6::Kirigami)
+    target_link_libraries(kpublicalerts PRIVATE OpenSSL::SSL Qt::Svg KF6::Kirigami)
     kirigami_package_breeze_icons(ICONS
         car
         cloudstatus
@@ -76,13 +76,13 @@ else()
         security-high-symbolic
         weather-storm
     )
-    ecm_add_android_apk(publicalerts ANDROID_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android)
+    ecm_add_android_apk(kpublicalerts ANDROID_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android)
 endif()
 
-install(TARGETS publicalerts ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kpublicalerts ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 if (NOT ANDROID)
-    install(PROGRAMS org.kde.publicalerts.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-    configure_file(org.kde.publicalerts.service.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.publicalerts.service)
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.publicalerts.service DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})
-    install(FILES publicalerts.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
+    install(PROGRAMS org.kde.kpublicalerts.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+    configure_file(org.kde.kpublicalerts.service.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kpublicalerts.service)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kpublicalerts.service DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})
+    install(FILES kpublicalerts.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 endif()

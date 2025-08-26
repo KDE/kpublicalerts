@@ -4,7 +4,7 @@
  SPDX-License-Identifier: CC0-1.0
 -->
 <component type="desktop">
-  <id>org.kde.publicalerts</id>
+  <id>org.kde.kpublicalerts</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.0-or-later</project_license>
   <content_rating type="oars-1.1"/>
@@ -89,5 +89,5 @@
   <provides>
     <binary>publicalerts</binary>
   </provides>
-  <launchable type="desktop-id">org.kde.publicalerts.desktop</launchable>
+  <launchable type="desktop-id">org.kde.kpublicalerts.desktop</launchable>
 </component>
