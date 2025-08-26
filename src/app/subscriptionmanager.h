@@ -71,6 +71,7 @@ private:
     void storeSubscriptionIds(QSettings &settings);
 
     void checkHeartbeat();
+    void updatePushConnectorRegistration();
     void pushMessageReceived(const QByteArray &msg);
     void fetchVapidKey();
 

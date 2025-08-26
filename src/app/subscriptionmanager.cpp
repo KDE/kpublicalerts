@@ -30,7 +30,7 @@ SubscriptionManager::SubscriptionManager(QObject *parent)
     connect(m_connector.get(), &KUnifiedPush::Connector::endpointChanged, this, &SubscriptionManager::doSubscribeAll);
     connect(m_connector.get(), &KUnifiedPush::Connector::messageReceived, this, &SubscriptionManager::pushMessageReceived);
     m_connector->setVapidPublicKeyRequired(true);
-    m_connector->registerClient(i18n("Weather and emergency alert notifications")); // TODO technically we only needs this when there is at least one subscription
+    m_connector->registerClient(i18n("Weather and emergency alert notifications"));
 
     QSettings settings;
     const auto subIds = settings.value(QLatin1String("SubscriptionIds"), QStringList()).toStringList();
@@ -39,6 +39,7 @@ SubscriptionManager::SubscriptionManager(QObject *parent)
         m_subscriptions.push_back(Subscription::load(subId, settings));
     }
     std::sort(m_subscriptions.begin(), m_subscriptions.end());
+    updatePushConnectorRegistration();
 
     connect(this, &QAbstractItemModel::rowsInserted, this, &SubscriptionManager::countChanged);
     connect(this, &QAbstractItemModel::rowsRemoved, this, &SubscriptionManager::countChanged);
@@ -152,6 +153,7 @@ void SubscriptionManager::doRemoveOne(const QString& id)
 
     QSettings settings;
     storeSubscriptionIds(settings);
+    updatePushConnectorRegistration();
 }
 
 void SubscriptionManager::add(Subscription sub)
@@ -167,6 +169,7 @@ void SubscriptionManager::add(Subscription sub)
     endInsertRows();
 
     storeSubscriptionIds(settings);
+    updatePushConnectorRegistration();
     doSubscribeAll();
 }
 
@@ -339,6 +342,15 @@ void SubscriptionManager::checkHeartbeat()
             // we retry on network errors via QNetworkInformation reachability monitoring
             qDebug() << reply->errorString() << reply->readAll() << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
         });
+    }
+}
+
+void SubscriptionManager::updatePushConnectorRegistration()
+{
+    if (!m_subscriptions.empty()) {
+        m_connector->registerClient(i18n("Weather and emergency alert notifications"));
+    } else {
+        m_connector->unregisterClient();
     }
 }
 
