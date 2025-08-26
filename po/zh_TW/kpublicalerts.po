@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-25 00:45+0000\n"
+"POT-Creation-Date: 2025-08-26 00:46+0000\n"
 "PO-Revision-Date: 2025-04-30 01:57+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -323,7 +323,7 @@ msgstr "該事件已不再構成威脅或擔憂，之後的動作會在指示中
 msgid "No action recommended."
 msgstr "沒有建議的動作。"
 
-#: app/main.cpp:43 app/Main.qml:19 app/Main.qml:65
+#: app/main.cpp:43 app/Main.qml:19 app/Main.qml:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
@@ -341,29 +341,29 @@ msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
 msgstr "Copyright © 2022 KDE 社群"
 
-#: app/Main.qml:23
+#: app/Main.qml:32
 #, kde-format
 msgid "Missing notification permission!"
 msgstr "缺乏通知權限！"
 
-#: app/Main.qml:34
+#: app/Main.qml:43
 #, kde-format
 msgid "Request permission…"
 msgstr "正在請求權限…"
 
-#: app/Main.qml:70
+#: app/Main.qml:79
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
 msgstr "關注區域…"
 
-#: app/Main.qml:75
+#: app/Main.qml:85
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"
 msgstr "關於"
 
-#: app/subscriptionmanager.cpp:90
+#: app/subscriptionmanager.cpp:33
 #, kde-format
 msgid "Weather and emergency alert notifications"
 msgstr "天氣與緊急事件警報通知"
@@ -395,25 +395,25 @@ msgctxt "@action:button"
 msgid "Save"
 msgstr ""
 
-#: app/SubscriptionsPage.qml:15
+#: app/SubscriptionsPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Areas of Interest"
 msgstr "關注區域"
 
-#: app/SubscriptionsPage.qml:25 app/SubscriptionsPage.qml:68
+#: app/SubscriptionsPage.qml:26 app/SubscriptionsPage.qml:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Add…"
 msgstr "加入…"
 
-#: app/SubscriptionsPage.qml:53
+#: app/SubscriptionsPage.qml:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Unsubscribe"
 msgstr "取消訂閱"
 
-#: app/SubscriptionsPage.qml:65
+#: app/SubscriptionsPage.qml:71
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-25 00:45+0000\n"
-"PO-Revision-Date: 2025-08-24 04:00+0200\n"
+"POT-Creation-Date: 2025-08-26 00:46+0000\n"
+"PO-Revision-Date: 2025-08-25 06:27+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -330,7 +330,7 @@ msgstr ""
 msgid "No action recommended."
 msgstr "რეკომენდებული ქმედებების გარეშე."
 
-#: app/main.cpp:43 app/Main.qml:19 app/Main.qml:65
+#: app/main.cpp:43 app/Main.qml:19 app/Main.qml:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
@@ -348,29 +348,29 @@ msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
 msgstr "საავტორო უფლებები © 2022 KDE-ის საზოგადოება"
 
-#: app/Main.qml:23
+#: app/Main.qml:32
 #, kde-format
 msgid "Missing notification permission!"
 msgstr "აკლია გაფრთხილების წვდომა!"
 
-#: app/Main.qml:34
+#: app/Main.qml:43
 #, kde-format
 msgid "Request permission…"
 msgstr "წვდომის მოთხოვნა…"
 
-#: app/Main.qml:70
+#: app/Main.qml:79
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
 msgstr "ინტერესის ადგილები…"
 
-#: app/Main.qml:75
+#: app/Main.qml:85
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"
 msgstr "შესახებ"
 
-#: app/subscriptionmanager.cpp:90
+#: app/subscriptionmanager.cpp:33
 #, kde-format
 msgid "Weather and emergency alert notifications"
 msgstr "ამინდი და გადაუდებელი განგაშის შეტყობინებები"
@@ -382,19 +382,15 @@ msgid "Add Area of Interest"
 msgstr "ინტერესის ადგილის დამატება"
 
 #: app/SubscriptionPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Name:"
+#, kde-format
 msgid "Name"
-msgstr "სახელი:"
+msgstr "სახელი"
 
 #: app/SubscriptionPage.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr "დამატება…"
+msgstr "დამატება"
 
 #: app/SubscriptionPage.qml:60
 #, kde-format
@@ -402,25 +398,25 @@ msgctxt "@action:button"
 msgid "Save"
 msgstr "შენახვა"
 
-#: app/SubscriptionsPage.qml:15
+#: app/SubscriptionsPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Areas of Interest"
 msgstr "ინტერესის ადგილები"
 
-#: app/SubscriptionsPage.qml:25 app/SubscriptionsPage.qml:68
+#: app/SubscriptionsPage.qml:26 app/SubscriptionsPage.qml:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Add…"
 msgstr "დამატება…"
 
-#: app/SubscriptionsPage.qml:53
+#: app/SubscriptionsPage.qml:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Unsubscribe"
 msgstr "გამოწერის გაუქმება"
 
-#: app/SubscriptionsPage.qml:65
+#: app/SubscriptionsPage.qml:71
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
