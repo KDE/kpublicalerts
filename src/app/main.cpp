@@ -36,14 +36,6 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char **argv)
 {
-    QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
-    QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
-    QCoreApplication::setApplicationName(QStringLiteral("kpublicalerts"));
-    QCoreApplication::setApplicationVersion(QStringLiteral(KPUBLICALERTS_VERSION_STRING));
-    QGuiApplication::setApplicationDisplayName(i18nc("@title:window", "Public Alerts"));
-    QGuiApplication::setDesktopFileName(QStringLiteral("org.kde.kpublicalerts"));
-    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("weather-storm")));
-
 #ifdef Q_OS_ANDROID
     QGuiApplication qtApp(argc, argv);
     QQuickStyle::setStyle(u"org.kde.breeze"_s);
@@ -57,7 +49,9 @@ int main(int argc, char **argv)
     }
 #endif
 
-    static auto aboutData = KAboutData::applicationData();
+    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("weather-storm")));
+
+    KAboutData aboutData(QStringLiteral("kpublicalerts"), i18nc("@title:window", "Public Alerts"), QStringLiteral(KPUBLICALERTS_VERSION_STRING));
     aboutData.setLicense(KAboutLicense::LGPL_V2, KAboutLicense::OrLaterVersions);
     aboutData.setShortDescription(i18nc("@info", "Weather and emergency alerts"));
     aboutData.setCopyrightStatement(i18nc("@info:credit", "Copyright © 2022 The KDE Community"));
