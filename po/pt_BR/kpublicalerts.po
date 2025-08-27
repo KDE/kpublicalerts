@@ -1,33 +1,31 @@
-# Spanish translations for kpublicalerts.po package.
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kpublicalerts package.
-# Automatically generated, 2025.
 #
-# SPDX-FileCopyrightText: 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-27 00:46+0000\n"
-"PO-Revision-Date: 2025-08-25 23:22+0100\n"
-"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
-"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
-"Language: es\n"
+"PO-Revision-Date: 2025-08-26 07:37-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Eloy Cuadra"
+msgstr "Marcus Gama"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "ecuadra@eloihr.net"
+msgstr "marcus.gama@gmail.com"
 
 #: app/AlertPage.qml:43
 #, kde-format
@@ -50,7 +48,7 @@ msgstr ""
 #| msgid "Categories:"
 msgctxt "@label"
 msgid "Categories"
-msgstr "Categorías:"
+msgstr "Categorias:"
 
 #: app/AlertPage.qml:137
 #, fuzzy, kde-format
@@ -58,7 +56,7 @@ msgstr "Categorías:"
 #| msgid "Urgency:"
 msgctxt "@label"
 msgid "Urgency"
-msgstr "Urgencia:"
+msgstr "Urgência:"
 
 #: app/AlertPage.qml:146
 #, fuzzy, kde-format
@@ -66,7 +64,7 @@ msgstr "Urgencia:"
 #| msgid "Severity:"
 msgctxt "@label"
 msgid "Severity"
-msgstr "Severidad:"
+msgstr "Gravidade:"
 
 #: app/AlertPage.qml:155
 #, fuzzy, kde-format
@@ -74,7 +72,7 @@ msgstr "Severidad:"
 #| msgid "Certainty:"
 msgctxt "@label"
 msgid "Certainty"
-msgstr "Certidumbre:"
+msgstr "Certeza:"
 
 #: app/AlertPage.qml:164
 #, fuzzy, kde-format
@@ -82,13 +80,13 @@ msgstr "Certidumbre:"
 #| msgid "Onset:"
 msgctxt "@label, time"
 msgid "Onset"
-msgstr "Comienzo:"
+msgstr "Início em:"
 
 #: app/AlertPage.qml:172
 #, kde-format
 msgctxt "@label"
 msgid "Description"
-msgstr "Descripción"
+msgstr "Descrição"
 
 #: app/AlertPage.qml:178
 #, kde-format
@@ -101,13 +99,13 @@ msgstr ""
 #| msgid "Recommended response:"
 msgctxt "@label"
 msgid "Recommended response"
-msgstr "Respuesta recomendada:"
+msgstr "Resposta recomendada:"
 
 #: app/AlertPage.qml:196
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
-msgstr "Instrucción"
+msgstr "Instrução"
 
 #: app/AlertPage.qml:203
 #, kde-format
@@ -128,7 +126,7 @@ msgstr "Web:"
 #| msgid "Contact:"
 msgctxt "@label"
 msgid "Contact"
-msgstr "Contacto:"
+msgstr "Contato:"
 
 #: app/AlertPage.qml:232
 #, fuzzy, kde-format
@@ -136,7 +134,7 @@ msgstr "Contacto:"
 #| msgid "Sender:"
 msgctxt "@label"
 msgid "Sender"
-msgstr "Emisor:"
+msgstr "Remetente:"
 
 #: app/AlertPage.qml:241 app/AlertPage.qml:250
 #, kde-format
@@ -148,7 +146,7 @@ msgstr "Área"
 #, kde-format
 msgctxt "@label"
 msgid "Additional Resources"
-msgstr "Recursos adicionales"
+msgstr "Recursos adicionais"
 
 #: app/AlertPage.qml:274
 #, kde-format
@@ -166,7 +164,7 @@ msgstr ""
 #| msgid "Status:"
 msgctxt "@label"
 msgid "Status"
-msgstr "Estado:"
+msgstr "Status:"
 
 #: app/AlertPage.qml:305
 #, fuzzy, kde-format
@@ -174,7 +172,7 @@ msgstr "Estado:"
 #| msgid "Message type:"
 msgctxt "@label"
 msgid "Message type"
-msgstr "Tipo de mensaje:"
+msgstr "Tipo de mensagem:"
 
 #: app/AlertPage.qml:320
 #, kde-format
@@ -187,7 +185,7 @@ msgstr ""
 #| msgid "Sent:"
 msgctxt "@label, time"
 msgid "Sent"
-msgstr "Enviada:"
+msgstr "Enviado:"
 
 #: app/AlertPage.qml:338
 #, fuzzy, kde-format
@@ -195,7 +193,7 @@ msgstr "Enviada:"
 #| msgid "Effective:"
 msgctxt "@label, time"
 msgid "Effective"
-msgstr "Efectiva:"
+msgstr "Efetivo:"
 
 #: app/AlertPage.qml:347
 #, fuzzy, kde-format
@@ -203,7 +201,7 @@ msgstr "Efectiva:"
 #| msgid "Expires:"
 msgctxt "@label, time"
 msgid "Expires"
-msgstr "Expiración:"
+msgstr "Expira em:"
 
 #: app/AlertPage.qml:355
 #, kde-format
@@ -214,7 +212,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Alert Details"
-msgstr "Mostrar detalles de la alerta"
+msgstr "Mostrar detalhes do alerta"
 
 #: app/alertsmanager.cpp:370
 #, kde-format
@@ -226,19 +224,19 @@ msgstr "Descartar"
 #, kde-format
 msgctxt "@title:window"
 msgid "Active Alerts"
-msgstr "Alertas activas"
+msgstr "Alertas ativos"
 
 #: app/AlertsPage.qml:70
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No alerts"
-msgstr "No hay alertas"
+msgstr "Nenhum alerta"
 
 #: app/AlertsPage.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest…"
-msgstr "Añadir área de interés…"
+msgstr "Adicionar área de interesse…"
 
 #: app/alertssortproxymodel.cpp:42
 #, kde-format
@@ -250,87 +248,87 @@ msgstr "Futuro"
 #, kde-format
 msgctxt "@label"
 msgid "Current"
-msgstr "Actual"
+msgstr "Atual"
 
 #: app/caputil.cpp:52
 msgid "Extreme — Extraordinary threat to life or property"
-msgstr "Extrema: amenaza extraordinaria para la vida o la propiedad."
+msgstr "Extremo — Ameaça extraordinária à vida ou à propriedade"
 
 #: app/caputil.cpp:53
 msgid "Severe — Significant threat to life or property"
-msgstr "Grave: amenaza significativa para la vida o la propiedad."
+msgstr "Grave — Ameaça significativa à vida ou à propriedade"
 
 #: app/caputil.cpp:54
 msgid "Moderate — Possible threat to life or property"
-msgstr "Moderada: posible amenaza para la vida o la propiedad."
+msgstr "Moderado — Possível ameaça à vida ou à propriedade"
 
 #: app/caputil.cpp:55
 msgid "Minor — Minimal to no known threat to life or property"
-msgstr "Menor: amenaza mínima o desconocida para la vida o la propiedad."
+msgstr "Menor — Ameaça mínima ou nenhuma conhecida à vida ou à propriedade"
 
 #: app/caputil.cpp:59
 msgid "Responsive action should be taken immediately"
-msgstr "Se deben tomar medidas de respuesta inmediatamente"
+msgstr "Ações em resposta devem ser tomadas imediatamente"
 
 #: app/caputil.cpp:60
 msgid "Responsive action should be taken soon"
-msgstr "Se deben tomar medidas de respuesta en breve"
+msgstr "Ações em resposta devem ser tomadas em breve"
 
 #: app/caputil.cpp:61
 msgid "Responsive action be taken in the near future"
-msgstr "Se deben tomar medidas de respuesta en un futuro próximo."
+msgstr "Ações em resposta devem ser tomadas em um futuro próximo"
 
 #: app/caputil.cpp:62
 msgid "Responsive action is no longer required"
-msgstr "Ya no se requieren medidas de respuesta"
+msgstr "A ação em resposta não é mais necessária"
 
 #: app/caputil.cpp:66
 msgid "Occurred or ongoing"
-msgstr "Ha ocurrido o está en curso"
+msgstr "Ocorrido ou em andamento"
 
 #: app/caputil.cpp:67
 msgid "Likely (> 50%)"
-msgstr "Probable (> 50 %)"
+msgstr "Provável (> 50%)"
 
 #: app/caputil.cpp:68
 msgid "Possible but not likely (< 50%)"
-msgstr "Posible pero no probable (< 50 %)"
+msgstr "Possível, mas não provável (< 50%)"
 
 #: app/caputil.cpp:69
 msgid "Not expected to occur"
-msgstr "No se espera que ocurra"
+msgstr "Não é esperado que ocorra"
 
 #: app/caputil.cpp:73
 msgid "Geophysical"
-msgstr "Geofísica"
+msgstr "Geofísico"
 
 #: app/caputil.cpp:74
 msgid "Meteorological"
-msgstr "Meteorológica"
+msgstr "Meteorológico"
 
 #: app/caputil.cpp:75
 msgid "General emergency and public safety"
-msgstr "Emergencia general y seguridad pública"
+msgstr "Emergência geral e segurança pública"
 
 #: app/caputil.cpp:76
 msgid "Law enforcement, military, homeland and local/private security"
-msgstr "Fuerzas de seguridad, militares, nacionales y locales/privadas"
+msgstr "Segurança policial, militar, nacional e local/privada"
 
 #: app/caputil.cpp:77
 msgid "Rescue and recovery"
-msgstr "Rescate y recuperación"
+msgstr "Resgate e recuperação"
 
 #: app/caputil.cpp:78
 msgid "Fire"
-msgstr "Fuego"
+msgstr "Fogo"
 
 #: app/caputil.cpp:79
 msgid "Medical and public health"
-msgstr "Médica y salud pública"
+msgstr "Saúde médica e pública"
 
 #: app/caputil.cpp:80
 msgid "Pollution and other environmental event"
-msgstr "Contaminación y otros eventos ambientales"
+msgstr "Poluição e outros eventos ambientais"
 
 #: app/caputil.cpp:81
 msgid "Transportation"
@@ -339,153 +337,152 @@ msgstr "Transporte"
 #: app/caputil.cpp:82
 msgid "Utility, telecommunication, other non-transport infrastructure"
 msgstr ""
-"Servicios públicos, telecomunicaciones y otras infraestructuras no "
-"relacionadas con el transporte"
+"Serviços públicos, telecomunicações e outras infraestruturas não "
+"relacionadas com transportes"
 
 #: app/caputil.cpp:83
 msgid ""
 "Chemical, biological, radiological, nuclear or high-yield explosive threat "
 "or attack"
 msgstr ""
-"Amenaza o ataque químico, biológico, radiológico, nuclear o explosivo de "
-"alto poder"
+"Ameaça ou ataque químico, biológico, radiológico, nuclear ou explosivo de "
+"alto rendimento"
 
 #: app/caputil.cpp:84
 msgid "Other event"
-msgstr "Otro evento"
+msgstr "Outro evento"
 
 #: app/caputil.cpp:88
 msgid "Take shelter in place or per instructions."
-msgstr "Busque refugio en el lugar o según las instrucciones."
+msgstr "Procure abrigo no local ou conforme as instruções."
 
 #: app/caputil.cpp:89
 msgid "Relocate as instructed."
-msgstr "Reubíquese según las instrucciones."
+msgstr "Realoque-se conforme as instruções."
 
 #: app/caputil.cpp:90
 msgid "Make preparations as per the instructions."
-msgstr "Realice los preparativos según las instrucciones."
+msgstr "Faça os preparativos conforme as instruções."
 
 #: app/caputil.cpp:91
 msgid "Execute activities identified in the instructions."
-msgstr "Ejecute las actividades identificadas en las instrucciones."
+msgstr "Execute as atividades identificadas nas instruções."
 
 #: app/caputil.cpp:92
 msgid "Avoid the subject event as per the instructions."
-msgstr "Evite el evento en cuestión según las instrucciones."
+msgstr "Evite o evento assunto conforme as instruções."
 
 #: app/caputil.cpp:93
 msgid "Attend to information sources as described in the instructions."
-msgstr ""
-"Esté atento a fuentes de información según se describe en las instrucciones."
+msgstr "Consulte as fontes de informação conforme descrito nas instruções."
 
 #: app/caputil.cpp:94
 msgid "Evaluate the information in this message."
-msgstr "Evalúe la información de este mensaje."
+msgstr "Avalie as informações desta mensagem."
 
 #: app/caputil.cpp:95
 msgid ""
 "The subject event no longer poses a threat or concern and any follow on "
 "action is described in the instructions."
 msgstr ""
-"El evento en cuestión ya no representa una amenaza o una preocupación y "
-"cualquier acción posterior se describe en las instrucciones."
+"O evento em questão não representa mais uma ameaça ou preocupação e qualquer "
+"ação subsequente é descrita nas instruções."
 
 #: app/caputil.cpp:96
 msgid "No action recommended."
-msgstr "No se recomienda ninguna acción."
+msgstr "Nenhuma ação recomendada."
 
 #: app/main.cpp:43 app/Main.qml:19 app/Main.qml:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
-msgstr "Alertas públicas"
+msgstr "Alertas públicos"
 
 #: app/main.cpp:62
 #, kde-format
 msgctxt "@info"
 msgid "Weather and emergency alerts"
-msgstr "Alertas meteorológicas y de emergencia"
+msgstr "Alertas meteorológicos e de emergência"
 
 #: app/main.cpp:63
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
-msgstr "Copyright © 2022 La Comunidad KDE"
+msgstr "Copyright © 2022 A Comunidade do KDE"
 
 #: app/Main.qml:32
 #, kde-format
 msgid "Missing notification permission!"
-msgstr "Falta el permiso de notificación."
+msgstr "Permissão de notificação ausente!"
 
 #: app/Main.qml:43
 #, kde-format
 msgid "Request permission…"
-msgstr "Solicitando permiso…"
+msgstr "Solicitar permissão…"
 
 #: app/Main.qml:79
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
-msgstr "Áreas de interés…"
+msgstr "Áreas de interesse…"
 
 #: app/Main.qml:85
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"
-msgstr "Acerca de"
+msgstr "Sobre"
 
 #: app/subscriptionmanager.cpp:33 app/subscriptionmanager.cpp:351
 #, kde-format
 msgid "Weather and emergency alert notifications"
-msgstr "Notificaciones de alertas meteorológicas y de emergencia"
+msgstr "Notificações de alerta de clima e emergência"
 
 #: app/SubscriptionPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Area of Interest"
-msgstr "Añadir área de interés"
+msgstr "Adicionar área de interesse"
 
 #: app/SubscriptionPage.qml:55
 #, kde-format
 msgid "Name"
-msgstr "Nombre"
+msgstr "Nome"
 
 #: app/SubscriptionPage.qml:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr "Añadir"
+msgstr "Adicionar"
 
 #: app/SubscriptionPage.qml:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr "Guardar"
+msgstr "Salvar"
 
 #: app/SubscriptionsPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Areas of Interest"
-msgstr "Áreas de interés"
+msgstr "Áreas de interesse"
 
 #: app/SubscriptionsPage.qml:26 app/SubscriptionsPage.qml:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Add…"
-msgstr "Añadir…"
+msgstr "Adicionar…"
 
 #: app/SubscriptionsPage.qml:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Unsubscribe"
-msgstr "Cancelar suscripción"
+msgstr "Cancelar inscrição"
 
 #: app/SubscriptionsPage.qml:71
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
-msgstr "No se han elegido áreas de interés"
+msgstr "Nenhuma área de interesse escolhida"
 
 #~ msgid "Open…"
 #~ msgstr "Abrir…"

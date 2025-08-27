@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 00:46+0000\n"
+"POT-Creation-Date: 2025-08-27 00:46+0000\n"
 "PO-Revision-Date: 2025-08-01 14:36+0200\n"
 "Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -31,122 +31,185 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-i18n-de@kde.org"
 
-#: app/AlertPage.qml:117
+#: app/AlertPage.qml:43
 #, kde-format
-msgctxt "@label"
-msgid "Status:"
-msgstr "Status:"
+msgid "Language"
+msgstr ""
 
-#: app/AlertPage.qml:127
+#: app/AlertPage.qml:54
 #, kde-format
-msgctxt "@label"
-msgid "Message type:"
-msgstr "Nachrichtentyp:"
+msgid "Affected area"
+msgstr ""
 
-#: app/AlertPage.qml:140
+#: app/AlertPage.qml:123
 #, kde-format
+msgid "Event"
+msgstr ""
+
+#: app/AlertPage.qml:128
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Categories:"
 msgctxt "@label"
-msgid "Categories:"
+msgid "Categories"
 msgstr "Kategorien:"
 
-#: app/AlertPage.qml:147
-#, kde-format
+#: app/AlertPage.qml:137
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Urgency:"
 msgctxt "@label"
-msgid "Urgency:"
+msgid "Urgency"
 msgstr "Dringlichkeit:"
 
-#: app/AlertPage.qml:152
-#, kde-format
+#: app/AlertPage.qml:146
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Severity:"
 msgctxt "@label"
-msgid "Severity:"
+msgid "Severity"
 msgstr "Tragweite:"
 
-#: app/AlertPage.qml:157
-#, kde-format
+#: app/AlertPage.qml:155
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Certainty:"
 msgctxt "@label"
-msgid "Certainty:"
+msgid "Certainty"
 msgstr "Wahrscheinlichkeit:"
 
-#: app/AlertPage.qml:162
-#, kde-format
-msgctxt "@label"
-msgid "Recommended response:"
-msgstr "Empfohlene Maßnahme:"
-
-#: app/AlertPage.qml:170
-#, kde-format
-msgctxt "@label"
-msgid "Web:"
-msgstr "Web:"
-
-#: app/AlertPage.qml:178
-#, kde-format
-msgctxt "@label"
-msgid "Contact:"
-msgstr "Kontakt:"
-
-#: app/AlertPage.qml:186
-#, kde-format
+#: app/AlertPage.qml:164
+#, fuzzy, kde-format
+#| msgctxt "@label, time"
+#| msgid "Onset:"
 msgctxt "@label, time"
-msgid "Sent:"
-msgstr "Versendet:"
-
-#: app/AlertPage.qml:191
-#, kde-format
-msgctxt "@label, time"
-msgid "Effective:"
-msgstr "Eintritt:"
-
-#: app/AlertPage.qml:196
-#, kde-format
-msgctxt "@label, time"
-msgid "Onset:"
+msgid "Onset"
 msgstr "Beginn:"
 
-#: app/AlertPage.qml:201
-#, kde-format
-msgctxt "@label, time"
-msgid "Expires:"
-msgstr "Gültig bis:"
-
-#: app/AlertPage.qml:206
-#, kde-format
-msgctxt "@label"
-msgid "Sender:"
-msgstr "Absender:"
-
-#: app/AlertPage.qml:215
+#: app/AlertPage.qml:172
 #, kde-format
 msgctxt "@label"
 msgid "Description"
 msgstr "Beschreibung"
 
-#: app/AlertPage.qml:226
+#: app/AlertPage.qml:178
+#, kde-format
+msgid "Act"
+msgstr ""
+
+#: app/AlertPage.qml:187
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Recommended response:"
+msgctxt "@label"
+msgid "Recommended response"
+msgstr "Empfohlene Maßnahme:"
+
+#: app/AlertPage.qml:196
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
 msgstr "Anweisung"
 
-#: app/AlertPage.qml:240
+#: app/AlertPage.qml:203
+#, kde-format
+msgid "Further Information"
+msgstr ""
+
+#: app/AlertPage.qml:213
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Web:"
+msgctxt "@label"
+msgid "Web"
+msgstr "Web:"
+
+#: app/AlertPage.qml:223
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Contact:"
+msgctxt "@label"
+msgid "Contact"
+msgstr "Kontakt:"
+
+#: app/AlertPage.qml:232
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Sender:"
+msgctxt "@label"
+msgid "Sender"
+msgstr "Absender:"
+
+#: app/AlertPage.qml:241 app/AlertPage.qml:250
 #, kde-format
 msgctxt "@label"
 msgid "Area"
 msgstr "Gebiet"
 
-#: app/AlertPage.qml:254
+#: app/AlertPage.qml:257
 #, kde-format
 msgctxt "@label"
 msgid "Additional Resources"
 msgstr ""
 
-#: app/AlertPage.qml:278
+#: app/AlertPage.qml:274
 #, kde-format
 msgid "%1 (%2)"
 msgstr ""
 
-#: app/AlertPage.qml:282
+#: app/AlertPage.qml:290
 #, kde-format
-msgid "Open…"
+msgid "Technical Information"
+msgstr ""
+
+#: app/AlertPage.qml:294
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Status:"
+msgctxt "@label"
+msgid "Status"
+msgstr "Status:"
+
+#: app/AlertPage.qml:305
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Message type:"
+msgctxt "@label"
+msgid "Message type"
+msgstr "Nachrichtentyp:"
+
+#: app/AlertPage.qml:320
+#, kde-format
+msgid "Audience"
+msgstr ""
+
+#: app/AlertPage.qml:329
+#, fuzzy, kde-format
+#| msgctxt "@label, time"
+#| msgid "Sent:"
+msgctxt "@label, time"
+msgid "Sent"
+msgstr "Versendet:"
+
+#: app/AlertPage.qml:338
+#, fuzzy, kde-format
+#| msgctxt "@label, time"
+#| msgid "Effective:"
+msgctxt "@label, time"
+msgid "Effective"
+msgstr "Eintritt:"
+
+#: app/AlertPage.qml:347
+#, fuzzy, kde-format
+#| msgctxt "@label, time"
+#| msgid "Expires:"
+msgctxt "@label, time"
+msgid "Expires"
+msgstr "Gültig bis:"
+
+#: app/AlertPage.qml:355
+#, kde-format
+msgid "Identifier"
 msgstr ""
 
 #: app/alertsmanager.cpp:366
@@ -378,7 +441,7 @@ msgctxt "@action:inmenu"
 msgid "About"
 msgstr "Über"
 
-#: app/subscriptionmanager.cpp:33
+#: app/subscriptionmanager.cpp:33 app/subscriptionmanager.cpp:351
 #, kde-format
 msgid "Weather and emergency alert notifications"
 msgstr "Meldungen zu Wetter- und Notfallwarnungen"

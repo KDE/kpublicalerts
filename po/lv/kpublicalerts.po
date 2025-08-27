@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 00:46+0000\n"
+"POT-Creation-Date: 2025-08-27 00:46+0000\n"
 "PO-Revision-Date: 2025-08-22 13:53+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -28,123 +28,186 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "toms.trasuns@posteo.net"
 
-#: app/AlertPage.qml:117
+#: app/AlertPage.qml:43
 #, kde-format
-msgctxt "@label"
-msgid "Status:"
-msgstr "Stāvoklis:"
+msgid "Language"
+msgstr ""
 
-#: app/AlertPage.qml:127
+#: app/AlertPage.qml:54
 #, kde-format
-msgctxt "@label"
-msgid "Message type:"
-msgstr "Ziņas tips:"
+msgid "Affected area"
+msgstr ""
 
-#: app/AlertPage.qml:140
+#: app/AlertPage.qml:123
 #, kde-format
+msgid "Event"
+msgstr ""
+
+#: app/AlertPage.qml:128
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Categories:"
 msgctxt "@label"
-msgid "Categories:"
+msgid "Categories"
 msgstr "Kategorijas:"
 
-#: app/AlertPage.qml:147
-#, kde-format
+#: app/AlertPage.qml:137
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Urgency:"
 msgctxt "@label"
-msgid "Urgency:"
+msgid "Urgency"
 msgstr "Steidzamība:"
 
-#: app/AlertPage.qml:152
-#, kde-format
+#: app/AlertPage.qml:146
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Severity:"
 msgctxt "@label"
-msgid "Severity:"
+msgid "Severity"
 msgstr "Nopietnība:"
 
-#: app/AlertPage.qml:157
-#, kde-format
+#: app/AlertPage.qml:155
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Certainty:"
 msgctxt "@label"
-msgid "Certainty:"
+msgid "Certainty"
 msgstr "Noteiktība:"
 
-#: app/AlertPage.qml:162
-#, kde-format
-msgctxt "@label"
-msgid "Recommended response:"
-msgstr "Ieteicamā reakcija:"
-
-#: app/AlertPage.qml:170
-#, kde-format
-msgctxt "@label"
-msgid "Web:"
-msgstr "Tīmeklis:"
-
-#: app/AlertPage.qml:178
-#, kde-format
-msgctxt "@label"
-msgid "Contact:"
-msgstr "Saziņa:"
-
-#: app/AlertPage.qml:186
-#, kde-format
+#: app/AlertPage.qml:164
+#, fuzzy, kde-format
+#| msgctxt "@label, time"
+#| msgid "Onset:"
 msgctxt "@label, time"
-msgid "Sent:"
-msgstr "Nosūtīts:"
-
-#: app/AlertPage.qml:191
-#, kde-format
-msgctxt "@label, time"
-msgid "Effective:"
-msgstr "Spēkā:"
-
-#: app/AlertPage.qml:196
-#, kde-format
-msgctxt "@label, time"
-msgid "Onset:"
+msgid "Onset"
 msgstr "Sākums:"
 
-#: app/AlertPage.qml:201
-#, kde-format
-msgctxt "@label, time"
-msgid "Expires:"
-msgstr "Termiņš:"
-
-#: app/AlertPage.qml:206
-#, kde-format
-msgctxt "@label"
-msgid "Sender:"
-msgstr "Nosūtītājs:"
-
-#: app/AlertPage.qml:215
+#: app/AlertPage.qml:172
 #, kde-format
 msgctxt "@label"
 msgid "Description"
 msgstr "Apraksts"
 
-#: app/AlertPage.qml:226
+#: app/AlertPage.qml:178
+#, kde-format
+msgid "Act"
+msgstr ""
+
+#: app/AlertPage.qml:187
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Recommended response:"
+msgctxt "@label"
+msgid "Recommended response"
+msgstr "Ieteicamā reakcija:"
+
+#: app/AlertPage.qml:196
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
 msgstr "Instrukcija"
 
-#: app/AlertPage.qml:240
+#: app/AlertPage.qml:203
+#, kde-format
+msgid "Further Information"
+msgstr ""
+
+#: app/AlertPage.qml:213
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Web:"
+msgctxt "@label"
+msgid "Web"
+msgstr "Tīmeklis:"
+
+#: app/AlertPage.qml:223
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Contact:"
+msgctxt "@label"
+msgid "Contact"
+msgstr "Saziņa:"
+
+#: app/AlertPage.qml:232
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Sender:"
+msgctxt "@label"
+msgid "Sender"
+msgstr "Nosūtītājs:"
+
+#: app/AlertPage.qml:241 app/AlertPage.qml:250
 #, kde-format
 msgctxt "@label"
 msgid "Area"
 msgstr "Apgabals"
 
-#: app/AlertPage.qml:254
+#: app/AlertPage.qml:257
 #, kde-format
 msgctxt "@label"
 msgid "Additional Resources"
 msgstr "Papildu resursi"
 
-#: app/AlertPage.qml:278
+#: app/AlertPage.qml:274
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/AlertPage.qml:282
+#: app/AlertPage.qml:290
 #, kde-format
-msgid "Open…"
-msgstr "Atvērt…"
+msgid "Technical Information"
+msgstr ""
+
+#: app/AlertPage.qml:294
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Status:"
+msgctxt "@label"
+msgid "Status"
+msgstr "Stāvoklis:"
+
+#: app/AlertPage.qml:305
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Message type:"
+msgctxt "@label"
+msgid "Message type"
+msgstr "Ziņas tips:"
+
+#: app/AlertPage.qml:320
+#, kde-format
+msgid "Audience"
+msgstr ""
+
+#: app/AlertPage.qml:329
+#, fuzzy, kde-format
+#| msgctxt "@label, time"
+#| msgid "Sent:"
+msgctxt "@label, time"
+msgid "Sent"
+msgstr "Nosūtīts:"
+
+#: app/AlertPage.qml:338
+#, fuzzy, kde-format
+#| msgctxt "@label, time"
+#| msgid "Effective:"
+msgctxt "@label, time"
+msgid "Effective"
+msgstr "Spēkā:"
+
+#: app/AlertPage.qml:347
+#, fuzzy, kde-format
+#| msgctxt "@label, time"
+#| msgid "Expires:"
+msgctxt "@label, time"
+msgid "Expires"
+msgstr "Termiņš:"
+
+#: app/AlertPage.qml:355
+#, kde-format
+msgid "Identifier"
+msgstr ""
 
 #: app/alertsmanager.cpp:366
 #, kde-format
@@ -369,7 +432,7 @@ msgctxt "@action:inmenu"
 msgid "About"
 msgstr "Par"
 
-#: app/subscriptionmanager.cpp:33
+#: app/subscriptionmanager.cpp:33 app/subscriptionmanager.cpp:351
 #, kde-format
 msgid "Weather and emergency alert notifications"
 msgstr "Laikapstākļu un ārkārtas stāvokļu paziņojumi"
@@ -424,6 +487,9 @@ msgstr "Beigt abonēt"
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
 msgstr "Nav izvēlēti interesējošie apgabali"
+
+#~ msgid "Open…"
+#~ msgstr "Atvērt…"
 
 #~ msgctxt "@action:button"
 #~ msgid "Add Area of Interest"
