@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-27 00:46+0000\n"
-"PO-Revision-Date: 2025-08-26 11:19+0300\n"
+"PO-Revision-Date: 2025-08-27 09:37+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -31,57 +31,47 @@ msgstr "kde-l10n-he@kde.org"
 #: app/AlertPage.qml:43
 #, kde-format
 msgid "Language"
-msgstr ""
+msgstr "שפה"
 
 #: app/AlertPage.qml:54
 #, kde-format
 msgid "Affected area"
-msgstr ""
+msgstr "אזור מושפע"
 
 #: app/AlertPage.qml:123
 #, kde-format
 msgid "Event"
-msgstr ""
+msgstr "אירוע"
 
 #: app/AlertPage.qml:128
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Categories:"
+#, kde-format
 msgctxt "@label"
 msgid "Categories"
-msgstr "קטגוריות:"
+msgstr "קטגוריות"
 
 #: app/AlertPage.qml:137
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Urgency:"
+#, kde-format
 msgctxt "@label"
 msgid "Urgency"
-msgstr "דחיפות:"
+msgstr "דחיפות"
 
 #: app/AlertPage.qml:146
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Severity:"
+#, kde-format
 msgctxt "@label"
 msgid "Severity"
-msgstr "חומרה:"
+msgstr "חומרה"
 
 #: app/AlertPage.qml:155
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Certainty:"
+#, kde-format
 msgctxt "@label"
 msgid "Certainty"
-msgstr "ודאות:"
+msgstr "ודאות"
 
 #: app/AlertPage.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@label, time"
-#| msgid "Onset:"
+#, kde-format
 msgctxt "@label, time"
 msgid "Onset"
-msgstr "תחילת מקרה:"
+msgstr "תחילת מקרה"
 
 #: app/AlertPage.qml:172
 #, kde-format
@@ -92,15 +82,13 @@ msgstr "תיאור"
 #: app/AlertPage.qml:178
 #, kde-format
 msgid "Act"
-msgstr ""
+msgstr "פעולה"
 
 #: app/AlertPage.qml:187
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Recommended response:"
+#, kde-format
 msgctxt "@label"
 msgid "Recommended response"
-msgstr "תגובה מומלצת:"
+msgstr "תגובה מומלצת"
 
 #: app/AlertPage.qml:196
 #, kde-format
@@ -111,31 +99,25 @@ msgstr "הנחיה"
 #: app/AlertPage.qml:203
 #, kde-format
 msgid "Further Information"
-msgstr ""
+msgstr "פרטים נוספים"
 
 #: app/AlertPage.qml:213
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Web:"
+#, kde-format
 msgctxt "@label"
 msgid "Web"
-msgstr "אתר:"
+msgstr "אתר"
 
 #: app/AlertPage.qml:223
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Contact:"
+#, kde-format
 msgctxt "@label"
 msgid "Contact"
-msgstr "פרטי קשר:"
+msgstr "פרטי קשר"
 
 #: app/AlertPage.qml:232
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Sender:"
+#, kde-format
 msgctxt "@label"
 msgid "Sender"
-msgstr "מוען:"
+msgstr "מוען"
 
 #: app/AlertPage.qml:241 app/AlertPage.qml:250
 #, kde-format
@@ -157,57 +139,47 @@ msgstr "%1 (%2)"
 #: app/AlertPage.qml:290
 #, kde-format
 msgid "Technical Information"
-msgstr ""
+msgstr "פרטים טכניים"
 
 #: app/AlertPage.qml:294
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Status:"
+#, kde-format
 msgctxt "@label"
 msgid "Status"
-msgstr "מצב:"
+msgstr "מצב"
 
 #: app/AlertPage.qml:305
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Message type:"
+#, kde-format
 msgctxt "@label"
 msgid "Message type"
-msgstr "סוג הודעה:"
+msgstr "סוג הודעה"
 
 #: app/AlertPage.qml:320
 #, kde-format
 msgid "Audience"
-msgstr ""
+msgstr "קהל"
 
 #: app/AlertPage.qml:329
-#, fuzzy, kde-format
-#| msgctxt "@label, time"
-#| msgid "Sent:"
+#, kde-format
 msgctxt "@label, time"
 msgid "Sent"
-msgstr "נשלח:"
+msgstr "נשלחה"
 
 #: app/AlertPage.qml:338
-#, fuzzy, kde-format
-#| msgctxt "@label, time"
-#| msgid "Effective:"
+#, kde-format
 msgctxt "@label, time"
 msgid "Effective"
-msgstr "יעיל:"
+msgstr "יעיל"
 
 #: app/AlertPage.qml:347
-#, fuzzy, kde-format
-#| msgctxt "@label, time"
-#| msgid "Expires:"
+#, kde-format
 msgctxt "@label, time"
 msgid "Expires"
-msgstr "תום תוקף:"
+msgstr "תום תוקף"
 
 #: app/AlertPage.qml:355
 #, kde-format
 msgid "Identifier"
-msgstr ""
+msgstr "מזהה"
 
 #: app/alertsmanager.cpp:366
 #, kde-format
