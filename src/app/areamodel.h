@@ -27,6 +27,7 @@ public:
     enum Role {
         PolygonsRole = Qt::UserRole,
         CirclesRole,
+        AreaRole,
     };
 
     KWeatherCore::CAPAlertInfo alertInfo() const;

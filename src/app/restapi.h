@@ -9,6 +9,8 @@
 class QNetworkRequest;
 class QRectF;
 class QString;
+class QStringView;
+class QUrl;
 class QUuid;
 
 namespace KPublicAlerts {
@@ -16,7 +18,8 @@ namespace KPublicAlerts {
 /** REST API of the server part of this. */
 namespace RestApi
 {
-[[nodiscard]] QNetworkRequest alert(const QString &id);
+[[nodiscard]] QUrl alertUrl(QStringView id);
+[[nodiscard]] QNetworkRequest alert(QStringView id);
 [[nodiscard]] QNetworkRequest alerts(const QRectF &bbox);
 
 [[nodiscard]] QNetworkRequest vapidKey();

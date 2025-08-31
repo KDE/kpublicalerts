@@ -61,6 +61,8 @@ public:
         AlertRole = Qt::UserRole,
         AlertInfoRole,
         OnsetTimeRole,
+        SourceFileRole,
+        SourceUrlRole,
         UserRole,
     };
 

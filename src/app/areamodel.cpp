@@ -94,6 +94,8 @@ QVariant AreaModel::data(const QModelIndex &index, int role) const
             std::copy(circles.begin(), circles.end(), std::back_inserter(res));
             return QVariant::fromValue(res);
         }
+        case AreaRole:
+            return QVariant::fromValue(area);
     }
 
     return {};
@@ -104,6 +106,7 @@ QHash<int, QByteArray> AreaModel::roleNames() const
     auto n = QAbstractListModel::roleNames();
     n.insert(PolygonsRole, "polygons");
     n.insert(CirclesRole, "circles");
+    n.insert(AreaRole, "area");
     return n;
 }
 

@@ -19,6 +19,8 @@ FormCard.FormCardPage {
     id: root
     property capAlertMessage alert
     property capAlertInfo alertInfo
+    property string sourceFile
+    property url sourceUrl
 
     title: alertInfo.event
 
@@ -63,6 +65,8 @@ FormCard.FormCardPage {
         QtLocation.MapItemView {
             model: areaModel
             delegate: QtLocation.MapItemView {
+                id: polygonsRoot
+                required property capArea area
                 required property var polygons
                 model: polygons
                 delegate: QtLocation.MapPolygon {
@@ -78,6 +82,12 @@ FormCard.FormCardPage {
                     border.color: color
                     border.width: 2
                     path: modelData
+
+                    HoverHandler { id: hover }
+                    QQC2.ToolTip.text: polygonsRoot.area.description
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                    // TODO this somehow positions the tooltips way off with Qt 6.9?
+                    //QQC2.ToolTip.visible: hover.hovered
                 }
             }
         }
@@ -356,7 +366,19 @@ FormCard.FormCardPage {
             description: root.alert.identifier
             // TODO make copyable
         }
-        // TODO add CAP source link
-        // TODO open raw CAP data
+        FormCard.FormDelegateSeparator {}
+        FormCard.FormButtonDelegate {
+            text: i18n("View Source File")
+            icon.name: "document-open-symbolic"
+            onClicked: Qt.openUrlExternally("file://" + root.sourceFile)
+        }
+        FormCard.FormDelegateSeparator {}
+        FormCard.FormButtonDelegate {
+            text: i18n("Open Source File")
+            icon.name: "internet-services-symbolic"
+            onClicked: Qt.openUrlExternally(root.sourceUrl)
+            // TODO copying this would be more useful than opening it directly
+        }
+        // TODO add source CAP links (once we have those in CAP as custom event codes)
     }
 }

@@ -31,6 +31,9 @@ Kirigami.ScrollablePage {
             id: delegateRoot
             required property capAlertMessage alert
             required property capAlertInfo alertInfo
+            required property string sourceFile
+            required property url sourceUrl
+
             width: ListView.view.width
             contentItem: Kirigami.IconTitleSubtitle {
                 title: delegateRoot.alertInfo.headline ? delegateRoot.alertInfo.headline : delegateRoot.alertInfo.event
@@ -51,7 +54,12 @@ Kirigami.ScrollablePage {
             onClicked: {
                 while (applicationWindow().pageStack.depth > 1)
                     applicationWindow().pageStack.pop();
-                applicationWindow().pageStack.push(alertPage, { alert: delegateRoot.alert, alertInfo: delegateRoot.alertInfo })
+                applicationWindow().pageStack.push(alertPage, {
+                    alert: delegateRoot.alert,
+                    alertInfo: delegateRoot.alertInfo,
+                    sourceFile: delegateRoot.sourceFile,
+                    sourceUrl: delegateRoot.sourceUrl
+                });
             }
         }
 

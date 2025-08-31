@@ -25,6 +25,7 @@
 #include <QStandardPaths>
 #include <QUrlQuery>
 
+using namespace Qt::Literals;
 using namespace KPublicAlerts;
 
 bool AlertElement::operator<(const AlertElement &other) const
@@ -81,9 +82,14 @@ KWeatherCore::CAPAlertInfo AlertElement::info() const
     return alertData.alertInfos()[alertData.preferredInfoIndexForLocale()];
 }
 
-static QString basePath()
+[[nodiscard]] static QString basePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/cap/");
+    return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + "/cap/"_L1;
+}
+
+[[nodiscard]] static QString alertFileName(QStringView id)
+{
+    return basePath() + id + ".xml"_L1;
 }
 
 AlertsManager::AlertsManager(QObject* parent)
@@ -91,7 +97,7 @@ AlertsManager::AlertsManager(QObject* parent)
 {
     for (auto it = QDirIterator(basePath(), QDir::Files); it.hasNext();) {
         it.next();
-        if (!it.fileName().endsWith(QLatin1String(".xml"))) {
+        if (!it.fileName().endsWith(".xml"_L1)) {
             continue;
         }
 
@@ -177,7 +183,7 @@ void AlertsManager::fetchAlert(const QString &id, bool force)
 
         const auto path = basePath();
         QDir().mkpath(path);
-        if (QFile f(path + id + QLatin1String(".xml")); f.open(QFile::WriteOnly)) {
+        if (QFile f(path + id + ".xml"_L1); f.open(QFile::WriteOnly)) {
             f.write(capData);
         } else {
             qWarning() << f.fileName() << f.errorString();
@@ -225,18 +231,18 @@ void AlertsManager::fetchAll()
 void AlertsManager::purgeAlerts()
 {
     qDebug() << "fetch done, purging leftovers";
-    std::sort(m_fetchedAlertIds.begin(), m_fetchedAlertIds.end());
+    std::ranges::sort(m_fetchedAlertIds);
     for (auto it = m_alerts.begin(); it != m_alerts.end();) {
         if (std::binary_search(m_fetchedAlertIds.begin(), m_fetchedAlertIds.end(), (*it).id)) {
             ++it;
             continue;
         }
-        const auto row = std::distance(m_alerts.begin(), it);
+        const auto row = (int)std::distance(m_alerts.begin(), it);
         beginRemoveRows({}, row, row);
         if ((*it).notification) {
             (*it).notification->close();
         }
-        QFile::remove(basePath() + (*it).id + QLatin1String(".xml"));
+        QFile::remove(alertFileName((*it).id));
         it = m_alerts.erase(it);
         endRemoveRows();
     }
@@ -250,9 +256,9 @@ void AlertsManager::removeAlert(const QString &id)
         return;
     }
 
-    const auto row = std::distance(m_alerts.begin(), it);
+    const auto row = (int)std::distance(m_alerts.begin(), it);
     beginRemoveRows({}, row, row);
-    QFile::remove(basePath() + (*it).id + QLatin1String(".xml"));
+    QFile::remove(alertFileName((*it).id));
     m_alerts.erase(it);
     endRemoveRows();
 }
@@ -262,7 +268,7 @@ int AlertsManager::rowCount(const QModelIndex &parent) const
     if (parent.isValid()) {
         return 0;
     }
-    return m_alerts.size();
+    return (int)m_alerts.size();
 }
 
 QVariant AlertsManager::data(const QModelIndex &index, int role) const
@@ -279,6 +285,10 @@ QVariant AlertsManager::data(const QModelIndex &index, int role) const
             return QVariant::fromValue(info.info());
         case OnsetTimeRole:
             return info.onsetTime();
+        case SourceFileRole:
+            return alertFileName(info.id);
+        case SourceUrlRole:
+            return RestApi::alertUrl(info.id);
         case Qt::DisplayRole:
             return info.alertData.identifier();
     }
@@ -291,6 +301,8 @@ QHash<int, QByteArray> AlertsManager::roleNames() const
     auto n = QAbstractListModel::roleNames();
     n.insert(AlertRole, "alert");
     n.insert(AlertInfoRole, "alertInfo");
+    n.insert(SourceFileRole, "sourceFile");
+    n.insert(SourceUrlRole, "sourceUrl");
     return n;
 }
 
@@ -300,14 +312,14 @@ AlertElement& AlertsManager::addAlert(AlertElement &&e)
         e.alert().messageType() == KWeatherCore::CAPAlertMessage::MessageType::Cancel) {
         const auto alert = e.alert();
         for (const auto &ref : alert.references()) {
-            const auto it = std::find_if(m_alerts.begin(), m_alerts.end(), [&ref](const auto &alert) {
+            const auto it = std::ranges::find_if(m_alerts, [&ref](const auto &alert) {
                 return alert.alert().ownReference() == ref;
             });
             if (it == m_alerts.end()) {
                 continue;
             }
             qDebug() << "found existing alert that is being updated!" << (*it).id;
-            const auto row = std::distance(m_alerts.begin(), it);
+            const auto row = (int)std::distance(m_alerts.begin(), it);
             beginRemoveRows({}, row, row);
             // move notification to the updated message, so it gets reused/updated when still active
             if (!e.notification) {
@@ -316,7 +328,7 @@ AlertElement& AlertsManager::addAlert(AlertElement &&e)
             if ((*it).notification) {
                 (*it).notification->close();
             }
-            QFile::remove(basePath() + (*it).id + QLatin1String(".xml")); // ### do we need to ensure we are not reloading this one?
+            QFile::remove(alertFileName((*it).id)); // ### do we need to ensure we are not reloading this one?
             m_alerts.erase(it);
             endRemoveRows();
         }
@@ -325,11 +337,11 @@ AlertElement& AlertsManager::addAlert(AlertElement &&e)
     auto it = std::lower_bound(m_alerts.begin(), m_alerts.end(), e);
     if (it != m_alerts.end() && (*it).id == e.id) {
         (*it).alertData = std::move(e.alertData);
-        const auto idx = index(std::distance(m_alerts.begin(), it), 0);
+        const auto idx = index((int)std::distance(m_alerts.begin(), it), 0);
         Q_EMIT dataChanged(idx, idx);
         return (*it);
     } else {
-        const auto row = std::distance(m_alerts.begin(), it);
+        const auto row = (int)std::distance(m_alerts.begin(), it);
         beginInsertRows({}, row, row);
         auto &alert = *m_alerts.insert(it, std::move(e));
         endInsertRows();
@@ -361,7 +373,7 @@ void AlertsManager::showNotification(AlertElement &e)
     for (const auto &m : notification_map) {
         if (m.severity == info.severity()) {
             if (!e.notification) {
-                auto n = new KNotification(QLatin1String(m.eventName));
+                auto n = new KNotification(QLatin1StringView(m.eventName));
                 e.notification = n;
                 auto viewAction = n->addDefaultAction(i18nc("@action:button", "Show Alert Details"));
                 connect(viewAction, &KNotificationAction::activated, this, [this, n]() {
@@ -378,7 +390,7 @@ void AlertsManager::showNotification(AlertElement &e)
             if (info.severity() == KWeatherCore::CAPAlertInfo::Severity::Extreme) {
                 e.notification->setFlags(KNotification::Persistent);
             }
-            e.notification->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));
+            e.notification->setHint(u"x-kde-visibility"_s, u"public"_s);
             e.notification->sendEvent();
             break;
         }
@@ -464,7 +476,7 @@ void AlertsManager::purgeExpired()
     qDebug() << "purging expired alerts";
     for (auto it = m_alerts.begin(); it != m_alerts.end();) {
         if ((*it).isExpired()) {
-            const auto row = std::distance(m_alerts.begin(), it);
+            const auto row = (int)std::distance(m_alerts.begin(), it);
             beginRemoveRows({}, row, row);
             it = m_alerts.erase(it);
             // TODO delete alert file
@@ -478,7 +490,7 @@ void AlertsManager::purgeExpired()
 
 bool AlertsManager::hasPendingNotifications() const
 {
-    return std::any_of(m_alerts.begin(), m_alerts.end(), [](const auto &alert) { return alert.notification; });
+    return std::ranges::any_of(m_alerts, [](const auto &alert) { return alert.notification; });
 }
 
 #include "moc_alertsmanager.cpp"

@@ -34,11 +34,16 @@ static QUrl baseUrl()
     return req;
 }
 
-QNetworkRequest RestApi::alert(const QString &id)
+QUrl RestApi::alertUrl(QStringView id)
 {
     auto url = baseUrl();
     url.setPath(url.path() + "alert/"_L1 + id);
-    return makeRequest(url);
+    return url;
+}
+
+QNetworkRequest RestApi::alert(QStringView id)
+{
+    return makeRequest(alertUrl(id));
 }
 
 QNetworkRequest RestApi::alerts(const QRectF &bbox)
