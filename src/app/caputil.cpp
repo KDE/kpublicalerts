@@ -134,7 +134,7 @@ struct {
     { KWeatherCore::CAPAlertInfo::Category::Geophysical, "earthquake" },
     { KWeatherCore::CAPAlertInfo::Category::Safety, "security-high-symbolic" },
     { KWeatherCore::CAPAlertInfo::Category::Security, "security-high-symbolic" },
-    { KWeatherCore::CAPAlertInfo::Category::Environmental, "internet-services" },
+    { KWeatherCore::CAPAlertInfo::Category::Environmental, "internet-services-symbolic" },
     { KWeatherCore::CAPAlertInfo::Category::Infrastructure, "network-wireless-hotspot" },
     { KWeatherCore::CAPAlertInfo::Category::Transport, "car" },
 };

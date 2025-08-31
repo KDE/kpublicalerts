@@ -83,7 +83,7 @@ Kirigami.ApplicationWindow {
             },
             Kirigami.Action {
                 text: i18nc("@action:inmenu", "About")
-                icon.name: "help-about"
+                icon.name: "help-about-symbolic"
                 onTriggered: applicationWindow().pageStack.pushDialogLayer(aboutPage)
             }
         ]

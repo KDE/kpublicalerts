@@ -60,14 +60,16 @@ if (NOT ANDROID)
 else()
     target_link_libraries(publicalerts PRIVATE OpenSSL::SSL Qt::Svg KF6::Kirigami)
     kirigami_package_breeze_icons(ICONS
+        ${KIRIGAMI_ADDONS_ICONS}
         car
         cloudstatus
         cross-shape
+        document-open-symbolic
         earthquake
         edit-delete
-        help-about
+        help-about-symbolic
         hotspot
-        internet-services
+        internet-services-symbolic
         list-add
         map-globe
         network-wireless-hotspot
