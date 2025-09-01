@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 00:46+0000\n"
+"POT-Creation-Date: 2025-09-01 00:46+0000\n"
 "PO-Revision-Date: 2025-08-28 02:09+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -29,166 +29,176 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ecuadra@eloihr.net"
 
-#: app/AlertPage.qml:43
+#: app/AlertPage.qml:45
 #, kde-format
 msgid "Language"
 msgstr "Idioma"
 
-#: app/AlertPage.qml:54
+#: app/AlertPage.qml:56
 #, kde-format
 msgid "Affected area"
 msgstr "Área afectada"
 
-#: app/AlertPage.qml:123
+#: app/AlertPage.qml:133
 #, kde-format
 msgid "Event"
 msgstr "Evento"
 
-#: app/AlertPage.qml:128
+#: app/AlertPage.qml:138
 #, kde-format
 msgctxt "@label"
 msgid "Categories"
 msgstr "Categorías"
 
-#: app/AlertPage.qml:137
+#: app/AlertPage.qml:147
 #, kde-format
 msgctxt "@label"
 msgid "Urgency"
 msgstr "Urgencia"
 
-#: app/AlertPage.qml:146
+#: app/AlertPage.qml:156
 #, kde-format
 msgctxt "@label"
 msgid "Severity"
 msgstr "Severidad"
 
-#: app/AlertPage.qml:155
+#: app/AlertPage.qml:165
 #, kde-format
 msgctxt "@label"
 msgid "Certainty"
 msgstr "Certidumbre"
 
-#: app/AlertPage.qml:164
+#: app/AlertPage.qml:174
 #, kde-format
 msgctxt "@label, time"
 msgid "Onset"
 msgstr "Comienzo"
 
-#: app/AlertPage.qml:172
+#: app/AlertPage.qml:182
 #, kde-format
 msgctxt "@label"
 msgid "Description"
 msgstr "Descripción"
 
-#: app/AlertPage.qml:178
+#: app/AlertPage.qml:188
 #, kde-format
 msgid "Act"
 msgstr "Acción"
 
-#: app/AlertPage.qml:187
+#: app/AlertPage.qml:197
 #, kde-format
 msgctxt "@label"
 msgid "Recommended response"
 msgstr "Respuesta recomendada"
 
-#: app/AlertPage.qml:196
+#: app/AlertPage.qml:206
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
 msgstr "Instrucción"
 
-#: app/AlertPage.qml:203
+#: app/AlertPage.qml:213
 #, kde-format
 msgid "Further Information"
 msgstr "Más información"
 
-#: app/AlertPage.qml:213
+#: app/AlertPage.qml:223
 #, kde-format
 msgctxt "@label"
 msgid "Web"
 msgstr "Web"
 
-#: app/AlertPage.qml:223
+#: app/AlertPage.qml:233
 #, kde-format
 msgctxt "@label"
 msgid "Contact"
 msgstr "Contacto"
 
-#: app/AlertPage.qml:232
+#: app/AlertPage.qml:242
 #, kde-format
 msgctxt "@label"
 msgid "Sender"
 msgstr "Emisor"
 
-#: app/AlertPage.qml:241 app/AlertPage.qml:250
+#: app/AlertPage.qml:251 app/AlertPage.qml:260
 #, kde-format
 msgctxt "@label"
 msgid "Area"
 msgstr "Área"
 
-#: app/AlertPage.qml:257
+#: app/AlertPage.qml:267
 #, kde-format
 msgctxt "@label"
 msgid "Additional Resources"
 msgstr "Recursos adicionales"
 
-#: app/AlertPage.qml:274
+#: app/AlertPage.qml:284
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/AlertPage.qml:290
+#: app/AlertPage.qml:300
 #, kde-format
 msgid "Technical Information"
 msgstr "Información técnica"
 
-#: app/AlertPage.qml:294
+#: app/AlertPage.qml:304
 #, kde-format
 msgctxt "@label"
 msgid "Status"
 msgstr "Estado"
 
-#: app/AlertPage.qml:305
+#: app/AlertPage.qml:315
 #, kde-format
 msgctxt "@label"
 msgid "Message type"
 msgstr "Tipo de mensaje"
 
-#: app/AlertPage.qml:320
+#: app/AlertPage.qml:330
 #, kde-format
 msgid "Audience"
 msgstr "Audiencia"
 
-#: app/AlertPage.qml:329
+#: app/AlertPage.qml:339
 #, kde-format
 msgctxt "@label, time"
 msgid "Sent"
 msgstr "Enviada"
 
-#: app/AlertPage.qml:338
+#: app/AlertPage.qml:348
 #, kde-format
 msgctxt "@label, time"
 msgid "Effective"
 msgstr "Efectiva"
 
-#: app/AlertPage.qml:347
+#: app/AlertPage.qml:357
 #, kde-format
 msgctxt "@label, time"
 msgid "Expires"
 msgstr "Expiración"
 
-#: app/AlertPage.qml:355
+#: app/AlertPage.qml:365
 #, kde-format
 msgid "Identifier"
 msgstr "Identificador"
 
-#: app/alertsmanager.cpp:366
+#: app/AlertPage.qml:371
+#, kde-format
+msgid "View Source File"
+msgstr ""
+
+#: app/AlertPage.qml:377
+#, kde-format
+msgid "Open Source File"
+msgstr ""
+
+#: app/alertsmanager.cpp:378
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Alert Details"
 msgstr "Mostrar detalles de la alerta"
 
-#: app/alertsmanager.cpp:370
+#: app/alertsmanager.cpp:382
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
@@ -200,13 +210,13 @@ msgctxt "@title:window"
 msgid "Active Alerts"
 msgstr "Alertas activas"
 
-#: app/AlertsPage.qml:70
+#: app/AlertsPage.qml:78
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No alerts"
 msgstr "No hay alertas"
 
-#: app/AlertsPage.qml:73
+#: app/AlertsPage.qml:81
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest…"
