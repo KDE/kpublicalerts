@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-01 00:46+0000\n"
-"PO-Revision-Date: 2025-08-30 19:38+0400\n"
+"PO-Revision-Date: 2025-09-01 19:40+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -184,12 +184,12 @@ msgstr "المعرف"
 #: app/AlertPage.qml:371
 #, kde-format
 msgid "View Source File"
-msgstr ""
+msgstr "اعرض ملف المصدر"
 
 #: app/AlertPage.qml:377
 #, kde-format
 msgid "Open Source File"
-msgstr ""
+msgstr "افتح ملف المصدر"
 
 #: app/alertsmanager.cpp:378
 #, kde-format

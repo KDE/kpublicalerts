@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-01 00:46+0000\n"
-"PO-Revision-Date: 2025-08-27 11:08+0200\n"
+"PO-Revision-Date: 2025-09-01 15:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -183,12 +183,12 @@ msgstr "Identifier"
 #: app/AlertPage.qml:371
 #, kde-format
 msgid "View Source File"
-msgstr ""
+msgstr "Bronbestand bekijken"
 
 #: app/AlertPage.qml:377
 #, kde-format
 msgid "Open Source File"
-msgstr ""
+msgstr "Bronbestand openen"
 
 #: app/alertsmanager.cpp:378
 #, kde-format
