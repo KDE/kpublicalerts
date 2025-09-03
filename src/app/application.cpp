@@ -42,7 +42,16 @@ Application::Application(QObject *parent)
     connect(&m_subscriptionMgr, &SubscriptionManager::rowsRemoved, &m_alertsMgr, &AlertsManager::fetchAll);
     connect(&m_subscriptionMgr, &SubscriptionManager::unhandledPushNotifications, &m_alertsMgr, &AlertsManager::fetchAll);
 
-    connect(&m_alertsMgr, &AlertsManager::showAlert, this, &Application::showUi);
+    connect(&m_alertsMgr, &AlertsManager::showAlert, this, [this](const QString &id){
+        if (m_qmlAppEngine) { // UI already shown, QML code takes care of showing the select alert
+            return;
+        }
+        // UI not yet shown, ie. the QML code will also miss the showAlert signal, so re-emit this here
+        // that is safe as the above check prevents us from recursing here
+        showUi();
+        assert(m_qmlAppEngine);
+        Q_EMIT m_alertsMgr.showAlert(id);
+    });
     connect(&m_alertsMgr, &AlertsManager::notificationClosed, this, &Application::maybeQuit, Qt::QueuedConnection);
     connect(&m_alertsMgr, &AlertsManager::fetchingChanged, this, &Application::maybeQuit, Qt::QueuedConnection);
 }
