@@ -92,7 +92,12 @@ Kirigami.ScrollablePage {
             while (applicationWindow().pageStack.depth > 1) {
                 applicationWindow().pageStack.pop();
             }
-            applicationWindow().pageStack.push(alertPage, { alert: alert.alert, alertInfo: alert.info });
+            applicationWindow().pageStack.push(alertPage, {
+                alert: alert.alert,
+                alertInfo: alert.alertInfo,
+                sourceFile: alert.sourceFile,
+                sourceUrl: alert.sourceUrl
+            });
         }
         function onFetchingChanged() {
             root.refreshing = AlertsManager.fetching

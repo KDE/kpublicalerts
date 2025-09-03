@@ -28,6 +28,17 @@
 using namespace Qt::Literals;
 using namespace KPublicAlerts;
 
+[[nodiscard]] static QString basePath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + "/cap/"_L1;
+}
+
+[[nodiscard]] static QString alertFileName(QStringView id)
+{
+    return basePath() + id + ".xml"_L1;
+}
+
+
 bool AlertElement::operator<(const AlertElement &other) const
 {
     return id < other.id;
@@ -82,14 +93,14 @@ KWeatherCore::CAPAlertInfo AlertElement::info() const
     return alertData.alertInfos()[alertData.preferredInfoIndexForLocale()];
 }
 
-[[nodiscard]] static QString basePath()
+QString AlertElement::sourceFile() const
 {
-    return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + "/cap/"_L1;
+    return alertFileName(id);
 }
 
-[[nodiscard]] static QString alertFileName(QStringView id)
+QUrl AlertElement::sourceUrl() const
 {
-    return basePath() + id + ".xml"_L1;
+    return RestApi::alertUrl(id);
 }
 
 AlertsManager::AlertsManager(QObject* parent)
@@ -286,9 +297,9 @@ QVariant AlertsManager::data(const QModelIndex &index, int role) const
         case OnsetTimeRole:
             return info.onsetTime();
         case SourceFileRole:
-            return alertFileName(info.id);
+            return info.sourceFile();
         case SourceUrlRole:
-            return RestApi::alertUrl(info.id);
+            return info.sourceUrl();
         case Qt::DisplayRole:
             return info.alertData.identifier();
     }

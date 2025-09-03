@@ -24,6 +24,8 @@ class AlertElement {
     Q_GADGET
     Q_PROPERTY(KWeatherCore::CAPAlertMessage alert READ alert)
     Q_PROPERTY(KWeatherCore::CAPAlertInfo info READ info)
+    Q_PROPERTY(QString sourceFile READ sourceFile)
+    Q_PROPERTY(QUrl sourceUrl READ sourceUrl)
 
 public:
     QString id;
@@ -39,6 +41,9 @@ public:
 
     [[nodiscard]] KWeatherCore::CAPAlertMessage alert() const;
     [[nodiscard]] KWeatherCore::CAPAlertInfo info() const;
+
+    [[nodiscard]] QString sourceFile() const;
+    [[nodiscard]] QUrl sourceUrl() const;
 
     QPointer<KNotification> notification;
 };
