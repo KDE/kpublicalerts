@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-01 00:46+0000\n"
+"POT-Creation-Date: 2025-09-04 00:46+0000\n"
 "PO-Revision-Date: 2025-09-02 04:53+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -191,13 +191,13 @@ msgstr "წყარო ფაილის ნახვა"
 msgid "Open Source File"
 msgstr "წყარო ფაილის გახსნა"
 
-#: app/alertsmanager.cpp:378
+#: app/alertsmanager.cpp:389
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Alert Details"
 msgstr "განგაშის დეტალების ჩვენება"
 
-#: app/alertsmanager.cpp:382
+#: app/alertsmanager.cpp:393
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"

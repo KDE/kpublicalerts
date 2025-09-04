@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-01 00:46+0000\n"
+"POT-Creation-Date: 2025-09-04 00:46+0000\n"
 "PO-Revision-Date: 2025-09-01 19:40+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -191,13 +191,13 @@ msgstr "اعرض ملف المصدر"
 msgid "Open Source File"
 msgstr "افتح ملف المصدر"
 
-#: app/alertsmanager.cpp:378
+#: app/alertsmanager.cpp:389
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Alert Details"
 msgstr "اعرض تفاصيل الإنذار"
 
-#: app/alertsmanager.cpp:382
+#: app/alertsmanager.cpp:393
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"

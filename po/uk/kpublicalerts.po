@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-01 00:46+0000\n"
+"POT-Creation-Date: 2025-09-04 00:46+0000\n"
 "PO-Revision-Date: 2025-09-01 08:36+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -191,13 +191,13 @@ msgstr "Переглянути файл джерела даних"
 msgid "Open Source File"
 msgstr "Відкрити файл джерела даних"
 
-#: app/alertsmanager.cpp:378
+#: app/alertsmanager.cpp:389
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Alert Details"
 msgstr "Показати параметри нагадування"
 
-#: app/alertsmanager.cpp:382
+#: app/alertsmanager.cpp:393
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
