@@ -32,7 +32,6 @@
   <name xml:lang="sv">Allmänna varningar</name>
   <name xml:lang="tr">Acil Durum İkazları</name>
   <name xml:lang="uk">Попередження цивільного захисту</name>
-  <name xml:lang="x-test">xxPublic Alertsxx</name>
   <name xml:lang="zh-CN">公共警报</name>
   <name xml:lang="zh-TW">公共警報</name>
   <summary>Emergency and weather alerts</summary>
@@ -57,7 +56,6 @@
   <summary xml:lang="sv">Nöd- och vädervarningar</summary>
   <summary xml:lang="tr">Acil durum ve hava durumu ikazları</summary>
   <summary xml:lang="uk">Попередження про аварійні та природні ситуації</summary>
-  <summary xml:lang="x-test">xxEmergency and weather alertsxx</summary>
   <summary xml:lang="zh-CN">紧急情况和天气警报</summary>
   <summary xml:lang="zh-TW">緊急事件與天氣警報</summary>
   <description>
@@ -83,7 +81,6 @@
     <p xml:lang="sv">Ta emot nöd- och vädervarningar i cirka 100 länder.</p>
     <p xml:lang="tr">Yaklaşık 100 ülkede acil durum ve hava durumu bildirimlerini alın.</p>
     <p xml:lang="uk">Отримання сповіщень про природні та аварійні ситуації у майже 100 країнах.</p>
-    <p xml:lang="x-test">xxReceive emergency and weather alert notifications in about 100 countries.xx</p>
     <p xml:lang="zh-CN">接收来自约 100 个国家的紧急情况和天气警报通知。</p>
     <p xml:lang="zh-TW">接受緊急事件與天氣警報通知，支援約 100 個國家。</p>
   </description>
