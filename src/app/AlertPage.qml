@@ -281,7 +281,7 @@ FormCard.FormCardPage {
                 text: delegateRoot.modelData.description
                 icon.name: delegateRoot.modelData.mimeType.iconName
                 description: delegateRoot.modelData.hasSize
-                    ? i18n("%1 (%2)", delegateRoot.modelData.mimeType.comment, Format.formatByteSize(delegateRoot.modelData.size))
+                    ? i18nc("file type (file size)", "%1 (%2)", delegateRoot.modelData.mimeType.comment, Format.formatByteSize(delegateRoot.modelData.size))
                     : delegateRoot.modelData.mimeType.comment
                 onClicked: Qt.openUrlExternally(delegateRoot.modelData.uri)
 
