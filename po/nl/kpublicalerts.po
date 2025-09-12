@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:45+0000\n"
-"PO-Revision-Date: 2025-09-01 15:05+0200\n"
+"PO-Revision-Date: 2025-09-11 17:28+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -131,8 +131,7 @@ msgid "Additional Resources"
 msgstr "Aanvullende hulpbronnen"
 
 #: app/AlertPage.qml:284
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "file type (file size)"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
