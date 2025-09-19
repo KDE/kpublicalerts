@@ -310,7 +310,7 @@ void SubscriptionManager::checkHeartbeat()
 {
     const auto threshold = QDateTime::currentDateTime().addDays(-1); // TODO make this less aggressive
     for (const auto &s : m_subscriptions) {
-        if (s.m_lastHeartbeat.isValid() && s.m_lastHeartbeat > threshold) {
+        if ((s.m_lastHeartbeat.isValid() && s.m_lastHeartbeat > threshold) || !s.isSubscribed()) {
             continue;
         }
 
