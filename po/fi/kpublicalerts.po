@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:45+0000\n"
-"PO-Revision-Date: 2025-09-11 17:25+0300\n"
+"PO-Revision-Date: 2025-09-12 16:42+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -135,7 +135,7 @@ msgstr "Lisäresursseja"
 #, kde-format
 msgctxt "file type (file size)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: app/AlertPage.qml:300
 #, kde-format
@@ -185,12 +185,12 @@ msgstr "Tunniste"
 #: app/AlertPage.qml:371
 #, kde-format
 msgid "View Source File"
-msgstr ""
+msgstr "Näytä lähdetiedosto"
 
 #: app/AlertPage.qml:377
 #, kde-format
 msgid "Open Source File"
-msgstr ""
+msgstr "Avaa lähdetiedosto"
 
 #: app/alertsmanager.cpp:389
 #, kde-format
