@@ -365,6 +365,28 @@ FormCard.FormCardPage {
             visible: expireDelegate.visible
         }
         FormCard.FormTextDelegate {
+            id: scopeDelegate
+            text: i18nc("scope of an alert: public/private/restricted", "Scope")
+            description: switch (root.alert.scope) {
+                    case CAPAlertMessage.Public: return i18n("Public — For general dissemination to unrestricted audiences")
+                    case CAPAlertMessage.Restriced: return i18n("Restricted — For dissemination only to users with a known operational requirement")
+                    case CAPAlertMessage.Private: return i18n("Private — For dissemination only to specified addresses")
+            }
+            visible: root.alert.scope !== CAPAlertMessage.UnknownScope
+        }
+        FormCard.FormDelegateSeparator {
+            visible: scopeDelegate.visible
+        }
+        FormCard.FormTextDelegate {
+            id: addressesDelegate
+            text: i18nc("addressees of a non-public alert", "Addresses")
+            description: root.alert.addresses.join(", ")
+            visible: root.alert.addresses.length > 0
+        }
+        FormCard.FormDelegateSeparator {
+            visible: addressesDelegate.visible
+        }
+        FormCard.FormTextDelegate {
             text: i18n("Identifier")
             description: root.alert.identifier
             // TODO make copyable
