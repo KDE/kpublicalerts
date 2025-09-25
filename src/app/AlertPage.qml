@@ -180,7 +180,8 @@ FormCard.FormCardPage {
         }
         FormCard.FormTextDelegate {
             text: i18nc("@label", "Description")
-            description: root.alertInfo.description
+            description: KTextToHTML.convertToHtml(root.alertInfo.description, KTextToHTMLOptions.PreserveSpaces)
+            onLinkActivated: (link) => { Qt.openUrlExternally(link); }
         }
     }
 
@@ -204,8 +205,9 @@ FormCard.FormCardPage {
         FormCard.FormTextDelegate {
             id: instructionDelegate
             text: i18nc("@label", "Instruction")
-            description: root.alertInfo.instruction
+            description: KTextToHTML.convertToHtml(root.alertInfo.instruction, KTextToHTMLOptions.PreserveSpaces)
             visible: description !== ""
+            onLinkActivated: (link) => { Qt.openUrlExternally(link); }
         }
     }
 
@@ -221,7 +223,7 @@ FormCard.FormCardPage {
         FormCard.FormTextDelegate {
             id: webDelegate
             text: i18nc("@label", "Web")
-            description: root.alertInfo.web
+            description: KTextToHTML.convertToHtml(root.alertInfo.web, KTextToHTMLOptions.PreserveSpaces)
             visible: root.alertInfo.web
             onLinkActivated: (link) => { Qt.openUrlExternally(link); }
         }
@@ -231,8 +233,9 @@ FormCard.FormCardPage {
         FormCard.FormTextDelegate {
             id: contactDelegate
             text: i18nc("@label", "Contact")
-            description: root.alertInfo.contact
+            description: KTextToHTML.convertToHtml(root.alertInfo.contact, KTextToHTMLOptions.PreserveSpaces | KTextToHTMLOptions.ConvertPhoneNumbers)
             visible: root.alertInfo.contact
+            onLinkActivated: (link) => { Qt.openUrlExternally(link); }
         }
         FormCard.FormDelegateSeparator {
             visible: contactDelegate.visible
