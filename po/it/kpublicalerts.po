@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:45+0000\n"
-"PO-Revision-Date: 2025-08-31 00:36+0200\n"
+"PO-Revision-Date: 2025-09-11 22:05+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -132,8 +132,7 @@ msgid "Additional Resources"
 msgstr "Risorse aggiuntive"
 
 #: app/AlertPage.qml:284
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "file type (file size)"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -186,12 +185,12 @@ msgstr "Identificatore"
 #: app/AlertPage.qml:371
 #, kde-format
 msgid "View Source File"
-msgstr ""
+msgstr "Visualizza file delle fonti"
 
 #: app/AlertPage.qml:377
 #, kde-format
 msgid "Open Source File"
-msgstr ""
+msgstr "Apri file delle fonti"
 
 #: app/alertsmanager.cpp:389
 #, kde-format
