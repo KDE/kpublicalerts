@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:45+0000\n"
+"POT-Creation-Date: 2025-09-26 00:45+0000\n"
 "PO-Revision-Date: 2025-09-11 12:12+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -80,115 +80,115 @@ msgctxt "@label"
 msgid "Description"
 msgstr "Descripción"
 
-#: app/AlertPage.qml:188
+#: app/AlertPage.qml:189
 #, kde-format
 msgid "Act"
 msgstr "Acción"
 
-#: app/AlertPage.qml:197
+#: app/AlertPage.qml:198
 #, kde-format
 msgctxt "@label"
 msgid "Recommended response"
 msgstr "Respuesta recomendada"
 
-#: app/AlertPage.qml:206
+#: app/AlertPage.qml:207
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
 msgstr "Instrucción"
 
-#: app/AlertPage.qml:213
+#: app/AlertPage.qml:215
 #, kde-format
 msgid "Further Information"
 msgstr "Más información"
 
-#: app/AlertPage.qml:223
+#: app/AlertPage.qml:225
 #, kde-format
 msgctxt "@label"
 msgid "Web"
 msgstr "Web"
 
-#: app/AlertPage.qml:233
+#: app/AlertPage.qml:235
 #, kde-format
 msgctxt "@label"
 msgid "Contact"
 msgstr "Contacto"
 
-#: app/AlertPage.qml:242
+#: app/AlertPage.qml:245
 #, kde-format
 msgctxt "@label"
 msgid "Sender"
 msgstr "Emisor"
 
-#: app/AlertPage.qml:251 app/AlertPage.qml:260
+#: app/AlertPage.qml:254 app/AlertPage.qml:263
 #, kde-format
 msgctxt "@label"
 msgid "Area"
 msgstr "Área"
 
-#: app/AlertPage.qml:267
+#: app/AlertPage.qml:270
 #, kde-format
 msgctxt "@label"
 msgid "Additional Resources"
 msgstr "Recursos adicionales"
 
-#: app/AlertPage.qml:284
+#: app/AlertPage.qml:287
 #, kde-format
 msgctxt "file type (file size)"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/AlertPage.qml:300
+#: app/AlertPage.qml:303
 #, kde-format
 msgid "Technical Information"
 msgstr "Información técnica"
 
-#: app/AlertPage.qml:304
+#: app/AlertPage.qml:307
 #, kde-format
 msgctxt "@label"
 msgid "Status"
 msgstr "Estado"
 
-#: app/AlertPage.qml:315
+#: app/AlertPage.qml:318
 #, kde-format
 msgctxt "@label"
 msgid "Message type"
 msgstr "Tipo de mensaje"
 
-#: app/AlertPage.qml:330
+#: app/AlertPage.qml:333
 #, kde-format
 msgid "Audience"
 msgstr "Audiencia"
 
-#: app/AlertPage.qml:339
+#: app/AlertPage.qml:342
 #, kde-format
 msgctxt "@label, time"
 msgid "Sent"
 msgstr "Enviada"
 
-#: app/AlertPage.qml:348
+#: app/AlertPage.qml:351
 #, kde-format
 msgctxt "@label, time"
 msgid "Effective"
 msgstr "Efectiva"
 
-#: app/AlertPage.qml:357
+#: app/AlertPage.qml:360
 #, kde-format
 msgctxt "@label, time"
 msgid "Expires"
 msgstr "Expiración"
 
-#: app/AlertPage.qml:365
+#: app/AlertPage.qml:368
 #, kde-format
 msgid "Identifier"
 msgstr "Identificador"
 
-#: app/AlertPage.qml:371
+#: app/AlertPage.qml:374
 #, kde-format
 msgid "View Source File"
 msgstr "Ver archivo de la fuente"
 
-#: app/AlertPage.qml:377
+#: app/AlertPage.qml:380
 #, kde-format
 msgid "Open Source File"
 msgstr "Abrir archivo de la fuente"
