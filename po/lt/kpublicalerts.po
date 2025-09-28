@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-26 00:45+0000\n"
+"POT-Creation-Date: 2025-09-28 00:47+0000\n"
 "PO-Revision-Date: 2025-09-01 00:46+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -177,17 +177,46 @@ msgctxt "@label, time"
 msgid "Expires"
 msgstr ""
 
-#: app/AlertPage.qml:368
+#: app/AlertPage.qml:369
+#, kde-format
+msgctxt "scope of an alert: public/private/restricted"
+msgid "Scope"
+msgstr ""
+
+#: app/AlertPage.qml:371
+#, kde-format
+msgid "Public — For general dissemination to unrestricted audiences"
+msgstr ""
+
+#: app/AlertPage.qml:372
+#, kde-format
+msgid ""
+"Restricted — For dissemination only to users with a known operational "
+"requirement"
+msgstr ""
+
+#: app/AlertPage.qml:373
+#, kde-format
+msgid "Private — For dissemination only to specified addresses"
+msgstr ""
+
+#: app/AlertPage.qml:382
+#, kde-format
+msgctxt "addressees of a non-public alert"
+msgid "Addresses"
+msgstr ""
+
+#: app/AlertPage.qml:390
 #, kde-format
 msgid "Identifier"
 msgstr ""
 
-#: app/AlertPage.qml:374
+#: app/AlertPage.qml:396
 #, kde-format
 msgid "View Source File"
 msgstr ""
 
-#: app/AlertPage.qml:380
+#: app/AlertPage.qml:402
 #, kde-format
 msgid "Open Source File"
 msgstr ""
