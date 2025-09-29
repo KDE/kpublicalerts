@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:47+0000\n"
-"PO-Revision-Date: 2025-09-11 06:59+0200\n"
+"PO-Revision-Date: 2025-09-28 09:34+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -181,12 +181,12 @@ msgstr "Poteče"
 #, kde-format
 msgctxt "scope of an alert: public/private/restricted"
 msgid "Scope"
-msgstr ""
+msgstr "Obseg"
 
 #: app/AlertPage.qml:371
 #, kde-format
 msgid "Public — For general dissemination to unrestricted audiences"
-msgstr ""
+msgstr "Javno – Za splošno razširjanje neomejenemu občinstvu"
 
 #: app/AlertPage.qml:372
 #, kde-format
@@ -194,17 +194,18 @@ msgid ""
 "Restricted — For dissemination only to users with a known operational "
 "requirement"
 msgstr ""
+"Omejeno – Za razširjanje samo uporabnikom z znanimi operativnimi zahtevami"
 
 #: app/AlertPage.qml:373
 #, kde-format
 msgid "Private — For dissemination only to specified addresses"
-msgstr ""
+msgstr "Zasebno – Samo za razširjanje na določene naslove"
 
 #: app/AlertPage.qml:382
 #, kde-format
 msgctxt "addressees of a non-public alert"
 msgid "Addresses"
-msgstr ""
+msgstr "Naslovi"
 
 #: app/AlertPage.qml:390
 #, kde-format

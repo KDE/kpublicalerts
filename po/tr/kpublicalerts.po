@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:47+0000\n"
-"PO-Revision-Date: 2025-09-12 10:27+0300\n"
+"PO-Revision-Date: 2025-09-28 20:27+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -180,12 +180,12 @@ msgstr "Bitiş:"
 #, kde-format
 msgctxt "scope of an alert: public/private/restricted"
 msgid "Scope"
-msgstr ""
+msgstr "Kapsam"
 
 #: app/AlertPage.qml:371
 #, kde-format
 msgid "Public — For general dissemination to unrestricted audiences"
-msgstr ""
+msgstr "Kamu — Sınırsız kitlelere genel dağıtım için"
 
 #: app/AlertPage.qml:372
 #, kde-format
@@ -193,17 +193,19 @@ msgid ""
 "Restricted — For dissemination only to users with a known operational "
 "requirement"
 msgstr ""
+"Sınırlı — Yalnızca bilinen bir operasyonel gereksinimi olan kullanıcılara "
+"dağıtım için"
 
 #: app/AlertPage.qml:373
 #, kde-format
 msgid "Private — For dissemination only to specified addresses"
-msgstr ""
+msgstr "Özel — Yalnızca belirtilen adreslere dağıtım için"
 
 #: app/AlertPage.qml:382
 #, kde-format
 msgctxt "addressees of a non-public alert"
 msgid "Addresses"
-msgstr ""
+msgstr "Adresler"
 
 #: app/AlertPage.qml:390
 #, kde-format

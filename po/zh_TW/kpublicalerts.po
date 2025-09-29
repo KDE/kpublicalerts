@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:47+0000\n"
-"PO-Revision-Date: 2025-09-25 02:56+0900\n"
+"PO-Revision-Date: 2025-09-29 01:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -180,30 +180,30 @@ msgstr "失效時間"
 #, kde-format
 msgctxt "scope of an alert: public/private/restricted"
 msgid "Scope"
-msgstr ""
+msgstr "範疇"
 
 #: app/AlertPage.qml:371
 #, kde-format
 msgid "Public — For general dissemination to unrestricted audiences"
-msgstr ""
+msgstr "公開 — 供傳播給所有受衆"
 
 #: app/AlertPage.qml:372
 #, kde-format
 msgid ""
 "Restricted — For dissemination only to users with a known operational "
 "requirement"
-msgstr ""
+msgstr "受限 — 供傳播給有已知操作需求的用戶"
 
 #: app/AlertPage.qml:373
 #, kde-format
 msgid "Private — For dissemination only to specified addresses"
-msgstr ""
+msgstr "私人 — 僅供傳播給指定地址"
 
 #: app/AlertPage.qml:382
 #, kde-format
 msgctxt "addressees of a non-public alert"
 msgid "Addresses"
-msgstr ""
+msgstr "地址"
 
 #: app/AlertPage.qml:390
 #, kde-format

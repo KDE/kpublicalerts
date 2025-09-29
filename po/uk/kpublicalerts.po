@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:47+0000\n"
-"PO-Revision-Date: 2025-09-11 09:00+0300\n"
+"PO-Revision-Date: 2025-09-28 16:32+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -181,12 +181,12 @@ msgstr "Строк дії"
 #, kde-format
 msgctxt "scope of an alert: public/private/restricted"
 msgid "Scope"
-msgstr ""
+msgstr "Область"
 
 #: app/AlertPage.qml:371
 #, kde-format
 msgid "Public — For general dissemination to unrestricted audiences"
-msgstr ""
+msgstr "Загальна — для загального поширення для нічим не обмеженої аудиторії"
 
 #: app/AlertPage.qml:372
 #, kde-format
@@ -194,17 +194,18 @@ msgid ""
 "Restricted — For dissemination only to users with a known operational "
 "requirement"
 msgstr ""
+"Обмежена — для поширення лише між користувачами із відомими вимогами щодо дій"
 
 #: app/AlertPage.qml:373
 #, kde-format
 msgid "Private — For dissemination only to specified addresses"
-msgstr ""
+msgstr "Конфіденційна – для поширення лише за вказаними адресами"
 
 #: app/AlertPage.qml:382
 #, kde-format
 msgctxt "addressees of a non-public alert"
 msgid "Addresses"
-msgstr ""
+msgstr "Адреси"
 
 #: app/AlertPage.qml:390
 #, kde-format

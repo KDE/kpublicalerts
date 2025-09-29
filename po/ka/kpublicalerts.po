@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:47+0000\n"
-"PO-Revision-Date: 2025-09-11 03:52+0200\n"
+"PO-Revision-Date: 2025-09-28 06:11+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -181,12 +181,12 @@ msgstr "ვადა"
 #, kde-format
 msgctxt "scope of an alert: public/private/restricted"
 msgid "Scope"
-msgstr ""
+msgstr "ფარგლები"
 
 #: app/AlertPage.qml:371
 #, kde-format
 msgid "Public — For general dissemination to unrestricted audiences"
-msgstr ""
+msgstr "საჯარო — ზოგადი გავრცელებისთვის შეუზღუდავ აუდიტორიაზე"
 
 #: app/AlertPage.qml:372
 #, kde-format
@@ -194,17 +194,19 @@ msgid ""
 "Restricted — For dissemination only to users with a known operational "
 "requirement"
 msgstr ""
+"შეზღუდვა — გავრცელება, მხოლოდ, ცნობილი საოპერაციო მოთხოვნების მქონე "
+"მომხმარებლებზე"
 
 #: app/AlertPage.qml:373
 #, kde-format
 msgid "Private — For dissemination only to specified addresses"
-msgstr ""
+msgstr "პირადი — მხოლოდ, მითითებულ მისამართებზე გავრცელებისთვის"
 
 #: app/AlertPage.qml:382
 #, kde-format
 msgctxt "addressees of a non-public alert"
 msgid "Addresses"
-msgstr ""
+msgstr "მისამართები"
 
 #: app/AlertPage.qml:390
 #, kde-format
