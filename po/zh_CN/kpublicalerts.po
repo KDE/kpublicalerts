@@ -131,8 +131,7 @@ msgid "Additional Resources"
 msgstr "额外资源"
 
 #: app/AlertPage.qml:287
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "file type (file size)"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -181,30 +180,30 @@ msgstr "过期时间"
 #, kde-format
 msgctxt "scope of an alert: public/private/restricted"
 msgid "Scope"
-msgstr ""
+msgstr "范围"
 
 #: app/AlertPage.qml:371
 #, kde-format
 msgid "Public — For general dissemination to unrestricted audiences"
-msgstr ""
+msgstr "公开——面向不受限制的受众进行广泛传播"
 
 #: app/AlertPage.qml:372
 #, kde-format
 msgid ""
 "Restricted — For dissemination only to users with a known operational "
 "requirement"
-msgstr ""
+msgstr "受限——仅发送到具备某种工作条件的用户"
 
 #: app/AlertPage.qml:373
 #, kde-format
 msgid "Private — For dissemination only to specified addresses"
-msgstr ""
+msgstr "私密——仅发送到指定地址"
 
 #: app/AlertPage.qml:382
 #, kde-format
 msgctxt "addressees of a non-public alert"
 msgid "Addresses"
-msgstr ""
+msgstr "地址"
 
 #: app/AlertPage.qml:390
 #, kde-format
@@ -214,12 +213,12 @@ msgstr "标识符"
 #: app/AlertPage.qml:396
 #, kde-format
 msgid "View Source File"
-msgstr ""
+msgstr "查看源文件"
 
 #: app/AlertPage.qml:402
 #, kde-format
 msgid "Open Source File"
-msgstr ""
+msgstr "打开源文件"
 
 #: app/alertsmanager.cpp:389
 #, kde-format
