@@ -85,7 +85,7 @@
     <p xml:lang="zh-TW">接受緊急事件與天氣警報通知，支援約 100 個國家。</p>
   </description>
   <categories>
-    <category>Utilities</category>
+    <category>Utility</category>
   </categories>
   <url type="homepage">https://invent.kde.org/utilities/kpublicalerts/</url>
   <project_group>KDE</project_group>
