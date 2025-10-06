@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:47+0000\n"
-"PO-Revision-Date: 2025-09-15 12:52+0400\n"
+"PO-Revision-Date: 2025-10-05 10:18+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -181,30 +181,30 @@ msgstr "تنتهي"
 #, kde-format
 msgctxt "scope of an alert: public/private/restricted"
 msgid "Scope"
-msgstr ""
+msgstr "النطاق"
 
 #: app/AlertPage.qml:371
 #, kde-format
 msgid "Public — For general dissemination to unrestricted audiences"
-msgstr ""
+msgstr "عام — للنشر العام لجمهور غير محدود"
 
 #: app/AlertPage.qml:372
 #, kde-format
 msgid ""
 "Restricted — For dissemination only to users with a known operational "
 "requirement"
-msgstr ""
+msgstr "مقيد — للنشر فقط للمستخدمين الذين لديهم متطلبات تشغيلية معروفة"
 
 #: app/AlertPage.qml:373
 #, kde-format
 msgid "Private — For dissemination only to specified addresses"
-msgstr ""
+msgstr "خاص — للنشر فقط إلى عناوين محددة"
 
 #: app/AlertPage.qml:382
 #, kde-format
 msgctxt "addressees of a non-public alert"
 msgid "Addresses"
-msgstr ""
+msgstr "العناوين"
 
 #: app/AlertPage.qml:390
 #, kde-format
