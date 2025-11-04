@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:47+0000\n"
-"PO-Revision-Date: 2025-09-12 12:08+0200\n"
+"PO-Revision-Date: 2025-09-29 12:10+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -177,12 +177,12 @@ msgstr "Expire"
 #, kde-format
 msgctxt "scope of an alert: public/private/restricted"
 msgid "Scope"
-msgstr ""
+msgstr "Champ d’application"
 
 #: app/AlertPage.qml:371
 #, kde-format
 msgid "Public — For general dissemination to unrestricted audiences"
-msgstr ""
+msgstr "Public — Pour diffusion générale auprès d'un public sans restriction"
 
 #: app/AlertPage.qml:372
 #, kde-format
@@ -190,17 +190,19 @@ msgid ""
 "Restricted — For dissemination only to users with a known operational "
 "requirement"
 msgstr ""
+"Restreint — Pour diffusion uniquement aux personnes ayant une exigence "
+"opérationnelle reconnue"
 
 #: app/AlertPage.qml:373
 #, kde-format
 msgid "Private — For dissemination only to specified addresses"
-msgstr ""
+msgstr "Privé — Pour diffusion uniquement à des adresses spécifiées"
 
 #: app/AlertPage.qml:382
 #, kde-format
 msgctxt "addressees of a non-public alert"
 msgid "Addresses"
-msgstr ""
+msgstr "Adresses"
 
 #: app/AlertPage.qml:390
 #, kde-format
