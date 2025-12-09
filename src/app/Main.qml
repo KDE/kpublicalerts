@@ -7,6 +7,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.coreaddons as KCoreAddons
+import org.kde.guiaddons as KGuiAddons
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.notification as KNotification
@@ -64,7 +65,7 @@ Kirigami.ApplicationWindow {
         switch(severity) {
             case CAPAlertInfo.Extreme: return Kirigami.Theme.negativeTextColor;
             case CAPAlertInfo.Severe: return Kirigami.Theme.neutralTextColor;
-            case CAPAlertInfo.Moderate: return CAPUtil.colorMix(Kirigami.Theme.neutralTextColor, Kirigami.Theme.positiveTextColor, 0.35);
+            case CAPAlertInfo.Moderate: return KGuiAddons.ColorUtils.mix(Kirigami.Theme.neutralTextColor, Kirigami.Theme.positiveTextColor, 0.35);
             case CAPAlertInfo.Minor: return Kirigami.Theme.positiveTextColor;
         }
         return Kirigami.Theme.textColor;

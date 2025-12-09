@@ -8,8 +8,6 @@
 #include <KLocalizedString>
 #include <KLazyLocalizedString>
 
-#include <KColorUtils>
-
 #include <QDebug>
 #include <QLocale>
 
@@ -147,11 +145,6 @@ QString CAPUtil::categoriesIconName(KWeatherCore::CAPAlertInfo::Categories categ
         }
     }
     return QLatin1String("dialog-warning");
-}
-
-QColor CAPUtil::colorMix(const QColor& c1, const QColor& c2, double bias)
-{
-    return KColorUtils::mix(c1, c2, bias);
 }
 
 #include "moc_caputil.cpp"
