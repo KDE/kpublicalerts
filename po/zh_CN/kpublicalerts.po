@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-12-10 00:47+0000\n"
 "PO-Revision-Date: 2025-02-12 11:39\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -262,143 +262,143 @@ msgctxt "@label"
 msgid "Current"
 msgstr "当前"
 
-#: app/caputil.cpp:52
+#: app/caputil.cpp:50
 msgid "Extreme — Extraordinary threat to life or property"
 msgstr "极端 — 对生命或财产构成的特别重大威胁"
 
-#: app/caputil.cpp:53
+#: app/caputil.cpp:51
 msgid "Severe — Significant threat to life or property"
 msgstr "严重 — 对生命或财产构成重大威胁"
 
-#: app/caputil.cpp:54
+#: app/caputil.cpp:52
 msgid "Moderate — Possible threat to life or property"
 msgstr "中等 — 对生命或财产可能构成威胁"
 
-#: app/caputil.cpp:55
+#: app/caputil.cpp:53
 msgid "Minor — Minimal to no known threat to life or property"
 msgstr "轻微 — 对生命或财产几乎没有或完全没有威胁"
 
-#: app/caputil.cpp:59
+#: app/caputil.cpp:57
 msgid "Responsive action should be taken immediately"
 msgstr "应立即采取应对措施"
 
-#: app/caputil.cpp:60
+#: app/caputil.cpp:58
 msgid "Responsive action should be taken soon"
 msgstr "应尽快采取应对措施"
 
-#: app/caputil.cpp:61
+#: app/caputil.cpp:59
 msgid "Responsive action be taken in the near future"
 msgstr "应计划采取应对措施"
 
-#: app/caputil.cpp:62
+#: app/caputil.cpp:60
 msgid "Responsive action is no longer required"
 msgstr "不需要采取应对措施"
 
-#: app/caputil.cpp:66
+#: app/caputil.cpp:64
 msgid "Occurred or ongoing"
 msgstr "已发生或正在进行"
 
-#: app/caputil.cpp:67
+#: app/caputil.cpp:65
 msgid "Likely (> 50%)"
 msgstr "可能性高 (> 50%)"
 
-#: app/caputil.cpp:68
+#: app/caputil.cpp:66
 msgid "Possible but not likely (< 50%)"
 msgstr "可能性低 (< 50%)"
 
-#: app/caputil.cpp:69
+#: app/caputil.cpp:67
 msgid "Not expected to occur"
 msgstr "预计不会发生"
 
-#: app/caputil.cpp:73
+#: app/caputil.cpp:71
 msgid "Geophysical"
 msgstr "地质"
 
-#: app/caputil.cpp:74
+#: app/caputil.cpp:72
 msgid "Meteorological"
 msgstr "气象"
 
-#: app/caputil.cpp:75
+#: app/caputil.cpp:73
 msgid "General emergency and public safety"
 msgstr "一般紧急情况和公共安全"
 
-#: app/caputil.cpp:76
+#: app/caputil.cpp:74
 msgid "Law enforcement, military, homeland and local/private security"
 msgstr "执法、军事、国土以及地方/个人安全"
 
-#: app/caputil.cpp:77
+#: app/caputil.cpp:75
 msgid "Rescue and recovery"
 msgstr "救援和恢复"
 
-#: app/caputil.cpp:78
+#: app/caputil.cpp:76
 msgid "Fire"
 msgstr "火灾"
 
-#: app/caputil.cpp:79
+#: app/caputil.cpp:77
 msgid "Medical and public health"
 msgstr "医学与公共卫生"
 
-#: app/caputil.cpp:80
+#: app/caputil.cpp:78
 msgid "Pollution and other environmental event"
 msgstr "污染及其他环境事件"
 
-#: app/caputil.cpp:81
+#: app/caputil.cpp:79
 msgid "Transportation"
 msgstr "交通"
 
-#: app/caputil.cpp:82
+#: app/caputil.cpp:80
 msgid "Utility, telecommunication, other non-transport infrastructure"
 msgstr "公用事业、电信以及其他非运输基础设施"
 
-#: app/caputil.cpp:83
+#: app/caputil.cpp:81
 msgid ""
 "Chemical, biological, radiological, nuclear or high-yield explosive threat "
 "or attack"
 msgstr "化学、生物、放射性、核能或高爆炸物威胁或攻击"
 
-#: app/caputil.cpp:84
+#: app/caputil.cpp:82
 msgid "Other event"
 msgstr "其他事件"
 
-#: app/caputil.cpp:88
+#: app/caputil.cpp:86
 msgid "Take shelter in place or per instructions."
 msgstr "就地避险或按照指示行事。"
 
-#: app/caputil.cpp:89
+#: app/caputil.cpp:87
 msgid "Relocate as instructed."
 msgstr "按照指示进行疏散。"
 
-#: app/caputil.cpp:90
+#: app/caputil.cpp:88
 msgid "Make preparations as per the instructions."
 msgstr "按照指示做好准备。"
 
-#: app/caputil.cpp:91
+#: app/caputil.cpp:89
 msgid "Execute activities identified in the instructions."
 msgstr "执行应对指示中的事项。"
 
-#: app/caputil.cpp:92
+#: app/caputil.cpp:90
 msgid "Avoid the subject event as per the instructions."
 msgstr "避免应对指示中的事项。"
 
-#: app/caputil.cpp:93
+#: app/caputil.cpp:91
 msgid "Attend to information sources as described in the instructions."
 msgstr "关注应对指示中的信息来源。"
 
-#: app/caputil.cpp:94
+#: app/caputil.cpp:92
 msgid "Evaluate the information in this message."
 msgstr "评估本条消息提供的信息。"
 
-#: app/caputil.cpp:95
+#: app/caputil.cpp:93
 msgid ""
 "The subject event no longer poses a threat or concern and any follow on "
 "action is described in the instructions."
 msgstr "该事件不再构成威胁或需要关注，后续应对措施请参见应对指示。"
 
-#: app/caputil.cpp:96
+#: app/caputil.cpp:94
 msgid "No action recommended."
 msgstr "没有建议任何应对措施。"
 
-#: app/main.cpp:43 app/Main.qml:19 app/Main.qml:74
+#: app/main.cpp:43 app/Main.qml:20 app/Main.qml:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
@@ -416,23 +416,23 @@ msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
 msgstr "Copyright © 2022 The KDE Community"
 
-#: app/Main.qml:32
+#: app/Main.qml:33
 #, kde-format
 msgid "Missing notification permission!"
 msgstr "缺少通知权限"
 
-#: app/Main.qml:43
+#: app/Main.qml:44
 #, kde-format
 msgid "Request permission…"
 msgstr "请求权限…"
 
-#: app/Main.qml:79
+#: app/Main.qml:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
 msgstr "关注区域…"
 
-#: app/Main.qml:85
+#: app/Main.qml:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"

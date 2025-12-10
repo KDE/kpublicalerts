@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-12-10 00:47+0000\n"
 "PO-Revision-Date: 2025-09-28 06:11+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -265,97 +265,97 @@ msgctxt "@label"
 msgid "Current"
 msgstr "მიმდინარე"
 
-#: app/caputil.cpp:52
+#: app/caputil.cpp:50
 msgid "Extreme — Extraordinary threat to life or property"
 msgstr "უკიდურესი — სიცოცხლისა და ქონების განსაკუთრებული საფრთხე"
 
-#: app/caputil.cpp:53
+#: app/caputil.cpp:51
 msgid "Severe — Significant threat to life or property"
 msgstr "მძიმე — მნიშვნელოვანი საფრთხე სიცოცხლისთვის ან ქონებისთვის"
 
-#: app/caputil.cpp:54
+#: app/caputil.cpp:52
 msgid "Moderate — Possible threat to life or property"
 msgstr "ზომიერი — სიცოცხლის ან ქონების შესაძლო საფრთხე"
 
-#: app/caputil.cpp:55
+#: app/caputil.cpp:53
 msgid "Minor — Minimal to no known threat to life or property"
 msgstr ""
 "უმცირესი — მინიმალური, რომ არ იყოს ცნობილი საფრთხე სიცოცხლისთვის ან "
 "ქონებისთვის"
 
-#: app/caputil.cpp:59
+#: app/caputil.cpp:57
 msgid "Responsive action should be taken immediately"
 msgstr "საპასუხო ქმედება დაუყოვნებლივ უნდა განხორციელდეს"
 
-#: app/caputil.cpp:60
+#: app/caputil.cpp:58
 msgid "Responsive action should be taken soon"
 msgstr "საპასუხო ქმედება მალე უნდა განხორციელდეს"
 
-#: app/caputil.cpp:61
+#: app/caputil.cpp:59
 msgid "Responsive action be taken in the near future"
 msgstr "საპასუხო ქმედება უახლოეს მომავალში უნდა განხორციელდეს"
 
-#: app/caputil.cpp:62
+#: app/caputil.cpp:60
 msgid "Responsive action is no longer required"
 msgstr "საპასუხო მოქმედება საჭირო აღარაა"
 
-#: app/caputil.cpp:66
+#: app/caputil.cpp:64
 msgid "Occurred or ongoing"
 msgstr "მოხდა ან მიმდინარეობს"
 
-#: app/caputil.cpp:67
+#: app/caputil.cpp:65
 msgid "Likely (> 50%)"
 msgstr "მოსალოდნელია (> 50%)"
 
-#: app/caputil.cpp:68
+#: app/caputil.cpp:66
 msgid "Possible but not likely (< 50%)"
 msgstr "შესაძლებელია, მაგრამ არ არის მოსალოდნელი (< 50%)"
 
-#: app/caputil.cpp:69
+#: app/caputil.cpp:67
 msgid "Not expected to occur"
 msgstr "არ არის მოსალოდნელი, რომ მოხდეს"
 
-#: app/caputil.cpp:73
+#: app/caputil.cpp:71
 msgid "Geophysical"
 msgstr "გეოფიზიკური"
 
-#: app/caputil.cpp:74
+#: app/caputil.cpp:72
 msgid "Meteorological"
 msgstr "მეტეოროლოგიური"
 
-#: app/caputil.cpp:75
+#: app/caputil.cpp:73
 msgid "General emergency and public safety"
 msgstr "ზოგადი საგანგებო და საჯარო უსაფრთხოება"
 
-#: app/caputil.cpp:76
+#: app/caputil.cpp:74
 msgid "Law enforcement, military, homeland and local/private security"
 msgstr "სამართალდამცავი, სამხედრო, სამშობლო და ადგილობრივი/კერძო უსაფრთხოება"
 
-#: app/caputil.cpp:77
+#: app/caputil.cpp:75
 msgid "Rescue and recovery"
 msgstr "აღმოჩენა და დახმარება"
 
-#: app/caputil.cpp:78
+#: app/caputil.cpp:76
 msgid "Fire"
 msgstr "ცეცხლი"
 
-#: app/caputil.cpp:79
+#: app/caputil.cpp:77
 msgid "Medical and public health"
 msgstr "სამედიცინო და საზოგადოებრივი ჯანმრთელობა"
 
-#: app/caputil.cpp:80
+#: app/caputil.cpp:78
 msgid "Pollution and other environmental event"
 msgstr "დაბინძურება და სხვა გარემო გარემოსს მოვლენები"
 
-#: app/caputil.cpp:81
+#: app/caputil.cpp:79
 msgid "Transportation"
 msgstr "ტრანსპორტი"
 
-#: app/caputil.cpp:82
+#: app/caputil.cpp:80
 msgid "Utility, telecommunication, other non-transport infrastructure"
 msgstr "კომუნალური, სატელეკომუნიკაციო, სხვა არატრანსპორტის ინფრასტრუქტურა"
 
-#: app/caputil.cpp:83
+#: app/caputil.cpp:81
 msgid ""
 "Chemical, biological, radiological, nuclear or high-yield explosive threat "
 "or attack"
@@ -363,39 +363,39 @@ msgstr ""
 "ქიმიური, ბიოლოგიური, რადიოლოგიური, ბირთვული ან მაღალი შემცველი ფეთქებადი "
 "საფრთხე ან შეტევა"
 
-#: app/caputil.cpp:84
+#: app/caputil.cpp:82
 msgid "Other event"
 msgstr "%d სხვა მოვლენა"
 
-#: app/caputil.cpp:88
+#: app/caputil.cpp:86
 msgid "Take shelter in place or per instructions."
 msgstr "მიიღეთ თავშესაფარი ადგილზე ან ინსტრუქციების მიხედვით."
 
-#: app/caputil.cpp:89
+#: app/caputil.cpp:87
 msgid "Relocate as instructed."
 msgstr "გადაადგილება რჩევის მიხედვით."
 
-#: app/caputil.cpp:90
+#: app/caputil.cpp:88
 msgid "Make preparations as per the instructions."
 msgstr "მოემზადეთ ინსტრუქციების მიხედვით."
 
-#: app/caputil.cpp:91
+#: app/caputil.cpp:89
 msgid "Execute activities identified in the instructions."
 msgstr "შეასრულეთ ქმედებები ინსტრუქციებიდან."
 
-#: app/caputil.cpp:92
+#: app/caputil.cpp:90
 msgid "Avoid the subject event as per the instructions."
 msgstr "თავი აარიდეთ მოვლენას ინსტრუქციების მიხედვით."
 
-#: app/caputil.cpp:93
+#: app/caputil.cpp:91
 msgid "Attend to information sources as described in the instructions."
 msgstr "საინფორმაციო მოვლენების დასწრება, როგორც ეს ინსტრუქციებშია."
 
-#: app/caputil.cpp:94
+#: app/caputil.cpp:92
 msgid "Evaluate the information in this message."
 msgstr "შეაფასეთ ინფორმაცია ამ შეტყობინებაში."
 
-#: app/caputil.cpp:95
+#: app/caputil.cpp:93
 msgid ""
 "The subject event no longer poses a threat or concern and any follow on "
 "action is described in the instructions."
@@ -403,11 +403,11 @@ msgstr ""
 "საგნის მოვლენა აღარ წარმოადგენს საფრთხეს ან შეშფოთებას და ნებისმიერი "
 "მოქმედება აღწერილია ინსტრუქციებში."
 
-#: app/caputil.cpp:96
+#: app/caputil.cpp:94
 msgid "No action recommended."
 msgstr "რეკომენდებული ქმედებების გარეშე."
 
-#: app/main.cpp:43 app/Main.qml:19 app/Main.qml:74
+#: app/main.cpp:43 app/Main.qml:20 app/Main.qml:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
@@ -425,23 +425,23 @@ msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
 msgstr "საავტორო უფლებები © 2022 KDE-ის საზოგადოება"
 
-#: app/Main.qml:32
+#: app/Main.qml:33
 #, kde-format
 msgid "Missing notification permission!"
 msgstr "აკლია გაფრთხილების წვდომა!"
 
-#: app/Main.qml:43
+#: app/Main.qml:44
 #, kde-format
 msgid "Request permission…"
 msgstr "წვდომის მოთხოვნა…"
 
-#: app/Main.qml:79
+#: app/Main.qml:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
 msgstr "ინტერესის ადგილები…"
 
-#: app/Main.qml:85
+#: app/Main.qml:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"

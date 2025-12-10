@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-12-10 00:47+0000\n"
 "PO-Revision-Date: 2025-09-28 16:32+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -264,134 +264,134 @@ msgctxt "@label"
 msgid "Current"
 msgstr "Поточні"
 
-#: app/caputil.cpp:52
+#: app/caputil.cpp:50
 msgid "Extreme — Extraordinary threat to life or property"
 msgstr "Надзвичайна — надзвичайна загроза життю або майну"
 
-#: app/caputil.cpp:53
+#: app/caputil.cpp:51
 msgid "Severe — Significant threat to life or property"
 msgstr "Критична — значна загроза життю або майну"
 
-#: app/caputil.cpp:54
+#: app/caputil.cpp:52
 msgid "Moderate — Possible threat to life or property"
 msgstr "Помірна — можлива загроза життю або майну"
 
-#: app/caputil.cpp:55
+#: app/caputil.cpp:53
 msgid "Minor — Minimal to no known threat to life or property"
 msgstr "Незначна — мінімальна загроза життю або майну"
 
-#: app/caputil.cpp:59
+#: app/caputil.cpp:57
 msgid "Responsive action should be taken immediately"
 msgstr "Слід негайно вжити відповідних дій"
 
-#: app/caputil.cpp:60
+#: app/caputil.cpp:58
 msgid "Responsive action should be taken soon"
 msgstr "Слід якомога швидше вжити відповідних дій"
 
-#: app/caputil.cpp:61
+#: app/caputil.cpp:59
 msgid "Responsive action be taken in the near future"
 msgstr "Невдовзі слід вжити відповідних дій"
 
-#: app/caputil.cpp:62
+#: app/caputil.cpp:60
 msgid "Responsive action is no longer required"
 msgstr "У відповіді більше немає потреби"
 
-#: app/caputil.cpp:66
+#: app/caputil.cpp:64
 msgid "Occurred or ongoing"
 msgstr "Сталося або буде"
 
-#: app/caputil.cpp:67
+#: app/caputil.cpp:65
 msgid "Likely (> 50%)"
 msgstr "Ймовірне (> 50%)"
 
-#: app/caputil.cpp:68
+#: app/caputil.cpp:66
 msgid "Possible but not likely (< 50%)"
 msgstr "Можливе, але не надто ймовірне (< 50%)"
 
-#: app/caputil.cpp:69
+#: app/caputil.cpp:67
 msgid "Not expected to occur"
 msgstr "Навряд чи станеться"
 
-#: app/caputil.cpp:73
+#: app/caputil.cpp:71
 msgid "Geophysical"
 msgstr "Геофізика"
 
-#: app/caputil.cpp:74
+#: app/caputil.cpp:72
 msgid "Meteorological"
 msgstr "Метеорологія"
 
-#: app/caputil.cpp:75
+#: app/caputil.cpp:73
 msgid "General emergency and public safety"
 msgstr "Загальні попередження та громадська безпека"
 
-#: app/caputil.cpp:76
+#: app/caputil.cpp:74
 msgid "Law enforcement, military, homeland and local/private security"
 msgstr "Охорона порядку, військо, державна та місцева/приватна безпека"
 
-#: app/caputil.cpp:77
+#: app/caputil.cpp:75
 msgid "Rescue and recovery"
 msgstr "Порятунок і відновлення"
 
-#: app/caputil.cpp:78
+#: app/caputil.cpp:76
 msgid "Fire"
 msgstr "Вогонь"
 
-#: app/caputil.cpp:79
+#: app/caputil.cpp:77
 msgid "Medical and public health"
 msgstr "Медицина або громадське здоров'я"
 
-#: app/caputil.cpp:80
+#: app/caputil.cpp:78
 msgid "Pollution and other environmental event"
 msgstr "Забруднення та інші події з середовищем"
 
-#: app/caputil.cpp:81
+#: app/caputil.cpp:79
 msgid "Transportation"
 msgstr "Транспорт"
 
-#: app/caputil.cpp:82
+#: app/caputil.cpp:80
 msgid "Utility, telecommunication, other non-transport infrastructure"
 msgstr "Допоміжна, телекомунікаційна та інша нетранспортна інфраструктура"
 
-#: app/caputil.cpp:83
+#: app/caputil.cpp:81
 msgid ""
 "Chemical, biological, radiological, nuclear or high-yield explosive threat "
 "or attack"
 msgstr ""
 "Хімічна, біологічна, радіологічна, ядерна та вибухова загроза або атака"
 
-#: app/caputil.cpp:84
+#: app/caputil.cpp:82
 msgid "Other event"
 msgstr "Інша %d подія"
 
-#: app/caputil.cpp:88
+#: app/caputil.cpp:86
 msgid "Take shelter in place or per instructions."
 msgstr "Прямуйте до місцевого або рекомендованого сховища."
 
-#: app/caputil.cpp:89
+#: app/caputil.cpp:87
 msgid "Relocate as instructed."
 msgstr "Переїжджайте за рекомендацією."
 
-#: app/caputil.cpp:90
+#: app/caputil.cpp:88
 msgid "Make preparations as per the instructions."
 msgstr "Готуйтеся за настановами."
 
-#: app/caputil.cpp:91
+#: app/caputil.cpp:89
 msgid "Execute activities identified in the instructions."
 msgstr "Виконайте дії, які вказано у настановах."
 
-#: app/caputil.cpp:92
+#: app/caputil.cpp:90
 msgid "Avoid the subject event as per the instructions."
 msgstr "Уникайте місця події за настановами."
 
-#: app/caputil.cpp:93
+#: app/caputil.cpp:91
 msgid "Attend to information sources as described in the instructions."
 msgstr "Ознайомтеся з джерелами інформації, як це описано у настановах."
 
-#: app/caputil.cpp:94
+#: app/caputil.cpp:92
 msgid "Evaluate the information in this message."
 msgstr "Ознайомтеся із інформацією у цьому повідомленні."
 
-#: app/caputil.cpp:95
+#: app/caputil.cpp:93
 msgid ""
 "The subject event no longer poses a threat or concern and any follow on "
 "action is described in the instructions."
@@ -399,11 +399,11 @@ msgstr ""
 "Подія вже не становить небезпеки або причини непокоїтися, виконайте дії, які "
 "описано у настановах."
 
-#: app/caputil.cpp:96
+#: app/caputil.cpp:94
 msgid "No action recommended."
 msgstr "Дій не рекомендовано."
 
-#: app/main.cpp:43 app/Main.qml:19 app/Main.qml:74
+#: app/main.cpp:43 app/Main.qml:20 app/Main.qml:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
@@ -421,23 +421,23 @@ msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
 msgstr "© Спільнота KDE, 2022"
 
-#: app/Main.qml:32
+#: app/Main.qml:33
 #, kde-format
 msgid "Missing notification permission!"
 msgstr "Не вистачає прав доступу до сповіщень!"
 
-#: app/Main.qml:43
+#: app/Main.qml:44
 #, kde-format
 msgid "Request permission…"
 msgstr "Надіслати запит щодо прав доступу…"
 
-#: app/Main.qml:79
+#: app/Main.qml:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
 msgstr "Області зацікавленості…"
 
-#: app/Main.qml:85
+#: app/Main.qml:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"

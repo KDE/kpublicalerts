@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-12-10 00:47+0000\n"
 "PO-Revision-Date: 2025-10-12 12:12+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -262,143 +262,143 @@ msgctxt "@label"
 msgid "Current"
 msgstr "현재"
 
-#: app/caputil.cpp:52
+#: app/caputil.cpp:50
 msgid "Extreme — Extraordinary threat to life or property"
 msgstr "긴급: 생명이나 재산에 중대한 피해가 있음"
 
-#: app/caputil.cpp:53
+#: app/caputil.cpp:51
 msgid "Severe — Significant threat to life or property"
 msgstr "중대: 생명이나 재산에 피해가 있음"
 
-#: app/caputil.cpp:54
+#: app/caputil.cpp:52
 msgid "Moderate — Possible threat to life or property"
 msgstr "중간: 생명이나 재산에 피해 가능성 있음"
 
-#: app/caputil.cpp:55
+#: app/caputil.cpp:53
 msgid "Minor — Minimal to no known threat to life or property"
 msgstr "주의: 생명이나 재산에 사소한 위협이 있거나 위험 없음"
 
-#: app/caputil.cpp:59
+#: app/caputil.cpp:57
 msgid "Responsive action should be taken immediately"
 msgstr "즉시 대응해야 함"
 
-#: app/caputil.cpp:60
+#: app/caputil.cpp:58
 msgid "Responsive action should be taken soon"
 msgstr "빠른 시일 내에 대응해야 함"
 
-#: app/caputil.cpp:61
+#: app/caputil.cpp:59
 msgid "Responsive action be taken in the near future"
 msgstr "가까운 미래에 대응해야 함"
 
-#: app/caputil.cpp:62
+#: app/caputil.cpp:60
 msgid "Responsive action is no longer required"
 msgstr "대응 행동을 더 이상 할 필요 없음"
 
-#: app/caputil.cpp:66
+#: app/caputil.cpp:64
 msgid "Occurred or ongoing"
 msgstr "일어났거나 현재 진행 중"
 
-#: app/caputil.cpp:67
+#: app/caputil.cpp:65
 msgid "Likely (> 50%)"
 msgstr "가능성 높음(> 50%)"
 
-#: app/caputil.cpp:68
+#: app/caputil.cpp:66
 msgid "Possible but not likely (< 50%)"
 msgstr "가능하지만 확률 낮음(< 50%)"
 
-#: app/caputil.cpp:69
+#: app/caputil.cpp:67
 msgid "Not expected to occur"
 msgstr "예상되지 않음"
 
-#: app/caputil.cpp:73
+#: app/caputil.cpp:71
 msgid "Geophysical"
 msgstr "지진"
 
-#: app/caputil.cpp:74
+#: app/caputil.cpp:72
 msgid "Meteorological"
 msgstr "기상"
 
-#: app/caputil.cpp:75
+#: app/caputil.cpp:73
 msgid "General emergency and public safety"
 msgstr "일반 긴급 및 공공 안전"
 
-#: app/caputil.cpp:76
+#: app/caputil.cpp:74
 msgid "Law enforcement, military, homeland and local/private security"
 msgstr "공권력, 군사, 지역 치안 경보"
 
-#: app/caputil.cpp:77
+#: app/caputil.cpp:75
 msgid "Rescue and recovery"
 msgstr "응급 구조"
 
-#: app/caputil.cpp:78
+#: app/caputil.cpp:76
 msgid "Fire"
 msgstr "화재"
 
-#: app/caputil.cpp:79
+#: app/caputil.cpp:77
 msgid "Medical and public health"
 msgstr "의료 및 공공 안전"
 
-#: app/caputil.cpp:80
+#: app/caputil.cpp:78
 msgid "Pollution and other environmental event"
 msgstr "환경 오염 및 기타 환경 재난"
 
-#: app/caputil.cpp:81
+#: app/caputil.cpp:79
 msgid "Transportation"
 msgstr "운송 수단"
 
-#: app/caputil.cpp:82
+#: app/caputil.cpp:80
 msgid "Utility, telecommunication, other non-transport infrastructure"
 msgstr "사회 기반 시설, 통신"
 
-#: app/caputil.cpp:83
+#: app/caputil.cpp:81
 msgid ""
 "Chemical, biological, radiological, nuclear or high-yield explosive threat "
 "or attack"
 msgstr "화학, 생물학, 방사능, 핵, 고중량 폭탄이나 공격"
 
-#: app/caputil.cpp:84
+#: app/caputil.cpp:82
 msgid "Other event"
 msgstr "기타 사건"
 
-#: app/caputil.cpp:88
+#: app/caputil.cpp:86
 msgid "Take shelter in place or per instructions."
 msgstr "근처 대피소로 대피하십시오."
 
-#: app/caputil.cpp:89
+#: app/caputil.cpp:87
 msgid "Relocate as instructed."
 msgstr "지시받은 대로 이동하십시오."
 
-#: app/caputil.cpp:90
+#: app/caputil.cpp:88
 msgid "Make preparations as per the instructions."
 msgstr "지시받은 대로 준비하십시오."
 
-#: app/caputil.cpp:91
+#: app/caputil.cpp:89
 msgid "Execute activities identified in the instructions."
 msgstr "지시받은 대로 활동을 수행하십시오."
 
-#: app/caputil.cpp:92
+#: app/caputil.cpp:90
 msgid "Avoid the subject event as per the instructions."
 msgstr "지시받은 대로 현장을 피하십시오."
 
-#: app/caputil.cpp:93
+#: app/caputil.cpp:91
 msgid "Attend to information sources as described in the instructions."
 msgstr "지시받은 대로 정보를 청취하십시오."
 
-#: app/caputil.cpp:94
+#: app/caputil.cpp:92
 msgid "Evaluate the information in this message."
 msgstr "이 메시지의 정보를 확인하십시오."
 
-#: app/caputil.cpp:95
+#: app/caputil.cpp:93
 msgid ""
 "The subject event no longer poses a threat or concern and any follow on "
 "action is described in the instructions."
 msgstr "더 이상 위험하지 않으며, 추가 정보는 지시 사항을 참조하십시오."
 
-#: app/caputil.cpp:96
+#: app/caputil.cpp:94
 msgid "No action recommended."
 msgstr "권장하는 행동이 없습니다."
 
-#: app/main.cpp:43 app/Main.qml:19 app/Main.qml:74
+#: app/main.cpp:43 app/Main.qml:20 app/Main.qml:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
@@ -416,23 +416,23 @@ msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
 msgstr "Copyright © 2022 The KDE Community"
 
-#: app/Main.qml:32
+#: app/Main.qml:33
 #, kde-format
 msgid "Missing notification permission!"
 msgstr "알림 권한이 없습니다!"
 
-#: app/Main.qml:43
+#: app/Main.qml:44
 #, kde-format
 msgid "Request permission…"
 msgstr "권한 요청 중…"
 
-#: app/Main.qml:79
+#: app/Main.qml:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
 msgstr "관심 영역…"
 
-#: app/Main.qml:85
+#: app/Main.qml:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"

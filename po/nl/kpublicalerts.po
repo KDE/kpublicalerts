@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-12-10 00:47+0000\n"
 "PO-Revision-Date: 2025-09-28 15:59+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -264,95 +264,95 @@ msgctxt "@label"
 msgid "Current"
 msgstr "Huidige"
 
-#: app/caputil.cpp:52
+#: app/caputil.cpp:50
 msgid "Extreme — Extraordinary threat to life or property"
 msgstr "Extreem — buitengewone bedreiging voor leven of eigendom"
 
-#: app/caputil.cpp:53
+#: app/caputil.cpp:51
 msgid "Severe — Significant threat to life or property"
 msgstr "Ernstig — aanzienlijke bedreiging voor leven of eigendom"
 
-#: app/caputil.cpp:54
+#: app/caputil.cpp:52
 msgid "Moderate — Possible threat to life or property"
 msgstr "Matig — mogelijke bedreiging voor leven of eigendom"
 
-#: app/caputil.cpp:55
+#: app/caputil.cpp:53
 msgid "Minor — Minimal to no known threat to life or property"
 msgstr "Minimaal — minimale bedreiging voor leven of eigendom"
 
-#: app/caputil.cpp:59
+#: app/caputil.cpp:57
 msgid "Responsive action should be taken immediately"
 msgstr "Beantwoordende actie zou onmiddellijk genomen moeten worden"
 
-#: app/caputil.cpp:60
+#: app/caputil.cpp:58
 msgid "Responsive action should be taken soon"
 msgstr "Beantwoordende actie zou spoedig genomen moeten worden"
 
-#: app/caputil.cpp:61
+#: app/caputil.cpp:59
 msgid "Responsive action be taken in the near future"
 msgstr "Beantwoordende actie zou in de nabije toekomst genomen moeten worden"
 
-#: app/caputil.cpp:62
+#: app/caputil.cpp:60
 msgid "Responsive action is no longer required"
 msgstr "Beantwoordende actie is niet langer vereist"
 
-#: app/caputil.cpp:66
+#: app/caputil.cpp:64
 msgid "Occurred or ongoing"
 msgstr "Gebeurd of gaande"
 
-#: app/caputil.cpp:67
+#: app/caputil.cpp:65
 msgid "Likely (> 50%)"
 msgstr "Waarschijnlijk (> 50%)"
 
-#: app/caputil.cpp:68
+#: app/caputil.cpp:66
 msgid "Possible but not likely (< 50%)"
 msgstr "Mogelijk maar niet waarschijnlijk (< 50%)"
 
-#: app/caputil.cpp:69
+#: app/caputil.cpp:67
 msgid "Not expected to occur"
 msgstr "Niet verwacht te gebeuren"
 
-#: app/caputil.cpp:73
+#: app/caputil.cpp:71
 msgid "Geophysical"
 msgstr "Geofysisch"
 
-#: app/caputil.cpp:74
+#: app/caputil.cpp:72
 msgid "Meteorological"
 msgstr "Meteorologisch"
 
-#: app/caputil.cpp:75
+#: app/caputil.cpp:73
 msgid "General emergency and public safety"
 msgstr "Algemeen noodgeval en publieke veiligheid"
 
-#: app/caputil.cpp:76
+#: app/caputil.cpp:74
 msgid "Law enforcement, military, homeland and local/private security"
 msgstr "Politieactie, militair, binnenland en lokale/private veiligheid"
 
-#: app/caputil.cpp:77
+#: app/caputil.cpp:75
 msgid "Rescue and recovery"
 msgstr "Redding en herstel"
 
-#: app/caputil.cpp:78
+#: app/caputil.cpp:76
 msgid "Fire"
 msgstr "Vuur"
 
-#: app/caputil.cpp:79
+#: app/caputil.cpp:77
 msgid "Medical and public health"
 msgstr "Medische en publieke gezondheid"
 
-#: app/caputil.cpp:80
+#: app/caputil.cpp:78
 msgid "Pollution and other environmental event"
 msgstr "Vervuiling en andere omgevingsgebeurtenis"
 
-#: app/caputil.cpp:81
+#: app/caputil.cpp:79
 msgid "Transportation"
 msgstr "Vervoer"
 
-#: app/caputil.cpp:82
+#: app/caputil.cpp:80
 msgid "Utility, telecommunication, other non-transport infrastructure"
 msgstr "Nutsbedrijf, telecommunicatie, andere niet-transport infrastructuur"
 
-#: app/caputil.cpp:83
+#: app/caputil.cpp:81
 msgid ""
 "Chemical, biological, radiological, nuclear or high-yield explosive threat "
 "or attack"
@@ -360,40 +360,40 @@ msgstr ""
 "Chemische, biologische, radiologische, nucleaire of hoog explosieve "
 "bedreiging of aanval"
 
-#: app/caputil.cpp:84
+#: app/caputil.cpp:82
 msgid "Other event"
 msgstr "Andere gebeurtenis"
 
-#: app/caputil.cpp:88
+#: app/caputil.cpp:86
 msgid "Take shelter in place or per instructions."
 msgstr "Zoek een schuilplaats ter plekke of per instructies."
 
-#: app/caputil.cpp:89
+#: app/caputil.cpp:87
 msgid "Relocate as instructed."
 msgstr "Vlucht zoals geïnstrueerd."
 
-#: app/caputil.cpp:90
+#: app/caputil.cpp:88
 msgid "Make preparations as per the instructions."
 msgstr "Neem voorzorg zoals geïnstrueerd."
 
-#: app/caputil.cpp:91
+#: app/caputil.cpp:89
 msgid "Execute activities identified in the instructions."
 msgstr "Voer activiteiten uit zoals aangegeven in de instructies."
 
-#: app/caputil.cpp:92
+#: app/caputil.cpp:90
 msgid "Avoid the subject event as per the instructions."
 msgstr "Vermijd de aangegeven gebeurtenis zoals geïnstrueerd."
 
-#: app/caputil.cpp:93
+#: app/caputil.cpp:91
 msgid "Attend to information sources as described in the instructions."
 msgstr ""
 "Geef aandacht aan informatiebronnen zoals beschreven in de instructies."
 
-#: app/caputil.cpp:94
+#: app/caputil.cpp:92
 msgid "Evaluate the information in this message."
 msgstr "De informatie in dit bericht evalueren."
 
-#: app/caputil.cpp:95
+#: app/caputil.cpp:93
 msgid ""
 "The subject event no longer poses a threat or concern and any follow on "
 "action is described in the instructions."
@@ -401,11 +401,11 @@ msgstr ""
 "De aangegeven gebeurtenis is niet langer een bedreiging of zorg en elke "
 "opvolgende actie is beschreven in de instructies."
 
-#: app/caputil.cpp:96
+#: app/caputil.cpp:94
 msgid "No action recommended."
 msgstr "Geen actie aanbevolen."
 
-#: app/main.cpp:43 app/Main.qml:19 app/Main.qml:74
+#: app/main.cpp:43 app/Main.qml:20 app/Main.qml:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
@@ -423,23 +423,23 @@ msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
 msgstr "Copyright © 2022 De KDE gemeenschap"
 
-#: app/Main.qml:32
+#: app/Main.qml:33
 #, kde-format
 msgid "Missing notification permission!"
 msgstr "Toegangsrechten op meldingen ontbreken!"
 
-#: app/Main.qml:43
+#: app/Main.qml:44
 #, kde-format
 msgid "Request permission…"
 msgstr "Om toegangsrecht vragen…"
 
-#: app/Main.qml:79
+#: app/Main.qml:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
 msgstr "Aandachtsgebieden…"
 
-#: app/Main.qml:85
+#: app/Main.qml:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"
