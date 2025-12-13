@@ -24,6 +24,10 @@ FormCard.FormCardPage {
 
     title: alertInfo.event
 
+    function htmlify(s: string, opts: int): string {
+        return s.match(/<[A-Za-z].*\/?>/) ? s : KTextToHTML.convertToHtml(s, opts);
+    }
+
     data: [
         AreaModel {
             id: areaModel
@@ -180,7 +184,7 @@ FormCard.FormCardPage {
         }
         FormCard.FormTextDelegate {
             text: i18nc("@label", "Description")
-            description: KTextToHTML.convertToHtml(root.alertInfo.description, KTextToHTMLOptions.PreserveSpaces)
+            description: root.htmlify(root.alertInfo.description, KTextToHTMLOptions.PreserveSpaces)
             onLinkActivated: (link) => { Qt.openUrlExternally(link); }
         }
     }
@@ -205,7 +209,7 @@ FormCard.FormCardPage {
         FormCard.FormTextDelegate {
             id: instructionDelegate
             text: i18nc("@label", "Instruction")
-            description: KTextToHTML.convertToHtml(root.alertInfo.instruction, KTextToHTMLOptions.PreserveSpaces)
+            description: root.htmlify(root.alertInfo.instruction, KTextToHTMLOptions.PreserveSpaces)
             visible: description !== ""
             onLinkActivated: (link) => { Qt.openUrlExternally(link); }
         }
@@ -223,7 +227,7 @@ FormCard.FormCardPage {
         FormCard.FormTextDelegate {
             id: webDelegate
             text: i18nc("@label", "Web")
-            description: KTextToHTML.convertToHtml(root.alertInfo.web, KTextToHTMLOptions.PreserveSpaces)
+            description: root.htmlify(root.alertInfo.web, KTextToHTMLOptions.PreserveSpaces)
             visible: root.alertInfo.web
             onLinkActivated: (link) => { Qt.openUrlExternally(link); }
         }
@@ -233,7 +237,7 @@ FormCard.FormCardPage {
         FormCard.FormTextDelegate {
             id: contactDelegate
             text: i18nc("@label", "Contact")
-            description: KTextToHTML.convertToHtml(root.alertInfo.contact, KTextToHTMLOptions.PreserveSpaces | KTextToHTMLOptions.ConvertPhoneNumbers)
+            description: root.htmlify(root.alertInfo.contact, KTextToHTMLOptions.PreserveSpaces | KTextToHTMLOptions.ConvertPhoneNumbers)
             visible: root.alertInfo.contact
             onLinkActivated: (link) => { Qt.openUrlExternally(link); }
         }
