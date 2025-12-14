@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:47+0000\n"
+"POT-Creation-Date: 2025-12-14 00:45+0000\n"
 "PO-Revision-Date: 2025-05-09 17:22+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -27,22 +27,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "g.sora@tiscali.it"
 
-#: app/AlertPage.qml:45
+#: app/AlertPage.qml:49
 #, kde-format
 msgid "Language"
 msgstr ""
 
-#: app/AlertPage.qml:56
+#: app/AlertPage.qml:60
 #, kde-format
 msgid "Affected area"
 msgstr ""
 
-#: app/AlertPage.qml:133
+#: app/AlertPage.qml:137
 #, kde-format
 msgid "Event"
 msgstr ""
 
-#: app/AlertPage.qml:138
+#: app/AlertPage.qml:142
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Categories:"
@@ -50,7 +50,7 @@ msgctxt "@label"
 msgid "Categories"
 msgstr "Categorias:"
 
-#: app/AlertPage.qml:147
+#: app/AlertPage.qml:151
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Urgency:"
@@ -58,7 +58,7 @@ msgctxt "@label"
 msgid "Urgency"
 msgstr "Urgentia:"
 
-#: app/AlertPage.qml:156
+#: app/AlertPage.qml:160
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Severity:"
@@ -66,7 +66,7 @@ msgctxt "@label"
 msgid "Severity"
 msgstr "Gravitate:"
 
-#: app/AlertPage.qml:165
+#: app/AlertPage.qml:169
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Certainty:"
@@ -74,24 +74,24 @@ msgctxt "@label"
 msgid "Certainty"
 msgstr "Certitude:"
 
-#: app/AlertPage.qml:174
+#: app/AlertPage.qml:178
 #, kde-format
 msgctxt "@label, time"
 msgid "Onset"
 msgstr ""
 
-#: app/AlertPage.qml:182
+#: app/AlertPage.qml:186
 #, kde-format
 msgctxt "@label"
 msgid "Description"
 msgstr "Description"
 
-#: app/AlertPage.qml:189
+#: app/AlertPage.qml:193
 #, kde-format
 msgid "Act"
 msgstr ""
 
-#: app/AlertPage.qml:198
+#: app/AlertPage.qml:202
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Recommended response:"
@@ -99,18 +99,18 @@ msgctxt "@label"
 msgid "Recommended response"
 msgstr "REsponsa Recommendate:"
 
-#: app/AlertPage.qml:207
+#: app/AlertPage.qml:211
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
 msgstr "Instruction"
 
-#: app/AlertPage.qml:215
+#: app/AlertPage.qml:219
 #, kde-format
 msgid "Further Information"
 msgstr ""
 
-#: app/AlertPage.qml:225
+#: app/AlertPage.qml:229
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Web:"
@@ -118,7 +118,7 @@ msgctxt "@label"
 msgid "Web"
 msgstr "Web:"
 
-#: app/AlertPage.qml:235
+#: app/AlertPage.qml:239
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Contact:"
@@ -126,7 +126,7 @@ msgctxt "@label"
 msgid "Contact"
 msgstr "Contacto:"
 
-#: app/AlertPage.qml:245
+#: app/AlertPage.qml:249
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Sender:"
@@ -134,30 +134,30 @@ msgctxt "@label"
 msgid "Sender"
 msgstr "Mittente: "
 
-#: app/AlertPage.qml:254 app/AlertPage.qml:263
+#: app/AlertPage.qml:258 app/AlertPage.qml:267
 #, kde-format
 msgctxt "@label"
 msgid "Area"
 msgstr "Area"
 
-#: app/AlertPage.qml:270
+#: app/AlertPage.qml:274
 #, kde-format
 msgctxt "@label"
 msgid "Additional Resources"
 msgstr ""
 
-#: app/AlertPage.qml:287
+#: app/AlertPage.qml:291
 #, kde-format
 msgctxt "file type (file size)"
 msgid "%1 (%2)"
 msgstr ""
 
-#: app/AlertPage.qml:303
+#: app/AlertPage.qml:307
 #, kde-format
 msgid "Technical Information"
 msgstr ""
 
-#: app/AlertPage.qml:307
+#: app/AlertPage.qml:311
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Status:"
@@ -165,7 +165,7 @@ msgctxt "@label"
 msgid "Status"
 msgstr "Stato:"
 
-#: app/AlertPage.qml:318
+#: app/AlertPage.qml:322
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Message type:"
@@ -173,12 +173,12 @@ msgctxt "@label"
 msgid "Message type"
 msgstr "Typo de message:"
 
-#: app/AlertPage.qml:333
+#: app/AlertPage.qml:337
 #, kde-format
 msgid "Audience"
 msgstr ""
 
-#: app/AlertPage.qml:342
+#: app/AlertPage.qml:346
 #, fuzzy, kde-format
 #| msgctxt "@label, time"
 #| msgid "Sent:"
@@ -186,7 +186,7 @@ msgctxt "@label, time"
 msgid "Sent"
 msgstr "Inviate:"
 
-#: app/AlertPage.qml:351
+#: app/AlertPage.qml:355
 #, fuzzy, kde-format
 #| msgctxt "@label, time"
 #| msgid "Effective:"
@@ -194,7 +194,7 @@ msgctxt "@label, time"
 msgid "Effective"
 msgstr "Effective:"
 
-#: app/AlertPage.qml:360
+#: app/AlertPage.qml:364
 #, fuzzy, kde-format
 #| msgctxt "@label, time"
 #| msgid "Expires:"
@@ -202,46 +202,46 @@ msgctxt "@label, time"
 msgid "Expires"
 msgstr "Termina:"
 
-#: app/AlertPage.qml:369
+#: app/AlertPage.qml:373
 #, kde-format
 msgctxt "scope of an alert: public/private/restricted"
 msgid "Scope"
 msgstr ""
 
-#: app/AlertPage.qml:371
+#: app/AlertPage.qml:375
 #, kde-format
 msgid "Public — For general dissemination to unrestricted audiences"
 msgstr ""
 
-#: app/AlertPage.qml:372
+#: app/AlertPage.qml:376
 #, kde-format
 msgid ""
 "Restricted — For dissemination only to users with a known operational "
 "requirement"
 msgstr ""
 
-#: app/AlertPage.qml:373
+#: app/AlertPage.qml:377
 #, kde-format
 msgid "Private — For dissemination only to specified addresses"
 msgstr ""
 
-#: app/AlertPage.qml:382
+#: app/AlertPage.qml:386
 #, kde-format
 msgctxt "addressees of a non-public alert"
 msgid "Addresses"
 msgstr ""
 
-#: app/AlertPage.qml:390
+#: app/AlertPage.qml:394
 #, kde-format
 msgid "Identifier"
 msgstr ""
 
-#: app/AlertPage.qml:396
+#: app/AlertPage.qml:400
 #, kde-format
 msgid "View Source File"
 msgstr ""
 
-#: app/AlertPage.qml:402
+#: app/AlertPage.qml:406
 #, kde-format
 msgid "Open Source File"
 msgstr ""

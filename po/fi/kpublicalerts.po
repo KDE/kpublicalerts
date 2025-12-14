@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:47+0000\n"
+"POT-Creation-Date: 2025-12-14 00:45+0000\n"
 "PO-Revision-Date: 2025-10-13 21:09+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -27,168 +27,168 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: app/AlertPage.qml:45
+#: app/AlertPage.qml:49
 #, kde-format
 msgid "Language"
 msgstr "Kieli"
 
-#: app/AlertPage.qml:56
+#: app/AlertPage.qml:60
 #, kde-format
 msgid "Affected area"
 msgstr "Vaikutuksenalainen alue"
 
-#: app/AlertPage.qml:133
+#: app/AlertPage.qml:137
 #, kde-format
 msgid "Event"
 msgstr "Tapahtuma"
 
-#: app/AlertPage.qml:138
+#: app/AlertPage.qml:142
 #, kde-format
 msgctxt "@label"
 msgid "Categories"
 msgstr "Luokat"
 
-#: app/AlertPage.qml:147
+#: app/AlertPage.qml:151
 #, kde-format
 msgctxt "@label"
 msgid "Urgency"
 msgstr "Kiireellisyys"
 
-#: app/AlertPage.qml:156
+#: app/AlertPage.qml:160
 #, kde-format
 msgctxt "@label"
 msgid "Severity"
 msgstr "Vakavuus"
 
-#: app/AlertPage.qml:165
+#: app/AlertPage.qml:169
 #, kde-format
 msgctxt "@label"
 msgid "Certainty"
 msgstr "Varmuus"
 
-#: app/AlertPage.qml:174
+#: app/AlertPage.qml:178
 #, kde-format
 msgctxt "@label, time"
 msgid "Onset"
 msgstr "Alku"
 
-#: app/AlertPage.qml:182
+#: app/AlertPage.qml:186
 #, kde-format
 msgctxt "@label"
 msgid "Description"
 msgstr "Kuvaus"
 
 # *** TARKISTA: Voisi olla myös verbi, ”Toimi” (tai jotain aivan muuta)
-#: app/AlertPage.qml:189
+#: app/AlertPage.qml:193
 #, kde-format
 msgid "Act"
 msgstr "Toiminta"
 
-#: app/AlertPage.qml:198
+#: app/AlertPage.qml:202
 #, kde-format
 msgctxt "@label"
 msgid "Recommended response"
 msgstr "Suositeltu reaktio"
 
-#: app/AlertPage.qml:207
+#: app/AlertPage.qml:211
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
 msgstr "Ohje"
 
-#: app/AlertPage.qml:215
+#: app/AlertPage.qml:219
 #, kde-format
 msgid "Further Information"
 msgstr "Lisätietoa"
 
-#: app/AlertPage.qml:225
+#: app/AlertPage.qml:229
 #, kde-format
 msgctxt "@label"
 msgid "Web"
 msgstr "Verkko"
 
-#: app/AlertPage.qml:235
+#: app/AlertPage.qml:239
 #, kde-format
 msgctxt "@label"
 msgid "Contact"
 msgstr "Yhteystiedot"
 
-#: app/AlertPage.qml:245
+#: app/AlertPage.qml:249
 #, kde-format
 msgctxt "@label"
 msgid "Sender"
 msgstr "Lähettäjä"
 
-#: app/AlertPage.qml:254 app/AlertPage.qml:263
+#: app/AlertPage.qml:258 app/AlertPage.qml:267
 #, kde-format
 msgctxt "@label"
 msgid "Area"
 msgstr "Alue"
 
-#: app/AlertPage.qml:270
+#: app/AlertPage.qml:274
 #, kde-format
 msgctxt "@label"
 msgid "Additional Resources"
 msgstr "Lisäresursseja"
 
-#: app/AlertPage.qml:287
+#: app/AlertPage.qml:291
 #, kde-format
 msgctxt "file type (file size)"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/AlertPage.qml:303
+#: app/AlertPage.qml:307
 #, kde-format
 msgid "Technical Information"
 msgstr "Teknistä tietoa"
 
-#: app/AlertPage.qml:307
+#: app/AlertPage.qml:311
 #, kde-format
 msgctxt "@label"
 msgid "Status"
 msgstr "Tila"
 
-#: app/AlertPage.qml:318
+#: app/AlertPage.qml:322
 #, kde-format
 msgctxt "@label"
 msgid "Message type"
 msgstr "Viestityyppi"
 
-#: app/AlertPage.qml:333
+#: app/AlertPage.qml:337
 #, kde-format
 msgid "Audience"
 msgstr "Yleisö"
 
-#: app/AlertPage.qml:342
+#: app/AlertPage.qml:346
 #, kde-format
 msgctxt "@label, time"
 msgid "Sent"
 msgstr "Lähetetty"
 
-#: app/AlertPage.qml:351
+#: app/AlertPage.qml:355
 #, kde-format
 msgctxt "@label, time"
 msgid "Effective"
 msgstr "Voimassa"
 
-#: app/AlertPage.qml:360
+#: app/AlertPage.qml:364
 #, kde-format
 msgctxt "@label, time"
 msgid "Expires"
 msgstr "Vanhenee"
 
-#: app/AlertPage.qml:369
+#: app/AlertPage.qml:373
 #, kde-format
 msgctxt "scope of an alert: public/private/restricted"
 msgid "Scope"
 msgstr "Ala"
 
-#: app/AlertPage.qml:371
+#: app/AlertPage.qml:375
 #, kde-format
 msgid "Public — For general dissemination to unrestricted audiences"
 msgstr "Julkinen – yleiseen levitykseen rajoittamattomalle yleisölle"
 
-#: app/AlertPage.qml:372
+#: app/AlertPage.qml:376
 #, kde-format
 msgid ""
 "Restricted — For dissemination only to users with a known operational "
@@ -196,28 +196,28 @@ msgid ""
 msgstr ""
 "Rajoitettu – levitykseen vain käyttäjille, joilla on vaaditut käyttötaidot"
 
-#: app/AlertPage.qml:373
+#: app/AlertPage.qml:377
 #, kde-format
 msgid "Private — For dissemination only to specified addresses"
 msgstr "Yksityinen – levitykseen vain määräyleisöille"
 
-#: app/AlertPage.qml:382
+#: app/AlertPage.qml:386
 #, kde-format
 msgctxt "addressees of a non-public alert"
 msgid "Addresses"
 msgstr "Osoitteet"
 
-#: app/AlertPage.qml:390
+#: app/AlertPage.qml:394
 #, kde-format
 msgid "Identifier"
 msgstr "Tunniste"
 
-#: app/AlertPage.qml:396
+#: app/AlertPage.qml:400
 #, kde-format
 msgid "View Source File"
 msgstr "Näytä lähdetiedosto"
 
-#: app/AlertPage.qml:402
+#: app/AlertPage.qml:406
 #, kde-format
 msgid "Open Source File"
 msgstr "Avaa lähdetiedosto"

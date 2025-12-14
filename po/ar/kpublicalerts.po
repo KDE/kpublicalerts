@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:47+0000\n"
+"POT-Creation-Date: 2025-12-14 00:45+0000\n"
 "PO-Revision-Date: 2025-10-05 10:18+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -28,195 +28,195 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
-#: app/AlertPage.qml:45
+#: app/AlertPage.qml:49
 #, kde-format
 msgid "Language"
 msgstr "اللغة"
 
-#: app/AlertPage.qml:56
+#: app/AlertPage.qml:60
 #, kde-format
 msgid "Affected area"
 msgstr "المنطقة المتأثرة"
 
-#: app/AlertPage.qml:133
+#: app/AlertPage.qml:137
 #, kde-format
 msgid "Event"
 msgstr "الحدث"
 
-#: app/AlertPage.qml:138
+#: app/AlertPage.qml:142
 #, kde-format
 msgctxt "@label"
 msgid "Categories"
 msgstr "الفئات"
 
-#: app/AlertPage.qml:147
+#: app/AlertPage.qml:151
 #, kde-format
 msgctxt "@label"
 msgid "Urgency"
 msgstr "الإلحاح"
 
-#: app/AlertPage.qml:156
+#: app/AlertPage.qml:160
 #, kde-format
 msgctxt "@label"
 msgid "Severity"
 msgstr "الخطورة"
 
-#: app/AlertPage.qml:165
+#: app/AlertPage.qml:169
 #, kde-format
 msgctxt "@label"
 msgid "Certainty"
 msgstr "اليقين"
 
-#: app/AlertPage.qml:174
+#: app/AlertPage.qml:178
 #, kde-format
 msgctxt "@label, time"
 msgid "Onset"
 msgstr "البدء"
 
-#: app/AlertPage.qml:182
+#: app/AlertPage.qml:186
 #, kde-format
 msgctxt "@label"
 msgid "Description"
 msgstr "الوصف"
 
-#: app/AlertPage.qml:189
+#: app/AlertPage.qml:193
 #, kde-format
 msgid "Act"
 msgstr "العمل"
 
-#: app/AlertPage.qml:198
+#: app/AlertPage.qml:202
 #, kde-format
 msgctxt "@label"
 msgid "Recommended response"
 msgstr "الاستجابة الموصى بها"
 
-#: app/AlertPage.qml:207
+#: app/AlertPage.qml:211
 #, kde-format
 msgctxt "@label"
 msgid "Instruction"
 msgstr "التوجيه"
 
-#: app/AlertPage.qml:215
+#: app/AlertPage.qml:219
 #, kde-format
 msgid "Further Information"
 msgstr "معلومات إضافية"
 
-#: app/AlertPage.qml:225
+#: app/AlertPage.qml:229
 #, kde-format
 msgctxt "@label"
 msgid "Web"
 msgstr "الوبّ"
 
-#: app/AlertPage.qml:235
+#: app/AlertPage.qml:239
 #, kde-format
 msgctxt "@label"
 msgid "Contact"
 msgstr "المتراسل"
 
-#: app/AlertPage.qml:245
+#: app/AlertPage.qml:249
 #, kde-format
 msgctxt "@label"
 msgid "Sender"
 msgstr "المرسل"
 
-#: app/AlertPage.qml:254 app/AlertPage.qml:263
+#: app/AlertPage.qml:258 app/AlertPage.qml:267
 #, kde-format
 msgctxt "@label"
 msgid "Area"
 msgstr "المنطقة"
 
-#: app/AlertPage.qml:270
+#: app/AlertPage.qml:274
 #, kde-format
 msgctxt "@label"
 msgid "Additional Resources"
 msgstr "مصادر إضافية"
 
-#: app/AlertPage.qml:287
+#: app/AlertPage.qml:291
 #, kde-format
 msgctxt "file type (file size)"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/AlertPage.qml:303
+#: app/AlertPage.qml:307
 #, kde-format
 msgid "Technical Information"
 msgstr "معلومات فنية"
 
-#: app/AlertPage.qml:307
+#: app/AlertPage.qml:311
 #, kde-format
 msgctxt "@label"
 msgid "Status"
 msgstr "الحالة"
 
-#: app/AlertPage.qml:318
+#: app/AlertPage.qml:322
 #, kde-format
 msgctxt "@label"
 msgid "Message type"
 msgstr "نوع الرسالة:"
 
-#: app/AlertPage.qml:333
+#: app/AlertPage.qml:337
 #, kde-format
 msgid "Audience"
 msgstr "جمهور"
 
-#: app/AlertPage.qml:342
+#: app/AlertPage.qml:346
 #, kde-format
 msgctxt "@label, time"
 msgid "Sent"
 msgstr "أُرسلت"
 
-#: app/AlertPage.qml:351
+#: app/AlertPage.qml:355
 #, kde-format
 msgctxt "@label, time"
 msgid "Effective"
 msgstr "فعّال"
 
-#: app/AlertPage.qml:360
+#: app/AlertPage.qml:364
 #, kde-format
 msgctxt "@label, time"
 msgid "Expires"
 msgstr "تنتهي"
 
-#: app/AlertPage.qml:369
+#: app/AlertPage.qml:373
 #, kde-format
 msgctxt "scope of an alert: public/private/restricted"
 msgid "Scope"
 msgstr "النطاق"
 
-#: app/AlertPage.qml:371
+#: app/AlertPage.qml:375
 #, kde-format
 msgid "Public — For general dissemination to unrestricted audiences"
 msgstr "عام — للنشر العام لجمهور غير محدود"
 
-#: app/AlertPage.qml:372
+#: app/AlertPage.qml:376
 #, kde-format
 msgid ""
 "Restricted — For dissemination only to users with a known operational "
 "requirement"
 msgstr "مقيد — للنشر فقط للمستخدمين الذين لديهم متطلبات تشغيلية معروفة"
 
-#: app/AlertPage.qml:373
+#: app/AlertPage.qml:377
 #, kde-format
 msgid "Private — For dissemination only to specified addresses"
 msgstr "خاص — للنشر فقط إلى عناوين محددة"
 
-#: app/AlertPage.qml:382
+#: app/AlertPage.qml:386
 #, kde-format
 msgctxt "addressees of a non-public alert"
 msgid "Addresses"
 msgstr "العناوين"
 
-#: app/AlertPage.qml:390
+#: app/AlertPage.qml:394
 #, kde-format
 msgid "Identifier"
 msgstr "المعرف"
 
-#: app/AlertPage.qml:396
+#: app/AlertPage.qml:400
 #, kde-format
 msgid "View Source File"
 msgstr "اعرض ملف المصدر"
 
-#: app/AlertPage.qml:402
+#: app/AlertPage.qml:406
 #, kde-format
 msgid "Open Source File"
 msgstr "افتح ملف المصدر"
