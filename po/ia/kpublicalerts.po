@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kpublicalerts package.
 #
-# SPDX-FileCopyrightText: 2025 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2025, 2026 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-14 00:45+0000\n"
-"PO-Revision-Date: 2025-05-09 17:22+0200\n"
+"PO-Revision-Date: 2026-01-20 16:30+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -40,15 +40,13 @@ msgstr ""
 #: app/AlertPage.qml:137
 #, kde-format
 msgid "Event"
-msgstr ""
+msgstr "Evento"
 
 #: app/AlertPage.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Categories:"
+#, kde-format
 msgctxt "@label"
 msgid "Categories"
-msgstr "Categorias:"
+msgstr "Categorias"
 
 #: app/AlertPage.qml:151
 #, fuzzy, kde-format
@@ -59,12 +57,10 @@ msgid "Urgency"
 msgstr "Urgentia:"
 
 #: app/AlertPage.qml:160
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Severity:"
+#, kde-format
 msgctxt "@label"
 msgid "Severity"
-msgstr "Gravitate:"
+msgstr "Gravitate"
 
 #: app/AlertPage.qml:169
 #, fuzzy, kde-format
@@ -111,28 +107,22 @@ msgid "Further Information"
 msgstr ""
 
 #: app/AlertPage.qml:229
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Web:"
+#, kde-format
 msgctxt "@label"
 msgid "Web"
-msgstr "Web:"
+msgstr "Web"
 
 #: app/AlertPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Contact:"
+#, kde-format
 msgctxt "@label"
 msgid "Contact"
-msgstr "Contacto:"
+msgstr "Contacto"
 
 #: app/AlertPage.qml:249
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Sender:"
+#, kde-format
 msgctxt "@label"
 msgid "Sender"
-msgstr "Mittente: "
+msgstr "Mittente"
 
 #: app/AlertPage.qml:258 app/AlertPage.qml:267
 #, kde-format
@@ -158,12 +148,10 @@ msgid "Technical Information"
 msgstr ""
 
 #: app/AlertPage.qml:311
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Status:"
+#, kde-format
 msgctxt "@label"
 msgid "Status"
-msgstr "Stato:"
+msgstr "Stato"
 
 #: app/AlertPage.qml:322
 #, fuzzy, kde-format
@@ -179,34 +167,28 @@ msgid "Audience"
 msgstr ""
 
 #: app/AlertPage.qml:346
-#, fuzzy, kde-format
-#| msgctxt "@label, time"
-#| msgid "Sent:"
+#, kde-format
 msgctxt "@label, time"
 msgid "Sent"
-msgstr "Inviate:"
+msgstr "Inviate"
 
 #: app/AlertPage.qml:355
-#, fuzzy, kde-format
-#| msgctxt "@label, time"
-#| msgid "Effective:"
+#, kde-format
 msgctxt "@label, time"
 msgid "Effective"
-msgstr "Effective:"
+msgstr "Effective"
 
 #: app/AlertPage.qml:364
-#, fuzzy, kde-format
-#| msgctxt "@label, time"
-#| msgid "Expires:"
+#, kde-format
 msgctxt "@label, time"
 msgid "Expires"
-msgstr "Termina:"
+msgstr "Termina"
 
 #: app/AlertPage.qml:373
 #, kde-format
 msgctxt "scope of an alert: public/private/restricted"
 msgid "Scope"
-msgstr ""
+msgstr "Extension"
 
 #: app/AlertPage.qml:375
 #, kde-format
@@ -229,12 +211,12 @@ msgstr ""
 #, kde-format
 msgctxt "addressees of a non-public alert"
 msgid "Addresses"
-msgstr ""
+msgstr "Adresses"
 
 #: app/AlertPage.qml:394
 #, kde-format
 msgid "Identifier"
-msgstr ""
+msgstr "Identificator"
 
 #: app/AlertPage.qml:400
 #, kde-format
@@ -476,25 +458,21 @@ msgid "Add Area of Interest"
 msgstr ""
 
 #: app/SubscriptionPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Name:"
+#, kde-format
 msgid "Name"
-msgstr "Nomine:"
+msgstr "Nomine"
 
 #: app/SubscriptionPage.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr "Adde…"
+msgstr "Adde"
 
 #: app/SubscriptionPage.qml:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Salveguarda"
 
 #: app/SubscriptionsPage.qml:16
 #, kde-format
