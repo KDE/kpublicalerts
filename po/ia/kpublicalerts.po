@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-14 00:45+0000\n"
-"PO-Revision-Date: 2026-01-20 16:30+0100\n"
+"PO-Revision-Date: 2026-01-22 12:29+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -49,12 +49,10 @@ msgid "Categories"
 msgstr "Categorias"
 
 #: app/AlertPage.qml:151
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Urgency:"
+#, kde-format
 msgctxt "@label"
 msgid "Urgency"
-msgstr "Urgentia:"
+msgstr "Urgentia"
 
 #: app/AlertPage.qml:160
 #, kde-format
@@ -63,12 +61,10 @@ msgid "Severity"
 msgstr "Gravitate"
 
 #: app/AlertPage.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Certainty:"
+#, kde-format
 msgctxt "@label"
 msgid "Certainty"
-msgstr "Certitude:"
+msgstr "Certitude"
 
 #: app/AlertPage.qml:178
 #, kde-format
@@ -88,12 +84,10 @@ msgid "Act"
 msgstr ""
 
 #: app/AlertPage.qml:202
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Recommended response:"
+#, kde-format
 msgctxt "@label"
 msgid "Recommended response"
-msgstr "REsponsa Recommendate:"
+msgstr "Responsa Recommendate"
 
 #: app/AlertPage.qml:211
 #, kde-format
@@ -154,12 +148,10 @@ msgid "Status"
 msgstr "Stato"
 
 #: app/AlertPage.qml:322
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Message type:"
+#, kde-format
 msgctxt "@label"
 msgid "Message type"
-msgstr "Typo de message:"
+msgstr "Typo de message"
 
 #: app/AlertPage.qml:337
 #, kde-format
@@ -416,7 +408,7 @@ msgstr "Alertas public"
 #, kde-format
 msgctxt "@info"
 msgid "Weather and emergency alerts"
-msgstr ""
+msgstr "Alertas meteorologic e de emergentia"
 
 #: app/main.cpp:63
 #, kde-format
