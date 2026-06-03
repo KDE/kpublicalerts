@@ -33,6 +33,7 @@
   <name xml:lang="sl">Javna opozorila</name>
   <name xml:lang="sv">Allmänna varningar</name>
   <name xml:lang="tr">Acil Durum İkazları</name>
+  <name xml:lang="ug">ئاممىۋى ئاگاھلاندۇرۇش</name>
   <name xml:lang="uk">Попередження цивільного захисту</name>
   <name xml:lang="zh-CN">公共警报</name>
   <name xml:lang="zh-TW">公共警報</name>
@@ -60,6 +61,7 @@
   <summary xml:lang="sl">Izredne razmere in vremenska opozorila</summary>
   <summary xml:lang="sv">Nöd- och vädervarningar</summary>
   <summary xml:lang="tr">Acil durum ve hava durumu ikazları</summary>
+  <summary xml:lang="ug">جىددىي ۋە  ھاۋا رايى ئاگاھلاندۇرۇشى</summary>
   <summary xml:lang="uk">Попередження про аварійні та природні ситуації</summary>
   <summary xml:lang="zh-CN">紧急情况和天气警报</summary>
   <summary xml:lang="zh-TW">緊急事件與天氣警報</summary>
