@@ -15,7 +15,7 @@
 #include <KAboutData>
 #include <KLocalizedQmlContext>
 
-#include <QCoreApplication>
+#include <QGuiApplication>
 #include <QCommandLineParser>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -54,6 +54,12 @@ Application::Application(QObject *parent)
     });
     connect(&m_alertsMgr, &AlertsManager::notificationClosed, this, &Application::maybeQuit, Qt::QueuedConnection);
     connect(&m_alertsMgr, &AlertsManager::fetchingChanged, this, &Application::maybeQuit, Qt::QueuedConnection);
+
+    const auto countChanged = [this]() {
+        qGuiApp->setBadgeNumber(m_alertsMgr.rowCount());
+    };
+    connect(&m_alertsMgr, &AlertsManager::rowsInserted, this, countChanged);
+    connect(&m_alertsMgr, &AlertsManager::rowsRemoved, this, countChanged);
 }
 
 Application::~Application() = default;
