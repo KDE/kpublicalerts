@@ -50,12 +50,10 @@ target_link_libraries(publicalerts PRIVATE
     Qt::Quick
     Qt::QuickControls2
     Qt::Positioning
+    KF6::Crash
 )
 if (NOT ANDROID)
     target_link_libraries(publicalerts PRIVATE Qt::Widgets KF6::DBusAddons)
-    if (TARGET KF6::Crash)
-        target_link_libraries(publicalerts PRIVATE KF6::Crash)
-    endif()
 else()
     target_link_libraries(publicalerts PRIVATE OpenSSL::SSL Qt::Svg KF6::Kirigami)
     kirigami_package_breeze_icons(ICONS

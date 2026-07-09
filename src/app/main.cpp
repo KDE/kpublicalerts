@@ -4,6 +4,7 @@
  */
 
 #include "application.h"
+#include "version.h"
 
 #include <QCommandLineParser>
 #include <QIcon>
@@ -16,16 +17,11 @@
 #endif
 
 #include <KAboutData>
+#include <KCrash>
+#include <KLocalizedString>
 
 #ifndef Q_OS_ANDROID
 #include <KDBusService>
-#endif
-#include <KLocalizedString>
-
-#include "version.h"
-
-#if __has_include("KCrash")
-#include <KCrash>
 #endif
 
 using namespace Qt::Literals;
@@ -62,9 +58,7 @@ int main(int argc, char **argv)
     aboutData.setShortDescription(i18nc("@info", "Weather and emergency alerts"));
     aboutData.setCopyrightStatement(i18nc("@info:credit", "Copyright © 2022 The KDE Community"));
     KAboutData::setApplicationData(aboutData);
-#if __has_include("KCrash")
     KCrash::initialize();
-#endif
     QCommandLineParser parser;
     QCommandLineOption serviceLaunchOpt(u"dbus-activated"_s, u"indicates D-Bus activation (internal)"_s);
     parser.addOption(serviceLaunchOpt);
