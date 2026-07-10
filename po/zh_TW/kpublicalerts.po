@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"POT-Creation-Date: 2026-07-10 00:48+0000\n"
 "PO-Revision-Date: 2025-09-29 01:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -398,19 +398,19 @@ msgstr "該事件已不再構成威脅或擔憂，之後的動作會在指示中
 msgid "No action recommended."
 msgstr "沒有建議的動作。"
 
-#: app/main.cpp:43 app/Main.qml:20 app/Main.qml:75
+#: app/main.cpp:39 app/Main.qml:20 app/Main.qml:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
 msgstr "公共警報"
 
-#: app/main.cpp:62
+#: app/main.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "Weather and emergency alerts"
 msgstr "天氣與緊急事件警報"
 
-#: app/main.cpp:63
+#: app/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
