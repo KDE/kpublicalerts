@@ -423,7 +423,7 @@ msgstr "Alertes meteorològiques i d'emergències"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
-msgstr "Copyright © 2022 The Comunitat KDE"
+msgstr "Copyright © 2022 La comunitat KDE"
 
 #: app/Main.qml:33
 #, kde-format
