@@ -1,31 +1,32 @@
 # Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the kpublicalerts package.
 # SPDX-FileCopyrightText: 2026 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-10 00:48+0000\n"
-"PO-Revision-Date: 2026-05-05 14:08+0200\n"
-"Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-07-29 21:26+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: app/AlertPage.qml:49
 #, kde-format
@@ -35,7 +36,7 @@ msgstr "Jazyk"
 #: app/AlertPage.qml:60
 #, kde-format
 msgid "Affected area"
-msgstr ""
+msgstr "Postižená oblast"
 
 #: app/AlertPage.qml:137
 #, kde-format
@@ -52,7 +53,7 @@ msgstr "Kategorie"
 #, kde-format
 msgctxt "@label"
 msgid "Urgency"
-msgstr ""
+msgstr "Naléhavost"
 
 #: app/AlertPage.qml:160
 #, kde-format
@@ -70,7 +71,7 @@ msgstr "Jistota"
 #, kde-format
 msgctxt "@label, time"
 msgid "Onset"
-msgstr ""
+msgstr "Nástup"
 
 #: app/AlertPage.qml:186
 #, kde-format
@@ -81,13 +82,13 @@ msgstr "Popis"
 #: app/AlertPage.qml:193
 #, kde-format
 msgid "Act"
-msgstr ""
+msgstr "Činnost"
 
 #: app/AlertPage.qml:202
 #, kde-format
 msgctxt "@label"
 msgid "Recommended response"
-msgstr ""
+msgstr "Doporučená reakce"
 
 #: app/AlertPage.qml:211
 #, kde-format
@@ -98,7 +99,7 @@ msgstr "Instrukce"
 #: app/AlertPage.qml:219
 #, kde-format
 msgid "Further Information"
-msgstr ""
+msgstr "Další informace"
 
 #: app/AlertPage.qml:229
 #, kde-format
@@ -128,18 +129,18 @@ msgstr "Oblast"
 #, kde-format
 msgctxt "@label"
 msgid "Additional Resources"
-msgstr ""
+msgstr "Další zdroje"
 
 #: app/AlertPage.qml:291
 #, kde-format
 msgctxt "file type (file size)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: app/AlertPage.qml:307
 #, kde-format
 msgid "Technical Information"
-msgstr ""
+msgstr "Technické informace"
 
 #: app/AlertPage.qml:311
 #, kde-format
@@ -151,12 +152,12 @@ msgstr "Stav"
 #, kde-format
 msgctxt "@label"
 msgid "Message type"
-msgstr ""
+msgstr "Typ zprávy"
 
 #: app/AlertPage.qml:337
 #, kde-format
 msgid "Audience"
-msgstr ""
+msgstr "Sledovanost"
 
 #: app/AlertPage.qml:346
 #, kde-format
@@ -185,7 +186,7 @@ msgstr "Rozsah"
 #: app/AlertPage.qml:375
 #, kde-format
 msgid "Public — For general dissemination to unrestricted audiences"
-msgstr ""
+msgstr "Veřejné — Určeno k všeobecnému šíření bez omezení okruhu příjemců"
 
 #: app/AlertPage.qml:376
 #, kde-format
@@ -193,11 +194,12 @@ msgid ""
 "Restricted — For dissemination only to users with a known operational "
 "requirement"
 msgstr ""
+"Omezený přístup — Určeno pouze pro uživatele se známou provozní potřebou"
 
 #: app/AlertPage.qml:377
 #, kde-format
 msgid "Private — For dissemination only to specified addresses"
-msgstr ""
+msgstr "Soukromé — Určeno pouze k rozeslání na uvedené adresy"
 
 #: app/AlertPage.qml:386
 #, kde-format
@@ -213,18 +215,18 @@ msgstr "Identifikátor"
 #: app/AlertPage.qml:400
 #, kde-format
 msgid "View Source File"
-msgstr ""
+msgstr "Zobrazit zdrojový soubor"
 
 #: app/AlertPage.qml:406
 #, kde-format
 msgid "Open Source File"
-msgstr ""
+msgstr "Otevřít zdrojový soubor"
 
 #: app/alertsmanager.cpp:389
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Alert Details"
-msgstr ""
+msgstr "Zobrazit podrobnosti výstrahy"
 
 #: app/alertsmanager.cpp:393
 #, kde-format
@@ -236,19 +238,19 @@ msgstr "Zahodit"
 #, kde-format
 msgctxt "@title:window"
 msgid "Active Alerts"
-msgstr ""
+msgstr "Aktivní výstrahy"
 
 #: app/AlertsPage.qml:78
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No alerts"
-msgstr ""
+msgstr "Žádné výstrahy"
 
 #: app/AlertsPage.qml:81
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest…"
-msgstr ""
+msgstr "Přidat oblast zájmu…"
 
 #: app/alertssortproxymodel.cpp:42
 #, kde-format
@@ -264,71 +266,73 @@ msgstr "Současný"
 
 #: app/caputil.cpp:50
 msgid "Extreme — Extraordinary threat to life or property"
-msgstr ""
+msgstr "Extrémní — Mimořádné ohrožení života nebo majetku"
 
 #: app/caputil.cpp:51
 msgid "Severe — Significant threat to life or property"
-msgstr ""
+msgstr "Závažné — Významné ohrožení života nebo majetku"
 
 #: app/caputil.cpp:52
 msgid "Moderate — Possible threat to life or property"
-msgstr ""
+msgstr "Střední — Možné ohrožení života nebo majetku"
 
 #: app/caputil.cpp:53
 msgid "Minor — Minimal to no known threat to life or property"
-msgstr ""
+msgstr "Mírné — minimální až žádné známé ohrožení života nebo majetku"
 
 #: app/caputil.cpp:57
 msgid "Responsive action should be taken immediately"
-msgstr ""
+msgstr "Je třeba okamžitě přijmout odpovídající opatření"
 
 #: app/caputil.cpp:58
 msgid "Responsive action should be taken soon"
-msgstr ""
+msgstr "Je třeba co nejdříve přijmout odpovídající opatření"
 
 #: app/caputil.cpp:59
 msgid "Responsive action be taken in the near future"
-msgstr ""
+msgstr "V blízké budoucnosti by měla být přijata příslušná opatření"
 
 #: app/caputil.cpp:60
 msgid "Responsive action is no longer required"
-msgstr ""
+msgstr "Reakce již není nutná"
 
 #: app/caputil.cpp:64
 msgid "Occurred or ongoing"
-msgstr ""
+msgstr "Uskutečnilo se nebo probíhá"
 
 #: app/caputil.cpp:65
 msgid "Likely (> 50%)"
-msgstr ""
+msgstr "Pravděpodobně (> 50 %)"
 
 #: app/caputil.cpp:66
 msgid "Possible but not likely (< 50%)"
-msgstr ""
+msgstr "Možné, ale nepravděpodobné (< 50 %)"
 
 #: app/caputil.cpp:67
 msgid "Not expected to occur"
-msgstr ""
+msgstr "Neočekává se, že by k tomu došlo"
 
 #: app/caputil.cpp:71
 msgid "Geophysical"
-msgstr ""
+msgstr "Geofyzikální"
 
 #: app/caputil.cpp:72
 msgid "Meteorological"
-msgstr ""
+msgstr "Meteorologické"
 
 #: app/caputil.cpp:73
 msgid "General emergency and public safety"
-msgstr ""
+msgstr "Obecné nouzové situace a veřejná bezpečnost"
 
 #: app/caputil.cpp:74
 msgid "Law enforcement, military, homeland and local/private security"
 msgstr ""
+"Policie, armáda, bezpečnostní složky pro ochranu státu a místní/soukromé "
+"bezpečnostní služby"
 
 #: app/caputil.cpp:75
 msgid "Rescue and recovery"
-msgstr ""
+msgstr "Záchrana a vyproštění"
 
 #: app/caputil.cpp:76
 msgid "Fire"
@@ -336,11 +340,11 @@ msgstr "Oheň"
 
 #: app/caputil.cpp:77
 msgid "Medical and public health"
-msgstr ""
+msgstr "Zdravotnictví a veřejné zdraví"
 
 #: app/caputil.cpp:78
 msgid "Pollution and other environmental event"
-msgstr ""
+msgstr "Znečištění a jiné události související s životním prostředím"
 
 #: app/caputil.cpp:79
 msgid "Transportation"
@@ -348,55 +352,59 @@ msgstr "Doprava"
 
 #: app/caputil.cpp:80
 msgid "Utility, telecommunication, other non-transport infrastructure"
-msgstr ""
+msgstr "Veřejné služby, telekomunikace, ostatní infrastruktura mimo dopravu"
 
 #: app/caputil.cpp:81
 msgid ""
 "Chemical, biological, radiological, nuclear or high-yield explosive threat "
 "or attack"
 msgstr ""
+"Hrozba nebo útok chemického, biologického, radiologického, jaderného "
+"charakteru nebo s použitím vysoce výbušných látek"
 
 #: app/caputil.cpp:82
 msgid "Other event"
-msgstr ""
+msgstr "Jiná událost"
 
 #: app/caputil.cpp:86
 msgid "Take shelter in place or per instructions."
-msgstr ""
+msgstr "Zůstaňte na místě nebo postupujte podle pokynů."
 
 #: app/caputil.cpp:87
 msgid "Relocate as instructed."
-msgstr ""
+msgstr "Přesuňte se podle pokynů."
 
 #: app/caputil.cpp:88
 msgid "Make preparations as per the instructions."
-msgstr ""
+msgstr "Postupujte podle pokynů."
 
 #: app/caputil.cpp:89
 msgid "Execute activities identified in the instructions."
-msgstr ""
+msgstr "Proveďte činnosti uvedené v pokynech."
 
 #: app/caputil.cpp:90
 msgid "Avoid the subject event as per the instructions."
-msgstr ""
+msgstr "Vyhněte se dané události podle pokynů."
 
 #: app/caputil.cpp:91
 msgid "Attend to information sources as described in the instructions."
-msgstr ""
+msgstr "Postupujte podle pokynů uvedených ve zdrojích informací."
 
 #: app/caputil.cpp:92
 msgid "Evaluate the information in this message."
-msgstr ""
+msgstr "Zhodnoťte informace obsažené v této zprávě."
 
 #: app/caputil.cpp:93
 msgid ""
 "The subject event no longer poses a threat or concern and any follow on "
 "action is described in the instructions."
 msgstr ""
+"Uvedená událost již nepředstavuje hrozbu ani důvod k obavám a případné další "
+"kroky jsou popsány v pokynech."
 
 #: app/caputil.cpp:94
 msgid "No action recommended."
-msgstr ""
+msgstr "Nedoporučuje se přijmout žádná opatření."
 
 #: app/main.cpp:39 app/Main.qml:20 app/Main.qml:75
 #, kde-format
@@ -419,7 +427,7 @@ msgstr "Autorská práva © 2022 Komunita KDE"
 #: app/Main.qml:33
 #, kde-format
 msgid "Missing notification permission!"
-msgstr ""
+msgstr "Chybí oprávnění k zasílání upozornění!"
 
 #: app/Main.qml:44
 #, kde-format
@@ -430,7 +438,7 @@ msgstr "Vyžádat povolení…"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
-msgstr ""
+msgstr "Oblasti zájmu…"
 
 #: app/Main.qml:86
 #, kde-format
@@ -441,13 +449,13 @@ msgstr "O aplikaci"
 #: app/subscriptionmanager.cpp:33 app/subscriptionmanager.cpp:351
 #, kde-format
 msgid "Weather and emergency alert notifications"
-msgstr ""
+msgstr "Upozornění na počasí a mimořádné události"
 
 #: app/SubscriptionPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Area of Interest"
-msgstr ""
+msgstr "Přidat oblast zájmu"
 
 #: app/SubscriptionPage.qml:55
 #, kde-format
@@ -470,7 +478,7 @@ msgstr "Uložit"
 #, kde-format
 msgctxt "@title:window"
 msgid "Areas of Interest"
-msgstr ""
+msgstr "Oblasti zájmu"
 
 #: app/SubscriptionsPage.qml:26 app/SubscriptionsPage.qml:74
 #, kde-format
@@ -488,4 +496,4 @@ msgstr "Odhlásit se"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
-msgstr ""
+msgstr "Nebyly vybrány žádné oblasti zájmu"
