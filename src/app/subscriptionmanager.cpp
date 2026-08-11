@@ -241,6 +241,7 @@ void SubscriptionManager::doSubscribeOne(const Subscription &sub)
         {"max_lat"_L1, sub.m_boundingBox.bottom()},
         {"p256dh_key"_L1, QString::fromLatin1(m_connector->contentEncryptionPublicKey().toBase64(QByteArray::Base64UrlEncoding | QByteArray::OmitTrailingEquals))},
         {"auth_key"_L1, QString::fromLatin1(m_connector->contentEncryptionAuthSecret().toBase64(QByteArray::Base64UrlEncoding | QByteArray::OmitTrailingEquals))},
+        {"vapid_public_key"_L1, m_connector->vapidPublicKey()},
     };
 
     auto reply = m_nam->post(RestApi::subscribe(), QJsonDocument(subCmd).toJson(QJsonDocument::Compact));
