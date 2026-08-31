@@ -190,7 +190,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Act")
+        title: i18nc("instructions on how to act in response to an emergency", "Act")
         visible: responseCard.visible
     }
     FormCard.FormCard {
@@ -199,7 +199,7 @@ FormCard.FormCardPage {
 
         FormCard.FormTextDelegate {
             id: responseDelegate
-            text: i18nc("@label", "Recommended response")
+            text: i18nc("@label, recommended way to act in response to an emergeny", "Recommended response")
             description: CAPUtil.responseTypesStrings(root.alertInfo.responseTypes).join('\n')
             visible: root.alertInfo.responseTypes != CAPAlertInfo.UnknownResponseType
         }
@@ -226,7 +226,7 @@ FormCard.FormCardPage {
         // TODO make these buttons if we got a valid url/phone number/email address/etc
         FormCard.FormTextDelegate {
             id: webDelegate
-            text: i18nc("@label", "Web")
+            text: i18nc("@label", "Website")
             description: root.htmlify(root.alertInfo.web, KTextToHTMLOptions.PreserveSpaces)
             visible: root.alertInfo.web
             onLinkActivated: (link) => { Qt.openUrlExternally(link); }
@@ -236,7 +236,7 @@ FormCard.FormCardPage {
         }
         FormCard.FormTextDelegate {
             id: contactDelegate
-            text: i18nc("@label", "Contact")
+            text: i18nc("@label, contact information, noun", "Contact")
             description: root.htmlify(root.alertInfo.contact, KTextToHTMLOptions.PreserveSpaces | KTextToHTMLOptions.ConvertPhoneNumbers)
             visible: root.alertInfo.contact
             onLinkActivated: (link) => { Qt.openUrlExternally(link); }
@@ -334,7 +334,7 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
         FormCard.FormTextDelegate {
             id: audienceDelegate
-            text: i18n("Audience")
+            text: i18nc("intended target audience for an emergency alert", "Audience")
             description: root.alertInfo.audience
             visible: description !== ""
         }
