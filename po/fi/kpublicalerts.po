@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:51+0000\n"
+"POT-Creation-Date: 2026-09-01 00:50+0000\n"
 "PO-Revision-Date: 2025-10-13 21:09+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -80,13 +80,17 @@ msgstr "Kuvaus"
 
 # *** TARKISTA: Voisi olla myös verbi, ”Toimi” (tai jotain aivan muuta)
 #: app/AlertPage.qml:193
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Act"
+msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
 msgstr "Toiminta"
 
 #: app/AlertPage.qml:202
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Recommended response"
+msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr "Suositeltu reaktio"
 
@@ -104,12 +108,14 @@ msgstr "Lisätietoa"
 #: app/AlertPage.qml:229
 #, kde-format
 msgctxt "@label"
-msgid "Web"
-msgstr "Verkko"
+msgid "Website"
+msgstr ""
 
 #: app/AlertPage.qml:239
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Contact"
+msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "Yhteystiedot"
 
@@ -155,7 +161,9 @@ msgid "Message type"
 msgstr "Viestityyppi"
 
 #: app/AlertPage.qml:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Audience"
+msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
 msgstr "Yleisö"
 
@@ -493,6 +501,10 @@ msgstr "Peru tilaus"
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
 msgstr "Tarkkailtavia alueita ei ole valittu"
+
+#~ msgctxt "@label"
+#~ msgid "Web"
+#~ msgstr "Verkko"
 
 #~ msgctxt "@action:button"
 #~ msgid "Add Area of Interest"

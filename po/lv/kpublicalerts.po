@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:51+0000\n"
+"POT-Creation-Date: 2026-09-01 00:50+0000\n"
 "PO-Revision-Date: 2025-09-24 15:23+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -80,13 +80,17 @@ msgid "Description"
 msgstr "Apraksts"
 
 #: app/AlertPage.qml:193
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Act"
+msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
 msgstr "Rīkoties"
 
 #: app/AlertPage.qml:202
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Recommended response"
+msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr "Ieteicamā reakcija"
 
@@ -104,12 +108,14 @@ msgstr "Turpmākā informācija"
 #: app/AlertPage.qml:229
 #, kde-format
 msgctxt "@label"
-msgid "Web"
-msgstr "Tīmeklis"
+msgid "Website"
+msgstr ""
 
 #: app/AlertPage.qml:239
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Contact"
+msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "Saziņa"
 
@@ -155,7 +161,9 @@ msgid "Message type"
 msgstr "Ziņas tips"
 
 #: app/AlertPage.qml:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Audience"
+msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
 msgstr "Auditorija"
 
@@ -495,6 +503,10 @@ msgstr "Beigt abonēt"
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
 msgstr "Nav izvēlēti interesējošie apgabali"
+
+#~ msgctxt "@label"
+#~ msgid "Web"
+#~ msgstr "Tīmeklis"
 
 #~ msgid "Open…"
 #~ msgstr "Atvērt…"

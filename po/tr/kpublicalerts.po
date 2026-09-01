@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:51+0000\n"
+"POT-Creation-Date: 2026-09-01 00:50+0000\n"
 "PO-Revision-Date: 2025-09-28 20:27+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -79,13 +79,17 @@ msgid "Description"
 msgstr "Açıklama"
 
 #: app/AlertPage.qml:193
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Act"
+msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
 msgstr "Hareket"
 
 #: app/AlertPage.qml:202
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Recommended response"
+msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr "Önerilen tepki"
 
@@ -103,12 +107,14 @@ msgstr "Ek Bilgi"
 #: app/AlertPage.qml:229
 #, kde-format
 msgctxt "@label"
-msgid "Web"
-msgstr "Web"
+msgid "Website"
+msgstr ""
 
 #: app/AlertPage.qml:239
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Contact"
+msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "İletişim"
 
@@ -154,7 +160,9 @@ msgid "Message type"
 msgstr "İleti türü"
 
 #: app/AlertPage.qml:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Audience"
+msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
 msgstr "Kitle"
 
@@ -495,6 +503,10 @@ msgstr "Bildirimlerden Çık"
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
 msgstr "Seçili ilgi alanı yok"
+
+#~ msgctxt "@label"
+#~ msgid "Web"
+#~ msgstr "Web"
 
 #~ msgid "Open…"
 #~ msgstr "Aç…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:51+0000\n"
+"POT-Creation-Date: 2026-09-01 00:50+0000\n"
 "PO-Revision-Date: 2025-10-12 12:12+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -79,13 +79,17 @@ msgid "Description"
 msgstr "설명"
 
 #: app/AlertPage.qml:193
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Act"
+msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
 msgstr "행동"
 
 #: app/AlertPage.qml:202
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Recommended response"
+msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr "추천 행동"
 
@@ -103,12 +107,14 @@ msgstr "자세한 정보"
 #: app/AlertPage.qml:229
 #, kde-format
 msgctxt "@label"
-msgid "Web"
-msgstr "웹"
+msgid "Website"
+msgstr ""
 
 #: app/AlertPage.qml:239
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Contact"
+msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "연락처"
 
@@ -154,7 +160,9 @@ msgid "Message type"
 msgstr "메시지 형식"
 
 #: app/AlertPage.qml:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Audience"
+msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
 msgstr "대상자"
 
@@ -489,6 +497,10 @@ msgstr "구독 해제"
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
 msgstr "선택한 관심 영역 없음"
+
+#~ msgctxt "@label"
+#~ msgid "Web"
+#~ msgstr "웹"
 
 #~ msgctxt "@action:button"
 #~ msgid "Add Area of Interest"

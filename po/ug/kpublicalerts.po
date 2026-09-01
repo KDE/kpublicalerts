@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:51+0000\n"
+"POT-Creation-Date: 2026-09-01 00:50+0000\n"
 "PO-Revision-Date: 2026-05-31 19:30-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -81,12 +81,13 @@ msgstr "چۈشەندۈرۈش"
 
 #: app/AlertPage.qml:193
 #, kde-format
+msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
 msgstr ""
 
 #: app/AlertPage.qml:202
 #, kde-format
-msgctxt "@label"
+msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr ""
 
@@ -104,12 +105,14 @@ msgstr ""
 #: app/AlertPage.qml:229
 #, kde-format
 msgctxt "@label"
-msgid "Web"
+msgid "Website"
 msgstr ""
 
 #: app/AlertPage.qml:239
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Contact"
+msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "ئالاقەداش"
 
@@ -156,6 +159,7 @@ msgstr ""
 
 #: app/AlertPage.qml:337
 #, kde-format
+msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
 msgstr ""
 

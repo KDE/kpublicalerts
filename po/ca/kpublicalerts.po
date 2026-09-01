@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:51+0000\n"
+"POT-Creation-Date: 2026-09-01 00:50+0000\n"
 "PO-Revision-Date: 2025-09-28 11:33+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -81,13 +81,17 @@ msgid "Description"
 msgstr "Descripció"
 
 #: app/AlertPage.qml:193
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Act"
+msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
 msgstr "Acte"
 
 #: app/AlertPage.qml:202
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Recommended response"
+msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr "Resposta recomanada"
 
@@ -105,12 +109,14 @@ msgstr "Informació addicional"
 #: app/AlertPage.qml:229
 #, kde-format
 msgctxt "@label"
-msgid "Web"
-msgstr "Web"
+msgid "Website"
+msgstr ""
 
 #: app/AlertPage.qml:239
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Contact"
+msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "Contacte"
 
@@ -156,7 +162,9 @@ msgid "Message type"
 msgstr "Tipus de missatge"
 
 #: app/AlertPage.qml:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Audience"
+msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
 msgstr "Destinataris"
 
@@ -498,6 +506,10 @@ msgstr "Cancel·la la subscripció"
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
 msgstr "No s'ha triat cap àrea d'interès"
+
+#~ msgctxt "@label"
+#~ msgid "Web"
+#~ msgstr "Web"
 
 #~ msgid "Open…"
 #~ msgstr "Obre…"

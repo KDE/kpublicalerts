@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:51+0000\n"
+"POT-Creation-Date: 2026-09-01 00:50+0000\n"
 "PO-Revision-Date: 2025-02-08 17:50+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -90,6 +90,7 @@ msgstr "Opis"
 
 #: app/AlertPage.qml:193
 #, kde-format
+msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
 msgstr ""
 
@@ -97,7 +98,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Recommended response:"
-msgctxt "@label"
+msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr "Zalecana odpowiedź:"
 
@@ -113,18 +114,16 @@ msgid "Further Information"
 msgstr ""
 
 #: app/AlertPage.qml:229
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Web:"
+#, kde-format
 msgctxt "@label"
-msgid "Web"
-msgstr "Sieć:"
+msgid "Website"
+msgstr ""
 
 #: app/AlertPage.qml:239
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Contact:"
-msgctxt "@label"
+msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "Kontakt:"
 
@@ -177,6 +176,7 @@ msgstr "Rodzaj wiadomości:"
 
 #: app/AlertPage.qml:337
 #, kde-format
+msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
 msgstr ""
 
@@ -525,6 +525,13 @@ msgstr "Przestań śledzić"
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
 msgstr "Nie zaznaczono interesujących obszarów"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Web:"
+#~ msgctxt "@label"
+#~ msgid "Web"
+#~ msgstr "Sieć:"
 
 #~ msgctxt "@action:button"
 #~ msgid "Add Area of Interest"
