@@ -1,15 +1,15 @@
 # Translation of kpublicalerts.po to Catalan
-# Copyright (C) 2025 This_file_is_part_of_KDE
+# Copyright (C) 2025-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-01 00:50+0000\n"
-"PO-Revision-Date: 2025-09-28 11:33+0200\n"
+"PO-Revision-Date: 2026-09-01 10:16+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -81,16 +81,13 @@ msgid "Description"
 msgstr "Descripció"
 
 #: app/AlertPage.qml:193
-#, fuzzy, kde-format
-#| msgid "Act"
+#, kde-format
 msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
-msgstr "Acte"
+msgstr "Actuació"
 
 #: app/AlertPage.qml:202
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Recommended response"
+#, kde-format
 msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr "Resposta recomanada"
@@ -110,12 +107,10 @@ msgstr "Informació addicional"
 #, kde-format
 msgctxt "@label"
 msgid "Website"
-msgstr ""
+msgstr "Lloc web"
 
 #: app/AlertPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "Contacte"
@@ -162,8 +157,7 @@ msgid "Message type"
 msgstr "Tipus de missatge"
 
 #: app/AlertPage.qml:337
-#, fuzzy, kde-format
-#| msgid "Audience"
+#, kde-format
 msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
 msgstr "Destinataris"

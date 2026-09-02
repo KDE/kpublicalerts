@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-01 00:50+0000\n"
-"PO-Revision-Date: 2025-09-28 06:11+0200\n"
+"PO-Revision-Date: 2026-09-01 04:46+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -80,16 +80,13 @@ msgid "Description"
 msgstr "აღწერა"
 
 #: app/AlertPage.qml:193
-#, fuzzy, kde-format
-#| msgid "Act"
+#, kde-format
 msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
 msgstr "ქმედება"
 
 #: app/AlertPage.qml:202
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Recommended response"
+#, kde-format
 msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr "რეკომენდებული პასუხი"
@@ -109,12 +106,10 @@ msgstr "დამატებითი ინფორმაცია"
 #, kde-format
 msgctxt "@label"
 msgid "Website"
-msgstr ""
+msgstr "ვებგვერდი"
 
 #: app/AlertPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "კონტაქტი"
@@ -161,8 +156,7 @@ msgid "Message type"
 msgstr "შეტყობინების ტიპი"
 
 #: app/AlertPage.qml:337
-#, fuzzy, kde-format
-#| msgid "Audience"
+#, kde-format
 msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
 msgstr "აუდიტორია"

@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the kpublicalerts package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2025.
+# SPDX-FileCopyrightText: 2025, 2026 Yuri Chornoivan <yurchor@ukr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-01 00:50+0000\n"
-"PO-Revision-Date: 2025-09-28 16:32+0300\n"
+"PO-Revision-Date: 2026-09-01 21:06+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -80,16 +80,13 @@ msgid "Description"
 msgstr "Опис"
 
 #: app/AlertPage.qml:193
-#, fuzzy, kde-format
-#| msgid "Act"
+#, kde-format
 msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
 msgstr "Дія"
 
 #: app/AlertPage.qml:202
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Recommended response"
+#, kde-format
 msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr "Рекомендована відповідь"
@@ -109,12 +106,10 @@ msgstr "Подальша інформація"
 #, kde-format
 msgctxt "@label"
 msgid "Website"
-msgstr ""
+msgstr "Сайт"
 
 #: app/AlertPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "Контакт"
@@ -161,8 +156,7 @@ msgid "Message type"
 msgstr "Тип повідомлення"
 
 #: app/AlertPage.qml:337
-#, fuzzy, kde-format
-#| msgid "Audience"
+#, kde-format
 msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
 msgstr "Коло призначення"

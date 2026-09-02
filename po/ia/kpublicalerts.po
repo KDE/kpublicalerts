@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-01 00:50+0000\n"
-"PO-Revision-Date: 2026-01-22 12:29+0100\n"
+"PO-Revision-Date: 2026-09-01 12:29+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -85,9 +85,7 @@ msgid "Act"
 msgstr ""
 
 #: app/AlertPage.qml:202
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Recommended response"
+#, kde-format
 msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr "Responsa Recommendate"
@@ -107,12 +105,10 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Website"
-msgstr ""
+msgstr "Sito Web"
 
 #: app/AlertPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "Contacto"
@@ -254,7 +250,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest…"
-msgstr ""
+msgstr "Adde Area de Interesse…"
 
 #: app/alertssortproxymodel.cpp:42
 #, kde-format
@@ -436,7 +432,7 @@ msgstr "Demanda Permission…"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
-msgstr ""
+msgstr "Areas de interesse..."
 
 #: app/Main.qml:86
 #, kde-format
@@ -453,7 +449,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Area of Interest"
-msgstr ""
+msgstr "Adde Area de Interesse"
 
 #: app/SubscriptionPage.qml:55
 #, kde-format
@@ -476,7 +472,7 @@ msgstr "Salveguarda"
 #, kde-format
 msgctxt "@title:window"
 msgid "Areas of Interest"
-msgstr ""
+msgstr "Areas de interesse"
 
 #: app/SubscriptionsPage.qml:26 app/SubscriptionsPage.qml:74
 #, kde-format
@@ -494,7 +490,7 @@ msgstr "De-subscribe"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
-msgstr ""
+msgstr "Nulle area de interesse seligite"
 
 #~ msgctxt "@label"
 #~ msgid "Web"
