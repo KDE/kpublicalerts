@@ -79,19 +79,16 @@ msgid "Description"
 msgstr "描述"
 
 #: app/AlertPage.qml:193
-#, fuzzy, kde-format
-#| msgid "Act"
+#, kde-format
 msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
-msgstr "行动"
+msgstr ""
 
 #: app/AlertPage.qml:202
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Recommended response"
+#, kde-format
 msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
-msgstr "建议应对方式"
+msgstr ""
 
 #: app/AlertPage.qml:211
 #, kde-format
@@ -111,12 +108,10 @@ msgid "Website"
 msgstr ""
 
 #: app/AlertPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label, contact information, noun"
 msgid "Contact"
-msgstr "联系方式"
+msgstr ""
 
 #: app/AlertPage.qml:249
 #, kde-format
@@ -160,11 +155,10 @@ msgid "Message type"
 msgstr "消息类型"
 
 #: app/AlertPage.qml:337
-#, fuzzy, kde-format
-#| msgid "Audience"
+#, kde-format
 msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
-msgstr "目标受众"
+msgstr ""
 
 #: app/AlertPage.qml:346
 #, kde-format
@@ -497,7 +491,3 @@ msgstr "取消关注"
 msgctxt "@info:placeholder"
 msgid "No areas of interest chosen"
 msgstr "没有选择关注区域"
-
-#~ msgctxt "@label"
-#~ msgid "Web"
-#~ msgstr "网页"
