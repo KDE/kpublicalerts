@@ -247,7 +247,7 @@ FormCard.FormCardPage {
         FormCard.FormTextDelegate {
             id: senderDelegate
             text: i18nc("@label", "Sender")
-            description: root.alertInfo.sender
+            description: root.htmlify(root.alertInfo.sender, KTextToHTMLOptions.PreserveSpaces)
             visible: text !== ""
         }
     }
