@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-01 00:50+0000\n"
-"PO-Revision-Date: 2025-12-14 00:45+0000\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-09-14 20:10+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: none\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -79,16 +79,13 @@ msgid "Description"
 msgstr "Popis"
 
 #: app/AlertPage.qml:193
-#, fuzzy, kde-format
-#| msgid "Act"
+#, kde-format
 msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
 msgstr "Konať"
 
 #: app/AlertPage.qml:202
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Recommended response"
+#, kde-format
 msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr "Odporúčaná reakcia"
@@ -108,12 +105,10 @@ msgstr "Ďalšie informácie"
 #, kde-format
 msgctxt "@label"
 msgid "Website"
-msgstr ""
+msgstr "Webová stránka"
 
 #: app/AlertPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "Kontakt"
@@ -160,8 +155,7 @@ msgid "Message type"
 msgstr "Typ správy"
 
 #: app/AlertPage.qml:337
-#, fuzzy, kde-format
-#| msgid "Audience"
+#, kde-format
 msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
 msgstr "Publikum"
