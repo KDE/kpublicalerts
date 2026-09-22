@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-01 00:50+0000\n"
-"PO-Revision-Date: 2026-05-31 19:30-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -106,12 +106,10 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Website"
-msgstr ""
+msgstr "تور بېكەت"
 
 #: app/AlertPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "ئالاقەداش"
@@ -138,7 +136,7 @@ msgstr ""
 #, kde-format
 msgctxt "file type (file size)"
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: app/AlertPage.qml:307
 #, kde-format
