@@ -10,7 +10,6 @@ import org.kde.coreaddons as KCoreAddons
 import org.kde.guiaddons as KGuiAddons
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.notification as KNotification
 import org.kde.weathercore
 import org.kde.publicalerts
 
@@ -26,25 +25,6 @@ Kirigami.ApplicationWindow {
             style: Kirigami.ApplicationHeaderStyle.ToolBar
             showNavigationButtons: pageStack.currentIndex > 0 || pageStack.layers.depth > 1 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : 0
         }
-    }
-
-    header: Kirigami.InlineMessage {
-        id: notificationPermissionWarning
-        text: i18n("Missing notification permission!")
-        type: Kirigami.MessageType.Error
-        position: Kirigami.InlineMessage.Header
-        visible: !KNotification.NotificationPermission.checkPermission()
-
-        function permissionCallback(success) {
-            notificationPermissionWarning.visible = !success;
-        }
-        actions: [
-            Kirigami.Action {
-                icon.name: "notifications"
-                text: i18n("Request permission…")
-                onTriggered: KNotification.NotificationPermission.requestPermission(notificationPermissionWarning.permissionCallback)
-            }
-        ]
     }
 
     Component {
