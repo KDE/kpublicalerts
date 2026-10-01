@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:50+0000\n"
+"POT-Creation-Date: 2026-10-01 00:49+0000\n"
 "PO-Revision-Date: 2026-09-01 06:39-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -237,19 +237,29 @@ msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "Descartar"
 
-#: app/AlertsPage.qml:16
+#: app/AlertsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Active Alerts"
 msgstr "Alertas ativos"
 
-#: app/AlertsPage.qml:78
+#: app/AlertsPage.qml:27
+#, kde-format
+msgid "Missing notification permission!"
+msgstr "Permissão de notificação ausente!"
+
+#: app/AlertsPage.qml:38
+#, kde-format
+msgid "Request permission…"
+msgstr "Solicitar permissão…"
+
+#: app/AlertsPage.qml:98
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No alerts"
 msgstr "Nenhum alerta"
 
-#: app/AlertsPage.qml:81
+#: app/AlertsPage.qml:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest…"
@@ -409,7 +419,7 @@ msgstr ""
 msgid "No action recommended."
 msgstr "Nenhuma ação recomendada."
 
-#: app/main.cpp:39 app/Main.qml:20 app/Main.qml:75
+#: app/main.cpp:39 app/Main.qml:19 app/Main.qml:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
@@ -427,23 +437,13 @@ msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
 msgstr "Copyright © 2022 A Comunidade KDE"
 
-#: app/Main.qml:33
-#, kde-format
-msgid "Missing notification permission!"
-msgstr "Permissão de notificação ausente!"
-
-#: app/Main.qml:44
-#, kde-format
-msgid "Request permission…"
-msgstr "Solicitar permissão…"
-
-#: app/Main.qml:80
+#: app/Main.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
 msgstr "Áreas de interesse…"
 
-#: app/Main.qml:86
+#: app/Main.qml:66
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"

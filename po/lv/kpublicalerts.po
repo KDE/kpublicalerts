@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:50+0000\n"
+"POT-Creation-Date: 2026-10-01 00:49+0000\n"
 "PO-Revision-Date: 2025-09-24 15:23+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -241,19 +241,29 @@ msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "Noraidīt"
 
-#: app/AlertsPage.qml:16
+#: app/AlertsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Active Alerts"
 msgstr "Aktīvie brīdinājumi"
 
-#: app/AlertsPage.qml:78
+#: app/AlertsPage.qml:27
+#, kde-format
+msgid "Missing notification permission!"
+msgstr "Trūkst atļaujas paziņojuma rādīšanai!"
+
+#: app/AlertsPage.qml:38
+#, kde-format
+msgid "Request permission…"
+msgstr "Pieprasīt atļauju…"
+
+#: app/AlertsPage.qml:98
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No alerts"
 msgstr "Nav brīdinājumu"
 
-#: app/AlertsPage.qml:81
+#: app/AlertsPage.qml:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest…"
@@ -412,7 +422,7 @@ msgstr ""
 msgid "No action recommended."
 msgstr "Nav ieteicamo darbību."
 
-#: app/main.cpp:39 app/Main.qml:20 app/Main.qml:75
+#: app/main.cpp:39 app/Main.qml:19 app/Main.qml:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
@@ -430,23 +440,13 @@ msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
 msgstr "Autortiesības © 2022 KDE kopiena"
 
-#: app/Main.qml:33
-#, kde-format
-msgid "Missing notification permission!"
-msgstr "Trūkst atļaujas paziņojuma rādīšanai!"
-
-#: app/Main.qml:44
-#, kde-format
-msgid "Request permission…"
-msgstr "Pieprasīt atļauju…"
-
-#: app/Main.qml:80
+#: app/Main.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
 msgstr "Interesējošie apgabali…"
 
-#: app/Main.qml:86
+#: app/Main.qml:66
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"

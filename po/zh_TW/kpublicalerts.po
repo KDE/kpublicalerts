@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:50+0000\n"
+"POT-Creation-Date: 2026-10-01 00:49+0000\n"
 "PO-Revision-Date: 2026-09-16 22:59+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -234,19 +234,29 @@ msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "忽略"
 
-#: app/AlertsPage.qml:16
+#: app/AlertsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Active Alerts"
 msgstr "作用中警示"
 
-#: app/AlertsPage.qml:78
+#: app/AlertsPage.qml:27
+#, kde-format
+msgid "Missing notification permission!"
+msgstr "缺乏通知權限！"
+
+#: app/AlertsPage.qml:38
+#, kde-format
+msgid "Request permission…"
+msgstr "正在請求權限…"
+
+#: app/AlertsPage.qml:98
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No alerts"
 msgstr "沒有警示"
 
-#: app/AlertsPage.qml:81
+#: app/AlertsPage.qml:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Area of Interest…"
@@ -400,7 +410,7 @@ msgstr "該事件已不再構成威脅或擔憂，之後的動作會在指示中
 msgid "No action recommended."
 msgstr "沒有建議的動作。"
 
-#: app/main.cpp:39 app/Main.qml:20 app/Main.qml:75
+#: app/main.cpp:39 app/Main.qml:19 app/Main.qml:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Public Alerts"
@@ -418,23 +428,13 @@ msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
 msgstr "Copyright © 2022 KDE 社群"
 
-#: app/Main.qml:33
-#, kde-format
-msgid "Missing notification permission!"
-msgstr "缺乏通知權限！"
-
-#: app/Main.qml:44
-#, kde-format
-msgid "Request permission…"
-msgstr "正在請求權限…"
-
-#: app/Main.qml:80
+#: app/Main.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Areas of Interest…"
 msgstr "關注區域…"
 
-#: app/Main.qml:86
+#: app/Main.qml:66
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About"
