@@ -1,0 +1,507 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the kpublicalerts package.
+#
+# SPDX-FileCopyrightText: 2026 SPDX-FileCopyrightText :
+# SPDX-FileCopyrightText: 2026 SPDX-FileCopyrightText :
+# SPDX-FileCopyrightText: 2026 SPDX-FileCopyrightText :
+# SPDX-FileCopyrightText: 2026 SPDX-FileCopyrightText :
+# SPDX-FileCopyrightText: 2026 SPDX-FileCopyrightText :
+# SPDX-FileCopyrightText: 2026 SPDX-FileCopyrightText :
+# SPDX-FileCopyrightText: 2026 SPDX-FileCopyrightText :
+# SPDX-FileCopyrightText: 2026 SPDX-FileCopyrightText :
+# SPDX-FileCopyrightText: 2026 SPDX-FileCopyrightText :
+# SPDX-FileCopyrightText: 2026 SPDX-FileCopyrightText :
+msgid ""
+msgstr ""
+"Project-Id-Version: kpublicalerts\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-10-01 00:49+0000\n"
+"PO-Revision-Date: 2026-10-28 14:22+0200\n"
+"Last-Translator: Λευτέρης Τ. <tripoleft@protonmail.com>\n"
+"Language-Team: Greek <kde-i18n-doc@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 26.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Λευτέρης Τ."
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tripoleft@protonmail.com"
+
+#: app/AlertPage.qml:49
+#, kde-format
+msgid "Language"
+msgstr "Γλώσσα"
+
+#: app/AlertPage.qml:60
+#, kde-format
+msgid "Affected area"
+msgstr "Επηρεαζόμενη περιοχή"
+
+#: app/AlertPage.qml:137
+#, kde-format
+msgid "Event"
+msgstr "Γεγονός"
+
+#: app/AlertPage.qml:142
+#, kde-format
+msgctxt "@label"
+msgid "Categories"
+msgstr "Κατηγορίες"
+
+#: app/AlertPage.qml:151
+#, kde-format
+msgctxt "@label"
+msgid "Urgency"
+msgstr "Σπουδαιότητα"
+
+#: app/AlertPage.qml:160
+#, kde-format
+msgctxt "@label"
+msgid "Severity"
+msgstr "Ένταση"
+
+#: app/AlertPage.qml:169
+#, kde-format
+msgctxt "@label"
+msgid "Certainty"
+msgstr "Βεβαιότητα"
+
+#: app/AlertPage.qml:178
+#, kde-format
+msgctxt "@label, time"
+msgid "Onset"
+msgstr "Έναρξη"
+
+#: app/AlertPage.qml:186
+#, kde-format
+msgctxt "@label"
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: app/AlertPage.qml:193
+#, kde-format
+msgctxt "instructions on how to act in response to an emergency"
+msgid "Act"
+msgstr "Πράξη"
+
+#: app/AlertPage.qml:202
+#, kde-format
+msgctxt "@label, recommended way to act in response to an emergeny"
+msgid "Recommended response"
+msgstr "Συνιστώμενη αντίδραση"
+
+#: app/AlertPage.qml:211
+#, kde-format
+msgctxt "@label"
+msgid "Instruction"
+msgstr "Οδηγία"
+
+#: app/AlertPage.qml:219
+#, kde-format
+msgid "Further Information"
+msgstr "Περαιτέρω πληροφορίες"
+
+#: app/AlertPage.qml:229
+#, kde-format
+msgctxt "@label"
+msgid "Website"
+msgstr "Ιστότοπος"
+
+#: app/AlertPage.qml:239
+#, kde-format
+msgctxt "@label, contact information, noun"
+msgid "Contact"
+msgstr "Επικοινωνία"
+
+#: app/AlertPage.qml:249
+#, kde-format
+msgctxt "@label"
+msgid "Sender"
+msgstr "Αποστολέας"
+
+#: app/AlertPage.qml:258 app/AlertPage.qml:267
+#, kde-format
+msgctxt "@label"
+msgid "Area"
+msgstr "Περιοχή"
+
+#: app/AlertPage.qml:274
+#, kde-format
+msgctxt "@label"
+msgid "Additional Resources"
+msgstr "Επιπλέον πηγές"
+
+#: app/AlertPage.qml:291
+#, kde-format
+msgctxt "file type (file size)"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: app/AlertPage.qml:307
+#, kde-format
+msgid "Technical Information"
+msgstr "Τεχνικές πληροφορίες"
+
+#: app/AlertPage.qml:311
+#, kde-format
+msgctxt "@label"
+msgid "Status"
+msgstr "Κατάσταση"
+
+#: app/AlertPage.qml:322
+#, kde-format
+msgctxt "@label"
+msgid "Message type"
+msgstr "Τύπος μηνύματος"
+
+#: app/AlertPage.qml:337
+#, kde-format
+msgctxt "intended target audience for an emergency alert"
+msgid "Audience"
+msgstr "Κοινό"
+
+#: app/AlertPage.qml:346
+#, kde-format
+msgctxt "@label, time"
+msgid "Sent"
+msgstr "Εστάλη"
+
+#: app/AlertPage.qml:355
+#, kde-format
+msgctxt "@label, time"
+msgid "Effective"
+msgstr "Ενεργό"
+
+#: app/AlertPage.qml:364
+#, kde-format
+msgctxt "@label, time"
+msgid "Expires"
+msgstr "Λήγει"
+
+#: app/AlertPage.qml:373
+#, kde-format
+msgctxt "scope of an alert: public/private/restricted"
+msgid "Scope"
+msgstr "Εμβέλεια"
+
+#: app/AlertPage.qml:375
+#, kde-format
+msgid "Public — For general dissemination to unrestricted audiences"
+msgstr "Δημόσιο — Για γενική διάδοση σε μη περιορισμένο κοινό"
+
+#: app/AlertPage.qml:376
+#, kde-format
+msgid ""
+"Restricted — For dissemination only to users with a known operational "
+"requirement"
+msgstr ""
+"Περιορισμένο — Για διάδοση μόνο σε χρήστες με γνωστό λειτουργικό εξοπλισμό"
+
+#: app/AlertPage.qml:377
+#, kde-format
+msgid "Private — For dissemination only to specified addresses"
+msgstr "Ιδιωτικό — Για διάδοση μόνο σε συγκεκριμένες διευθύνσεις"
+
+#: app/AlertPage.qml:386
+#, kde-format
+msgctxt "addressees of a non-public alert"
+msgid "Addresses"
+msgstr "Διευθύνσεις"
+
+#: app/AlertPage.qml:394
+#, kde-format
+msgid "Identifier"
+msgstr "Αναγνωριστικό"
+
+#: app/AlertPage.qml:400
+#, kde-format
+msgid "View Source File"
+msgstr "Προβολή αρχείου πηγής"
+
+#: app/AlertPage.qml:406
+#, kde-format
+msgid "Open Source File"
+msgstr "Άνοιγμα αρχείου πηγής"
+
+#: app/alertsmanager.cpp:389
+#, kde-format
+msgctxt "@action:button"
+msgid "Show Alert Details"
+msgstr "Εμφάνιση λεπτομερειών προειδοποίησης"
+
+#: app/alertsmanager.cpp:393
+#, kde-format
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Απόρριψη"
+
+#: app/AlertsPage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Active Alerts"
+msgstr "Ενεργές Προειδοποιήσεις"
+
+#: app/AlertsPage.qml:27
+#, kde-format
+msgid "Missing notification permission!"
+msgstr "Λείπει η άδεια ειδοποιήσεων!"
+
+#: app/AlertsPage.qml:38
+#, kde-format
+msgid "Request permission…"
+msgstr "Αίτημα άδειας…"
+
+#: app/AlertsPage.qml:98
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No alerts"
+msgstr "Καμία προειδοποίηση"
+
+#: app/AlertsPage.qml:101
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Area of Interest…"
+msgstr "Προσθήκη περιοχή ενδιαφέροντος..."
+
+#: app/alertssortproxymodel.cpp:42
+#, kde-format
+msgctxt "@label"
+msgid "Future"
+msgstr "Μελλοντική"
+
+#: app/alertssortproxymodel.cpp:44
+#, kde-format
+msgctxt "@label"
+msgid "Current"
+msgstr "Τρέχουσα"
+
+#: app/caputil.cpp:50
+msgid "Extreme — Extraordinary threat to life or property"
+msgstr "Ακραία — Εξαιρετικός κίνδυνος για τη ζωή και την περιουσία"
+
+#: app/caputil.cpp:51
+msgid "Severe — Significant threat to life or property"
+msgstr "Σημαντική — Σημαντικός κίνδυνος για τη ζωή και την περιουσία"
+
+#: app/caputil.cpp:52
+msgid "Moderate — Possible threat to life or property"
+msgstr "Μεσαία — Πιθανός κίνδυνος για τη ζωή και την περιουσία"
+
+#: app/caputil.cpp:53
+msgid "Minor — Minimal to no known threat to life or property"
+msgstr "Ελάσσονα — Ελάχιστος ή καθόλου κίνδυνος για τη ζωή και την περιουσία"
+
+#: app/caputil.cpp:57
+msgid "Responsive action should be taken immediately"
+msgstr "Πρέπει να παρθεί "
+
+#: app/caputil.cpp:58
+msgid "Responsive action should be taken soon"
+msgstr "Θα πρέπει να ληφθούν άμεσα μέτρα"
+
+#: app/caputil.cpp:59
+msgid "Responsive action be taken in the near future"
+msgstr "Να ληφθούν τα κατάλληλα μέτρα στο εγγύς μέλλον"
+
+#: app/caputil.cpp:60
+msgid "Responsive action is no longer required"
+msgstr "Δεν απαιτείται πλέον η λήψη μέτρων"
+
+#: app/caputil.cpp:64
+msgid "Occurred or ongoing"
+msgstr "Συνέβη ή συμβαίνει"
+
+#: app/caputil.cpp:65
+msgid "Likely (> 50%)"
+msgstr "Πιθανό (> 50%)"
+
+#: app/caputil.cpp:66
+msgid "Possible but not likely (< 50%)"
+msgstr "Πιθανό αλλά όχι πολύ (< 50%)"
+
+#: app/caputil.cpp:67
+msgid "Not expected to occur"
+msgstr "Δεν αναμένεται να συμβεί"
+
+#: app/caputil.cpp:71
+msgid "Geophysical"
+msgstr "Γεωφυσική"
+
+#: app/caputil.cpp:72
+msgid "Meteorological"
+msgstr "Μετεωρολογική"
+
+#: app/caputil.cpp:73
+msgid "General emergency and public safety"
+msgstr "Γενική έκτακτη ανάγκη και δημόσια ασφάλεια"
+
+#: app/caputil.cpp:74
+msgid "Law enforcement, military, homeland and local/private security"
+msgstr "Επιβολή νόμου, στρατιωτική, ομοσπονδιακή και τοπική/ιδιωτική ασφάλεια"
+
+#: app/caputil.cpp:75
+msgid "Rescue and recovery"
+msgstr "Διάσωση και ανάκτηση"
+
+#: app/caputil.cpp:76
+msgid "Fire"
+msgstr "Πυρκαγιά"
+
+#: app/caputil.cpp:77
+msgid "Medical and public health"
+msgstr "Ιατρική και δημόσια υγεία"
+
+#: app/caputil.cpp:78
+msgid "Pollution and other environmental event"
+msgstr "Μόλυνση και άλλο περιβαλλοντικό γεγονός"
+
+#: app/caputil.cpp:79
+msgid "Transportation"
+msgstr "Μεταφορά"
+
+#: app/caputil.cpp:80
+msgid "Utility, telecommunication, other non-transport infrastructure"
+msgstr "Ρεύμα, τηλεπικοινωνίες και άλλες μη μεταφορικές υποδομές"
+
+#: app/caputil.cpp:81
+msgid ""
+"Chemical, biological, radiological, nuclear or high-yield explosive threat "
+"or attack"
+msgstr ""
+"Απειλή ή επίθεση χημικού, βιολογικού, ραδιολογικού, πυρηνικού ή εκρηκτικού "
+"υψηλής ισχύος χαρακτήρα"
+
+#: app/caputil.cpp:82
+msgid "Other event"
+msgstr "Άλλο γεγονός"
+
+#: app/caputil.cpp:86
+msgid "Take shelter in place or per instructions."
+msgstr "Παραμείνετε στο χώρο όπου βρίσκεστε ή ακολουθήστε τις οδηγίες."
+
+#: app/caputil.cpp:87
+msgid "Relocate as instructed."
+msgstr "Μετακινηθείτε σύμφωνα με τις οδηγίες."
+
+#: app/caputil.cpp:88
+msgid "Make preparations as per the instructions."
+msgstr "Προετοιμαστείτε σύμφωνα με τις οδηγίες."
+
+#: app/caputil.cpp:89
+msgid "Execute activities identified in the instructions."
+msgstr "Εκτελέστε τις ενέργειες που αναφέρονται στις οδηγίες."
+
+#: app/caputil.cpp:90
+msgid "Avoid the subject event as per the instructions."
+msgstr "Αποφύγετε τη συγκεκριμένη εκδήλωση σύμφωνα με τις οδηγίες."
+
+#: app/caputil.cpp:91
+msgid "Attend to information sources as described in the instructions."
+msgstr "Ακολουθήστε τις πηγές πληροφοριών όπως περιγράφεται στις οδηγίες."
+
+#: app/caputil.cpp:92
+msgid "Evaluate the information in this message."
+msgstr "Εξετάστε τις πληροφορίες σ' αυτό το μήνυμα."
+
+#: app/caputil.cpp:93
+msgid ""
+"The subject event no longer poses a threat or concern and any follow on "
+"action is described in the instructions."
+msgstr ""
+"Το συγκεκριμένο γεγονός δεν αποτελεί πλέον απειλή ή λόγο ανησυχίας και τυχόν "
+"περαιτέρω μέτρα περιγράφονται στις οδηγίες."
+
+#: app/caputil.cpp:94
+msgid "No action recommended."
+msgstr "Δεν απαιτείται ενέργεια."
+
+#: app/main.cpp:39 app/Main.qml:19 app/Main.qml:55
+#, kde-format
+msgctxt "@title:window"
+msgid "Public Alerts"
+msgstr "Δημόσιες Προειδοποιήσεις"
+
+#: app/main.cpp:58
+#, kde-format
+msgctxt "@info"
+msgid "Weather and emergency alerts"
+msgstr "Προειδοποιήσεις καιρού και εκτάκτων αναγκών"
+
+#: app/main.cpp:59
+#, kde-format
+msgctxt "@info:credit"
+msgid "Copyright © 2022 The KDE Community"
+msgstr "Πνευματικά δικαιώματα © 2022 Η Κοινότητα του KDE"
+
+#: app/Main.qml:60
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Areas of Interest…"
+msgstr "Περιοχές ενδιαφέροντος…"
+
+#: app/Main.qml:66
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "About"
+msgstr "Σχετικά"
+
+#: app/subscriptionmanager.cpp:33 app/subscriptionmanager.cpp:352
+#, kde-format
+msgid "Weather and emergency alert notifications"
+msgstr "Ειδοποιήσεις καιρού και έκτακτης ανάγκης"
+
+#: app/SubscriptionPage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Area of Interest"
+msgstr "Προσθήκη περιοχής ενδιαφέροντος..."
+
+#: app/SubscriptionPage.qml:55
+#, kde-format
+msgid "Name"
+msgstr "Όνομα"
+
+#: app/SubscriptionPage.qml:60
+#, kde-format
+msgctxt "@action:button"
+msgid "Add"
+msgstr "Προσθήκη"
+
+#: app/SubscriptionPage.qml:60
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr "Αποθήκευση"
+
+#: app/SubscriptionsPage.qml:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Areas of Interest"
+msgstr "Περιοχές ενδιαφέροντος"
+
+#: app/SubscriptionsPage.qml:26 app/SubscriptionsPage.qml:74
+#, kde-format
+msgctxt "@action:button"
+msgid "Add…"
+msgstr "Προσθήκη…"
+
+#: app/SubscriptionsPage.qml:59
+#, kde-format
+msgctxt "@action:button"
+msgid "Unsubscribe"
+msgstr "Απεγγραφή"
+
+#: app/SubscriptionsPage.qml:71
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No areas of interest chosen"
+msgstr "Δεν έχουν επιλεχθεί περιοχές ενδιαφέροντος"
