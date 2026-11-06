@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kpublicalerts package.
-# SPDX-FileCopyrightText: 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2025, 2026 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 00:49+0000\n"
-"PO-Revision-Date: 2025-10-13 21:09+0300\n"
+"PO-Revision-Date: 2026-10-06 13:19+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -80,16 +80,13 @@ msgstr "Kuvaus"
 
 # *** TARKISTA: Voisi olla myös verbi, ”Toimi” (tai jotain aivan muuta)
 #: app/AlertPage.qml:193
-#, fuzzy, kde-format
-#| msgid "Act"
+#, kde-format
 msgctxt "instructions on how to act in response to an emergency"
 msgid "Act"
 msgstr "Toiminta"
 
 #: app/AlertPage.qml:202
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Recommended response"
+#, kde-format
 msgctxt "@label, recommended way to act in response to an emergeny"
 msgid "Recommended response"
 msgstr "Suositeltu reaktio"
@@ -109,12 +106,10 @@ msgstr "Lisätietoa"
 #, kde-format
 msgctxt "@label"
 msgid "Website"
-msgstr ""
+msgstr "Sivusto"
 
 #: app/AlertPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label, contact information, noun"
 msgid "Contact"
 msgstr "Yhteystiedot"
@@ -161,8 +156,7 @@ msgid "Message type"
 msgstr "Viestityyppi"
 
 #: app/AlertPage.qml:337
-#, fuzzy, kde-format
-#| msgid "Audience"
+#, kde-format
 msgctxt "intended target audience for an emergency alert"
 msgid "Audience"
 msgstr "Yleisö"
