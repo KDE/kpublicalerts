@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 00:49+0000\n"
-"PO-Revision-Date: 2026-10-10 10:14+0200\n"
+"PO-Revision-Date: 2026-11-11 20:48+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -315,11 +315,11 @@ msgstr "Произошло или происходит"
 
 #: app/caputil.cpp:65
 msgid "Likely (> 50%)"
-msgstr "Вероятно (> 50 %)"
+msgstr "Вероятно (> 50 %)"
 
 #: app/caputil.cpp:66
 msgid "Possible but not likely (< 50%)"
-msgstr "Возможно, но маловероятно (< 50 %)"
+msgstr "Возможно, но маловероятно (< 50 %)"
 
 #: app/caputil.cpp:67
 msgid "Not expected to occur"
