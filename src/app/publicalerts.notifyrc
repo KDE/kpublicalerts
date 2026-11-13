@@ -127,8 +127,8 @@ Urgency=Critical
 [Event/severe-alert]
 Name=Severe Alert
 Name[ar]=إنذار شديد
-Name[ca]=Alerta severa
-Name[ca@valencia]=Alerta severa
+Name[ca]=Alerta greu
+Name[ca@valencia]=Alerta greu
 Name[cs]=Závažná výstraha
 Name[de]=Schwerwiegende Alarmstufe
 Name[el]=Σημαντική προειδοποίηση
