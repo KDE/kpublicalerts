@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kpublicalerts\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 00:49+0000\n"
-"PO-Revision-Date: 2026-09-01 10:16+0200\n"
+"PO-Revision-Date: 2026-11-12 20:04+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -284,7 +284,7 @@ msgstr "Extrema: Amenaça extraordinària a la vida o les propietats"
 
 #: app/caputil.cpp:51
 msgid "Severe — Significant threat to life or property"
-msgstr "Severa: Amenaça significativa a la vida o les propietats"
+msgstr "Greu: Amenaça significativa a la vida o les propietats"
 
 #: app/caputil.cpp:52
 msgid "Moderate — Possible threat to life or property"
@@ -316,11 +316,11 @@ msgstr "Ha ocorregut o està en curs"
 
 #: app/caputil.cpp:65
 msgid "Likely (> 50%)"
-msgstr "Probable (> 50%)"
+msgstr "Probable (> 50 %)"
 
 #: app/caputil.cpp:66
 msgid "Possible but not likely (< 50%)"
-msgstr "Possible però no probable (< 50%)"
+msgstr "Possible però no probable (< 50 %)"
 
 #: app/caputil.cpp:67
 msgid "Not expected to occur"
@@ -435,7 +435,7 @@ msgstr "Alertes meteorològiques i d'emergències"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © 2022 The KDE Community"
-msgstr "Copyright © 2022 La comunitat KDE"
+msgstr "Drets d'autoria © 2022 La comunitat KDE"
 
 #: app/Main.qml:60
 #, kde-format
